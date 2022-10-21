@@ -1,78 +1,78 @@
-﻿ElectionYear,Type,State,Source
-2022,Representatives,NSW,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-NSW.csv
-2022,Representatives,VIC,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-VIC.csv
-2022,Representatives,QLD,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-QLD.csv
-2022,Representatives,WA,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-WA.csv
-2022,Representatives,SA,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-SA.csv
-2022,Representatives,TAS,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-TAS.csv
-2022,Representatives,NT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-NT.csv
-2022,Representatives,ACT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-ACT.csv
-2022,Senate,AUS,https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-27966.csv
-2022,Polling Places,AUS,https://results.aec.gov.au/27966/Website/Downloads/GeneralPollingPlacesDownload-27966.csv
-2022,Turnout,AUS,https://results.aec.gov.au/27966/Website/Downloads/HouseTurnoutByDivisionDownload-27966.csv
-2019,Representatives,NSW,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NSW.csv
-2019,Representatives,VIC,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-VIC.csv
-2019,Representatives,QLD,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-QLD.csv
-2019,Representatives,WA,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-WA.csv
-2019,Representatives,SA,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-SA.csv
-2019,Representatives,TAS,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-TAS.csv
-2019,Representatives,NT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NT.csv
-2019,Representatives,ACT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-ACT.csv
-2019,Senate,AUS,https://results.aec.gov.au/24310/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-24310.csv
-2019,Polling Places,AUS,https://results.aec.gov.au/24310/Website/Downloads/GeneralPollingPlacesDownload-24310.csv
-2019,Turnout,AUS,https://results.aec.gov.au/24310/Website/Downloads/HouseTurnoutByDivisionDownload-24310.csv
-2016,Representatives,NSW,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NSW.csv
-2016,Representatives,VIC,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-VIC.csv
-2016,Representatives,QLD,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-QLD.csv
-2016,Representatives,WA,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-WA.csv
-2016,Representatives,SA,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-SA.csv
-2016,Representatives,TAS,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-TAS.csv
-2016,Representatives,NT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NT.csv
-2016,Representatives,ACT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-ACT.csv
-2016,Senate,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralEnrolmentByStateDownload-20499.csv
-2016,Polling Places,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralPollingPlacesDownload-20499.csv
-2016,Turnout,AUS,https://results.aec.gov.au/20499/Website/Downloads/HouseTurnoutByDivisionDownload-20499.csv
-2013,Representatives,NSW,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NSW.csv
-2013,Representatives,VIC,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-VIC.csv
-2013,Representatives,QLD,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-QLD.csv
-2013,Representatives,WA,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-WA.csv
-2013,Representatives,SA,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-SA.csv
-2013,Representatives,TAS,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-TAS.csv
-2013,Representatives,NT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NT.csv
-2013,Representatives,ACT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-ACT.csv
-2013,Senate,AUS,https://results.aec.gov.au/17496/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-17496.csv
-2013,Polling Places,AUS,https://results.aec.gov.au/17496/Website/Downloads/GeneralPollingPlacesDownload-17496.csv
-2013,Turnout,AUS,https://results.aec.gov.au/17496/Website/Downloads/HouseTurnoutByStateDownload-17496.csv
-2010,Representatives,NSW,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NSW.csv
-2010,Representatives,VIC,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-VIC.csv
-2010,Representatives,QLD,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-QLD.csv
-2010,Representatives,WA,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-WA.csv
-2010,Representatives,SA,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-SA.csv
-2010,Representatives,TAS,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-TAS.csv
-2010,Representatives,NT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NT.csv
-2010,Representatives,ACT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-ACT.csv
-2010,Senate,AUS,https://results.aec.gov.au/15508/Website/Downloads/GeneralPollingPlacesDownload-15508.csv
-2010,Polling Places,AUS,https://results.aec.gov.au/15508/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-15508.csv
-2010,Turnout,AUS,https://results.aec.gov.au/15508/Website/Downloads/HouseTurnoutByDivisionDownload-15508.csv
-2007,Representatives,NSW,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NSW.csv
-2007,Representatives,VIC,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-VIC.csv
-2007,Representatives,QLD,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-QLD.csv
-2007,Representatives,WA,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-WA.csv
-2007,Representatives,SA,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-SA.csv
-2007,Representatives,TAS,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-TAS.csv
-2007,Representatives,NT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NT.csv
-2007,Representatives,ACT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-ACT.csv
-2007,Senate,AUS,https://results.aec.gov.au/13745/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-13745.csv
-2007,Polling Places,AUS,https://results.aec.gov.au/13745/Website/Downloads/GeneralPollingPlacesDownload-13745.csv
-2007,Turnout,AUS,https://results.aec.gov.au/13745/Website/Downloads/HouseTurnoutByDivisionDownload-13745.csv
-2004,Representatives,NSW,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NSW.csv
-2004,Representatives,VIC,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-VIC.csv
-2004,Representatives,QLD,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-QLD.csv
-2004,Representatives,WA,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-WA.csv
-2004,Representatives,SA,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-SA.csv
-2004,Representatives,TAS,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-TAS.csv
-2004,Representatives,NT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NT.csv
-2004,Representatives,ACT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-ACT.csv
-2004,Senate,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-12246.csv
-2004,Polling Places,AUS,https://results.aec.gov.au/12246/results/Downloads/GeneralPollingPlacesDownload-12246.csv
-2004,Turnout,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateTurnoutByDivisionDownload-12246.csv
+﻿ElectionYear,Chamber,Type,State,Source
+2022,House,PrimaryVote,NSW,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-NSW.csv
+2022,House,PrimaryVote,VIC,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-VIC.csv
+2022,House,PrimaryVote,QLD,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-QLD.csv
+2022,House,PrimaryVote,WA,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-WA.csv
+2022,House,PrimaryVote,SA,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-SA.csv
+2022,House,PrimaryVote,TAS,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-TAS.csv
+2022,House,PrimaryVote,NT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-NT.csv
+2022,House,PrimaryVote,ACT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-ACT.csv
+2022,Senate,PrimaryVote,AUS,https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-27966.csv
+2022,Both,Polling Places,AUS,https://results.aec.gov.au/27966/Website/Downloads/GeneralPollingPlacesDownload-27966.csv
+2022,House,Turnout,AUS,https://results.aec.gov.au/27966/Website/Downloads/HouseTurnoutByDivisionDownload-27966.csv
+2019,House,PrimaryVote,NSW,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NSW.csv
+2019,House,PrimaryVote,VIC,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-VIC.csv
+2019,House,PrimaryVote,QLD,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-QLD.csv
+2019,House,PrimaryVote,WA,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-WA.csv
+2019,House,PrimaryVote,SA,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-SA.csv
+2019,House,PrimaryVote,TAS,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-TAS.csv
+2019,House,PrimaryVote,NT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NT.csv
+2019,House,PrimaryVote,ACT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-ACT.csv
+2019,Senate,PrimaryVote,AUS,https://results.aec.gov.au/24310/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-24310.csv
+2019,Both,Polling Places,AUS,https://results.aec.gov.au/24310/Website/Downloads/GeneralPollingPlacesDownload-24310.csv
+2019,House,Turnout,AUS,https://results.aec.gov.au/24310/Website/Downloads/HouseTurnoutByDivisionDownload-24310.csv
+2016,House,PrimaryVote,NSW,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NSW.csv
+2016,House,PrimaryVote,VIC,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-VIC.csv
+2016,House,PrimaryVote,QLD,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-QLD.csv
+2016,House,PrimaryVote,WA,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-WA.csv
+2016,House,PrimaryVote,SA,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-SA.csv
+2016,House,PrimaryVote,TAS,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-TAS.csv
+2016,House,PrimaryVote,NT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NT.csv
+2016,House,PrimaryVote,ACT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-ACT.csv
+2016,Senate,PrimaryVote,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralEnrolmentByStateDownload-20499.csv
+2016,Both,Polling Places,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralPollingPlacesDownload-20499.csv
+2016,House,Turnout,AUS,https://results.aec.gov.au/20499/Website/Downloads/HouseTurnoutByDivisionDownload-20499.csv
+2013,House,PrimaryVote,NSW,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NSW.csv
+2013,House,PrimaryVote,VIC,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-VIC.csv
+2013,House,PrimaryVote,QLD,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-QLD.csv
+2013,House,PrimaryVote,WA,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-WA.csv
+2013,House,PrimaryVote,SA,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-SA.csv
+2013,House,PrimaryVote,TAS,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-TAS.csv
+2013,House,PrimaryVote,NT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NT.csv
+2013,House,PrimaryVote,ACT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-ACT.csv
+2013,Senate,PrimaryVote,AUS,https://results.aec.gov.au/17496/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-17496.csv
+2013,Both,Polling Places,AUS,https://results.aec.gov.au/17496/Website/Downloads/GeneralPollingPlacesDownload-17496.csv
+2013,House,Turnout,AUS,https://results.aec.gov.au/17496/Website/Downloads/HouseTurnoutByStateDownload-17496.csv
+2010,House,PrimaryVote,NSW,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NSW.csv
+2010,House,PrimaryVote,VIC,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-VIC.csv
+2010,House,PrimaryVote,QLD,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-QLD.csv
+2010,House,PrimaryVote,WA,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-WA.csv
+2010,House,PrimaryVote,SA,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-SA.csv
+2010,House,PrimaryVote,TAS,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-TAS.csv
+2010,House,PrimaryVote,NT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NT.csv
+2010,House,PrimaryVote,ACT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-ACT.csv
+2010,Senate,PrimaryVote,AUS,https://results.aec.gov.au/15508/Website/Downloads/GeneralPollingPlacesDownload-15508.csv
+2010,Both,Polling Places,AUS,https://results.aec.gov.au/15508/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-15508.csv
+2010,House,Turnout,AUS,https://results.aec.gov.au/15508/Website/Downloads/HouseTurnoutByDivisionDownload-15508.csv
+2007,House,PrimaryVote,NSW,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NSW.csv
+2007,House,PrimaryVote,VIC,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-VIC.csv
+2007,House,PrimaryVote,QLD,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-QLD.csv
+2007,House,PrimaryVote,WA,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-WA.csv
+2007,House,PrimaryVote,SA,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-SA.csv
+2007,House,PrimaryVote,TAS,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-TAS.csv
+2007,House,PrimaryVote,NT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NT.csv
+2007,House,PrimaryVote,ACT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-ACT.csv
+2007,Senate,PrimaryVote,AUS,https://results.aec.gov.au/13745/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-13745.csv
+2007,Both,Polling Places,AUS,https://results.aec.gov.au/13745/Website/Downloads/GeneralPollingPlacesDownload-13745.csv
+2007,House,Turnout,AUS,https://results.aec.gov.au/13745/Website/Downloads/HouseTurnoutByDivisionDownload-13745.csv
+2004,House,PrimaryVote,NSW,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NSW.csv
+2004,House,PrimaryVote,VIC,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-VIC.csv
+2004,House,PrimaryVote,QLD,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-QLD.csv
+2004,House,PrimaryVote,WA,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-WA.csv
+2004,House,PrimaryVote,SA,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-SA.csv
+2004,House,PrimaryVote,TAS,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-TAS.csv
+2004,House,PrimaryVote,NT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NT.csv
+2004,House,PrimaryVote,ACT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-ACT.csv
+2004,Senate,PrimaryVote,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-12246.csv
+2004,Both,Polling Places,AUS,https://results.aec.gov.au/12246/results/Downloads/GeneralPollingPlacesDownload-12246.csv
+2004,House,Turnout,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateTurnoutByDivisionDownload-12246.csv
