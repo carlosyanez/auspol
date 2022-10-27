@@ -7,7 +7,7 @@
 2022,House,PrimaryVote,TAS,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-TAS.csv
 2022,House,PrimaryVote,NT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-NT.csv
 2022,House,PrimaryVote,ACT,https://results.aec.gov.au/27966/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-27966-ACT.csv
-2022,Senate,PrimaryVote,AUS,https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-27966.csv
+2022,Senate,FirstPreference,AUS,https://results.aec.gov.au/27966/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-27966.csv
 2022,Both,Polling Places,AUS,https://results.aec.gov.au/27966/Website/Downloads/GeneralPollingPlacesDownload-27966.csv
 2022,House,Turnout,AUS,https://results.aec.gov.au/27966/Website/Downloads/HouseTurnoutByDivisionDownload-27966.csv
 2019,House,PrimaryVote,NSW,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NSW.csv
@@ -18,7 +18,7 @@
 2019,House,PrimaryVote,TAS,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-TAS.csv
 2019,House,PrimaryVote,NT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-NT.csv
 2019,House,PrimaryVote,ACT,https://results.aec.gov.au/24310/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-24310-ACT.csv
-2019,Senate,PrimaryVote,AUS,https://results.aec.gov.au/24310/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-24310.csv
+2019,Senate,FirstPreference,AUS,https://results.aec.gov.au/24310/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-24310.csv
 2019,Both,Polling Places,AUS,https://results.aec.gov.au/24310/Website/Downloads/GeneralPollingPlacesDownload-24310.csv
 2019,House,Turnout,AUS,https://results.aec.gov.au/24310/Website/Downloads/HouseTurnoutByDivisionDownload-24310.csv
 2016,House,PrimaryVote,NSW,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NSW.csv
@@ -29,7 +29,7 @@
 2016,House,PrimaryVote,TAS,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-TAS.csv
 2016,House,PrimaryVote,NT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-NT.csv
 2016,House,PrimaryVote,ACT,https://results.aec.gov.au/20499/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-20499-ACT.csv
-2016,Senate,PrimaryVote,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralEnrolmentByStateDownload-20499.csv
+2016,Senate,FirstPreference,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralEnrolmentByStateDownload-20499.csv
 2016,Both,Polling Places,AUS,https://results.aec.gov.au/20499/Website/Downloads/GeneralPollingPlacesDownload-20499.csv
 2016,House,Turnout,AUS,https://results.aec.gov.au/20499/Website/Downloads/HouseTurnoutByDivisionDownload-20499.csv
 2013,House,PrimaryVote,NSW,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NSW.csv
@@ -40,7 +40,7 @@
 2013,House,PrimaryVote,TAS,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-TAS.csv
 2013,House,PrimaryVote,NT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-NT.csv
 2013,House,PrimaryVote,ACT,https://results.aec.gov.au/17496/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-17496-ACT.csv
-2013,Senate,PrimaryVote,AUS,https://results.aec.gov.au/17496/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-17496.csv
+2013,Senate,FirstPreference,AUS,https://results.aec.gov.au/17496/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-17496.csv
 2013,Both,Polling Places,AUS,https://results.aec.gov.au/17496/Website/Downloads/GeneralPollingPlacesDownload-17496.csv
 2013,House,Turnout,AUS,https://results.aec.gov.au/17496/Website/Downloads/HouseTurnoutByStateDownload-17496.csv
 2010,House,PrimaryVote,NSW,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NSW.csv
@@ -51,7 +51,7 @@
 2010,House,PrimaryVote,TAS,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-TAS.csv
 2010,House,PrimaryVote,NT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-NT.csv
 2010,House,PrimaryVote,ACT,https://results.aec.gov.au/15508/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-15508-ACT.csv
-2010,Senate,PrimaryVote,AUS,https://results.aec.gov.au/15508/Website/Downloads/GeneralPollingPlacesDownload-15508.csv
+2010,Senate,FirstPreference,AUS,https://results.aec.gov.au/15508/Website/Downloads/GeneralPollingPlacesDownload-15508.csv
 2010,Both,Polling Places,AUS,https://results.aec.gov.au/15508/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-15508.csv
 2010,House,Turnout,AUS,https://results.aec.gov.au/15508/Website/Downloads/HouseTurnoutByDivisionDownload-15508.csv
 2007,House,PrimaryVote,NSW,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NSW.csv
@@ -62,7 +62,7 @@
 2007,House,PrimaryVote,TAS,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-TAS.csv
 2007,House,PrimaryVote,NT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-NT.csv
 2007,House,PrimaryVote,ACT,https://results.aec.gov.au/13745/Website/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-13745-ACT.csv
-2007,Senate,PrimaryVote,AUS,https://results.aec.gov.au/13745/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-13745.csv
+2007,Senate,FirstPreference,AUS,https://results.aec.gov.au/13745/Website/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-13745.csv
 2007,Both,Polling Places,AUS,https://results.aec.gov.au/13745/Website/Downloads/GeneralPollingPlacesDownload-13745.csv
 2007,House,Turnout,AUS,https://results.aec.gov.au/13745/Website/Downloads/HouseTurnoutByDivisionDownload-13745.csv
 2004,House,PrimaryVote,NSW,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NSW.csv
@@ -73,6 +73,62 @@
 2004,House,PrimaryVote,TAS,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-TAS.csv
 2004,House,PrimaryVote,NT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-NT.csv
 2004,House,PrimaryVote,ACT,https://results.aec.gov.au/12246/results/Downloads/HouseStateFirstPrefsByPollingPlaceDownload-12246-ACT.csv
-2004,Senate,PrimaryVote,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-12246.csv
+2004,Senate,FirstPreference,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateFirstPrefsByDivisionByVoteTypeDownload-12246.csv
 2004,Both,Polling Places,AUS,https://results.aec.gov.au/12246/results/Downloads/GeneralPollingPlacesDownload-12246.csv
 2004,House,Turnout,AUS,https://results.aec.gov.au/12246/results/Downloads/SenateTurnoutByDivisionDownload-12246.csv
+2022,House,Flow,NSW,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-NSW.zip
+2022,House,Flow,VIC,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-VIC.zip
+2022,House,Flow,QLD,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-QLD.zip
+2022,House,Flow,WA,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-WA.zip
+2022,House,Flow,SA,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-SA.zip
+2022,House,Flow,TAS,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-TAS.zip
+2022,House,Flow,NT,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-NT.zip
+2022,House,Flow,ACT,https://results.aec.gov.au/27966/Website/External/HouseDopByPPDownload-27966-ACT.zip
+2019,House,Flow,NSW,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-NSW.zip
+2019,House,Flow,VIC,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-VIC.zip
+2019,House,Flow,QLD,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-QLD.zip
+2019,House,Flow,WA,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-WA.zip
+2019,House,Flow,SA,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-SA.zip
+2019,House,Flow,TAS,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-TAS.zip
+2019,House,Flow,NT,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-NT.zip
+2019,House,Flow,ACT,https://results.aec.gov.au/24310/Website/External/HouseDopByPPDownload-24310-ACT.zip
+2013,House,Flow,NSW,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-NSW.zip
+2013,House,Flow,VIC,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-VIC.zip
+2013,House,Flow,QLD,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-QLD.zip
+2013,House,Flow,WA,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-WA.zip
+2013,House,Flow,SA,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-SA.zip
+2013,House,Flow,TAS,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-TAS.zip
+2013,House,Flow,NT,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-NT.zip
+2013,House,Flow,ACT,https://results.aec.gov.au/17496/Website/External/HouseDopByPPDownload-17496-ACT.zip
+2016,House,Flow,NSW,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-NSW.zip
+2016,House,Flow,VIC,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-VIC.zip
+2016,House,Flow,QLD,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-QLD.zip
+2016,House,Flow,WA,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-WA.zip
+2016,House,Flow,SA,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-SA.zip
+2016,House,Flow,TAS,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-TAS.zip
+2016,House,Flow,NT,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-NT.zip
+2016,House,Flow,ACT,https://results.aec.gov.au/20499/Website/External/HouseDopByPPDownload-20499-ACT.zip
+2010,House,Flow,NSW,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-NSW.zip
+2010,House,Flow,VIC,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-VIC.zip
+2010,House,Flow,QLD,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-QLD.zip
+2010,House,Flow,WA,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-WA.zip
+2010,House,Flow,SA,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-SA.zip
+2010,House,Flow,TAS,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-TAS.zip
+2010,House,Flow,NT,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-NT.zip
+2010,House,Flow,ACT,https://results.aec.gov.au/15508/Website/External/HouseDopByPPDownload-15508-ACT.zip
+2007,House,Flow,NSW,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-NSW.zip
+2007,House,Flow,VIC,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-VIC.zip
+2007,House,Flow,QLD,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-QLD.zip
+2007,House,Flow,WA,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-WA.zip
+2007,House,Flow,SA,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-SA.zip
+2007,House,Flow,TAS,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-TAS.zip
+2007,House,Flow,NT,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-NT.zip
+2007,House,Flow,ACT,https://results.aec.gov.au/13745/Website/External/HouseDopByPPDownload-13745-ACT.zip
+2004,House,Flow,NSW,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-NSW.zip
+2004,House,Flow,VIC,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-VIC.zip
+2004,House,Flow,QLD,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-QLD.zip
+2004,House,Flow,WA,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-WA.zip
+2004,House,Flow,SA,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-SA.zip
+2004,House,Flow,TAS,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-TAS.zip
+2004,House,Flow,NT,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-NT.zip
+2004,House,Flow,ACT,https://results.aec.gov.au/12246/results/External/HouseDopByPPDownload-12246-ACT.zip
