@@ -45,3 +45,4 @@ rsconnect/
 # End of https://www.toptal.com/developers/gitignore/api/r
 data-raw/files/*
 *.parquet
+*.zip

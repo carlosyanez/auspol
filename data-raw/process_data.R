@@ -72,7 +72,9 @@ representatives<- representatives %>%
                   replace_na(list(SittingMemberFl=FALSE))
 
 
-write_parquet(representatives,path(dest_dir,"house_primary_vote.parquet"),compression="brotli")
+write_parquet(representatives,path(dest_dir,"house_primary_vote.parquet"),compression = "brotli")
+zip(path(dest_dir,"house_primary_vote.zip"),path(dest_dir,"house_primary_vote.parquet"))
+
 # Load data  - Reps turnout  ----
 
 reps_turnout <- load_data("House","Turnout",sources)
@@ -113,5 +115,12 @@ for(i in 1:nrow(flow)){
 unzipped_sources$Chamber <- "House"
 unzipped_sources$Type    <- "Flow"
 
-house_flow <- load_data("House","Flow",unzipped_sources,unzipped_flow)
+
+
+for(state in unique(unzipped_sources$State)){
+
+  house_flow <- load_data("House","Flow",unzipped_sources %>% filter(State==state),unzipped_flow)
+  write_parquet(house_flow,path(dest_dir,str_c("house_flow_",state,".parquet")),compression="brotli")
+
+}
 
