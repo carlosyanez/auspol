@@ -4,6 +4,7 @@ library(fs)
 library(tidyverse)
 library(rio)
 library(arrow)
+library(zip)
 
 raw_files_dir <- here("data-raw","files")
 dest_dir      <- here("data-raw","processed")
@@ -73,7 +74,11 @@ representatives<- representatives %>%
 
 
 write_parquet(representatives,path(dest_dir,"house_primary_vote.parquet"),compression = "brotli")
-zip(path(dest_dir,"house_primary_vote.zip"),path(dest_dir,"house_primary_vote.parquet"))
+zip::zip(zipfile=path(dest_dir,"house_primary_vote.zip"),
+         files=path(dest_dir,"house_primary_vote.parquet"),
+         mode = "cherry-pick")
+fs::file_delete(path(dest_dir,"house_primary_vote.parquet"))
+
 
 # Load data  - Reps turnout  ----
 
@@ -81,7 +86,10 @@ reps_turnout <- load_data("House","Turnout",sources)
 reps_turnout  <- reps_turnout %>% select(-StateNm)
 
 write_parquet(resps_turnout,path(dest_dir,"house_turnout.parquet"),compression="brotli")
-
+zip::zip(zipfile=path(dest_dir,"house_turnout.zip"),
+         files=path(dest_dir,"house_turnout.parquet"),
+         mode = "cherry-pick")
+fs::file_delete(path(dest_dir,"house_turnout.parquet"))
 
 
 # Load data - Reps flow of preferences ----
@@ -116,11 +124,16 @@ unzipped_sources$Chamber <- "House"
 unzipped_sources$Type    <- "Flow"
 
 
-
 for(state in unique(unzipped_sources$State)){
 
   house_flow <- load_data("House","Flow",unzipped_sources %>% filter(State==state),unzipped_flow)
   write_parquet(house_flow,path(dest_dir,str_c("house_flow_",state,".parquet")),compression="brotli")
+  zip::zip(zipfile=path(dest_dir,str_c("house_flow_",state,".zip")),
+           files=path(dest_dir,str_c("house_flow_",state,".parquet")),
+           mode = "cherry-pick")
+  fs::file_delete(path(dest_dir,str_c("house_flow_",state,".parquet")))
+
+
 
 }
 
