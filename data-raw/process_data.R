@@ -25,7 +25,10 @@ clean_parties <- function(df,var1,var2){
 load_data <- function(Chamber,Type,file_sources,base_path=raw_files_dir){
   df  <- tibble()
 
+  print(Chamber)
+  print(Type)
   rep_sources <- file_sources %>% filter(Chamber==Chamber& Type==Type)
+  print(nrow(rep_sources))
 
   for(i in 1:nrow(rep_sources)){
     year  <- rep_sources[i,]$ElectionYear
@@ -47,6 +50,19 @@ load_data <- function(Chamber,Type,file_sources,base_path=raw_files_dir){
 
 }
 
+save_zip_parquet <- function(df,name,dest_dir){
+
+  zipname     <- str_c(name,".zip")
+  parquetname <- str_c(name,".parquet")
+
+  write_parquet(df,path(dest_dir,parquetname),compression="brotli")
+  zip::zip(zipfile=path(dest_dir,zipname),
+           files=path(dest_dir,parquetname),
+           mode = "cherry-pick")
+  fs::file_delete(path(dest_dir,parquetname))
+
+}
+
 
 # Get List ----
 
@@ -62,7 +78,7 @@ sources  <- sources %>%
 
 # Load data  - Reps primary vote ----
 
-## Load and transform
+## Load and transform - primary vote
 
 representatives <- load_data("House","PrimaryVote",sources)
 
@@ -72,12 +88,20 @@ representatives<- representatives %>%
                          SittingMemberFl=if_else(SittingMemberFl=="#",TRUE,FALSE)) %>%
                   replace_na(list(SittingMemberFl=FALSE))
 
+save_zip_parquet(representatives,"house_primary_vote",dest_dir)
 
-write_parquet(representatives,path(dest_dir,"house_primary_vote.parquet"),compression = "brotli")
-zip::zip(zipfile=path(dest_dir,"house_primary_vote.zip"),
-         files=path(dest_dir,"house_primary_vote.parquet"),
-         mode = "cherry-pick")
-fs::file_delete(path(dest_dir,"house_primary_vote.parquet"))
+
+# Load data - get list of electorates ----
+
+electorates <- representatives %>%
+               distinct(Year,StateAb,DivisionID,DivisionNm) %>%
+               filter(!is.na(DivisionID))   %>%
+               filter(!is.na(StateAb)) %>%
+               mutate(dummy=TRUE)      %>%
+               pivot_wider(names_from = Year,values_from = dummy) %>%
+               arrange(StateAb,DivisionID)
+
+save_zip_parquet(electorates,"house_electorates",dest_dir)
 
 
 # Load data  - Reps turnout  ----
@@ -85,11 +109,7 @@ fs::file_delete(path(dest_dir,"house_primary_vote.parquet"))
 reps_turnout <- load_data("House","Turnout",sources)
 reps_turnout  <- reps_turnout %>% select(-StateNm)
 
-write_parquet(resps_turnout,path(dest_dir,"house_turnout.parquet"),compression="brotli")
-zip::zip(zipfile=path(dest_dir,"house_turnout.zip"),
-         files=path(dest_dir,"house_turnout.parquet"),
-         mode = "cherry-pick")
-fs::file_delete(path(dest_dir,"house_turnout.parquet"))
+save_zip_parquet(resps_turnout,"house_turnout",dest_dir)
 
 
 # Load data - Reps flow of preferences ----
@@ -127,13 +147,57 @@ unzipped_sources$Type    <- "Flow"
 for(state in unique(unzipped_sources$State)){
 
   house_flow <- load_data("House","Flow",unzipped_sources %>% filter(State==state),unzipped_flow)
-  write_parquet(house_flow,path(dest_dir,str_c("house_flow_",state,".parquet")),compression="brotli")
-  zip::zip(zipfile=path(dest_dir,str_c("house_flow_",state,".zip")),
-           files=path(dest_dir,str_c("house_flow_",state,".parquet")),
-           mode = "cherry-pick")
-  fs::file_delete(path(dest_dir,str_c("house_flow_",state,".parquet")))
 
+  save_zip_parquet(house_flow,str_c("house_flow_",state),dest_dir)
 
 
 }
 
+
+# Load data  - Elected -----
+
+mps <- load_data("House","Elected",sources %>% filter(Type=="Elected"))
+save_zip_parquet(mps,"house_elected",dest_dir)
+
+# Load data - Two candidate preferred -----
+
+
+
+unzipped_flow <- dir_create(path(raw_files_dir,"2cpflow"))
+
+#unzip files
+
+flow <- sources %>% filter(Chamber =="House" & Type == "TwoCandidatePref")
+unzipped_sources <- tibble()
+
+
+for(i in 1:nrow(flow)){
+
+  #record year for each file
+  unzipped_sources_i  <-zip::zip_list(path(raw_files_dir,flow[i,]$filename)) %>%
+    select(filename) %>%
+    add_column(ElectionYear=flow[i,]$ElectionYear,
+               State       = flow[i,]$State)
+
+  unzipped_sources <- unzipped_sources %>%
+    bind_rows(unzipped_sources_i)
+
+  #if(!file_exists(path(raw_files_dir,flow[i,]$filename)))
+
+    zip::unzip(path(raw_files_dir,flow[i,]$filename),
+               exdir=unzipped_flow)
+
+}
+
+unzipped_sources$Chamber <- "House"
+unzipped_sources$Type    <- "2CP"
+
+
+for(state in unique(unzipped_sources$State)){
+
+  twocp_flow <- load_data("House","2CP",unzipped_sources %>% filter(State==state),unzipped_flow)
+
+  save_zip_parquet(twocp_flow,str_c("house_2CP_",state),dest_dir)
+
+
+}

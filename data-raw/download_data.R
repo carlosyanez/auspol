@@ -9,10 +9,12 @@ raw_files_dir <- here("data-raw","files")
 sources <- read_csv(here("data-raw","sources.csv"))
 
 sources  <- sources%>%
+  mutate(extension=if_else(str_detect(Source,"zip$"),".zip",".csv")) %>%
   mutate(filename = str_c(ElectionYear,"-",
                           Chamber,"-",
                           Type,"-",
-                          State,".csv"))
+                          State,extension))
+
 
 
 # Download all files ----
