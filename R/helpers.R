@@ -11,6 +11,7 @@
 #' when specifying your cache directory's path in R.
 #'
 #' @param path The full path to the desired cache directory
+#' @importFrom utils read.table write.table
 #' @export
 #' @examples \dontrun{
 #' # Set the cache directory
@@ -66,7 +67,6 @@ auspol_cache_dir <- function(path) {
 #' @param keep_zipped_shapefile If set to TRUE, do not delete zipped shapefile
 #' (stored in temporary directory or AUSPOL_CACHE_DIR depending on the configuration of
 #' global option "auspol_use_cache"). Defaults to FALSE.
-#' @param query # Defunct. Has no effect.
 #'
 #' @return dataframe
 #'
@@ -75,8 +75,7 @@ load_auspol <- function(auspol_file,
                        auspol_type=NULL,
                        class = getOption("auspol_class", "sf"),
                        progress_bar = TRUE,
-                       keep_zipped_shapefile = FALSE,
-                       query = NULL) {
+                       keep_zipped_shapefile = FALSE) {
 
 
 

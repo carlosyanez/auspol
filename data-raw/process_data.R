@@ -22,12 +22,12 @@ clean_parties <- function(df,var1,var2){
 
 }
 
-load_data <- function(Chamber,Type,file_sources,base_path=raw_files_dir){
+load_data <- function(chamber,type,file_sources,base_path=raw_files_dir){
   df  <- tibble()
 
-  print(Chamber)
-  print(Type)
-  rep_sources <- file_sources %>% filter(Chamber==Chamber& Type==Type)
+  print(chamber)
+  print(type)
+  rep_sources <- file_sources %>% filter(Chamber==chamber& Type==type)
   print(nrow(rep_sources))
 
   for(i in 1:nrow(rep_sources)){
@@ -76,7 +76,7 @@ sources  <- sources %>%
                           State,extension))
 
 
-# Load data  - Reps primary vote ----
+# Load House  - Reps primary vote ----
 
 ## Load and transform - primary vote
 
@@ -91,7 +91,7 @@ representatives<- representatives %>%
 save_zip_parquet(representatives,"house_primary_vote",dest_dir)
 
 
-# Load data - get list of electorates ----
+# Load House - get list of electorates ----
 
 electorates <- representatives %>%
                distinct(Year,StateAb,DivisionID,DivisionNm) %>%
@@ -104,7 +104,18 @@ electorates <- representatives %>%
 save_zip_parquet(electorates,"house_electorates",dest_dir)
 
 
-# Load data  - Reps turnout  ----
+# Load House - List of Parties ----
+
+parties <- representatives %>%
+           distinct(Year,StateAb,PartyAb,PartyNm) %>%
+           filter(!(PartyAb %in% c("Informal","NAFD","UNAM"))) %>%
+           arrange(PartyAb,StateAb,Year)
+
+
+save_zip_parquet(parties,"house_parties",dest_dir)
+
+
+# Load House  - Reps turnout  ----
 
 reps_turnout <- load_data("House","Turnout",sources)
 reps_turnout  <- reps_turnout %>% select(-StateNm)
@@ -112,7 +123,7 @@ reps_turnout  <- reps_turnout %>% select(-StateNm)
 save_zip_parquet(resps_turnout,"house_turnout",dest_dir)
 
 
-# Load data - Reps flow of preferences ----
+# Load House - Reps flow of preferences ----
 
 unzipped_flow <- dir_create(path(raw_files_dir,"flow"))
 
@@ -154,12 +165,12 @@ for(state in unique(unzipped_sources$State)){
 }
 
 
-# Load data  - Elected -----
+# Load House  - Elected -----
 
 mps <- load_data("House","Elected",sources %>% filter(Type=="Elected"))
 save_zip_parquet(mps,"house_elected",dest_dir)
 
-# Load data - Two candidate preferred -----
+# Load House - Two candidate preferred -----
 
 
 
