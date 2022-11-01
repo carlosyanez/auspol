@@ -1,6 +1,6 @@
 Package: auspol
 Title: Australian Federal Election Results (2004-2022)
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person("Carlos", "Yanez Santibanez", , "carlos.yanez.s@gmail.com", role = c("aut", "cre"))
 Description: Retrieve Australian Federal Election results for House of Representatives and Senate, from 2004 onwards.
@@ -14,10 +14,15 @@ RoxygenNote: 7.2.1
 Imports: 
     arrow,
     dplyr,
-    knitr,
+    fs,
+    methods,
     piggyback,
+    rlang,
     stringr,
+    tidyr,
     utils,
     zip
+Suggests:
+    knitr
 VignetteBuilder: knitr
 

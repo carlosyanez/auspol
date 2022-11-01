@@ -90,8 +90,7 @@ representatives<- representatives %>%
 
 save_zip_parquet(representatives,"house_primary_vote",dest_dir)
 
-
-# Load House - get list of electorates ----
+# Load House - List of electorates ----
 
 electorates <- representatives %>%
                distinct(Year,StateAb,DivisionID,DivisionNm) %>%
@@ -112,7 +111,49 @@ parties <- representatives %>%
            arrange(PartyAb,StateAb,Year)
 
 
+party_list <- parties %>%
+              distinct(PartyAb,PartyNm) %>%
+              group_by(PartyAb) %>%
+              summarise(Names=str_c(PartyNm,collapse=","),.groups = "drop")
+
+write_csv(party_list,path(raw_files_dir,"party_list.csv"))
+
 save_zip_parquet(parties,"house_parties",dest_dir)
+
+
+# Load House - List of Polling Places
+
+polling_places <-  load_data("Both","Polling Places",sources)
+
+
+places <- polling_places %>% select(PollingPlaceID,PollingPlaceNm,
+                                    DivisionNm,PremisesNm,
+                                     Latitude,Longitude) %>%
+                         arrange(PollingPlaceID)  %>%
+                         fill(Latitude,Longitude,.direction="down") %>%
+                         mutate(PollingPlaceNm=str_remove(PollingPlaceNm,str_c("\\(",DivisionNm,"\\)"))) %>%
+                         select(-DivisionNm) %>%
+                         mutate(across(where(is.character),str_squish)) %>%
+                         distinct() %>%
+                         group_by(PollingPlaceNm,PollingPlaceID,PremisesNm) %>%
+                         summarise(across(where(is.numeric),mean),.groups="drop") %>%
+                         arrange(PollingPlaceID)# %>%
+                      #   mutate(long=Longitude,lat=Latitude)
+
+
+
+#places <- places  %>% sf::st_as_sf( coords = c("long", "lat"),
+#                                   crs = 4326, agr = "constant")
+
+places <- polling_places %>%
+          select(Year,State,DivisionID,DivisionNm,PollingPlaceID,
+                 PollingPlaceTypeID,PremisesNm) %>%
+          left_join(places,by=c("PollingPlaceID","PremisesNm")) %>%
+          arrange(DivisionID,PollingPlaceID,Year)
+
+
+
+save_zip_parquet(places,"polling_places",dest_dir)
 
 
 # Load House  - Reps turnout  ----
@@ -120,7 +161,7 @@ save_zip_parquet(parties,"house_parties",dest_dir)
 reps_turnout <- load_data("House","Turnout",sources)
 reps_turnout  <- reps_turnout %>% select(-StateNm)
 
-save_zip_parquet(resps_turnout,"house_turnout",dest_dir)
+save_zip_parquet(reps_turnout,"house_turnout",dest_dir)
 
 
 # Load House - Reps flow of preferences ----
@@ -170,7 +211,7 @@ for(state in unique(unzipped_sources$State)){
 mps <- load_data("House","Elected",sources %>% filter(Type=="Elected"))
 save_zip_parquet(mps,"house_elected",dest_dir)
 
-# Load House - Two candidate preferred -----
+# Load House - Two candidate preferred flow -----
 
 
 
@@ -212,3 +253,15 @@ for(state in unique(unzipped_sources$State)){
 
 
 }
+
+# Load House - Two candidate preferred results ----
+
+twocp <- load_data("House","TwoCandidatePrefRes",sources %>% filter(Type=="TwoCandidatePrefRes"))
+save_zip_parquet(twocp,"house_2PP",dest_dir)
+
+
+# Get colours from ggparliament -----
+
+ggparliament::election_data %>% filter(country=="Australia") %>%
+  distinct(party_short,colour)
+

@@ -14,7 +14,7 @@ List all political parties participating in a election year, for a state, or mat
 }
 \examples{
 \dontrun{
-# Get list of all divisions in 2013
+# Get list of all registered political parties
 list_parties()
  }
 }

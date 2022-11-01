@@ -12,7 +12,7 @@
 #'
 #' @param path The full path to the desired cache directory
 #' @importFrom utils read.table write.table
-#' @export
+#' @noRd
 #' @examples \dontrun{
 #' # Set the cache directory
 #' auspol_cache_dir('PATH TO MY NEW CACHE DIRECTORY')
@@ -55,27 +55,20 @@ auspol_cache_dir <- function(path) {
 #' @importFrom  piggyback pb_download_url
 #' @importFrom  arrow read_parquet
 #' @importFrom  stringr str_remove str_c str_detect
+#' @importFrom utils download.file
 #' @importFrom  zip unzip
+#' @importFrom fs path
 #' @param auspol_file name of the file to download.
 #' @param refresh Whether to re-download shapefiles if cached. Defaults to value of the global
 #' option "auspol_refresh" if that option is, and FALSE if not. This will override the behavior
 #' set in "auspol_refresh" option if a value (TRUE or FALSE) is provided.
 #' @param auspol_type Added as an attribute to return object (used internally).
-#' @param class Class of return object. Must be one of "sf" (the default) or "sp".
-#' @param progress_bar If set to FALSE, do not display download progress bar
-#' (helpful for R Markdown documents). Defaults to TRUE.
-#' @param keep_zipped_shapefile If set to TRUE, do not delete zipped shapefile
-#' (stored in temporary directory or AUSPOL_CACHE_DIR depending on the configuration of
-#' global option "auspol_use_cache"). Defaults to FALSE.
 #'
 #' @return dataframe
-#'
+#' @noRd
 load_auspol <- function(auspol_file,
                        refresh=getOption("auspol_refresh", FALSE),
-                       auspol_type=NULL,
-                       class = getOption("auspol_class", "sf"),
-                       progress_bar = TRUE,
-                       keep_zipped_shapefile = FALSE) {
+                       auspol_type=NULL,force=FALSE) {
 
 
 
@@ -98,11 +91,16 @@ load_auspol <- function(auspol_file,
     file_detect <- file_loc
   }
 
-  if (!file.exists(file_detect)) {
+  if (!file.exists(file_detect)|force) {
 
-        url  <- pb_download_url(auspol_file,
-                                repo = "carlosyanez/auspol",
-                                tag = "data")
+
+        if(!str_detect(auspol_file,"https")){
+          url  <- pb_download_url(auspol_file,
+                                  repo = "carlosyanez/auspol",
+                                  tag = "data")
+        }else{
+          url <- auspol_file
+        }
 
         download.file(url,file_loc)
 
@@ -116,6 +114,25 @@ load_auspol <- function(auspol_file,
 
   obj <- read_parquet(file_detect)
   return(obj)
+
+}
+
+#' Helper function to update/download  data
+#' @param file file name from repository. By default, downloads all files
+#' @returns nothing
+#' @export
+#' @keywords helpers
+#'
+update_data <- function(file="all"){
+
+  if(file=="all"){
+    file <- pb_download_url(repo = "carlosyanez/auspol",
+                    tag = "data")
+  }
+
+  for(f in file){
+    load_auspol(f,force=TRUE)
+  }
 
 }
 
