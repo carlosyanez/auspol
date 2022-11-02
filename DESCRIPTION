@@ -15,6 +15,7 @@ Imports:
     arrow,
     dplyr,
     fs,
+    ggrepel,
     methods,
     piggyback,
     rlang,
