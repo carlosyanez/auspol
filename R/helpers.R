@@ -136,3 +136,34 @@ update_data <- function(file="all"){
 
 }
 
+
+#' Helper function generate colour palette
+#' @returns nothing
+#' @importFrom RColorBrewer brewer.pal
+#' @noRd
+#'
+manage_colours <- function(extra_colours,extra_values){
+
+  #Manage Colours
+  colours <- party_colours(extra_colours)
+  colours <- colours[names(colours) %in% c(unique(extra_values))]
+
+  colours_nl_names <- unique(extra_values)[!(unique(extra_values) %in% names(colours))]
+
+  if(length(colours_nl_names)>0){
+
+    colours_nl <- brewer.pal(name = "Set3",n=12)
+    repeat_times <- ceiling(length(colours_nl_names)/12)
+    colours_nl <- rep(colours_nl,repeat_times)[1:length(colours_nl_names)]
+
+    colours_nl <- as.vector(colours_nl)
+
+    colour_names <- c(names(colours),colours_nl_names)
+
+    colours <- unique(c(colours,colours_nl))
+    names(colours) <- colour_names
+  }
+
+  return(colours)
+}
+

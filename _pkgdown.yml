@@ -1,0 +1,30 @@
+template:
+  bootstrap: 5
+  bootswatch: cosmo
+  bslib:
+    fg: "#00843D"
+    bg: "white"
+    primary: "#FFCD00"
+
+reference:
+  - title: House of Representatives - Get data
+    desc:  Basic Functions to retrieve data for the House of Representatives
+  - contents:
+    - has_keyword("housegetdata")
+  - title: House of Representatives - Convienience Functions
+    desc:  Convenience Functions to retrieve data for the House of Representatives
+  - contents:
+    - has_keyword("houseconvenience")
+  - title: House of Representatives - Plots
+    desc:  Convenience plots to retrieve data for the House of Representatives
+  - contents:
+    - has_keyword("houseplots")
+  - title: Lists
+    desc:  List of electorates, parties
+  - contents:
+    - has_keyword("lists")
+  - title: Helpers
+    desc:  assorted functions
+  - contents:
+    - has_keyword("helpers")
+

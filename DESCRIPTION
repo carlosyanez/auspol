@@ -1,11 +1,14 @@
 Package: auspol
 Title: Australian Federal Election Results (2004-2022)
 Version: 0.0.0.9001
-Authors@R: 
-    person("Carlos", "Yanez Santibanez", , "carlos.yanez.s@gmail.com", role = c("aut", "cre"))
+Authors@R: c(
+    person("Carlos", "Yáñez Santibáñez", , "carlos.yanez.s@gmail.com", role = c("aut", "cre")),
+    person(given="Kyle", family="Walker", email="kyle@walker-data.com", role=c("cph")),
+    person("Australian Electoral Commission", role = c("cph"))
+    )
 Description: Retrieve Australian Federal Election results for House of Representatives and Senate, from 2004 onwards.
 URL: https://carlosyanez.github.io/auspol/
-License: MIT + file LICENSE
+License: MIT + file LICENSE.md
 BugReports: https://github.com/carlosyanez/auspol/issues
 Encoding: UTF-8
 LazyData: true
@@ -14,13 +17,17 @@ RoxygenNote: 7.2.1
 Imports: 
     arrow,
     dplyr,
+    forcats,
     fs,
+    ggplot2,
     ggrepel,
     methods,
     piggyback,
+    RColorBrewer,
     rlang,
     stringr,
     tidyr,
+    tidyselect,
     utils,
     zip
 Suggests:

@@ -45,4 +45,16 @@
   <url>
     <loc>/reference/list_polling_stations.html</loc>
   </url>
+  <url>
+    <loc>/reference/party_colours.html</loc>
+  </url>
+  <url>
+    <loc>/reference/plot_primary_vote.html</loc>
+  </url>
+  <url>
+    <loc>/reference/primary_vote_summary.html</loc>
+  </url>
+  <url>
+    <loc>/reference/update_data.html</loc>
+  </url>
 </urlset>
