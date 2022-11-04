@@ -4,7 +4,10 @@
 \alias{list_parties}
 \title{List all political parties participating in a election year, for a state, or matching a pattern in their full name}
 \usage{
-list_parties()
+list_parties(filters = NULL)
+}
+\arguments{
+\item{filters}{(optional) list() with filters in the form list(Column="Value")}
 }
 \value{
 data frame with lists of divisions

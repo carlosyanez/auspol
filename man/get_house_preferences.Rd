@@ -2,9 +2,12 @@
 % Please edit documentation in R/house_basic_retrieval.R
 \name{get_house_preferences}
 \alias{get_house_preferences}
+\alias{get_preferences}
 \title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
 \usage{
 get_house_preferences(division, election_year)
+
+get_preferences(division, election_year)
 }
 \arguments{
 \item{division}{vector with division names}

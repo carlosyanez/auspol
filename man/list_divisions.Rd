@@ -4,7 +4,10 @@
 \alias{list_divisions}
 \title{List all divisions}
 \usage{
-list_divisions()
+list_divisions(filters = NULL)
+}
+\arguments{
+\item{filters}{\emph{(optional)} list() with filters in the form list(Column="Value")}
 }
 \value{
 data frame with lists of divisions
@@ -16,6 +19,9 @@ List all divisions
 \dontrun{
 # Get list of all divisions
 list_divisions()
+
+#Get list containing only Wills and Melbourne
+list_divisions(filters=list(DivisionNm=c("Wills","Melbourne")))
  }
 }
 \keyword{housegetdata}

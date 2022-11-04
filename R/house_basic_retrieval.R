@@ -102,11 +102,13 @@ get_house_primary_vote <- function(division="all",
 #' @param  election_year vector with election years
 #' @export
 #' @keywords housegetdata
-get_MPs <- function(division="all",election_year="all"){
+get_house_MPs <- function(division="all",election_year="all"){
   get_auspol_house_data("house_elected.zip",division,election_year)
 }
 
-get_house_MPs <- get_MPs
+#' @rdname get_house_MPs
+#' @export
+get_MPs <- get_house_MPs
 
 
 #' Get list of with turnout all elected MPs, for groups of divisions, for given year
@@ -145,6 +147,8 @@ get_house_preferences <- function(division,election_year){
   }
 }
 
+#' @rdname get_house_preferences
+#' @export
 get_preferences <- get_house_preferences
 
 
