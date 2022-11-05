@@ -19,6 +19,7 @@ Imports:
     dplyr,
     forcats,
     fs,
+    ggpackets,
     ggplot2,
     ggrepel,
     methods,
@@ -33,4 +34,12 @@ Imports:
 Suggests:
     knitr
 VignetteBuilder: knitr
-
+Collate: 
+    'helpers.R'
+    'internal.R'
+    'house_basic_retrieval.R'
+    'lists.R'
+    'onLoad.R'
+    'plotting.R'
+    'primary_vote_summary_data.R'
+    'primary_vote_summary_plots.R'

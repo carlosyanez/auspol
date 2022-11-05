@@ -2,46 +2,10 @@
 ### Plotting Functions to interact with House of Reps' data #####
 ####################################################################
 
-#' Named vector with common parry colours, with option to add custom/additonal values
-#' @param extra named vector additional colour (hex) values
-#' @returns named vector
-#' @export
-#' @keywords helpers
-party_colours <- function(extra=NULL){
-
-  colours <- c("ALP"="#E13940",
-               "CLP"="#FF7701",
-               "GRN" ="#009C3D",
-               "HAN" ="#0176BC",
-               "JLN" ="#000000",
-               "KAP" ="#DF1014",
-               "LNP" ="#ADD8E6",
-               "LNQ" ="#ADD8E6",
-               "LP"  ="#1C4F9C",
-               "NP"  ="#006946",
-               "ON"  = "#0176BC",
-               "UAPP"= "#FFFF00",
-               "XEN" = "#FF8000",
-               "COAL" ="#1C4F9C",
-               "TEAL" ="#008080",
-               "Other" ="#414141",
-               "IND" = "#9933FF",
-               "Informal"="#C0C0C0")
-
-
-  if(!is.null(extra)){
-    colours <- colours[!(names(colours) %in% names(extra))]
-    colours <- c(colours,extra)
-  }
-
-  return(colours)
-
-}
-
 
 #' Plot historical changes in primary vote in a electoral division (line chart)
 #' @importFrom dplyr filter select all_of rename
-#' @importFrom ggplot2 ggplot geom_point geom_line scale_color_manual labs theme_minimal aes
+#' @importFrom ggplot2 ggplot labs aes
 #' @importFrom stringr str_c
 #' @importFrom ggrepel geom_text_repel
 #' @param division named vector additional colour (hex)
@@ -110,8 +74,6 @@ plot_primary_historic <- function(division=NULL,
   if(include_data) data_orig <- data
 
 
-  colours <-manage_colours(extra_colours,data$PartyAb)
-
   data_cols <- c("Year","PartyAb",plotted_variable)
 
   if(!(plotted_variable %in% colnames(data))) stop("Invalid plotting option")
@@ -120,20 +82,15 @@ plot_primary_historic <- function(division=NULL,
     select(all_of(data_cols)) |>
     rename(value=!!plotted_variable)
 
+
+
   p <- data |>
-    ggplot(aes(x=.data$Year,y=.data$value,colour=.data$PartyAb)) +
-    geom_point() +
-    geom_line() +
-    scale_color_manual(values=colours,Candidate="Party") +
-    labs(title=str_c(division," - Primary Vote"),
-         y=plotted_variable) +
-    theme_minimal()
+    ggplot(aes(x=.data$Year,y=.data$value,colour=.data$PartyAb,
+               label=round(.data$value,2))) +
+    geom_auspol_line() + labs(y=plotted_variable)
 
-  if(include_labels){
-    p <- p +
-         geom_text_repel(aes(label=round(.data$value,2)),show.legend = FALSE)
+  p <- auspol_theme(p,type="colour",extra_values=unique(data$PartyAb), legend_pos = "right")
 
-  }
 
   if(include_data){
     p$source_data <- data_orig
@@ -145,7 +102,7 @@ plot_primary_historic <- function(division=NULL,
 
 #' Plot historical changes in primary vote in a electoral division (line chart)
 #' @importFrom dplyr filter select all_of rename
-#' @importFrom ggplot2 ggplot geom_point geom_line scale_color_manual labs theme_minimal aes geom_col geom_text scale_fill_manual coord_flip geom_segment
+#' @importFrom ggplot2 ggplot aes labs
 #' @importFrom stringr str_c
 #' @importFrom forcats fct_reorder
 #' @param division Name of ONE electoral division
@@ -156,7 +113,7 @@ plot_primary_historic <- function(division=NULL,
 #' @param extra_colours manual mapping of colours for each party, as a named vector.
 #' @param plot_format Whether to plot  lollipop chart ("lollipop", default) or a bar chart.
 #' @param include_labels If set to TRUE, the plot will include each value.
-#' @param nudge_y if labels are included, separation from chart/dot
+#' @param nudge_x if labels are included, separation from chart/dot
 #' @param year numeric vector with election years (from 2004), defaults to all.
 #' @param parties which parties to include in the summary. All (default), a vector of strings
 #'  with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.
@@ -170,7 +127,7 @@ plot_primary_historic <- function(division=NULL,
 #' from "IND" to "IND-<<candidate's surname>>", effectively separating them in party aggregations.
 #' @param include_data If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
 #' @param data Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
-#' to plot, folowing the format from the output of  primary_vote_summary().
+#' to plot, following the format from the output of  primary_vote_summary().
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
@@ -182,7 +139,7 @@ plot_primary_comparison <- function(division=NULL,
                                     extra_colours=NULL,
                                     plot_format = "lollipop",
                                     include_labels =FALSE,
-                                    nudge_y =3,
+                                    nudge_x =5,
                                     year=NULL,
                                     parties=NULL,
                                     parties_year=NULL,
@@ -191,7 +148,6 @@ plot_primary_comparison <- function(division=NULL,
                                     individualise_IND = FALSE,
                                     include_data = TRUE,
                                     data=NULL){
-
 
 
   #year must be declared
@@ -243,40 +199,33 @@ plot_primary_comparison <- function(division=NULL,
     rename(value=!!plotted_variable,
            label=!!label)
 
+  if(label=="Candidate"){
+    data <- data |>
+            mutate(label=str_c(label, " (",.data$Party,")"))
+  }
 
   if(sort_by_value) data <- data |> mutate(label=fct_reorder(.data$label,.data$value))
 
-  colours <- manage_colours(extra_colours,data$Party)
+  aesthetics2 <- NULL
+  if(plot_format=="lollipop"){
+    aesthetics2 <- aes(yend=.data$label, xend=.data$value,
+                       x=0,
+                       colour=.data$Party)
+  }
 
 
   p <- data |>
-    ggplot(aes(x=.data$label,y=.data$value))
+          ggplot(aes(y=.data$label,x=.data$value,
+                     colour=.data$Party,fill=.data$Party,
+                     label=round(.data$value,2))) +
+          geom_auspol_lollipop(format="lollipop",
+                               segment.mapping=aesthetics2,
+                               include_labels = TRUE,
+                               extra_values= unique(data$Party),labels.nudge_x = nudge_x) +
+         labs(y=label)
 
-  if(plot_format == "lollipop"){
+   p <- auspol_theme(p,extra_colours = extra_colours, extra_values = unique(data$Party), coord_flip = FALSE)
 
-    p <- p +
-        geom_segment(aes(xend=.data$label, y=0, yend=.data$value,colour=.data$Party)) +
-        geom_point(aes(colour=.data$Party),size=4) +
-        scale_color_manual(values=colours,name="Party")
-
-  }else{
-    p <- p+
-         geom_col(aes(fill=.data$Party)) +
-         scale_fill_manual(values=colours,name="Party")
-
-  }
-
-    p <- p +
-        labs(x=label,y=plotted_variable) +
-        coord_flip() +
-        theme_minimal()
-
-  if(include_labels){
-    p <- p +
-        geom_text(aes(label=round(.data$value,2)),show.legend = FALSE,nudge_y = nudge_y)
-
-
-  }
 
   if(include_data){
     p$source_data <- data_orig

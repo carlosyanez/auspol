@@ -9,7 +9,8 @@ get_house_primary_vote(
   election_year = "all",
   state_abb = "all",
   party_abb = "all",
-  aggregation = FALSE
+  aggregation = FALSE,
+  polling_places = NULL
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ get_house_primary_vote(
 \item{party_abb}{vector with party abbreviation (e.g. ALP,LIB,NP,GRN,etc.)}
 
 \item{aggregation}{Whether to present division totals (defaults to FALSE)}
+
+\item{polling_places}{vector with polling places}
 }
 \value{
 sf object with selected polygons

@@ -5,14 +5,28 @@
 \alias{get_preferences}
 \title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
 \usage{
-get_house_preferences(division, election_year)
+get_house_preferences(
+  division,
+  election_year,
+  polling_places = NULL,
+  aggregation = TRUE
+)
 
-get_preferences(division, election_year)
+get_preferences(
+  division,
+  election_year,
+  polling_places = NULL,
+  aggregation = TRUE
+)
 }
 \arguments{
 \item{division}{vector with division names}
 
 \item{election_year}{vector with election years}
+
+\item{polling_places}{list of polling places}
+
+\item{aggregation}{whether to aggregate by division}
 }
 \value{
 dataframe with list of elected MPs

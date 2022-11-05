@@ -13,7 +13,7 @@ plot_primary_comparison(
   extra_colours = NULL,
   plot_format = "lollipop",
   include_labels = FALSE,
-  nudge_y = 3,
+  nudge_x = 5,
   year = NULL,
   parties = NULL,
   parties_year = NULL,
@@ -41,7 +41,7 @@ plot_primary_comparison(
 
 \item{include_labels}{If set to TRUE, the plot will include each value.}
 
-\item{nudge_y}{if labels are included, separation from chart/dot}
+\item{nudge_x}{if labels are included, separation from chart/dot}
 
 \item{year}{numeric vector with election years (from 2004), defaults to all.}
 
@@ -63,7 +63,7 @@ from "IND" to "IND-<<candidate's surname>>", effectively separating them in part
 \item{include_data}{If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)}
 
 \item{data}{Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
-to plot, folowing the format from the output of  primary_vote_summary().}
+to plot, following the format from the output of  primary_vote_summary().}
 }
 \value{
 ggplot2 object

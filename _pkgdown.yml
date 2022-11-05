@@ -23,6 +23,10 @@ reference:
     desc:  List of electorates, parties
   - contents:
     - has_keyword("lists")
+  - title: Plotting
+    desc:  plotting functions
+  - contents:
+    - has_keyword("plotting")
   - title: Helpers
     desc:  assorted functions
   - contents:
