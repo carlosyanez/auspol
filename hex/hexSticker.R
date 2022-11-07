@@ -15,8 +15,7 @@ librarian::shelf("tidyverse",
 #<div> Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
 
 #https://www.reshot.com/free-svg-icons/item/download-6CWHK4RJU2/
-ds_logo <- image_read(here("hex","manual-voting.png"))
-
+ds_logo <- image_read(here("hex","manual-voting_white.png"))
 
 
 height <- 1
@@ -24,8 +23,8 @@ height <- 1
 s  <- sticker(ds_logo, package="auspol", p_size=18, p_x=1, p_y=0.50,
               s_x=1.1,s_y=1.2,
               s_width=1.3*height, s_height=height,
-              p_color="black",
-                  h_color="#FFCD00", h_fill="white",
+              p_color="white",
+                  h_color="#FFCD00", h_fill="#00843D",
                   filename=here("img","hexSticker.png"))
 
 

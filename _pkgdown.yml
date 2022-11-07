@@ -6,6 +6,11 @@ template:
     bg: "white"
     primary: "#FFCD00"
 
+navbar:
+  structure:
+    left:  [home, reference,articles]
+    right: [github]
+
 reference:
   - title: House of Representatives - Get data
     desc:  Basic Functions to retrieve data for the House of Representatives

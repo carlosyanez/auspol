@@ -4,8 +4,9 @@ auspol
   [![R-CMD-check](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml)
   <!-- badges: end -->
   
-<img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png"  align="left" />
-
+<img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png"  width = "175" align="center"/>
+<br/>
+<br/>
 
 <img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width = "175" height = "200" align="right" />
 
