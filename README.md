@@ -6,7 +6,7 @@ aussiemaps
 **auspol** provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R.
 Along with functions to access the data, this package also provides functions to provide summaries tables and plots.
 
-All the data is contained as a release (here) in [Apache Parquet format](https://arrow.apache.org/docs/r/index.html), so it can be used directly in any programming language/tool/platform that supports Parquet.
+All the data is contained as a release ([here](https://github.com/carlosyanez/auspol/releases/tag/data)) in [Apache Parquet format](https://arrow.apache.org/docs/r/index.html), so it can be used directly in any programming language/tool/platform that supports Parquet.
 
 
 ## Installation and pre-requisites
