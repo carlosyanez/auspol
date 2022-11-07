@@ -92,7 +92,10 @@ get_house_turnout <- function(division="all",election_year="all"){
 #' @include internal.R
 #' @export
 #' @keywords housegetdata
-get_house_preferences <- function(division,election_year,polling_places=NULL,aggregation=TRUE){
+get_house_preferences <- function(division,
+                                  election_year,
+                                  polling_places=NULL,
+                                  aggregation=TRUE){
 
   division_info <- check_division(division,election_year)
 
@@ -223,5 +226,77 @@ get_house_2PP <- function(division="all",
 
     return(df)
 
+}
+
+#' Get preference flow (rounds) for en electorate on a given election
+#' @return list with data frames with results for each round
+#' @param  division division
+#' @param  election_year election year
+#' @importFrom dplyr filter arrange desc mutate row_number if_any
+#' @importFrom tidyr pivot_wider
+#' @importFrom   stringr str_c
+#' @importFrom rlang .data
+#' @export
+#' @keywords housegetdata
+preference_flow_data <- function(division,election_year,
+                                 individualise_IND = TRUE,
+                                 parties_exclude= NULL,
+                                 rounds_exclude = 0){
+
+  data<-get_house_preferences(division,election_year)
+
+  if(!is.null(parties_exclude)){
+    data  <- data |>
+              filter(!(if_any("PartyAb", ~ .x %in% parties_exclude) &
+              if_any("CountNum", ~ .x %in% rounds_exclude)))
+
+  }
+
+  if(individualise_IND){
+    data <- data |>
+            mutate(PartyAb=if_else(.data$PartyAb=="IND",
+                                   str_c("IND-",.data$Surname),
+                                   .data$PartyAb))
+
+
+  }
+
+  counts <- unique(data$CountNum)
+
+  rounds<- list()
+  for(i in counts){
+
+    iter<- data |>
+      filter(.data$CountNum==i) |>
+      pivot_wider(names_from = .data$CalculationType,values_from = .data$CalculationValue) |>
+      arrange(desc(.data$`Preference Count`)) |>
+      mutate(RoundPosition=row_number())
+
+    if(i>0){
+      iter <- iter |>
+        filter(if_any("Preference Count",~ .x>0))
+    }
+
+
+    if(i==max(counts)){
+
+      winner <- min(iter$RoundPosition)
+      iter <- iter |> mutate(Elected=(.data$RoundPosition==winner))
+
+    }else{
+
+      last_candidate <- max(iter$RoundPosition)
+      iter <- iter |> mutate(Last=(.data$RoundPosition==last_candidate))
+
+    }
+
+
+    rounds[[i+1]] <- iter
+
+  }
+
+  names(rounds) <- str_c("Round ",counts)
+
+  return(rounds)
 }
 

@@ -21,6 +21,7 @@ Imports:
     fs,
     ggpackets,
     ggplot2,
+    ggalluvial,
     ggrepel,
     methods,
     piggyback,

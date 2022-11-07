@@ -11,6 +11,7 @@ party_colours <- function(extra=NULL){
   colours <- c("ALP"="#E13940",
                "CLP"="#FF7701",
                "GRN" ="#009C3D",
+               "GVIC"="#009C3D",
                "HAN" ="#0176BC",
                "JLN" ="#000000",
                "KAP" ="#DF1014",
@@ -93,7 +94,7 @@ auspol_theme <- function(p,type=c("colour","fill"),
                            extra_values=NULL,
                            coord_flip = FALSE,
                            palette=NULL,
-                           legend_pos=FALSE){
+                           legend_pos="none"){
 
   colours <- manage_colours(extra_colours,extra_values,palette)
   scale_name <- "Party"

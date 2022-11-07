@@ -11,7 +11,7 @@ auspol_theme(
   extra_values = NULL,
   coord_flip = FALSE,
   palette = NULL,
-  legend_pos = FALSE
+  legend_pos = "none"
 )
 }
 \arguments{
