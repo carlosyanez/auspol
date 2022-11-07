@@ -57,8 +57,51 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-Retrieve Australian Federal Election results for House of Representatives and Senate, from 2004 onwards.
+  <main id="main" class="col-md-9"><div class="section level1">
+<div class="page-header"><h1 id="auspol">auspol<a class="anchor" aria-label="anchor" href="#auspol"></a>
+</h1></div>
+<p><img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width="175" height="200" align="right"></p>
+<p><strong>auspol</strong> provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R. Along with functions to access the data, this package also provides functions to provide summaries tables and plots.</p>
+<p>All the data is contained as a release (<a href="https://github.com/carlosyanez/auspol/releases/tag/data" class="external-link">here</a>) in <a href="https://arrow.apache.org/docs/r/index.html" class="external-link">Apache Parquet format</a>, so it can be used directly in any programming language/tool/platform that supports Parquet.</p>
+<div class="section level2">
+<h2 id="installation-and-pre-requisites">Installation and pre-requisites<a class="anchor" aria-label="anchor" href="#installation-and-pre-requisites"></a>
+</h2>
+<p>First install required packages,then, install this package from github</p>
+<pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"carlosyanez/auspol"</span><span class="op">)</span></span></code></pre>
+<p>Alternatively, install from r-universe</p>
+<pre><code><span></span>
+<span><span class="co"># Enable this universe</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    carlosyanez <span class="op">=</span> <span class="st">'https://carlosyanez.r-universe.dev'</span>,</span>
+<span>    CRAN <span class="op">=</span> <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Install some packages</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'auspol'</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="issues-bugs-ideas">Issues? bugs? Ideas?<a class="anchor" aria-label="anchor" href="#issues-bugs-ideas"></a>
+</h2>
+<p>If you find something that is not quite right, please post an issue. If you have any ideas, or if you want to contribute, <a href="https://twitter.com/messages/25712933-3805104374?recipient_id=25712933&amp;text=Hello%20world" class="external-link">please let me know</a>!</p>
+</div>
+<div class="section level2">
+<h2 id="to-do">To Do<a class="anchor" aria-label="anchor" href="#to-do"></a>
+</h2>
+<p>This package is still under development. At the moment, it only contains data for the House of Representatives.</p>
+</div>
+<div class="section level2">
+<h2 id="credits">Credits<a class="anchor" aria-label="anchor" href="#credits"></a>
+</h2>
+<ul>
+<li>Data has been sourced directly from the <a href="https://www.aec.gov.au/" class="external-link">Australian Electoral Commission</a>. Historical results for all Commonwealth elections are published on the AEC’s <a href="https://results.aec.gov.au/" class="external-link">Tally 9Room archive</a>.</li>
+<li>Some functions use code written for the <a href="https://github.com/walkerke/tigris" class="external-link">{tigris} package</a>, maintained by <a href="https://github.com/walkerke" class="external-link">Kyle Walker</a>.</li>
+<li>#
+<div>
+Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" class="external-link"> Pixel perfect </a> from <a href="https://www.flaticon.com/" title="Flaticon" class="external-link">www.flaticon.com’</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
@@ -86,7 +129,7 @@ Retrieve Australian Federal Election results for House of Representatives and Se
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Carlos Yanez Santibanez <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Carlos Yáñez Santibáñez <br><small class="roles"> Author, maintainer </small>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -99,7 +142,7 @@ Retrieve Australian Federal Election results for House of Representatives and Se
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by Carlos Yanez Santibanez.</p>
+<p>Developed by Carlos Yáñez Santibáñez.</p>
 </div>
 
 <div class="pkgdown-footer-right">

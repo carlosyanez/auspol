@@ -1,7 +1,7 @@
-aussiemaps
+auspol
 ================
 
-<img src="https://github.com/carlosyanez/auspol/raw/master/img/hexSticker.png" width = "175" height = "200" align="right" />
+<img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width = "175" height = "200" align="right" />
 
 **auspol** provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R.
 Along with functions to access the data, this package also provides functions to provide summaries tables and plots.
