@@ -4,9 +4,6 @@
     <loc>/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
     <loc>/LICENSE.html</loc>
   </url>
   <url>
@@ -32,9 +29,6 @@
   </url>
   <url>
     <loc>/reference/geom_auspol_lollipop.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_MPs.html</loc>
   </url>
   <url>
     <loc>/reference/get_house_2PF.html</loc>
@@ -82,31 +76,7 @@
     <loc>/reference/list_polling_places.html</loc>
   </url>
   <url>
-    <loc>/reference/list_polling_stations.html</loc>
-  </url>
-  <url>
     <loc>/reference/manage_colours.html</loc>
-  </url>
-  <url>
-    <loc>/reference/party_colours.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_preference_flow.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_primary_comparison.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_primary_historic.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_primary_vote.html</loc>
-  </url>
-  <url>
-    <loc>/reference/preference_flow_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/primary_vote_summary.html</loc>
   </url>
   <url>
     <loc>/reference/update_data.html</loc>
