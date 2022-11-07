@@ -38,6 +38,13 @@
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="articles/house_preference_flow.html">House of Representatives - How to read Preference Flows</a>
+    <a class="dropdown-item" href="articles/house_primary_vote.html">House of Representatives - How to read Primary Vote</a>
+  </div>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -60,6 +67,8 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="auspol">auspol<a class="anchor" aria-label="anchor" href="#auspol"></a>
 </h1></div>
+<p><!-- badges: start --> <a href="https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --></p>
+<p><img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png" align="left"></p>
 <p><img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width="175" height="200" align="right"></p>
 <p><strong>auspol</strong> provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R. Along with functions to access the data, this package also provides functions to provide summaries tables and plots.</p>
 <p>All the data is contained as a release (<a href="https://github.com/carlosyanez/auspol/releases/tag/data" class="external-link">here</a>) in <a href="https://arrow.apache.org/docs/r/index.html" class="external-link">Apache Parquet format</a>, so it can be used directly in any programming language/tool/platform that supports Parquet.</p>
@@ -92,13 +101,12 @@
 <h2 id="credits">Credits<a class="anchor" aria-label="anchor" href="#credits"></a>
 </h2>
 <ul>
-<li>Data has been sourced directly from the <a href="https://www.aec.gov.au/" class="external-link">Australian Electoral Commission</a>. Historical results for all Commonwealth elections are published on the AEC’s <a href="https://results.aec.gov.au/" class="external-link">Tally 9Room archive</a>.</li>
+<li>Data has been sourced directly from the <a href="https://www.aec.gov.au/" class="external-link">Australian Electoral Commission</a>. Historical results for all Commonwealth elections are published on the AEC’s <a href="https://results.aec.gov.au/" class="external-link">Tally Room archive</a>.</li>
 <li>Some functions use code written for the <a href="https://github.com/walkerke/tigris" class="external-link">{tigris} package</a>, maintained by <a href="https://github.com/walkerke" class="external-link">Kyle Walker</a>.</li>
-<li>#
-<div>
+<li><div>
 Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect" class="external-link"> Pixel perfect </a> from <a href="https://www.flaticon.com/" title="Flaticon" class="external-link">www.flaticon.com’</a>
-</div>
-</li>
+</div></li>
+<li><a href="https://www.flaticon.com/free-icons/work-in-progress" title="work in progress icons" class="external-link">Work in progress icons created by Freepik - Flaticon</a></li>
 </ul>
 </div>
 </div>

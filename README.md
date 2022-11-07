@@ -1,5 +1,11 @@
 auspol
 ================
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+  
+<img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png"  align="left" />
+
 
 <img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width = "175" height = "200" align="right" />
 
@@ -40,6 +46,7 @@ This package is still under development. At the moment, it only contains data fo
 
 ## Credits
 
--   Data has been sourced directly from the [Australian Electoral Commission](https://www.aec.gov.au/). Historical results for all Commonwealth elections are published on the AEC's [Tally 9Room archive](https://results.aec.gov.au/).
+-   Data has been sourced directly from the [Australian Electoral Commission](https://www.aec.gov.au/). Historical results for all Commonwealth elections are published on the AEC's [Tally Room archive](https://results.aec.gov.au/).
 -  Some functions use code written for the [{tigris} package](https://github.com/walkerke/tigris), maintained by [Kyle Walker](https://github.com/walkerke).
--  #<div> Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+-  <div> Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect"> Pixel perfect </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+- <a href="https://www.flaticon.com/free-icons/work-in-progress" title="work in progress icons">Work in progress icons created by Freepik - Flaticon</a>

@@ -28,8 +28,9 @@
 #' Options include NULL (no summarisation, default), "OrdinaryVotes" (absolute numbers), "Percentage_with_Informal"
 #'  and  "Percentage" (which is the percentage counted on elections).
 #' @return dataframe
+#' @export
 #' @keywords houseconvenience
-primary_vote_summary <- function(division=NULL,
+house_primary_vote_summary <- function(division=NULL,
                                  state=NULL,
                                  year=NULL,
                                  parties=NULL,
@@ -61,7 +62,7 @@ primary_vote_summary <- function(division=NULL,
   }
 
   agg <- TRUE
-  votes   <- get_house_primary_vote(division=division,election_year=year,aggregation = agg) |>
+  votes   <- get_house_primary_vote(division=division,year=year,aggregation = agg) |>
     select(any_of(c("Year","StateAb" ,"DivisionNm",
                     "GivenNm"   ,"Surname",
                     "Elected","PartyAb","PartyNm",
@@ -190,7 +191,7 @@ primary_vote_summary <- function(division=NULL,
 #' Get preference flow (rounds) for en electorate on a given election
 #' @return list with data frames with results for each round
 #' @param  division division
-#' @param  election_year election year
+#' @param  year election year
 #' @param individualise_IND If set to TRUE, party abbreviations for each independent candidate will be changed
 #' from "IND" to "IND-<<candidate's surname>>", effectively separating them in party aggregations.
 #' @param  exclude_parties vector with party acronyms to exclude from plot
@@ -201,26 +202,25 @@ primary_vote_summary <- function(division=NULL,
 #' @importFrom rlang .data
 #' @export
 #' @keywords housegetdata
-preference_flow_data <- function(division,election_year,
+house_preference_flow_data <- function(division,year,
                                  individualise_IND = TRUE,
                                  exclude_parties= NULL,
                                  exclude_rounds = 0){
 
-  data<-get_house_preferences(division,election_year)
-
-  if(!is.null(exclude_parties)){
-    data  <- data |>
-      filter(!(if_any("PartyAb", ~ .x %in% exclude_parties) &
-                 if_any("CountNum", ~ .x %in% exclude_rounds)))
-
-  }
+  data<-get_house_preferences(division,year)
 
   if(individualise_IND){
     data <- data |>
       mutate(PartyAb=if_else(.data$PartyAb=="IND",
                              str_c("IND-",.data$Surname),
                              .data$PartyAb))
+  }
 
+
+  if(!is.null(exclude_parties)){
+    data  <- data |>
+      filter(!(if_any("PartyAb", ~ .x %in% exclude_parties) &
+                 if_any("CountNum", ~ .x %in% exclude_rounds)))
 
   }
 

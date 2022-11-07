@@ -29,7 +29,7 @@
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
-plot_primary_historic <- function(division=NULL,
+house_primary_historic_plot <- function(division=NULL,
                               plotted_variable="Percentage",
                               parties=NULL,
                               parties_year=NULL,
@@ -131,7 +131,7 @@ plot_primary_historic <- function(division=NULL,
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
-plot_primary_comparison <- function(division=NULL,
+house_primary_comparison_plot <- function(division=NULL,
                                     year=NULL,
                                     state=NULL,
                                     label="Candidate",
@@ -250,7 +250,7 @@ plot_primary_comparison <- function(division=NULL,
 #' @include internal.R
 #' @export
 #' @keywords houseplots
-plot_preference_flow <- function(division,year,
+house_preference_flow_plot <- function(division,year,
                                  var="Percent",
                                  exclude_parties= NULL,
                                  extra_colours=NULL,
@@ -266,9 +266,11 @@ plot_preference_flow <- function(division,year,
 
 
 
-  preferences <- preference_flow_data(division,
-                                      year,
-                                      exclude_parties = exclude_parties)
+  preferences <- house_preference_flow_data(division=division,
+                                      year=year,
+                                      individualise_IND = TRUE,
+                                      exclude_parties = exclude_parties,
+                                      exclude_rounds = 0)
 
 
   data_lodes <- preferences_lode(preferences,var)
@@ -292,7 +294,7 @@ plot_preference_flow <- function(division,year,
 
 
   if(include_data){
-    p$orig_data <- preferences
+    p$source_data <- preferences
   }
 
   return(p)

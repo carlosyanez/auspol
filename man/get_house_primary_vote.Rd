@@ -6,7 +6,7 @@
 \usage{
 get_house_primary_vote(
   division = "all",
-  election_year = "all",
+  year = "all",
   state_abb = "all",
   party_abb = "all",
   aggregation = FALSE,
@@ -16,7 +16,7 @@ get_house_primary_vote(
 \arguments{
 \item{division}{vector with division names}
 
-\item{election_year}{vector with election years}
+\item{year}{vector with election years}
 
 \item{state_abb}{vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)}
 

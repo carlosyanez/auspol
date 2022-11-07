@@ -5,14 +5,14 @@
 \alias{get_MPs}
 \title{Reetrieve elected MPs, for groups of divisions, for given year}
 \usage{
-get_house_MPs(division = "all", election_year = "all")
+get_house_MPs(division = "all", year = "all")
 
-get_MPs(division = "all", election_year = "all")
+get_MPs(division = "all", year = "all")
 }
 \arguments{
 \item{division}{vector with division names}
 
-\item{election_year}{vector with election years}
+\item{year}{vector with election years}
 }
 \value{
 dataframe with list of elected MPs

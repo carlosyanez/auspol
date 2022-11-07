@@ -4,12 +4,12 @@
 \alias{get_house_turnout}
 \title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
 \usage{
-get_house_turnout(division = "all", election_year = "all")
+get_house_turnout(division = "all", year = "all")
 }
 \arguments{
 \item{division}{character with division name}
 
-\item{election_year}{number with election year}
+\item{year}{number with election year}
 }
 \value{
 dataframe with list of elected MPs

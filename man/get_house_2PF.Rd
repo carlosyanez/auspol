@@ -4,12 +4,12 @@
 \alias{get_house_2PF}
 \title{Get 2-party preferred flow (as calculated by the ABS), for an division on a given election}
 \usage{
-get_house_2PF(division, election_year, aggregation = FALSE)
+get_house_2PF(division, year, aggregation = FALSE)
 }
 \arguments{
 \item{division}{character with division name}
 
-\item{election_year}{number with election year}
+\item{year}{number with election year}
 
 \item{aggregation}{Whether to present division totals (defaults to FALSE)}
 }

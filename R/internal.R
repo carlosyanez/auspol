@@ -71,7 +71,7 @@ preference_distributor <- function(preferences,name_correction, var="Preference 
   first_round <-  preferences[[1]] |>
     mutate(Candidate = .data$PartyAb) |>
     rename(count=!!var) |>
-    select(any_of("Candidate","PartyAb","count"))     |>
+    select(any_of(c("Candidate","PartyAb","count")))     |>
     group_by(across(c("Candidate","PartyAb"))) |>
     summarise(Count=sum(.data$count,na.rm = TRUE),.groups="drop")
 

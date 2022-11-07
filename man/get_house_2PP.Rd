@@ -6,7 +6,7 @@
 \usage{
 get_house_2PP(
   division = "all",
-  election_year = "all",
+  year = "all",
   state_abb = "all",
   aggregation = FALSE
 )
@@ -14,7 +14,7 @@ get_house_2PP(
 \arguments{
 \item{division}{character with division name}
 
-\item{election_year}{number with election year}
+\item{year}{number with election year}
 
 \item{state_abb}{vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)}
 

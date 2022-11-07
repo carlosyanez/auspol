@@ -34,7 +34,7 @@ Imports:
     utils,
     zip
 Suggests:
-    knitr
+    knitr,rmarkdown 
 VignetteBuilder: knitr
 Collate: 
     'helpers.R'

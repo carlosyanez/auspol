@@ -1,0 +1,124 @@
+---
+title: "House of Representatives - How to read Preference Flows"
+author: "Carlos YANEZ SANTIBANEZ"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{House of Representatives - How to read Preference Flows}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+library(ggplot2)
+library(auspol)
+
+```
+
+**auspol** includes two functions to interact with the preference distribution data:
+
+- get_house_preferences()
+- house_preference_flow_data()
+- house_preference_flow_plot()
+
+## What is this?
+
+If you are unfamiliar with the Australian electoral system and preferential voting, please look at this (explainer)[https://www.aec.gov.au/learn/preferential-voting.htm#:~:text=Australian%20federal%20elections%20use%20a,the%20white%20ballot%20paper%20(Senate)] before proceeding.
+
+
+## Getting the data
+
+get_house_preferences() - provides an interface to access preference flows for a particular division (electorate) on a given year, as published in the AEC's website . For instance:
+
+```{r}
+get_house_preferences("Wills",2019)
+
+```
+
+Results can be also retrieved disaggregated by polling place:
+
+```{r}
+get_house_preferences("Wills",2019,aggregation = FALSE) |> head(10)
+                      
+```
+
+It is also possible to filter by Polling Place Name (PPNm in the source):
+
+```{r}
+get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
+
+```
+
+
+
+
+Build on top of the basic function,  preference_flow_data() - provides an interface to access preference flows for a particular division (electorate) on a given year. This function returns a list, in which each element is a data frame with the results for each counting round. In its most basic use:
+
+```{r}
+house_preference_flow_data(division = "Wills", year=2019)
+```
+
+The function also include other variables, which are better explained through its use as part of the next function,  house_preference_flow_plot().
+
+## Plotting Preference flows.
+
+Perhaps it is most interesting to see how each round of counting assigns votes, until a candidate is chosen. For, this, this packages comes with the convenience function house_preference_flow_plot(), which  calls preference_flow_data() and plot the results in alluvial format. Using the previous example:
+
+```{r}
+house_preference_flow_plot(division = "Wills",year=2019) +
+  labs(title="Prefence Flow for Wills, 2019")
+```
+
+
+By default the vote is present as percentage, which can be changed changing the value of *var*:
+
+```{r}
+house_preference_flow_plot(division = "Wills",year=2019,var="Preference Count") +
+  labs(title="Prefence Flow for Wills, 2019")
+
+```
+
+
+For analysis, it may be interesting to remove some parties from the initial round - e.g. to see how votes flow to the finalists. This can be done using *exclude_parties*:
+
+```{r}
+house_preference_flow_plot(division = "Warringah",year=2022) +
+  labs(title="Prefence Flow for Warringah, 2022")
+
+```
+
+
+```{r}
+house_preference_flow_plot(division = "Warringah",year=2022, exclude_parties = c("LP","IND-STEGGALL")) +
+  labs(title="Flow of preference votes to Liberal and Teals in Warringah, 2022")
+
+```
+
+Like the other plotting functions, it is possible to override the colour scheme by providing an additional named vector:
+
+```{r}
+#adding teal
+house_preference_flow_plot(division = "Warringah",year=2022, 
+                     exclude_parties = c("LP","IND-STEGGALL"),
+                     extra_colours = c("IND-STEGGALL"="#008080")) +
+  labs(title="Flow of preference votes to Liberal and Teals in Warringah, 2022")
+```
+
+
+Similarly, it is possible to get the results of house_preference_flow_plot() directly, via *include_data*:
+
+```{r}
+p <- house_preference_flow_plot(division = "Warringah",year=2022, 
+                     exclude_parties = c("LP","IND-STEGGALL"),
+                     extra_colours = c("IND-STEGGALL"="#008080"),
+                     include_data=TRUE
+                     )
+
+p$source_data[[1]]
+```
+

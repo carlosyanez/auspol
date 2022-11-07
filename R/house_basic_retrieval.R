@@ -7,7 +7,7 @@
 #' Obtain primary vote per candidate for a given set of divisions, for a set of years
 #' @return sf object with selected polygons
 #' @param  division vector with division names
-#' @param  election_year vector with election years
+#' @param  year vector with election years
 #' @param  state_abb  vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)
 #' @param  party_abb  vector with party abbreviation (e.g. ALP,LIB,NP,GRN,etc.)
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
@@ -17,14 +17,14 @@
 #' @export
 #' @keywords housegetdata
 get_house_primary_vote <- function(division="all",
-                                   election_year="all",
+                                   year="all",
                                    state_abb = "all",
                                    party_abb = "all",
                                    aggregation=FALSE,
                                    polling_places=NULL
                                    ){
 
-  df <- get_auspol_house_data("house_primary_vote.zip",division,election_year)
+  df <- get_auspol_house_data("house_primary_vote.zip",division,year)
 
   if(!("all" %in% state_abb)){
     df <- df|>
@@ -33,12 +33,12 @@ get_house_primary_vote <- function(division="all",
 
   if(!("all" %in% party_abb)){
     df <- df|>
-      filter(if_any(c("PartyAb"), ~ .x %in% part_abb))
+      filter(if_any(c("PartyAb"), ~ .x %in% party_abb))
   }
 
   if(!is.null(polling_places)){
     df <- df |>
-      filter(if_any(c("PPNm"), ~ .x %in% pollling_places))
+      filter(if_any(c("PollingPlace"), ~ .x %in% polling_places))
   }
 
   if(aggregation){
@@ -58,11 +58,11 @@ get_house_primary_vote <- function(division="all",
 #' Reetrieve elected MPs, for groups of divisions, for given year
 #' @return dataframe with list of elected MPs
 #' @param  division vector with division names
-#' @param  election_year vector with election years
+#' @param  year vector with election years
 #' @export
 #' @keywords housegetdata
-get_house_MPs <- function(division="all",election_year="all"){
-  get_auspol_house_data("house_elected.zip",division,election_year)
+get_house_MPs <- function(division="all",year="all"){
+  get_auspol_house_data("house_elected.zip",division,year)
 }
 
 #' @rdname get_house_MPs
@@ -73,17 +73,17 @@ get_MPs <- get_house_MPs
 #' Get list of with turnout all elected MPs, for groups of divisions, for given year
 #' @return dataframe with list of elected MPs
 #' @param  division character with division name
-#' @param  election_year number with election year
+#' @param  year number with election year
 #' @export
 #' @keywords housegetdata
-get_house_turnout <- function(division="all",election_year="all"){
-  get_auspol_house_data("house_turnout.zip",division,election_year)
+get_house_turnout <- function(division="all",year="all"){
+  get_auspol_house_data("house_turnout.zip",division,year)
 }
 
 #' Get list of with turnout all elected MPs, for groups of divisions, for given year
 #' @return dataframe with list of elected MPs
 #' @param  division vector with division names
-#' @param  election_year vector with election years
+#' @param  year vector with election years
 #' @param  polling_places list of polling places
 #' @param  aggregation whether to aggregate by division
 #' @importFrom dplyr filter if_any
@@ -93,19 +93,19 @@ get_house_turnout <- function(division="all",election_year="all"){
 #' @export
 #' @keywords housegetdata
 get_house_preferences <- function(division,
-                                  election_year,
+                                  year,
                                   polling_places=NULL,
                                   aggregation=TRUE){
 
-  division_info <- check_division(division,election_year)
+  division_info <- check_division(division,year)
 
-  if(nrow(division_info)!=1) stop(str_c("Division of ", division," didn't exist for  the ", election_year," election."))
+  if(nrow(division_info)!=1) stop(str_c("Division of ", division," didn't exist for  the ", year," election."))
 
   filename <-  str_c("house_flow_",division_info$StateAb,".zip")
 
-  data <- get_auspol_house_data(filename,division,election_year) |>
+  data <- get_auspol_house_data(filename,division,year) |>
           filter(if_any("DivisionNm", ~ .x==division))       |>
-          filter(if_any("Year", ~ .x==election_year))
+          filter(if_any("Year", ~ .x==year))
 
   if(!is.null(polling_places)){
     data <- data |>
@@ -136,23 +136,23 @@ get_preferences <- get_house_preferences
 #' Get 2-party preferred flow (as calculated by the ABS), for an division on a given election
 #' @return dataframe with list of elected MPs
 #' @param  division character with division name
-#' @param  election_year number with election year
+#' @param  year number with election year
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
 #'@importFrom stringr str_c
 #' @importFrom rlang .data
 #' @importFrom dplyr filter mutate summarise group_by if_else
 #' @export
 #' @keywords housegetdata
-get_house_2PF <- function(division,election_year,aggregation=FALSE){
+get_house_2PF <- function(division,year,aggregation=FALSE){
 
-  division_info <- check_division(division,election_year)
+  division_info <- check_division(division,year)
 
   if(nrow(division_info)==1){
 
     filename <-  str_c("house_2CP_",division_info$StateAb,".zip")
 
-    data <- get_auspol_house_data(filename,division,election_year) |>
-      filter(.data$DivisionNm==division,.data$Year==election_year)
+    data <- get_auspol_house_data(filename,division,year) |>
+      filter(.data$DivisionNm==division,.data$Year==year)
 
     if(aggregation){
       print(1)
@@ -179,7 +179,7 @@ get_house_2PF <- function(division,election_year,aggregation=FALSE){
     return(data)
 
   }else{
-    message(str_c("Division of ", division," didn't exist for  the ", election_year," election."))
+    message(str_c("Division of ", division," didn't exist for  the ", year," election."))
   }
 }
 
@@ -187,7 +187,7 @@ get_house_2PF <- function(division,election_year,aggregation=FALSE){
 #' Get 2-party preferred party summary (Coalition vs ALP)
 #' @return dataframe with list of elected MPs
 #' @param  division character with division name
-#' @param  election_year number with election year
+#' @param  year number with election year
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
 #' @param  state_abb  vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)
 #'@importFrom stringr str_c
@@ -196,12 +196,12 @@ get_house_2PF <- function(division,election_year,aggregation=FALSE){
 #' @export
 #' @keywords housegetdata
 get_house_2PP <- function(division="all",
-                          election_year="all",
+                          year="all",
                           state_abb = "all",
                           aggregation=FALSE){
 
 
-    df <- get_auspol_house_data("house_2PP.zip",division,election_year)
+    df <- get_auspol_house_data("house_2PP.zip",division,year)
 
     if(!("all" %in% state_abb)){
       df <- df|>

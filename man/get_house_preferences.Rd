@@ -7,22 +7,17 @@
 \usage{
 get_house_preferences(
   division,
-  election_year,
+  year,
   polling_places = NULL,
   aggregation = TRUE
 )
 
-get_preferences(
-  division,
-  election_year,
-  polling_places = NULL,
-  aggregation = TRUE
-)
+get_preferences(division, year, polling_places = NULL, aggregation = TRUE)
 }
 \arguments{
 \item{division}{vector with division names}
 
-\item{election_year}{vector with election years}
+\item{year}{vector with election years}
 
 \item{polling_places}{list of polling places}
 
