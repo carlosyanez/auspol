@@ -44,3 +44,4 @@ data-raw/files/*
 *.parquet
 *.zip
 path/*
+hex/gh.png

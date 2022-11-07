@@ -8,7 +8,7 @@ plot_preference_flow(
   division,
   year,
   var = "Percent",
-  parties_exclude = NULL,
+  exclude_parties = NULL,
   extra_colours = NULL,
   include_data = FALSE
 )
@@ -18,7 +18,9 @@ plot_preference_flow(
 
 \item{year}{Election year}
 
-\item{parties_exclude}{vector with party acronyms to exclude from plot}
+\item{var}{Variable to be plotted "Percent" (default) or "Preference Count"}
+
+\item{exclude_parties}{vector with party acronyms to exclude from plot}
 
 \item{extra_colours}{manual mapping of colours for each party, as a named vector.}
 

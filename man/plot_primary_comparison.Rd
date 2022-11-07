@@ -6,6 +6,7 @@
 \usage{
 plot_primary_comparison(
   division = NULL,
+  year = NULL,
   state = NULL,
   label = "Candidate",
   plotted_variable = "Percentage",
@@ -14,7 +15,6 @@ plot_primary_comparison(
   plot_format = "lollipop",
   include_labels = FALSE,
   nudge_x = 5,
-  year = NULL,
   parties = NULL,
   parties_year = NULL,
   include_others = FALSE,
@@ -26,6 +26,8 @@ plot_primary_comparison(
 }
 \arguments{
 \item{division}{Name of ONE electoral division}
+
+\item{year}{numeric vector with election years (from 2004), defaults to all.}
 
 \item{state}{Code for one state}
 
@@ -42,8 +44,6 @@ plot_primary_comparison(
 \item{include_labels}{If set to TRUE, the plot will include each value.}
 
 \item{nudge_x}{if labels are included, separation from chart/dot}
-
-\item{year}{numeric vector with election years (from 2004), defaults to all.}
 
 \item{parties}{which parties to include in the summary. All (default), a vector of strings
 with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.}

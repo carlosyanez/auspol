@@ -28,6 +28,7 @@ Imports:
     RColorBrewer,
     rlang,
     stringr,
+    tibble,
     tidyr,
     tidyselect,
     utils,
