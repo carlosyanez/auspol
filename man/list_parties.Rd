@@ -4,10 +4,12 @@
 \alias{list_parties}
 \title{List all political parties participating in a election year, for a state, or matching a pattern in their full name}
 \usage{
-list_parties(filters = NULL)
+list_parties(filters = NULL, party_regex = NULL)
 }
 \arguments{
-\item{filters}{(optional) list() with filters in the form list(Column="Value")}
+\item{filters}{(optional) list() with filters in the form list(Column="Value").}
+
+\item{party_regex}{additional filter for party names, taking a regular expression.}
 }
 \value{
 data frame with lists of divisions
@@ -19,6 +21,9 @@ List all political parties participating in a election year, for a state, or mat
 \dontrun{
 # Get list of all registered political parties
 list_parties()
+#
+# Get list of all parties whose name start with "Australia"
+list_parties(party_regex="^Australia")
  }
 }
 \keyword{lists}

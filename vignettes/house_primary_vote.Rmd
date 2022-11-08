@@ -1,10 +1,10 @@
 ---
-title: "House of Representatives - How to read Primary Vote"
+title: "House of Representatives - Primary Vote"
 author: "Carlos YANEZ SANTIBANEZ"
 date: "2022-11-08"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{House of Representatives - How to read Primary Vote}
+  %\VignetteIndexEntry{House of Representatives - Primary Vote}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,7 +20,7 @@ vignette: >
 
 ## What is this?
 
-If you are unfamiliar with the Australian electoral system and preferential voting, please look at this (explainer)[https://www.aec.gov.au/learn/preferential-voting.htm#:~:text=Australian%20federal%20elections%20use%20a,the%20white%20ballot%20paper%20(Senate)] before proceeding.
+If you are unfamiliar with the Australian electoral system and preferential voting, please look at this [explainer(https://www.aec.gov.au/learn/preferential-voting.html) before proceeding.
 
 
 ## Getting the data

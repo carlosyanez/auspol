@@ -1,0 +1,84 @@
+---
+title: "Listing the essential data"
+author: "Carlos YANEZ SANTIBANEZ"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Listing the essential data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(
+  warning=  FALSE,
+  collapse = TRUE, comment = "#>", out.width = "100%",
+  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "man/figures/lists",
+  message = FALSE, warning = FALSE, error = FALSE
+)
+
+library(ggplot2)
+library(auspol)
+get_house_primary_vote()
+
+```
+
+To get started, it is good to know in advance the division to analyse, parties in the race, etc. The *list_* family of functions will help you to get to bearings before getting and analysing the data. The functions include here are:
+
+- list_years()
+- list_divisions()
+- list_parties()
+- list_polling_places()
+
+## Years and divisions
+
+To figure out the election results included in the package, just run:
+
+```{r}
+list_years()
+
+```
+
+To retrieve the list of division for all the years, you can run *list_divisions*:
+
+```{r}
+list_divisions()
+```
+
+
+This function allows for some filtering by using a list containing for any of the columns included:
+
+```{r}
+list_divisions(filter=list(DivisionNm=c("Batman","Cooper")))
+```
+
+## Political Parties
+
+It is recommend to explore the list of parties that have participated in the elections in the data. For this **
+
+```{r}
+
+list_parties()
+
+```
+
+
+Due to changes in parties and the federal nature of the country, parties may have different names in different places and they may change over time. In addition to a filter argument (like in list_divisions), this function also allows to filter by party names using  a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), e.g.:
+
+```{r}
+list_parties(party_regex = "Greens")
+```
+
+
+## Polling places
+
+Finally, it is possible to list all polling places, showing their active years. For exmple, for all the electorates in Bennelong
+
+```{r}
+list_polling_places(filters=list(DivisionNm="Bennelong"))
+```
+
+
+
+

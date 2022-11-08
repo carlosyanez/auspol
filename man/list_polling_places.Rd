@@ -19,6 +19,9 @@ List all polling stations
 \dontrun{
 # Get list of all registered parties
 list_parties()
+# Get list of polling places in the division of Hasluck
+list_parties(list)
+
  }
 }
 \keyword{lists}

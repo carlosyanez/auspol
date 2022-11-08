@@ -13,6 +13,9 @@
     <loc>/articles/index.html</loc>
   </url>
   <url>
+    <loc>/articles/lists.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -74,6 +77,9 @@
   </url>
   <url>
     <loc>/reference/list_polling_places.html</loc>
+  </url>
+  <url>
+    <loc>/reference/list_years.html</loc>
   </url>
   <url>
     <loc>/reference/manage_colours.html</loc>

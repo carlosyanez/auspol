@@ -3,7 +3,27 @@
 ##############################################################
 
 
-#' List all divisions
+
+#' Get election years.
+#' @description Very simple function listing the election years included in this package.
+#' @returns vector with years
+#' @export
+#' @keywords lists
+#' @examples \dontrun{
+#' # Get list of all divisions
+#' list_years()
+#'  }
+list_years <- function(){
+
+  data <- load_auspol("house_primary_vote.zip")
+
+  years  <- unique(data$Year)
+  return(years)
+}
+
+
+#' Get list of divisions
+#' @description get list of all the divsi
 #' @importFrom methods is
 #' @importFrom dplyr filter across if_any if_any
 #' @param filters *(optional)* list() with filters in the form list(Column="Value")
@@ -11,7 +31,6 @@
 #'
 #' @export
 #' @keywords lists housegetdata
-
 #' @examples \dontrun{
 #' # Get list of all divisions
 #' list_divisions()
@@ -36,25 +55,42 @@ list_divisions <- function(filters=NULL){
 
 #' List all political parties participating in a election year, for a state, or matching a pattern in their full name
 #' @importFrom methods is
-#' @importFrom dplyr filter across if_any
-#' @param filters (optional) list() with filters in the form list(Column="Value")
+#' @importFrom dplyr filter across if_any arrange mutate
+#' @importFrom tidyr pivot_wider
+#' @importFrom stringr str_detect
+#' @importFrom rlang .data
+#' @param filters (optional) list() with filters in the form list(Column="Value").
+#' @param party_regex additional filter for party names, taking a regular expression.
 #' @returns data frame with lists of divisions
 #' @export
 #' @keywords lists
 #' @examples \dontrun{
 #' # Get list of all registered political parties
 #' list_parties()
+#' #
+#' # Get list of all parties whose name start with "Australia"
+#' list_parties(party_regex="^Australia")
 #'  }
-list_parties <- function(filters=NULL){
+list_parties <- function(filters=NULL,party_regex=NULL){
   data <- load_auspol("house_parties.zip")
 
   if(is(filters,"list")){
     for(i in length(filters)){
 
-      data <- data |> filter(if_any(names(filters)[i], ~ .x %in% filters[[i]]))
+      data <- data |> filter(if_any(names(filters)[i], ~  .x %in% filters[[i]]))
 
     }
   }
+
+  if(!is.null(party_regex)){
+    data <- data |> filter(if_any("PartyNm", ~ str_detect(.x,party_regex)))
+  }
+
+  data <- data |>
+          mutate(dummy=TRUE)|>
+          pivot_wider(values_from = .data$dummy,names_from=.data$Year) |>
+          arrange("PartyAb","StateAb")
+
   return(data)
 }
 
@@ -68,6 +104,9 @@ list_parties <- function(filters=NULL){
 #' @examples \dontrun{
 #' # Get list of all registered parties
 #' list_parties()
+#' # Get list of polling places in the division of Hasluck
+#' list_parties(list)
+#'
 #'  }
 list_polling_places <- function(filters=NULL){
   data <- load_auspol("polling_places.zip")
@@ -79,6 +118,12 @@ list_polling_places <- function(filters=NULL){
 
     }
   }
+
+  data <- data |>
+    mutate(dummy=TRUE) |>
+    pivot_wider(names_from = Year, values_from = dummy) |>
+    distinct()
+
   return(data)
 }
 

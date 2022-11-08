@@ -19,6 +19,19 @@ navbar:
   structure:
     left:  [home, reference,articles]
     right: [github]
+  components:
+   articles:
+    text: Articles
+    menu:
+    - text: "Basics"
+    - text: List divisions, parties,...
+      href: articles/lists.html
+    - text: -------
+    - text: "House of Representatives"
+    - text: Primary Votes
+      href: articles/house_primary_vote.html
+    - text: Preferences
+      href: articles/house_preference_flow.html
 
 home:
   title: auspol
@@ -33,28 +46,29 @@ authors:
     href: http://www.carlosyanez.id.au
 
 reference:
-  - title: House of Representatives - Get data
-    desc:  Basic Functions to retrieve data for the House of Representatives
-  - contents:
-    - has_keyword("housegetdata")
-  - title: House of Representatives - Convienience Functions
-    desc:  Convenience Functions to retrieve data for the House of Representatives
-  - contents:
-    - has_keyword("houseconvenience")
-  - title: House of Representatives - Plots
-    desc:  Convenience plots to retrieve data for the House of Representatives
-  - contents:
-    - has_keyword("houseplots")
   - title: Lists
-    desc:  List of electorates, parties
+    desc:  Get Lists of divisions, years, parties and polling places
   - contents:
     - has_keyword("lists")
+  - title: Get the data
+    desc:  Basic Functions to retrieve data, as presented by the AEC.
+  - contents:
+    - has_keyword("housegetdata")
+  - title: House of Representatives
+    subtitle: Data Functions
+    desc: Convenience Functions to retrieve data for the House of Representatives
+  - contents:
+    - has_keyword("houseconvenience")
+    subtitle: Plots
+    desc: Convenience Functions to  plot data for the House of Representatives
+  - contents:
+    - has_keyword("houseplots")
   - title: Plotting
-    desc:  plotting functions
+    desc:  Ad-hoc plotting functions
   - contents:
     - has_keyword("plotting")
   - title: Helpers
-    desc:  assorted functions
+    desc:  assorted functions, manage data cache.
   - contents:
     - has_keyword("helpers")
 

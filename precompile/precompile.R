@@ -17,5 +17,5 @@ for(vig in vignettes){
  knit(here(orig_folder,vig), here(vignettes_folder,vig))
 }
 
-i<-1
-knit(here(orig_folder,vignettes[i]), here(vignettes_folder,vignettes[i]))
+#i<-1
+#knit(here(orig_folder,vignettes[i]), here(vignettes_folder,vignettes[i]))

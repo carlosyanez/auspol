@@ -2,7 +2,7 @@
 % Please edit documentation in R/lists.R
 \name{list_divisions}
 \alias{list_divisions}
-\title{List all divisions}
+\title{Get list of divisions}
 \usage{
 list_divisions(filters = NULL)
 }
@@ -13,7 +13,7 @@ list_divisions(filters = NULL)
 data frame with lists of divisions
 }
 \description{
-List all divisions
+get list of all the divsi
 }
 \examples{
 \dontrun{

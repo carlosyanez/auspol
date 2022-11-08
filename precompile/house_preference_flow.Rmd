@@ -1,10 +1,10 @@
 ---
-title: "House of Representatives - How to read Preference Flows"
+title: "House of Representatives - Preferences"
 author: "Carlos YANEZ SANTIBANEZ"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{House of Representatives - How to read Preference Flows}
+  %\VignetteIndexEntry{House of Representatives - Preferences}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -22,7 +22,8 @@ library(auspol)
 
 ```
 
-**auspol** includes two functions to interact with the preference distribution data:
+
+Preferences are a key aspect of Australia's preferential voting system.  **auspol** includes two functions to interact with the preference distribution data:
 
 - get_house_preferences()
 - house_preference_flow_data()
@@ -30,7 +31,7 @@ library(auspol)
 
 ## What is this?
 
-If you are unfamiliar with the Australian electoral system and preferential voting, please look at this (explainer)[https://www.aec.gov.au/learn/preferential-voting.htm#:~:text=Australian%20federal%20elections%20use%20a,the%20white%20ballot%20paper%20(Senate)] before proceeding.
+If you are unfamiliar with the Australian electoral system and preferential voting, please look at this [explainer](https://www.aec.gov.au/learn/preferential-voting.html) before proceeding.
 
 
 ## Getting the data

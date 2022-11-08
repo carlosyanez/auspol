@@ -30,8 +30,12 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/house_preference_flow.html">House of Representatives - How to read Preference Flows</a>
-    <a class="dropdown-item" href="../articles/house_primary_vote.html">House of Representatives - How to read Primary Vote</a>
+    <h6 class="dropdown-header" data-toc-skip>Basics</h6>
+    <a class="dropdown-item" href="../articles/lists.html">List divisions, parties,...</a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header" data-toc-skip>House of Representatives</h6>
+    <a class="dropdown-item" href="../articles/house_primary_vote.html">Primary Votes</a>
+    <a class="dropdown-item" href="../articles/house_preference_flow.html">Preferences</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -54,9 +58,40 @@
     </div>
 
     <div class="section level2">
-      <h2 id="house-of-representatives-get-data">House of Representatives - Get data<a class="anchor" aria-label="anchor" href="#house-of-representatives-get-data"></a></h2>
+      <h2 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a></h2>
       
-      <p class="section-desc"></p><p>Basic Functions to retrieve data for the House of Representatives</p>
+      <p class="section-desc"></p><p>Get Lists of divisions, years, parties and polling places</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="list_divisions.html">list_divisions()</a></code> 
+        </dt>
+        <dd>Get list of divisions</dd>
+      </dl><dl><dt>
+          
+          <code><a href="list_parties.html">list_parties()</a></code> 
+        </dt>
+        <dd>List all political parties participating in a election year, for a state, or matching a pattern in their full name</dd>
+      </dl><dl><dt>
+          
+          <code><a href="list_polling_places.html">list_polling_places()</a></code> 
+        </dt>
+        <dd>List all polling stations</dd>
+      </dl><dl><dt>
+          
+          <code><a href="list_years.html">list_years()</a></code> 
+        </dt>
+        <dd>Get election years.</dd>
+      </dl></div><div class="section level2">
+      <h2 id="get-the-data">Get the data<a class="anchor" aria-label="anchor" href="#get-the-data"></a></h2>
+      
+      <p class="section-desc"></p><p>Basic Functions to retrieve data, as presented by the AEC.</p>
 
       
     </div><div id="" class="section level2">
@@ -98,11 +133,23 @@
           
           <code><a href="list_divisions.html">list_divisions()</a></code> 
         </dt>
-        <dd>List all divisions</dd>
+        <dd>Get list of divisions</dd>
       </dl></div><div class="section level2">
-      <h2 id="house-of-representatives-convienience-functions">House of Representatives - Convienience Functions<a class="anchor" aria-label="anchor" href="#house-of-representatives-convienience-functions"></a></h2>
+      <h2 id="house-of-representatives">House of Representatives<a class="anchor" aria-label="anchor" href="#house-of-representatives"></a></h2>
       
       <p class="section-desc"></p><p>Convenience Functions to retrieve data for the House of Representatives</p>
+
+      
+    </div><div class="section level2">
+      
+      <h3 id="data-functions">Data Functions<a class="anchor" aria-label="anchor" href="#data-functions"></a></h3>
+      <p class="section-desc"></p><p>Convenience Functions to retrieve data for the House of Representatives</p>
+
+      
+    </div><div class="section level2">
+      
+      <h3 id="plots">Plots<a class="anchor" aria-label="anchor" href="#plots"></a></h3>
+      <p class="section-desc"></p><p>Convenience Functions to plot data for the House of Representatives</p>
 
       
     </div><div id="" class="section level2">
@@ -120,13 +167,7 @@
           <code><a href="house_primary_vote_summary.html">house_primary_vote_summary()</a></code> 
         </dt>
         <dd>Helper function to download  data</dd>
-      </dl></div><div class="section level2">
-      <h2 id="house-of-representatives-plots">House of Representatives - Plots<a class="anchor" aria-label="anchor" href="#house-of-representatives-plots"></a></h2>
-      
-      <p class="section-desc"></p><p>Convenience plots to retrieve data for the House of Representatives</p>
-
-      
-    </div><div id="" class="section level2">
+      </dl></div><div id="" class="section level2">
       
       
       
@@ -147,35 +188,9 @@
         </dt>
         <dd>Plot historical changes in primary vote in a electoral division (line chart)</dd>
       </dl></div><div class="section level2">
-      <h2 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a></h2>
-      
-      <p class="section-desc"></p><p>List of electorates, parties</p>
-
-      
-    </div><div id="" class="section level2">
-      
-      
-      
-
-      <dl><dt>
-          
-          <code><a href="list_divisions.html">list_divisions()</a></code> 
-        </dt>
-        <dd>List all divisions</dd>
-      </dl><dl><dt>
-          
-          <code><a href="list_parties.html">list_parties()</a></code> 
-        </dt>
-        <dd>List all political parties participating in a election year, for a state, or matching a pattern in their full name</dd>
-      </dl><dl><dt>
-          
-          <code><a href="list_polling_places.html">list_polling_places()</a></code> 
-        </dt>
-        <dd>List all polling stations</dd>
-      </dl></div><div class="section level2">
       <h2 id="plotting">Plotting<a class="anchor" aria-label="anchor" href="#plotting"></a></h2>
       
-      <p class="section-desc"></p><p>plotting functions</p>
+      <p class="section-desc"></p><p>Ad-hoc plotting functions</p>
 
       
     </div><div id="" class="section level2">
@@ -206,7 +221,7 @@
       </dl></div><div class="section level2">
       <h2 id="helpers">Helpers<a class="anchor" aria-label="anchor" href="#helpers"></a></h2>
       
-      <p class="section-desc"></p><p>assorted functions</p>
+      <p class="section-desc"></p><p>assorted functions, manage data cache.</p>
 
       
     </div><div id="" class="section level2">
