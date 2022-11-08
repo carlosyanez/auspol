@@ -85,7 +85,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-08</h4>
+            <h4 data-toc-skip class="date">2022-11-09</h4>
       
       
       <div class="d-none name"><code>house_preference_flow.Rmd</code></div>
@@ -236,24 +236,24 @@ Using the previous example:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_preference_flow_plot.html">house_preference_flow_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Wills"</span>,year<span class="op">=</span><span class="fl">2019</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title<span class="op">=</span><span class="st">"Prefence Flow for Wills, 2019"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/house-preference-flowplot1-1.png" alt="plot of chunk plot1" width="100%"></p>
+<p><img src="articles/house-preference-flowplot1-1.png" alt="plot of chunk plot1" width="100%"></p>
 <p>By default the vote is present as percentage, which can be changed
 changing the value of <em>var</em>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_preference_flow_plot.html">house_preference_flow_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Wills"</span>,year<span class="op">=</span><span class="fl">2019</span>,var<span class="op">=</span><span class="st">"Preference Count"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title<span class="op">=</span><span class="st">"Prefence Flow for Wills, 2019"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/house-preference-flowplot2-1.png" alt="plot of chunk plot2" width="100%"></p>
+<p><img src="articles/house-preference-flowplot2-1.png" alt="plot of chunk plot2" width="100%"></p>
 <p>For analysis, it may be interesting to remove some parties from the
 initial round - e.g. to see how votes flow to the finalists. This can be
 done using <em>exclude_parties</em>:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_preference_flow_plot.html">house_preference_flow_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Warringah"</span>,year<span class="op">=</span><span class="fl">2022</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title<span class="op">=</span><span class="st">"Prefence Flow for Warringah, 2022"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/house-preference-flowplot3-1.png" alt="plot of chunk plot3" width="100%"></p>
+<p><img src="articles/house-preference-flowplot3-1.png" alt="plot of chunk plot3" width="100%"></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_preference_flow_plot.html">house_preference_flow_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Warringah"</span>,year<span class="op">=</span><span class="fl">2022</span>, exclude_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LP"</span>,<span class="st">"IND-STEGGALL"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title<span class="op">=</span><span class="st">"Flow of preference votes to Liberal and Teal in Warringah, 2022"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/house-preference-flowplot4-1.png" alt="plot of chunk plot4" width="100%"></p>
+<p><img src="articles/house-preference-flowplot4-1.png" alt="plot of chunk plot4" width="100%"></p>
 <p>Like the other plotting functions, it is possible to override the
 colour scheme by providing an additional named vector:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -262,7 +262,7 @@ colour scheme by providing an additional named vector:</p>
 <span>                     exclude_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LP"</span>,<span class="st">"IND-STEGGALL"</span><span class="op">)</span>,</span>
 <span>                     extra_colours <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"IND-STEGGALL"</span><span class="op">=</span><span class="st">"#008080"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">labs</span><span class="op">(</span>title<span class="op">=</span><span class="st">"Flow of preference votes to Liberal and Teal in Warringah, 2022"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/house-preference-flowplot5-1.png" alt="plot of chunk plot5" width="100%"></p>
+<p><img src="articles/house-preference-flowplot5-1.png" alt="plot of chunk plot5" width="100%"></p>
 <p>Similarly, it is possible to get the results of
 house_preference_flow_plot() directly, via <em>include_data</em>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">

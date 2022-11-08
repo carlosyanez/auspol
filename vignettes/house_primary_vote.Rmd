@@ -1,7 +1,7 @@
 ---
 title: "House of Representatives - Primary Vote"
 author: "Carlos YANEZ SANTIBANEZ"
-date: "2022-11-08"
+date: "2022-11-09"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{House of Representatives - Primary Vote}
@@ -25,7 +25,7 @@ If you are unfamiliar with the Australian electoral system and preferential voti
 
 ## Getting the data
 
-*get_house_primary_vote()* is the basic function to retrieve primarty vote data as published by the AEC. Without any arguments, it will delivery all the results for all elections, but it comes with parameters to facilitate filtering.
+*get_house_primary_vote()* is the basic function to retrieve primary vote data as published by the AEC. Without any arguments, it will delivery all the results for all elections, but it comes with parameters to facilitate filtering.
 For instance, to get the results for Brisbane for 2022:
 
 

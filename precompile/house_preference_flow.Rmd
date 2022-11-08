@@ -1,5 +1,7 @@
 ---
 title: "House of Representatives - Preferences"
+resource_files:
+  - vignetttes/house-preference-flow*.png
 author: "Carlos YANEZ SANTIBANEZ"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -14,7 +16,7 @@ vignette: >
 knitr::opts_chunk$set(
   warning=  FALSE,
   collapse = TRUE, comment = "#>", out.width = "100%",
-  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "man/figures/house-preference-flow",
+  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "vignettes/house-preference-flow",
   message = FALSE, warning = FALSE, error = FALSE
 )
 library(ggplot2)
