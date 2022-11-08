@@ -19,3 +19,9 @@ for(vig in vignettes){
 
 i<-1
 #knit(here(orig_folder,vignettes[i]), here(vignettes_folder,vignettes[i]))
+
+
+##compile site
+
+pngs <- vignettes <- dir_ls(vignettes_folder,regexp=".png")
+file_move(pngs, here("docs","articles"))

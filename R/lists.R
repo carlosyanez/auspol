@@ -121,7 +121,7 @@ list_polling_places <- function(filters=NULL){
 
   data <- data |>
     mutate(dummy=TRUE) |>
-    pivot_wider(names_from = Year, values_from = dummy) |>
+    pivot_wider(names_from = .data$Year, values_from = .data$dummy) |>
     distinct()
 
   return(data)

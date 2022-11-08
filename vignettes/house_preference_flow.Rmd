@@ -161,7 +161,7 @@ house_preference_flow_plot(division = "Wills",year=2019) +
   labs(title="Prefence Flow for Wills, 2019")
 ```
 
-<img src="vignettes/house-preference-flowplot1-1.png" alt="plot of chunk plot1" width="100%" />
+<img src="articles/house-preference-flowplot1-1.png" alt="plot of chunk plot1" width="100%" />
 
 
 By default the vote is present as percentage, which can be changed changing the value of *var*:
@@ -172,7 +172,7 @@ house_preference_flow_plot(division = "Wills",year=2019,var="Preference Count") 
   labs(title="Prefence Flow for Wills, 2019")
 ```
 
-<img src="vignettes/house-preference-flowplot2-1.png" alt="plot of chunk plot2" width="100%" />
+<img src="articles/house-preference-flowplot2-1.png" alt="plot of chunk plot2" width="100%" />
 
 
 For analysis, it may be interesting to remove some parties from the initial round - e.g. to see how votes flow to the finalists. This can be done using *exclude_parties*:
@@ -183,7 +183,7 @@ house_preference_flow_plot(division = "Warringah",year=2022) +
   labs(title="Prefence Flow for Warringah, 2022")
 ```
 
-<img src="vignettes/house-preference-flowplot3-1.png" alt="plot of chunk plot3" width="100%" />
+<img src="articles/house-preference-flowplot3-1.png" alt="plot of chunk plot3" width="100%" />
 
 
 
@@ -192,7 +192,7 @@ house_preference_flow_plot(division = "Warringah",year=2022, exclude_parties = c
   labs(title="Flow of preference votes to Liberal and Teal in Warringah, 2022")
 ```
 
-<img src="vignettes/house-preference-flowplot4-1.png" alt="plot of chunk plot4" width="100%" />
+<img src="articles/house-preference-flowplot4-1.png" alt="plot of chunk plot4" width="100%" />
 
 Like the other plotting functions, it is possible to override the colour scheme by providing an additional named vector:
 
@@ -205,7 +205,7 @@ house_preference_flow_plot(division = "Warringah",year=2022,
   labs(title="Flow of preference votes to Liberal and Teal in Warringah, 2022")
 ```
 
-<img src="vignettes/house-preference-flowplot5-1.png" alt="plot of chunk plot5" width="100%" />
+<img src="articles/house-preference-flowplot5-1.png" alt="plot of chunk plot5" width="100%" />
 
 
 Similarly, it is possible to get the results of house_preference_flow_plot() directly, via *include_data*:
