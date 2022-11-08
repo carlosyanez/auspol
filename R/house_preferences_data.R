@@ -126,7 +126,7 @@ preferences_lode         <- function(preferences,var){
     if(split==1){
 
       data_i <- data_i |>
-        filter(Candidate!=candidate_name)
+        filter(if_any(c("Candidate"), ~ .x!=candidate_name))
 
 
       for(m in (i-1):1){

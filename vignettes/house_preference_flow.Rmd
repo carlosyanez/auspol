@@ -1,7 +1,7 @@
 ---
 title: "House of Representatives - How to read Preference Flows"
 author: "Carlos YANEZ SANTIBANEZ"
-date: "`r Sys.Date()`"
+date: "2022-11-08"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{House of Representatives - How to read Preference Flows}
@@ -9,16 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-	warning = FALSE,
-	collapse = TRUE,
-	comment = "#>"
-)
-library(ggplot2)
-library(auspol)
 
-```
 
 **auspol** includes two functions to interact with the preference distribution data:
 
@@ -35,23 +26,65 @@ If you are unfamiliar with the Australian electoral system and preferential voti
 
 get_house_preferences() - provides an interface to access preference flows for a particular division (electorate) on a given year, as published in the AEC's website . For instance:
 
-```{r}
-get_house_preferences("Wills",2019)
 
+```r
+get_house_preferences("Wills",2019)
+#> # A tibble: 60 × 13
+#>     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm   Calcu…¹ Calcu…²
+#>    <dbl> <chr>        <int> <chr>         <int>          <int>       <int> <chr>   <chr>             <chr>   <chr>     <chr>     <dbl>
+#>  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Prefer…    3596
+#>  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Transf…       0
+#>  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Prefer…    4344
+#>  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Transf…       0
+#>  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Prefer…   17241
+#>  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Transf…       0
+#>  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Prefer…   25575
+#>  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Transf…       0
+#>  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Prefer…    2979
+#> 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Transf…       0
+#> # … with 50 more rows, and abbreviated variable names ¹​CalculationType, ²​CalculationValue
 ```
 
 Results can be also retrieved disaggregated by polling place:
 
-```{r}
+
+```r
 get_house_preferences("Wills",2019,aggregation = FALSE) |> head(10)
-                      
+#> # A tibble: 10 × 16
+#>     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵
+#>    <dbl> <chr>        <int> <chr>      <int> <chr>     <int>     <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
+#>  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
+#>  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
+#>  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
+#>  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
+#>  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
+#> 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
+#> # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue
 ```
 
 It is also possible to filter by Polling Place Name (PPNm in the source):
 
-```{r}
-get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
 
+```r
+get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
+#> # A tibble: 10 × 16
+#>     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵
+#>    <dbl> <chr>        <int> <chr>      <int> <chr>     <int>     <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
+#>  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
+#>  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
+#>  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
+#>  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
+#>  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
+#> 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
+#> # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue
 ```
 
 
@@ -59,8 +92,58 @@ get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FAL
 
 Build on top of the basic function,  preference_flow_data() - provides an interface to access preference flows for a particular division (electorate) on a given year. This function returns a list, in which each element is a data frame with the results for each counting round. In its most basic use:
 
-```{r}
+
+```r
 house_preference_flow_data(division = "Wills", year=2019)
+#> $`Round 0`
+#> # A tibble: 6 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last 
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>      <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>
+#> 1  2019 VIC            234 Wills             0              6      32350 KHALIL  Peter   ALP     Austra…   42355       0       1 FALSE
+#> 2  2019 VIC            234 Wills             0              4      32657 PULFORD Adam R… GVIC    The Au…   25575       0       2 FALSE
+#> 3  2019 VIC            234 Wills             0              3      33251 KILLIN  Peter … LP      Libera…   17241       0       3 FALSE
+#> 4  2019 VIC            234 Wills             0              2      32398 BOLTON  Susann… VNS     Victor…    4344       0       4 FALSE
+#> 5  2019 VIC            234 Wills             0              1      32688 MILES   Christ… AJP     Animal…    3596       0       5 FALSE
+#> 6  2019 VIC            234 Wills             0              5      32329 VENKAT  Manju   UAPP    United…    2979       0       6 TRUE 
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
+#> 
+#> $`Round 1`
+#> # A tibble: 5 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last 
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>      <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>
+#> 1  2019 VIC            234 Wills             1              6      32350 KHALIL  Peter   ALP     Austra…   43301     946       1 FALSE
+#> 2  2019 VIC            234 Wills             1              4      32657 PULFORD Adam R… GVIC    The Au…   25811     236       2 FALSE
+#> 3  2019 VIC            234 Wills             1              3      33251 KILLIN  Peter … LP      Libera…   18521    1280       3 FALSE
+#> 4  2019 VIC            234 Wills             1              2      32398 BOLTON  Susann… VNS     Victor…    4511     167       4 FALSE
+#> 5  2019 VIC            234 Wills             1              1      32688 MILES   Christ… AJP     Animal…    3946     350       5 TRUE 
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
+#> 
+#> $`Round 2`
+#> # A tibble: 4 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last 
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>      <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>
+#> 1  2019 VIC            234 Wills             2              6      32350 KHALIL  Peter   ALP     Austra…   43982     681       1 FALSE
+#> 2  2019 VIC            234 Wills             2              4      32657 PULFORD Adam R… GVIC    The Au…   27083    1272       2 FALSE
+#> 3  2019 VIC            234 Wills             2              3      33251 KILLIN  Peter … LP      Libera…   19108     587       3 FALSE
+#> 4  2019 VIC            234 Wills             2              2      32398 BOLTON  Susann… VNS     Victor…    5917    1406       4 TRUE 
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
+#> 
+#> $`Round 3`
+#> # A tibble: 3 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last 
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>      <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>
+#> 1  2019 VIC            234 Wills             3              6      32350 KHALIL  Peter   ALP     Austra…   45442    1460       1 FALSE
+#> 2  2019 VIC            234 Wills             3              4      32657 PULFORD Adam R… GVIC    The Au…   30254    3171       2 FALSE
+#> 3  2019 VIC            234 Wills             3              3      33251 KILLIN  Peter … LP      Libera…   20394    1286       3 TRUE 
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
+#> 
+#> $`Round 4`
+#> # A tibble: 2 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candid…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Elected
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>    <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>  
+#> 1  2019 VIC            234 Wills             4              6    32350 KHALIL  Peter   ALP     Austra…   55898   10456       1 TRUE   
+#> 2  2019 VIC            234 Wills             4              4    32657 PULFORD Adam R… GVIC    The Au…   40192    9938       2 FALSE  
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
 ```
 
 The function also include other variables, which are better explained through its use as part of the next function,  house_preference_flow_plot().
@@ -69,50 +152,63 @@ The function also include other variables, which are better explained through it
 
 Perhaps it is most interesting to see how each round of counting assigns votes, until a candidate is chosen. For, this, this packages comes with the convenience function house_preference_flow_plot(), which  calls preference_flow_data() and plot the results in alluvial format. Using the previous example:
 
-```{r}
+
+```r
 house_preference_flow_plot(division = "Wills",year=2019) +
   labs(title="Prefence Flow for Wills, 2019")
 ```
 
+<img src="man/figures/house-preference-flowplot1-1.png" alt="plot of chunk plot1" width="100%" />
+
 
 By default the vote is present as percentage, which can be changed changing the value of *var*:
 
-```{r}
+
+```r
 house_preference_flow_plot(division = "Wills",year=2019,var="Preference Count") +
   labs(title="Prefence Flow for Wills, 2019")
-
 ```
+
+<img src="man/figures/house-preference-flowplot2-1.png" alt="plot of chunk plot2" width="100%" />
 
 
 For analysis, it may be interesting to remove some parties from the initial round - e.g. to see how votes flow to the finalists. This can be done using *exclude_parties*:
 
-```{r}
+
+```r
 house_preference_flow_plot(division = "Warringah",year=2022) +
   labs(title="Prefence Flow for Warringah, 2022")
-
 ```
 
+<img src="man/figures/house-preference-flowplot3-1.png" alt="plot of chunk plot3" width="100%" />
 
-```{r}
+
+
+```r
 house_preference_flow_plot(division = "Warringah",year=2022, exclude_parties = c("LP","IND-STEGGALL")) +
-  labs(title="Flow of preference votes to Liberal and Teals in Warringah, 2022")
-
+  labs(title="Flow of preference votes to Liberal and Teal in Warringah, 2022")
 ```
+
+<img src="man/figures/house-preference-flowplot4-1.png" alt="plot of chunk plot4" width="100%" />
 
 Like the other plotting functions, it is possible to override the colour scheme by providing an additional named vector:
 
-```{r}
+
+```r
 #adding teal
 house_preference_flow_plot(division = "Warringah",year=2022, 
                      exclude_parties = c("LP","IND-STEGGALL"),
                      extra_colours = c("IND-STEGGALL"="#008080")) +
-  labs(title="Flow of preference votes to Liberal and Teals in Warringah, 2022")
+  labs(title="Flow of preference votes to Liberal and Teal in Warringah, 2022")
 ```
+
+<img src="man/figures/house-preference-flowplot5-1.png" alt="plot of chunk plot5" width="100%" />
 
 
 Similarly, it is possible to get the results of house_preference_flow_plot() directly, via *include_data*:
 
-```{r}
+
+```r
 p <- house_preference_flow_plot(division = "Warringah",year=2022, 
                      exclude_parties = c("LP","IND-STEGGALL"),
                      extra_colours = c("IND-STEGGALL"="#008080"),
@@ -120,5 +216,14 @@ p <- house_preference_flow_plot(division = "Warringah",year=2022,
                      )
 
 p$source_data[[1]]
+#> # A tibble: 5 × 15
+#>    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last 
+#>   <dbl> <chr>        <int> <chr>         <int>          <int>      <int> <chr>   <chr>   <chr>   <chr>     <dbl>   <dbl>   <int> <lgl>
+#> 1  2022 NSW            151 Warringah         0              6      36808 MICKLE… David … ALP     Austra…    7806       0       1 FALSE
+#> 2  2022 NSW            151 Warringah         0              4      36675 GLANVI… Kristy… GRN     The Gr…    6910       0       2 FALSE
+#> 3  2022 NSW            151 Warringah         0              3      36271 ROBERT… Andrew… UAPP    United…    2202       0       3 FALSE
+#> 4  2022 NSW            151 Warringah         0              1      37516 TRIPP   Steven… ON      Paulin…    1980       0       4 FALSE
+#> 5  2022 NSW            151 Warringah         0              7      36396 PATERS… Kate A… AJP     Animal…    1475       0       5 TRUE 
+#> # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition
 ```
 
