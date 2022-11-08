@@ -2,6 +2,7 @@ auspol
 ================
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml)
+  [![auspol status badge](https://carlosyanez.r-universe.dev/badges/auspol)](https://carlosyanez.r-universe.dev)
   <!-- badges: end -->
   
 <img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png"  width = "175" align="center"/>
