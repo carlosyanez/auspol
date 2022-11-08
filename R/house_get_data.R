@@ -92,6 +92,14 @@ get_house_turnout <- function(division="all",year="all"){
 #' @include internal.R
 #' @export
 #' @keywords housegetdata
+#' @examples \dontrun{
+#' # basic use
+#' get_house_preferences("Wills",2019)
+#' # disaggregated version
+#' get_house_preferences("Wills",2019,aggregation = FALSE) |> head(10)
+#' # filtered by polling place
+#' get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
+#' }
 get_house_preferences <- function(division,
                                   year,
                                   polling_places=NULL,

@@ -11,10 +11,10 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
+	warning = FALSE,
+	collapse = TRUE,
+	comment = "#>"
 )
-
 library(ggplot2)
 library(auspol)
 get_house_primary_vote()

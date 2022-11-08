@@ -23,7 +23,6 @@ navbar:
 home:
   title: auspol
   description: Australian Election Results in R.
-
 repo:
   url:
     home: https://github.com/carlosyanez/auspol/

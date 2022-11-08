@@ -23,9 +23,9 @@
 #' @param extra_colours manual mapping of colours for each party, as a named vector.
 #' @param include_labels If set to TRUE, the plot will include each value.
 #' @param year numeric vector with election years (from 2004), defaults to all.
-#' @param include_data If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
+#' @param include_data If set to TRUE, output of house_primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
 #' @param data Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
-#' to plot, folowing the format from the output of  primary_vote_summary().
+#' to plot, folowing the format from the output of  house_primary_vote_summary().
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
@@ -48,7 +48,7 @@ house_primary_historic_plot <- function(division=NULL,
     if(length(division)>1) stop("Must include just one division")
 
 
-    data <- primary_vote_summary(division=division,
+    data <- house_primary_vote_summary(division=division,
                                  year=year,
                                  parties=parties,
                                  parties_year=parties_year,
@@ -125,9 +125,9 @@ house_primary_historic_plot <- function(division=NULL,
 #'   and it happens to be in the top n - even if this flag is set to false.
 #' @param individualise_IND If set to TRUE, party abbreviations for each independent candidate will be changed
 #' from "IND" to "IND-<<candidate's surname>>", effectively separating them in party aggregations.
-#' @param include_data If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
+#' @param include_data If set to TRUE, output of house_primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
 #' @param data Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
-#' to plot, following the format from the output of  primary_vote_summary().
+#' to plot, following the format from the output of  house_primary_vote_summary().
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
@@ -160,7 +160,7 @@ house_primary_comparison_plot <- function(division=NULL,
     if(!(is.null(division)|is.null(state))) stop("Include either division Candidate,state code or data")
     if(!is.null(state) &(length(parties)!=1)) stop("If state is selected, ONE party must be declared")
 
-    data <- primary_vote_summary(division=division,
+    data <- house_primary_vote_summary(division=division,
                                  state=state,
                                  year=year,
                                  parties=parties,
@@ -237,65 +237,3 @@ house_primary_comparison_plot <- function(division=NULL,
 }
 
 
-#' Plot preference flow, for a division for a given year
-#' @importFrom ggplot2 ggplot aes labs
-#' @importFrom ggalluvial geom_flow geom_stratum
-#' @param division Electoral division
-#' @param year Election year
-#' @param var Variable to be plotted "Percent" (default) or "Preference Count"
-#' @param exclude_parties vector with party acronyms to exclude from plot
-#' @param extra_colours manual mapping of colours for each party, as a named vector.
-#' @param include_data If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
-#' @return preference flow, ggplot2 object
-#' @include internal.R
-#' @export
-#' @keywords houseplots
-house_preference_flow_plot <- function(division,year,
-                                 var="Percent",
-                                 exclude_parties= NULL,
-                                 extra_colours=NULL,
-                                 include_data=FALSE
-){
-
-
-  if(var=="Percent"){
-    y_label <- "Percent"
-  }else{
-    y_label <- "Votes"
-  }
-
-
-
-  preferences <- house_preference_flow_data(division=division,
-                                      year=year,
-                                      individualise_IND = TRUE,
-                                      exclude_parties = exclude_parties,
-                                      exclude_rounds = 0)
-
-
-  data_lodes <- preferences_lode(preferences,var)
-
-
-  p <- (ggplot(data_lodes,
-               aes(x = .data$x,
-                   stratum = .data$stratum,
-                   alluvium = .data$alluvium,
-                   color=.data$stratum,
-                   y=.data$Count,
-                   fill = .data$stratum)) +
-          #  scale_x_discrete(expand = c(.001, .001)) +
-          geom_flow() +
-          geom_stratum(alpha = 1,color=NA)
-  ) |>
-    auspol_theme(extra_colours=extra_colours,
-                 extra_values = unique(data_lodes$stratum),
-                 legend_pos = "bottom") +
-    labs(x="Round",y=y_label)
-
-
-  if(include_data){
-    p$source_data <- preferences
-  }
-
-  return(p)
-}
