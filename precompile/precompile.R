@@ -5,6 +5,7 @@ library(knitr)
 library(here)
 library(fs)
 library(stringr)
+library(dplyr)
 
 
 orig_folder <- here("precompile")
@@ -25,6 +26,17 @@ pkgdown::build_articles()
 ##compile site
 
 pngs <- vignettes <- dir_ls(vignettes_folder,regexp=".png")
-article_img<-here("docs","articles","articles")
-dir_create(article_img)
-file_copy(pngs, article_img)
+article_dir<-here("docs","articles")
+#dir_create(article_img)
+file_copy(pngs, article_dir)
+
+article_html <- dir_ls(article_dir,regexp="html")
+
+for(article in article_html){
+  file <- tibble(orig=readLines(article))
+
+  file <-file |> mutate(new=if_else(str_detect(orig,"img src=\"articles/"),
+                                  str_replace(orig,"img src=\"articles/","img src=\"https://carlosyanez.github.io/auspol/articles/"),
+                                  orig))
+  write(file$new,article)
+}
