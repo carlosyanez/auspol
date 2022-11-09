@@ -117,54 +117,54 @@ published in the AEC’s website . For instance:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 60 × 13</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm   Calcu…¹ Calcu…²</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Prefer…    3596</span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Transf…       0</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Prefer…    4344</span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Transf…       0</span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Prefer…   17241</span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Transf…       0</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Prefer…   25575</span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Transf…       0</span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Prefer…    2979</span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Transf…       0</span></span>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm                     Calcu…¹ Calcu…²</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;                       &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal Justice Party        Prefer…    3596</span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal Justice Party        Transf…       0</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists        Prefer…    4344</span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists        Transf…       0</span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal Party of Australia… Prefer…   17241</span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal Party of Australia… Transf…       0</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Australian Greens - Vi… Prefer…   25575</span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Australian Greens - Vi… Transf…       0</span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United Australia Party      Prefer…    2979</span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United Australia Party      Transf…       0</span></span>
 <span><span class="co">#&gt; # … with 50 more rows, and abbreviated variable names ¹​CalculationType, ²​CalculationValue</span></span></code></pre></div>
 <p>Results can be also retrieved disaggregated by polling place:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>,aggregation <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 16</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   </span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   </span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   </span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotPosition CandidateId Surname GivenNm          PartyAb PartyNm Sitti…¹ Calcu…² Calcu…³</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Prefer…  254   </span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Prefer…    4.65</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Prefer…  238   </span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Prefer…    4.35</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John       LP      Libera… N       Prefer…  862   </span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John       LP      Libera… N       Prefer…   15.8 </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​SittingMemberFl, ²​CalculationType, ³​CalculationValue</span></span></code></pre></div>
 <p>It is also possible to filter by Polling Place Name (PPNm in the
 source):</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>, polling_places<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ABSENT"</span><span class="op">)</span>,aggregation <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 16</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   </span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   </span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   </span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotPosition CandidateId Surname GivenNm          PartyAb PartyNm Sitti…¹ Calcu…² Calcu…³</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Prefer…  254   </span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Prefer…    4.65</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher Jam… AJP     Animal… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Prefer…  238   </span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Prefer…    4.35</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison   VNS     Victor… N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John       LP      Libera… N       Prefer…  862   </span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John       LP      Libera… N       Prefer…   15.8 </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​SittingMemberFl, ²​CalculationType, ³​CalculationValue</span></span></code></pre></div>
 <p>Build on top of the basic function, preference_flow_data() - provides
 an interface to access preference flows for a particular division
 (electorate) on a given year. This function returns a list, in which
@@ -174,53 +174,53 @@ In its most basic use:</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_preference_flow_data.html">house_preference_flow_data</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Wills"</span>, year<span class="op">=</span><span class="fl">2019</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $`Round 0`</span></span>
 <span><span class="co">#&gt; # A tibble: 6 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last </span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
-<span><span class="co">#&gt; 1  2019 VIC            234 Wills             0              6      32350 KHALIL  Peter   ALP     Austra…   42355       0       1 FALSE</span></span>
-<span><span class="co">#&gt; 2  2019 VIC            234 Wills             0              4      32657 PULFORD Adam R… GVIC    The Au…   25575       0       2 FALSE</span></span>
-<span><span class="co">#&gt; 3  2019 VIC            234 Wills             0              3      33251 KILLIN  Peter … LP      Libera…   17241       0       3 FALSE</span></span>
-<span><span class="co">#&gt; 4  2019 VIC            234 Wills             0              2      32398 BOLTON  Susann… VNS     Victor…    4344       0       4 FALSE</span></span>
-<span><span class="co">#&gt; 5  2019 VIC            234 Wills             0              1      32688 MILES   Christ… AJP     Animal…    3596       0       5 FALSE</span></span>
-<span><span class="co">#&gt; 6  2019 VIC            234 Wills             0              5      32329 VENKAT  Manju   UAPP    United…    2979       0       6 TRUE </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm        Prefe…¹ Trans…² Round…³ Last </span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
+<span><span class="co">#&gt; 1  2019 VIC            234 Wills             0              6       32350 KHALIL  Peter             ALP     Australian La…   42355       0       1 FALSE</span></span>
+<span><span class="co">#&gt; 2  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Australia…   25575       0       2 FALSE</span></span>
+<span><span class="co">#&gt; 3  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal Party…   17241       0       3 FALSE</span></span>
+<span><span class="co">#&gt; 4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Soc…    4344       0       4 FALSE</span></span>
+<span><span class="co">#&gt; 5  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal Justic…    3596       0       5 FALSE</span></span>
+<span><span class="co">#&gt; 6  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United Austra…    2979       0       6 TRUE </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`Round 1`</span></span>
 <span><span class="co">#&gt; # A tibble: 5 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last </span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
-<span><span class="co">#&gt; 1  2019 VIC            234 Wills             1              6      32350 KHALIL  Peter   ALP     Austra…   43301     946       1 FALSE</span></span>
-<span><span class="co">#&gt; 2  2019 VIC            234 Wills             1              4      32657 PULFORD Adam R… GVIC    The Au…   25811     236       2 FALSE</span></span>
-<span><span class="co">#&gt; 3  2019 VIC            234 Wills             1              3      33251 KILLIN  Peter … LP      Libera…   18521    1280       3 FALSE</span></span>
-<span><span class="co">#&gt; 4  2019 VIC            234 Wills             1              2      32398 BOLTON  Susann… VNS     Victor…    4511     167       4 FALSE</span></span>
-<span><span class="co">#&gt; 5  2019 VIC            234 Wills             1              1      32688 MILES   Christ… AJP     Animal…    3946     350       5 TRUE </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm        Prefe…¹ Trans…² Round…³ Last </span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
+<span><span class="co">#&gt; 1  2019 VIC            234 Wills             1              6       32350 KHALIL  Peter             ALP     Australian La…   43301     946       1 FALSE</span></span>
+<span><span class="co">#&gt; 2  2019 VIC            234 Wills             1              4       32657 PULFORD Adam Ross         GVIC    The Australia…   25811     236       2 FALSE</span></span>
+<span><span class="co">#&gt; 3  2019 VIC            234 Wills             1              3       33251 KILLIN  Peter John        LP      Liberal Party…   18521    1280       3 FALSE</span></span>
+<span><span class="co">#&gt; 4  2019 VIC            234 Wills             1              2       32398 BOLTON  Susanne Alison    VNS     Victorian Soc…    4511     167       4 FALSE</span></span>
+<span><span class="co">#&gt; 5  2019 VIC            234 Wills             1              1       32688 MILES   Christopher James AJP     Animal Justic…    3946     350       5 TRUE </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`Round 2`</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last </span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
-<span><span class="co">#&gt; 1  2019 VIC            234 Wills             2              6      32350 KHALIL  Peter   ALP     Austra…   43982     681       1 FALSE</span></span>
-<span><span class="co">#&gt; 2  2019 VIC            234 Wills             2              4      32657 PULFORD Adam R… GVIC    The Au…   27083    1272       2 FALSE</span></span>
-<span><span class="co">#&gt; 3  2019 VIC            234 Wills             2              3      33251 KILLIN  Peter … LP      Libera…   19108     587       3 FALSE</span></span>
-<span><span class="co">#&gt; 4  2019 VIC            234 Wills             2              2      32398 BOLTON  Susann… VNS     Victor…    5917    1406       4 TRUE </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm        PartyAb PartyNm           Prefe…¹ Trans…² Round…³ Last </span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
+<span><span class="co">#&gt; 1  2019 VIC            234 Wills             2              6       32350 KHALIL  Peter          ALP     Australian Labor…   43982     681       1 FALSE</span></span>
+<span><span class="co">#&gt; 2  2019 VIC            234 Wills             2              4       32657 PULFORD Adam Ross      GVIC    The Australian G…   27083    1272       2 FALSE</span></span>
+<span><span class="co">#&gt; 3  2019 VIC            234 Wills             2              3       33251 KILLIN  Peter John     LP      Liberal Party of…   19108     587       3 FALSE</span></span>
+<span><span class="co">#&gt; 4  2019 VIC            234 Wills             2              2       32398 BOLTON  Susanne Alison VNS     Victorian Social…    5917    1406       4 TRUE </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`Round 3`</span></span>
 <span><span class="co">#&gt; # A tibble: 3 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last </span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
-<span><span class="co">#&gt; 1  2019 VIC            234 Wills             3              6      32350 KHALIL  Peter   ALP     Austra…   45442    1460       1 FALSE</span></span>
-<span><span class="co">#&gt; 2  2019 VIC            234 Wills             3              4      32657 PULFORD Adam R… GVIC    The Au…   30254    3171       2 FALSE</span></span>
-<span><span class="co">#&gt; 3  2019 VIC            234 Wills             3              3      33251 KILLIN  Peter … LP      Libera…   20394    1286       3 TRUE </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm    PartyAb PartyNm               Prefe…¹ Trans…² Round…³ Last </span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                   &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
+<span><span class="co">#&gt; 1  2019 VIC            234 Wills             3              6       32350 KHALIL  Peter      ALP     Australian Labor Par…   45442    1460       1 FALSE</span></span>
+<span><span class="co">#&gt; 2  2019 VIC            234 Wills             3              4       32657 PULFORD Adam Ross  GVIC    The Australian Green…   30254    3171       2 FALSE</span></span>
+<span><span class="co">#&gt; 3  2019 VIC            234 Wills             3              3       33251 KILLIN  Peter John LP      Liberal Party of Aus…   20394    1286       3 TRUE </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $`Round 4`</span></span>
 <span><span class="co">#&gt; # A tibble: 2 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candid…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Elected</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt; 1  2019 VIC            234 Wills             4              6    32350 KHALIL  Peter   ALP     Austra…   55898   10456       1 TRUE   </span></span>
-<span><span class="co">#&gt; 2  2019 VIC            234 Wills             4              4    32657 PULFORD Adam R… GVIC    The Au…   40192    9938       2 FALSE  </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm   PartyAb PartyNm              Prefe…¹ Trans…² Round…³ Elected</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt; 1  2019 VIC            234 Wills             4              6       32350 KHALIL  Peter     ALP     Australian Labor Pa…   55898   10456       1 TRUE   </span></span>
+<span><span class="co">#&gt; 2  2019 VIC            234 Wills             4              4       32657 PULFORD Adam Ross GVIC    The Australian Gree…   40192    9938       2 FALSE  </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span></code></pre></div>
 <p>The function also include other variables, which are better explained
 through its use as part of the next function,
 house_preference_flow_plot().</p>
@@ -274,14 +274,14 @@ house_preference_flow_plot() directly, via <em>include_data</em>:</p>
 <span></span>
 <span><span class="va">p</span><span class="op">$</span><span class="va">source_data</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="co">#&gt; # A tibble: 5 × 15</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition Candidat…¹ Surname GivenNm PartyAb PartyNm Prefe…² Trans…³ Round…⁴ Last </span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;      &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
-<span><span class="co">#&gt; 1  2022 NSW            151 Warringah         0              6      36808 MICKLE… David … ALP     Austra…    7806       0       1 FALSE</span></span>
-<span><span class="co">#&gt; 2  2022 NSW            151 Warringah         0              4      36675 GLANVI… Kristy… GRN     The Gr…    6910       0       2 FALSE</span></span>
-<span><span class="co">#&gt; 3  2022 NSW            151 Warringah         0              3      36271 ROBERT… Andrew… UAPP    United…    2202       0       3 FALSE</span></span>
-<span><span class="co">#&gt; 4  2022 NSW            151 Warringah         0              1      37516 TRIPP   Steven… ON      Paulin…    1980       0       4 FALSE</span></span>
-<span><span class="co">#&gt; 5  2022 NSW            151 Warringah         0              7      36396 PATERS… Kate A… AJP     Animal…    1475       0       5 TRUE </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​CandidateId, ²​`Preference Count`, ³​`Transfer Count`, ⁴​RoundPosition</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname     GivenNm       PartyAb PartyNm        Prefe…¹ Trans…² Round…³ Last </span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;         &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;int&gt; &lt;lgl&gt;</span></span>
+<span><span class="co">#&gt; 1  2022 NSW            151 Warringah         0              6       36808 MICKLEBURGH David Edward  ALP     Australian La…    7806       0       1 FALSE</span></span>
+<span><span class="co">#&gt; 2  2022 NSW            151 Warringah         0              4       36675 GLANVILLE   Kristyn Maree GRN     The Greens NSW    6910       0       2 FALSE</span></span>
+<span><span class="co">#&gt; 3  2022 NSW            151 Warringah         0              3       36271 ROBERTSON   Andrew Colin  UAPP    United Austra…    2202       0       3 FALSE</span></span>
+<span><span class="co">#&gt; 4  2022 NSW            151 Warringah         0              1       37516 TRIPP       Steven Leslie ON      Pauline Hanso…    1980       0       4 FALSE</span></span>
+<span><span class="co">#&gt; 5  2022 NSW            151 Warringah         0              7       36396 PATERSON    Kate Anne     AJP     Animal Justic…    1475       0       5 TRUE </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Preference Count`, ²​`Transfer Count`, ³​RoundPosition</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

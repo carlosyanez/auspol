@@ -20,8 +20,11 @@ for(vig in vignettes){
 i<-1
 #knit(here(orig_folder,vignettes[i]), here(vignettes_folder,vignettes[i]))
 
+pkgdown::build_articles()
 
 ##compile site
 
 pngs <- vignettes <- dir_ls(vignettes_folder,regexp=".png")
-file_move(pngs, here("docs","articles"))
+article_img<-here("docs","articles","articles")
+dir_create(article_img)
+file_copy(pngs, article_img)
