@@ -1,0 +1,66 @@
+---
+title: "House of Representatives - Get the data"
+resource_files:
+  - vignetttes/house-preference-flow*.png
+author: "Carlos YANEZ SANTIBANEZ"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{House of Representatives - Preferences}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(
+  warning=  FALSE,
+  collapse = TRUE, comment = "#>", out.width = "100%",
+  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "vignettes/house-get-data-",
+  message = FALSE, warning = FALSE, error = FALSE
+)
+library(ggplot2)
+library(auspol)
+
+```
+
+
+Although this package contains many convenience functions to process and display the election data, there are probably many cases where the data in its original format is preferable - especially by and advanced analysis doing ad-hoc analysis. For these reason, the functions that read the data in its "original" form are also exported for use. These are:
+
+- get_house_primary_vote()
+- get_house_preferences()
+- get_house_MPs()
+- get_house_turnout()
+- get_house_2PF()
+- get_house_2PP()
+
+Please note that the presented here is shown as downloaded from the AEC's website.
+
+## Get primary vote and preferences
+
+It is possible to get all primary vote results for all electorates in all electon from 2044, by running *get_house_primary_vote()*. More usefully, the funcion allows to filter by a number of electorates for a numbers of years, as shown in the below example:
+
+```{r}
+get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022))
+```
+
+The function allows also to narrow down to specific electorates. For instance, to check the primary vote for ALP candidates, for both electorates in polling places named "Perth":
+
+
+```{r}
+library(dplyr)
+
+get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022),polling_places = "Perth") |>
+  filter(PartyAb=="ALP")
+```
+
+The function also can present the division totals, fo
+
+```{r}
+
+get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022), aggregation = TRUE)
+```
+
+
+
+

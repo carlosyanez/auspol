@@ -11,34 +11,46 @@
 #' @param  state_abb  vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)
 #' @param  party_abb  vector with party abbreviation (e.g. ALP,LIB,NP,GRN,etc.)
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
-#' @param  polling_places vector with polling places
+#' @param  polling_places vector with regex for polling places
 #' @importFrom dplyr filter group_by mutate summarise if_any
 #' @importFrom rlang .data
 #' @export
 #' @keywords housegetdata
-get_house_primary_vote <- function(division="all",
-                                   year="all",
-                                   state_abb = "all",
-                                   party_abb = "all",
+get_house_primary_vote <- function(division=NULL,
+                                   year=NULL,
+                                   state_abb = NULL,
+                                   party_abb = NULL,
                                    aggregation=FALSE,
                                    polling_places=NULL
                                    ){
 
   df <- get_auspol_house_data("house_primary_vote.zip",division,year)
 
-  if(!("all" %in% state_abb)){
+
+  if(!is.null(state_abb)){
     df <- df|>
          filter(if_any(c("StateAb"), ~ .x %in% state_abb))
   }
 
-  if(!("all" %in% party_abb)){
+  if(!is.null(party_abb)){
     df <- df|>
       filter(if_any(c("PartyAb"), ~ .x %in% party_abb))
   }
 
   if(!is.null(polling_places)){
+
+    df <- df |> mutate(place=TRUE)
+
+    for(i in 1:length(polling_places)){
+
+      df <- df |>
+            mutate(place=.data$place & str_detect(.data$PollingPlace,polling_places[i]))
+
+    }
+
     df <- df |>
-      filter(if_any(c("PollingPlace"), ~ .x %in% polling_places))
+      filter(if_any(c("place"), ~ .x==TRUE)) |>
+      select(-any_of(c("place")))
   }
 
   if(aggregation){
@@ -61,7 +73,7 @@ get_house_primary_vote <- function(division="all",
 #' @param  year vector with election years
 #' @export
 #' @keywords housegetdata
-get_house_MPs <- function(division="all",year="all"){
+get_house_MPs <- function(division=NULL,year=NULL){
   get_auspol_house_data("house_elected.zip",division,year)
 }
 
@@ -76,7 +88,7 @@ get_MPs <- get_house_MPs
 #' @param  year number with election year
 #' @export
 #' @keywords housegetdata
-get_house_turnout <- function(division="all",year="all"){
+get_house_turnout <- function(division=NULL,year=NULL){
   get_auspol_house_data("house_turnout.zip",division,year)
 }
 
@@ -203,15 +215,15 @@ get_house_2PF <- function(division,year,aggregation=FALSE){
 #' @importFrom  dplyr filter mutate summarise group_by if_else
 #' @export
 #' @keywords housegetdata
-get_house_2PP <- function(division="all",
-                          year="all",
-                          state_abb = "all",
+get_house_2PP <- function(division=NULL,
+                          year=NULL,
+                          state_abb = NULL,
                           aggregation=FALSE){
 
 
     df <- get_auspol_house_data("house_2PP.zip",division,year)
 
-    if(!("all" %in% state_abb)){
+    if(!is.null(state_abb)){
       df <- df|>
         filter(.data$StateAb %in% state_abb)
     }

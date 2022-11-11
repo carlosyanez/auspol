@@ -76,7 +76,7 @@ Perhaps it is most interesting to see how each round of counting assigns votes, 
 
 ```{r plot1}
 house_preference_flow_plot(division = "Wills",year=2019) +
-  labs(title="Prefence Flow for Wills, 2019")
+  labs(title="Preference Flow for Wills, 2019")
 ```
 
 
@@ -84,7 +84,7 @@ By default the vote is present as percentage, which can be changed changing the 
 
 ```{r plot2}
 house_preference_flow_plot(division = "Wills",year=2019,var="Preference Count") +
-  labs(title="Prefence Flow for Wills, 2019")
+  labs(title="Preference Flow for Wills, 2019")
 
 ```
 
@@ -93,7 +93,7 @@ For analysis, it may be interesting to remove some parties from the initial roun
 
 ```{r plot3}
 house_preference_flow_plot(division = "Warringah",year=2022) +
-  labs(title="Prefence Flow for Warringah, 2022")
+  labs(title="Preference Flow for Warringah, 2022")
 
 ```
 

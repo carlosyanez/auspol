@@ -5,10 +5,10 @@
 \title{Obtain primary vote per candidate for a given set of divisions, for a set of years}
 \usage{
 get_house_primary_vote(
-  division = "all",
-  year = "all",
-  state_abb = "all",
-  party_abb = "all",
+  division = NULL,
+  year = NULL,
+  state_abb = NULL,
+  party_abb = NULL,
   aggregation = FALSE,
   polling_places = NULL
 )
@@ -24,7 +24,7 @@ get_house_primary_vote(
 
 \item{aggregation}{Whether to present division totals (defaults to FALSE)}
 
-\item{polling_places}{vector with polling places}
+\item{polling_places}{vector with regex for polling places}
 }
 \value{
 sf object with selected polygons

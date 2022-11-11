@@ -4,7 +4,7 @@
 \alias{get_house_turnout}
 \title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
 \usage{
-get_house_turnout(division = "all", year = "all")
+get_house_turnout(division = NULL, year = NULL)
 }
 \arguments{
 \item{division}{character with division name}

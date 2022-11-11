@@ -5,9 +5,9 @@
 \title{Get 2-party preferred party summary (Coalition vs ALP)}
 \usage{
 get_house_2PP(
-  division = "all",
-  year = "all",
-  state_abb = "all",
+  division = NULL,
+  year = NULL,
+  state_abb = NULL,
   aggregation = FALSE
 )
 }

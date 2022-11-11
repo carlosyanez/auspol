@@ -6,28 +6,25 @@
 
 #' Obtain get data from filename
 #' @return data frame with data from file, filtered by division and election year
-#' @importFrom dplyr filter
+#' @importFrom dplyr filter if_any
 #' @importFrom rlang .data
 #' @importFrom methods is
 #' @param  division vector with division names
-#' @param  election_year vector with election years
+#' @param  year vector with election years
 #' @param filename where the file is (parquet or zip containing parquet file)
 #' @noRd
-get_auspol_house_data <- function(filename,division, election_year){
+get_auspol_house_data <- function(filename,division=NULL, year=NULL){
 
   df <- load_auspol(filename)
 
-  # filter by year, ignore if year == "all"
-  if(!("all" %in% election_year)&(is(election_year,"numeric"))){
 
-    df  <- df |> filter(.data$Year %in% election_year)
+  if(!is.null(year)){
+      df <- df |> filter(if_any("Year",~ .x %in% year))
+
   }
+  if(!is.null(division)){
+      df <- df |> filter(if_any("DivisionNm", ~ .x %in% division))
 
-  #filter by division
-
-  if(!("all" %in% division)){
-
-    df <- df |> filter(.data$DivisionNm %in% division)
   }
 
   return(df)
@@ -40,7 +37,7 @@ get_auspol_house_data <- function(filename,division, election_year){
 #' @importFrom tidyr pivot_longer
 #' @importFrom tidyselect matches
 #' @param  division vector with division names
-#' @param  election_year vector with election years
+#' @param  year vector with election years
 #' @param filename where the file is (parquet or zip containing parquet file)
 #' @noRd
 check_division <- function(division,year){
