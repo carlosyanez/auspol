@@ -63,29 +63,12 @@ update_data <- function(file=NULL){
   }
 
   for(f in file){
+    delete_data(f)
     load_auspol(f,force=TRUE)
   }
 
 }
 
-#' Helper function to update/download  data
-#' @param file vectors with file name from repository. By default, downloads all files
-#' @returns nothing
-#' @export
-#' @keywords helpers
-#'
-update_data <- function(file=NULL){
-
-  if(is.null(file)){
-    file <- pb_download_url(repo = "carlosyanez/auspol",
-                            tag = "data")
-  }
-
-  for(f in file){
-    load_auspol(f,force=TRUE)
-  }
-
-}
 
 #' Helper function to update/download  data
 #' @importFrom fs dir_info
