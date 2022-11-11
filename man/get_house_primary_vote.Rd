@@ -34,4 +34,14 @@ Get primary vote for one or more divisions, for one or more elections.
 Data can be filtered by state, political party of polling locations. Results can be presented by
 polling station or aggregated by division.
 }
+\examples{
+\dontrun{
+# Primary vote in Brisbane, 2022 election
+get_house_primary_vote(division="Brisbane",year=2022)
+# Primary vote in Perth and Brisbane in 2019 and 2022 (aggregated)
+get_house_primary_vote(division=c("Brisbane","Perth"),year=c(2019,2022),aggregation = TRUE)
+# Primary vote for Greens candidates in Tasmania and the Northern Territory, 2019
+get_house_primary_vote(state=c("TAS","NT"),year=2019,aggregation = TRUE, party_abb=c("GRN"))
+}
+}
 \keyword{housegetdata}

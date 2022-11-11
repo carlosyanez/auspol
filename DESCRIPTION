@@ -45,6 +45,5 @@ Collate:
     'house_primary_vote_summary_data.R'
     'house_primary_vote_summary_plots.R'
     'lists.R'
-    'load_data.R'
     'onLoad.R'
     'plotting.R'

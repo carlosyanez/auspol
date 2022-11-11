@@ -6,7 +6,7 @@ author: "Carlos YANEZ SANTIBANEZ"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{House of Representatives - Preferences}
+  %\VignetteIndexEntry{House of Representatives - Get the data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -54,13 +54,30 @@ get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022),polling_
   filter(PartyAb=="ALP")
 ```
 
-The function also can present the division totals, fo
+The function also can present the division totals, for example:
 
 ```{r}
-
 get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022), aggregation = TRUE)
 ```
 
+To retrieve preferences for one division for a particular year, the function is called *get_house_preferences()*
+
+```{r}
+get_house_preferences("Wills",2019) |> head(10)
+
+```
 
 
+Similarly to the primary vote function, results can be aggregated and filtered by polling place:
+
+```{r}
+get_house_preferences("Wills",2019,aggregation = TRUE)
+
+```
+
+
+```{r}
+get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> 
+  head(10)
+```
 

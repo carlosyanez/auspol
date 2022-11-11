@@ -20,7 +20,7 @@
 #' # Check to see if it has been set correctly
 #' Sys.getenv('cache_dir')
 #' }
-cache_dir <- function(path) {
+manage_cache_dir <- function(path) {
   home <- Sys.getenv("HOME")
   renv <- file.path(home, ".Renviron")
 

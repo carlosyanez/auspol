@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_preferences_plot.R
 \name{house_preference_flow_plot}
 \alias{house_preference_flow_plot}
-\title{Plot preference flow, for a division for a given year}
+\title{Plot House of reps preferences flow}
 \usage{
 house_preference_flow_plot(
   division,
@@ -30,6 +30,16 @@ house_preference_flow_plot(
 preference flow, ggplot2 object
 }
 \description{
-Plot preference flow, for a division for a given year
+Plot flow of preferences in a division as an alluvial plot.
+}
+\examples{
+\dontrun{
+# Preference flow for Wills, 2019
+house_preference_flow_plot(division = "Wills",year=2019)
+# Preference flow for Warringah 2022,
+# excluding two finalists from round 1,
+# independent candidate in teal.
+house_preference_flow_plot(division = "Warringah",year=2022,
+}
 }
 \keyword{houseplots}

@@ -3,12 +3,14 @@
 ####################################################################
 
 
-#' Plot historical changes in primary vote in a electoral division (line chart)
+#' Plot primary vote history
+#' @description Plot historical primary vote results for a division or group of divisions, being able to select
+#' and aggregate political parties. Can plot either percentages or absolute number of ordinary votes.
 #' @importFrom dplyr filter select all_of rename
 #' @importFrom ggplot2 ggplot labs aes
 #' @importFrom stringr str_c
 #' @importFrom ggrepel geom_text_repel
-#' @param division named vector additional colour (hex)
+#' @param division named vector with division names
 #' @param plotted_variable Variable to plot, out of "OrdinaryVotes", "Percentage" (default) and Percentage_with_Informal
 #' @param parties which parties to include in the summary. All (default), a vector of strings
 #'  with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.
@@ -29,6 +31,10 @@
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
+#' @examples \dontrun{
+#' #
+#'
+#' }
 house_primary_historic_plot <- function(division=NULL,
                               plotted_variable="Percentage",
                               parties=NULL,

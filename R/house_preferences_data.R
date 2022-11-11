@@ -221,7 +221,9 @@ preferences_lode         <- function(preferences,var){
 
 
 
-#' Get preference flow (rounds) for en electorate on a given election
+#' Flow of preferences in a division.
+#' @description retrieves data containing preferential voting rounds for a division in a particular election (as published by the AEC).
+#' Can be filtered by polling place (including special modes of voting) or it can be presented as an aggregate per division.
 #' @return list with data frames with results for each round
 #' @param  division division
 #' @param  year election year
@@ -235,12 +237,19 @@ preferences_lode         <- function(preferences,var){
 #' @importFrom rlang .data
 #' @export
 #' @keywords houseconvenience
+#' @examples \dontrun{
+#' #get preferences for Wills, 2019
+#' get_house_preferences("Wills",2019)
+#' show results for absent votes only
+#' get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE)
+#'
+#' }
 house_preference_flow_data <- function(division,year,
                                        individualise_IND = TRUE,
                                        exclude_parties= NULL,
                                        exclude_rounds = 0){
 
-  data<-get_house_preferences(division,year)
+  data<-get_house_preferences(division,year,aggregation=TRUE)
 
   if(individualise_IND){
     data <- data |>

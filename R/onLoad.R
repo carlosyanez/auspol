@@ -6,7 +6,7 @@
   cache_path <- file.path(home, ".auspol_cache")
 
   if(!dir.exists(cache_path))
-    cache_dir(cache_path)
+    manage_cache_dir(cache_path)
 
 
 }

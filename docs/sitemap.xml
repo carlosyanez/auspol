@@ -4,6 +4,9 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/articles/house_getting_data.html</loc>
+  </url>
+  <url>
     <loc>/articles/house_preference_flow.html</loc>
   </url>
   <url>
@@ -29,6 +32,9 @@
   </url>
   <url>
     <loc>/reference/auspol_theme.html</loc>
+  </url>
+  <url>
+    <loc>/reference/delete_data.html</loc>
   </url>
   <url>
     <loc>/reference/geom_auspol_line.html</loc>
@@ -70,6 +76,9 @@
     <loc>/reference/house_primary_vote_summary.html</loc>
   </url>
   <url>
+    <loc>/reference/import_data.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -83,6 +92,9 @@
   </url>
   <url>
     <loc>/reference/list_years.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ls_data.html</loc>
   </url>
   <url>
     <loc>/reference/manage_colours.html</loc>

@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_primary_vote_summary_plots.R
 \name{house_primary_historic_plot}
 \alias{house_primary_historic_plot}
-\title{Plot historical changes in primary vote in a electoral division (line chart)}
+\title{Plot primary vote history}
 \usage{
 house_primary_historic_plot(
   division = NULL,
@@ -20,7 +20,7 @@ house_primary_historic_plot(
 )
 }
 \arguments{
-\item{division}{named vector additional colour (hex)}
+\item{division}{named vector with division names}
 
 \item{plotted_variable}{Variable to plot, out of "OrdinaryVotes", "Percentage" (default) and Percentage_with_Informal}
 
@@ -54,6 +54,13 @@ to plot, folowing the format from the output of  house_primary_vote_summary().}
 ggplot2 object
 }
 \description{
-Plot historical changes in primary vote in a electoral division (line chart)
+Plot historical primary vote results for a division or group of divisions, being able to select
+and aggregate political parties. Can plot either percentages or absolute number of ordinary votes.
+}
+\examples{
+\dontrun{
+#
+
+}
 }
 \keyword{houseplots}

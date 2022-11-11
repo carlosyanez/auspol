@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_preferences_data.R
 \name{house_preference_flow_data}
 \alias{house_preference_flow_data}
-\title{Get preference flow (rounds) for en electorate on a given election}
+\title{Flow of preferences in a division.}
 \usage{
 house_preference_flow_data(
   division,
@@ -28,6 +28,16 @@ from "IND" to "IND-<<candidate's surname>>", effectively separating them in part
 list with data frames with results for each round
 }
 \description{
-Get preference flow (rounds) for en electorate on a given election
+retrieves data containing preferential voting rounds for a division in a particular election (as published by the AEC).
+Can be filtered by polling place (including special modes of voting) or it can be presented as an aggregate per division.
+}
+\examples{
+\dontrun{
+#get preferences for Wills, 2019
+get_house_preferences("Wills",2019)
+show results for absent votes only
+get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE)
+
+}
 }
 \keyword{houseconvenience}

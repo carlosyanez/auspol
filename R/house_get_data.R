@@ -23,8 +23,8 @@
 #' # Primary vote in Perth and Brisbane in 2019 and 2022 (aggregated)
 #' get_house_primary_vote(division=c("Brisbane","Perth"),year=c(2019,2022),aggregation = TRUE)
 #' # Primary vote for Greens candidates in Tasmania and the Northern Territory, 2019
-#' get_house_primary_vote(state=c("TAS",NT"),year=2019,aggregation = TRUE, party_abb=c("GRN"))
-#'  }
+#' get_house_primary_vote(state=c("TAS","NT"),year=2019,aggregation = TRUE, party_abb=c("GRN"))
+#' }
 #' @export
 #' @keywords housegetdata
 get_house_primary_vote <- function(division=NULL,
@@ -117,16 +117,17 @@ get_house_turnout <- function(division=NULL,year=NULL){
 #' @keywords housegetdata
 #' @examples \dontrun{
 #' # basic use
-#' get_house_preferences("Wills",2019)
-#' # disaggregated version
-#' get_house_preferences("Wills",2019,aggregation = FALSE) |> head(10)
+#' get_house_preferences("Wills",2019) |> head(10)
+#' # aggregated version
+#' get_house_preferences("Wills",2019,aggregation = TRUE)
 #' # filtered by polling place
-#' get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
+#' get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> head(10)
+#'
 #' }
 get_house_preferences <- function(division,
                                   year,
                                   polling_places=NULL,
-                                  aggregation=TRUE){
+                                  aggregation=FALSE){
 
   division_info <- check_division(division,year)
 

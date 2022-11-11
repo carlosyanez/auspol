@@ -1,5 +1,6 @@
 
-#' Plot preference flow, for a division for a given year
+#' Plot House of reps preferences flow
+#' @description Plot flow of preferences in a division as an alluvial plot.
 #' @importFrom ggplot2 ggplot aes labs
 #' @importFrom ggalluvial geom_flow geom_stratum
 #' @param division Electoral division
@@ -12,6 +13,16 @@
 #' @include internal.R
 #' @export
 #' @keywords houseplots
+#' @examples \dontrun{
+#' # Preference flow for Wills, 2019
+#' house_preference_flow_plot(division = "Wills",year=2019)
+#' # Preference flow for Warringah 2022,
+#' # excluding two finalists from round 1,
+#' # independent candidate in teal.
+#' house_preference_flow_plot(division = "Warringah",year=2022,
+#   exclude_parties = c("LP","IND-STEGGALL"),
+#   extra_colours = c("IND-STEGGALL"="#008080"))
+#' }
 house_preference_flow_plot <- function(division,year,
                                        var="Percent",
                                        exclude_parties= NULL,

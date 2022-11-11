@@ -9,10 +9,10 @@ get_house_preferences(
   division,
   year,
   polling_places = NULL,
-  aggregation = TRUE
+  aggregation = FALSE
 )
 
-get_preferences(division, year, polling_places = NULL, aggregation = TRUE)
+get_preferences(division, year, polling_places = NULL, aggregation = FALSE)
 }
 \arguments{
 \item{division}{vector with division names}
@@ -32,11 +32,12 @@ Get list of with turnout all elected MPs, for groups of divisions, for given yea
 \examples{
 \dontrun{
 # basic use
-get_house_preferences("Wills",2019)
-# disaggregated version
-get_house_preferences("Wills",2019,aggregation = FALSE) |> head(10)
+get_house_preferences("Wills",2019) |> head(10)
+# aggregated version
+get_house_preferences("Wills",2019,aggregation = TRUE)
 # filtered by polling place
-get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
+get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> head(10)
+
 }
 }
 \keyword{housegetdata}
