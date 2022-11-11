@@ -13,7 +13,8 @@ list_divisions(filters = NULL)
 data frame with lists of divisions
 }
 \description{
-get list of all the divsi
+get list of all the Australian Federal electoral divisions, being able to
+filter by any attribute. Covers all divisions from the 2004 Election.
 }
 \examples{
 \dontrun{

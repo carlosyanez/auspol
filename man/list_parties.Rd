@@ -2,7 +2,7 @@
 % Please edit documentation in R/lists.R
 \name{list_parties}
 \alias{list_parties}
-\title{List all political parties participating in a election year, for a state, or matching a pattern in their full name}
+\title{List all political parties.}
 \usage{
 list_parties(filters = NULL, party_regex = NULL)
 }
@@ -15,7 +15,8 @@ list_parties(filters = NULL, party_regex = NULL)
 data frame with lists of divisions
 }
 \description{
-List all political parties participating in a election year, for a state, or matching a pattern in their full name
+Lists all political parties that have participated from the 2004 Election onwards.
+Parties are presented as recorded by the AEC. List can be filtered by party names matching a regular expression.
 }
 \examples{
 \dontrun{

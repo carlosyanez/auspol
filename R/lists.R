@@ -23,7 +23,8 @@ list_years <- function(){
 
 
 #' Get list of divisions
-#' @description get list of all the divsi
+#' @description get list of all the Australian Federal electoral divisions, being able to
+#' filter by any attribute. Covers all divisions from the 2004 Election.
 #' @importFrom methods is
 #' @importFrom dplyr filter across if_any if_any
 #' @param filters *(optional)* list() with filters in the form list(Column="Value")
@@ -53,7 +54,9 @@ list_divisions <- function(filters=NULL){
 }
 
 
-#' List all political parties participating in a election year, for a state, or matching a pattern in their full name
+#' List all political parties.
+#' @description Lists all political parties that have participated from the 2004 Election onwards.
+#' Parties are presented as recorded by the AEC. List can be filtered by party names matching a regular expression.
 #' @importFrom methods is
 #' @importFrom dplyr filter across if_any arrange mutate
 #' @importFrom tidyr pivot_wider
@@ -95,6 +98,9 @@ list_parties <- function(filters=NULL,party_regex=NULL){
 }
 
 #' List all polling stations
+#' @description Retrieve list of all polling station that been used from 2044 onwards.
+#' Names as recorded by the AEC. List can be filtered by state, division names and
+#' regular expressions matching their names.
 #' @importFrom methods is
 #' @importFrom dplyr filter across if_any
 #' @param filters (optional) list() with filters in the form list(Column="Value")

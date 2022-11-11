@@ -13,7 +13,9 @@ list_polling_places(filters = NULL)
 data frame with lists of polling stations
 }
 \description{
-List all polling stations
+Retrieve list of all polling station that been used from 2044 onwards.
+Names as recorded by the AEC. List can be filtered by state, division names and
+regular expressions matching their names.
 }
 \examples{
 \dontrun{

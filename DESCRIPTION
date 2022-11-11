@@ -37,7 +37,7 @@ Suggests:
     knitr,rmarkdown 
 VignetteBuilder: knitr
 Collate: 
-    'helpers.R'
+    'cache_management.R'
     'internal.R'
     'house_get_data.R'
     'house_preferences_data.R'
@@ -45,5 +45,6 @@ Collate:
     'house_primary_vote_summary_data.R'
     'house_primary_vote_summary_plots.R'
     'lists.R'
+    'load_data.R'
     'onLoad.R'
     'plotting.R'

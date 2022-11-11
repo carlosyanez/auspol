@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_get_data.R
 \name{get_house_primary_vote}
 \alias{get_house_primary_vote}
-\title{Obtain primary vote per candidate for a given set of divisions, for a set of years}
+\title{Primary vote for House Elections}
 \usage{
 get_house_primary_vote(
   division = NULL,
@@ -30,6 +30,8 @@ get_house_primary_vote(
 sf object with selected polygons
 }
 \description{
-Obtain primary vote per candidate for a given set of divisions, for a set of years
+Get primary vote for one or more divisions, for one or more elections.
+Data can be filtered by state, political party of polling locations. Results can be presented by
+polling station or aggregated by division.
 }
 \keyword{housegetdata}
