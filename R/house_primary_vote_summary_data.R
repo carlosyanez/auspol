@@ -18,6 +18,7 @@
 #' @param parties_year If *parties* has is NULL or a number, this indicates if the selection needs to be from
 #' a certain year (.e.g only select the historical data for the three top parties in 2012)
 #' @param include_others  Boolean used along *parties* to included the remaining votes in one "Other" category.
+#' @param merge_parties list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))
 #' @param include_informal Boolean to add informal votes in addition to the party selection.
 #'  Informal votes will be included if no parties are selected, or the top n parties are selected,
 #'   and it happens to be in the top n - even if this flag is set to false.
@@ -36,6 +37,7 @@ house_primary_vote_summary <- function(division=NULL,
                                  parties=NULL,
                                  parties_year=NULL,
                                  include_others=FALSE,
+                                 merge_parties=NULL,
                                  include_informal=FALSE,
                                  include_names = TRUE,
                                  individualise_IND = FALSE,

@@ -15,7 +15,8 @@
 #' @param parties which parties to include in the summary. All (default), a vector of strings
 #'  with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.
 #' @param parties_year If *parties* has is NULL or a number, this indicates if the selection needs to be from
-#' a certain year (.e.g only select the historical data for the three top parties in 2012)
+#' a certain year (.e.g only select the historical data for the three top parties in 2012).
+#' @param merge_parties list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))
 #' @param include_others  Boolean used along *parties* to included the remaining votes in one "Other" category.
 #' @param include_informal Boolean to add informal votes in addition to the party selection.
 #'  Informal votes will be included if no parties are selected, or the top n parties are selected,
@@ -39,6 +40,7 @@ house_primary_historic_plot <- function(division=NULL,
                               plotted_variable="Percentage",
                               parties=NULL,
                               parties_year=NULL,
+                              merge_parties=NULL,
                               include_others=FALSE,
                               include_informal=FALSE,
                               individualise_IND = FALSE,
@@ -59,6 +61,7 @@ house_primary_historic_plot <- function(division=NULL,
                                  parties=parties,
                                  parties_year=parties_year,
                                  include_others=include_others,
+                                 merge_parties=NULL,
                                  include_informal=include_informal,
                                  include_names = FALSE,
                                  individualise_IND = individualise_IND,

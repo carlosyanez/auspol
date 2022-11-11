@@ -104,7 +104,24 @@ house_primary_vote_summary(division="Franklin",parties="LP")
 ```
 
 
-
-
 ## Plotting 
+
+
+The first plotting convenience function in this packages allows to compare the evolution of primary voting across time. This function relies on house_primary_summary and uses many of its options. It's first use is to represent party trends in one electorate:
+
+```{r}
+house_primary_historic_plot("Canberra")
+```
+
+As in many cases there are many minor parties, it is sometime useful just to focus in a number of parties. This function allow to filter by a number of parties or by filtering by the most voted in a certain year. In both cases it is possible to consolidate the others votes.
+
+MERGE VALUES PENDIND
+
+
+```{r}
+house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include_others = TRUE )
+
+```
+
+
 

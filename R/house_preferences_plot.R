@@ -7,6 +7,7 @@
 #' @param year Election year
 #' @param var Variable to be plotted "Percent" (default) or "Preference Count"
 #' @param exclude_parties vector with party acronyms to exclude from plot
+#' @param merge_parties list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))
 #' @param extra_colours manual mapping of colours for each party, as a named vector.
 #' @param include_data If set to TRUE, output of primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
 #' @return preference flow, ggplot2 object
@@ -26,6 +27,7 @@
 house_preference_flow_plot <- function(division,year,
                                        var="Percent",
                                        exclude_parties= NULL,
+                                       merge_parties = NULL,
                                        extra_colours=NULL,
                                        include_data=FALSE
 ){
