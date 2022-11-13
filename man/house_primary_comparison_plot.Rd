@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_primary_vote_summary_plots.R
 \name{house_primary_comparison_plot}
 \alias{house_primary_comparison_plot}
-\title{Plot historical changes in primary vote in a electoral division (line chart)}
+\title{Plot historical changes in primary vote}
 \usage{
 house_primary_comparison_plot(
   division = NULL,
@@ -14,7 +14,7 @@ house_primary_comparison_plot(
   extra_colours = NULL,
   plot_format = "lollipop",
   include_labels = FALSE,
-  nudge_x = 5,
+  hor_nudge = 5,
   parties = NULL,
   parties_year = NULL,
   merge_parties = NULL,
@@ -44,7 +44,7 @@ house_primary_comparison_plot(
 
 \item{include_labels}{If set to TRUE, the plot will include each value.}
 
-\item{nudge_x}{if labels are included, separation from chart/dot}
+\item{hor_nudge}{if labels are included, separation from chart/dot}
 
 \item{parties}{which parties to include in the summary. All (default), a vector of strings
 with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.}
@@ -72,6 +72,21 @@ to plot, following the format from the output of  house_primary_vote_summary().}
 ggplot2 object
 }
 \description{
-Plot historical changes in primary vote in a electoral division (line chart)
+Line chart with historial changes for a division, group of candidates in a party,
+selected parties, etc.
+}
+\examples{
+\dontrun{
+# Compare primary voting in Kooyong in 2022,  lollipop chart (default)
+house_primary_comparison_plot(division = "Kooyong",
+                              year=2022,
+                              individualise_IND = TRUE)
+# Liberal Primary vote in Tasmania in 2022, bar chart
+house_primary_comparison_plot(state="TAS",
+                              year=2022,
+                              parties=c("LP"),
+                              plot_format = "bar")
+
+}
 }
 \keyword{houseplots}

@@ -4,6 +4,12 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>/articles/house_getting_data.html</loc>
   </url>
   <url>
@@ -25,16 +31,25 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
     <loc>/reference/auspol_theme.html</loc>
   </url>
   <url>
+    <loc>/reference/data_delete.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_import.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_info.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_update.html</loc>
+  </url>
+  <url>
     <loc>/reference/delete_data.html</loc>
+  </url>
+  <url>
+    <loc>/reference/find_cache.html</loc>
   </url>
   <url>
     <loc>/reference/geom_auspol_line.html</loc>
@@ -59,6 +74,15 @@
   </url>
   <url>
     <loc>/reference/get_house_turnout.html</loc>
+  </url>
+  <url>
+    <loc>/reference/house_2PF_plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/house_2PP_comparison_plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/house_2PP_historical_plot.html</loc>
   </url>
   <url>
     <loc>/reference/house_preference_flow_data.html</loc>

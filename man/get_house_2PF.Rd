@@ -2,14 +2,14 @@
 % Please edit documentation in R/house_get_data.R
 \name{get_house_2PF}
 \alias{get_house_2PF}
-\title{Get 2-party preferred flow (as calculated by the ABS), for an division on a given election}
+\title{Two-party preferred flow}
 \usage{
 get_house_2PF(division, year, aggregation = FALSE)
 }
 \arguments{
-\item{division}{character with division name}
+\item{division}{character vector with division names. When left blank, returns all division.}
 
-\item{year}{number with election year}
+\item{year}{number vector with election years. When left blank, returns all years.}
 
 \item{aggregation}{Whether to present division totals (defaults to FALSE)}
 }
@@ -17,6 +17,12 @@ get_house_2PF(division, year, aggregation = FALSE)
 dataframe with list of elected MPs
 }
 \description{
-Get 2-party preferred flow (as calculated by the ABS), for an division on a given election
+Get flow from primary vote to finalists, for an division on a given election
+}
+\examples{
+\dontrun{
+# get primary to finalist flow of preferences for Jagajaga in the 2013 election
+get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
+}
 }
 \keyword{housegetdata}

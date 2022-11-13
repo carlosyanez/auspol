@@ -51,11 +51,12 @@ manage_cache_dir <- function(path) {
 
 #' Helper function to update/download  data
 #' @param file vectors with file name from repository. By default, downloads all files
+#' @importFrom fs file_exists
 #' @returns nothing
 #' @export
 #' @keywords helpers
 #'
-update_data <- function(file=NULL){
+data_update <- function(file=NULL){
 
   if(is.null(file)){
     file <- pb_download_url(repo = "carlosyanez/auspol",
@@ -63,7 +64,7 @@ update_data <- function(file=NULL){
   }
 
   for(f in file){
-    delete_data(f)
+    if(file_exists(f)) data_delete(f)
     load_auspol(f,force=TRUE)
   }
 
@@ -75,7 +76,7 @@ update_data <- function(file=NULL){
 #' @returns nothing
 #' @export
 #' @keywords helpers
-ls_data <- function(){
+data_info <- function(){
   cache_dir <- Sys.getenv('auspol_cache_dir')
   dir_info(cache_dir)
 }
@@ -86,11 +87,9 @@ ls_data <- function(){
 #' @param file to delete - defaults to all of them
 #' @export
 #' @keywords helpers
-delete_data <- function(file=NULL){
-  cache_dir <- Sys.getenv('auspol_cache_dir')
-
+data_delete <- function(file=NULL){
   if(is.null(file)){
-    file <- dir_ls(cache_dir)
+    file <- data_info()$path
   }
 
   file_delete(file)
@@ -102,7 +101,7 @@ delete_data <- function(file=NULL){
 #' @param file file to import to the cache
 #' @export
 #' @keywords helpers
-import_data <- function(file){
+data_import <- function(file){
   cache_dir <- Sys.getenv('auspol_cache_dir')
   file_copy(file,path(cache_dir,file),TRUE)
 

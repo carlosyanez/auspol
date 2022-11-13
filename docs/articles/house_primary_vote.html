@@ -85,7 +85,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-13</h4>
+            <h4 data-toc-skip class="date">2022-11-14</h4>
       
       
       <div class="d-none name"><code>house_primary_vote.Rmd</code></div>
@@ -307,14 +307,17 @@ just to focus in a number of parties. This function allow to filter by a
 number of parties or by filtering by the most voted in a certain year.
 In both cases it is possible to consolidate the others votes.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span>, parties <span class="op">=</span><span class="fl">3</span>, parties_year <span class="op">=</span> <span class="fl">2022</span>, include_others <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span>, parties <span class="op">=</span><span class="fl">3</span>, </span>
+<span>                            parties_year <span class="op">=</span> <span class="fl">2022</span>, </span>
+<span>                            include_others <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span></span></code></pre></div>
 <p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote2-1.png" alt="plot of chunk primvote2" width="100%"></p>
 <p>Finally, it is possible to aggregate party acronyms - sometimes a
 same party has changed named or registered differently</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Brisbane"</span>,parties<span class="op">=</span><span class="fl">5</span>,</span>
-<span>                            merge_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>LNP<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LNP"</span>,<span class="st">"LNQ"</span>,<span class="st">"LP"</span><span class="op">)</span>,ON<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"HAN"</span>,<span class="st">"ON"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<span>                            merge_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>LNP<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LNP"</span>,<span class="st">"LNQ"</span>,<span class="st">"LP"</span><span class="op">)</span>,</span>
+<span>                                                 ON<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"HAN"</span>,<span class="st">"ON"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
 <p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote3-1.png" alt="plot of chunk primvote3" width="100%"></p>
 </div>
 </div>

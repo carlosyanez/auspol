@@ -3,21 +3,28 @@
 \name{get_house_MPs}
 \alias{get_house_MPs}
 \alias{get_MPs}
-\title{Reetrieve elected MPs, for groups of divisions, for given year}
+\title{Elected MPs}
 \usage{
 get_house_MPs(division = NULL, year = NULL)
 
 get_MPs(division = NULL, year = NULL)
 }
 \arguments{
-\item{division}{vector with division names}
+\item{division}{character vector with division names. When left blank, returns all division.}
 
-\item{year}{vector with election years}
+\item{year}{number vector with election years. When left blank, returns all years.}
 }
 \value{
-dataframe with list of elected MPs
+data frame with list of elected MPs
 }
 \description{
-Reetrieve elected MPs, for groups of divisions, for given year
+Retrieve list of elected MPs, filterable by division and year
+}
+\examples{
+\dontrun{
+# Elected MPs in Melbourne and Cooper, 2019 and 2022
+get_house_MPs(division = c("Melbourne","Cooper"),
+              year = c(2019,2022))
+}
 }
 \keyword{housegetdata}

@@ -85,7 +85,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-13</h4>
+            <h4 data-toc-skip class="date">2022-11-14</h4>
       
       
       <div class="d-none name"><code>house_preference_flow.Rmd</code></div>
@@ -100,17 +100,19 @@ the preference distribution data:</p>
 <li>get_house_preferences()</li>
 <li>house_preference_flow_data()</li>
 <li>house_preference_flow_plot()</li>
+<li>get_house_2PF()</li>
+<li>get_house_2PP()</li>
 </ul>
-<div class="section level2">
-<h2 id="what-is-this">What is this?<a class="anchor" aria-label="anchor" href="#what-is-this"></a>
-</h2>
+<div class="section level3">
+<h3 id="what-is-this">What is this?<a class="anchor" aria-label="anchor" href="#what-is-this"></a>
+</h3>
 <p>If you are unfamiliar with the Australian electoral system and
 preferential voting, please look at this <a href="https://www.aec.gov.au/learn/preferential-voting.html" class="external-link">explainer</a>
 before proceeding.</p>
 </div>
-<div class="section level2">
-<h2 id="getting-the-data">Getting the data<a class="anchor" aria-label="anchor" href="#getting-the-data"></a>
-</h2>
+<div class="section level3">
+<h3 id="getting-the-data">Getting the data<a class="anchor" aria-label="anchor" href="#getting-the-data"></a>
+</h3>
 <p>get_house_preferences() - provides an interface to access preference
 flows for a particular division (electorate) on a given year, as
 published in the AEC’s website . For instance:</p>
@@ -228,9 +230,9 @@ In its most basic use:</p>
 through its use as part of the next function,
 house_preference_flow_plot().</p>
 </div>
-<div class="section level2">
-<h2 id="plotting-preference-flows-">Plotting Preference flows.<a class="anchor" aria-label="anchor" href="#plotting-preference-flows-"></a>
-</h2>
+<div class="section level3">
+<h3 id="plotting-preference-flows-">Plotting Preference flows.<a class="anchor" aria-label="anchor" href="#plotting-preference-flows-"></a>
+</h3>
 <p>Perhaps it is most interesting to see how each round of counting
 assigns votes, until a candidate is chosen. For, this, this packages
 comes with the convenience function house_preference_flow_plot(), which
@@ -285,6 +287,77 @@ house_preference_flow_plot() directly, via <em>include_data</em>:</p>
 <span><span class="co">#&gt; 4  2022 NSW            151 Warringah         0          1   37516 TRIPP   Steven… ON      Paulin…    1980       0       4 FALSE</span></span>
 <span><span class="co">#&gt; 5  2022 NSW            151 Warringah         0          7   36396 PATERS… Kate A… AJP     Animal…    1475       0       5 TRUE </span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​`Preference Count`, ⁴​`Transfer Count`, ⁵​RoundPosition</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="flow-from-primary-vote-to-last-round">Flow from primary vote to last round<a class="anchor" aria-label="anchor" href="#flow-from-primary-vote-to-last-round"></a>
+</h2>
+<p>Although the last plot can be informative, The AEC also records how o
+understand how the votes has flow from primary votes to the two last
+candidates. This can be accessed through <em>get_house_2PF()</em></p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_2PF.html">get_house_2PF</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Lingiari"</span>,year<span class="op">=</span><span class="fl">2013</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 16 × 17</span></span>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm FromCa…¹ FromC…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ ToCan…⁷ ToCan…⁸ ToCan…⁹ ToCan…˟ ToCan…˟</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  </span></span>
+<span><span class="co">#&gt;  1  2013 NT             306 Lingiari      24971 IND     Indepe… GOULD   Alfred        3   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt;  2  2013 NT             306 Lingiari      24971 IND     Indepe… GOULD   Alfred        3   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt;  3  2013 NT             306 Lingiari      28006 CEC     Citize… FLYNN   Peter         7   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt;  4  2013 NT             306 Lingiari      28006 CEC     Citize… FLYNN   Peter         7   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt;  5  2013 NT             306 Lingiari      28016 IND     Indepe… EARLEY  Braedon       5   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt;  6  2013 NT             306 Lingiari      28016 IND     Indepe… EARLEY  Braedon       5   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt;  7  2013 NT             306 Lingiari      28555 GRN     Austra… HOAD    Rob           8   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt;  8  2013 NT             306 Lingiari      28555 GRN     Austra… HOAD    Rob           8   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt;  9  2013 NT             306 Lingiari      28561 RUA     Rise U… McCART… Regina        6   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt; 10  2013 NT             306 Lingiari      28561 RUA     Rise U… McCART… Regina        6   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt; 11  2013 NT             306 Lingiari      28735 ALP     Austra… SNOWDON Warren        2   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt; 12  2013 NT             306 Lingiari      28827 CLP     Countr… MacFAR… Tina          9   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt; 13  2013 NT             306 Lingiari      28849 ASP     Shoote… RIGHTON Chris         1   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt; 14  2013 NT             306 Lingiari      28849 ASP     Shoote… RIGHTON Chris         1   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt; 15  2013 NT             306 Lingiari      29433 IND     Indepe… GUYULA  Yingiy…       4   28735 ALP     Austra… SNOWDON Warren </span></span>
+<span><span class="co">#&gt; 16  2013 NT             306 Lingiari      29433 IND     Indepe… GUYULA  Yingiy…       4   28827 CLP     Countr… MacFAR… Tina   </span></span>
+<span><span class="co">#&gt; # … with 2 more variables: ToCandidateBallotPosition &lt;int&gt;, TransferCount &lt;int&gt;, and abbreviated variable names</span></span>
+<span><span class="co">#&gt; #   ¹​FromCandidateId, ²​FromCandidatePartyAb, ³​FromCandidatePartyNm, ⁴​FromCandidateSurname, ⁵​FromCandidateGivenNm,</span></span>
+<span><span class="co">#&gt; #   ⁶​FromCandidateBallotPosition, ⁷​ToCandidateId, ⁸​ToCandidatePartyAb, ⁹​ToCandidatePartyNm, ˟​ToCandidateSurname,</span></span>
+<span><span class="co">#&gt; #   ˟​ToCandidateGivenNm</span></span></code></pre></div>
+<p>These results can be charted using <em>house_2PF_plot</em>. This
+function can present the results either in alluvial or bar chart
+format.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_2PF_plot.html">house_2PF_plot</a></span><span class="op">(</span><span class="st">"Lingiari"</span>,<span class="fl">2013</span>,plot_format <span class="op">=</span> <span class="st">"alluvial"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-preference-flowplot6-1.png" alt="plot of chunk plot6" width="100%"></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_2PF_plot.html">house_2PF_plot</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Burt"</span>,</span>
+<span>               year<span class="op">=</span><span class="fl">2022</span>,</span>
+<span>               plot_format <span class="op">=</span> <span class="st">"bar"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-preference-flowplot7-1.png" alt="plot of chunk plot7" width="100%"></p>
+</div>
+<div class="section level2">
+<h2 id="two-party-preferred">Two-party preferred<a class="anchor" aria-label="anchor" href="#two-party-preferred"></a>
+</h2>
+<p>The AEC also publishes <a href="https://en.wikipedia.org/wiki/Two-party-preferred_vote" class="external-link">Two-Party-Preferred</a>
+summaries (<a href="https://en.wikipedia.org/wiki/Coalition_(Australia)" class="external-link">Coalition</a>
+against Labor). These are available through * get_house_2PP()*, which
+allows to filter by division and year, and can be displayed by division
+or polling place</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_2PP.html">get_house_2PP</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Fraser"</span>,year<span class="op">=</span><span class="fl">2004</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 9</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` Total…¹ Liber…² Austr…³</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                                   &lt;int&gt;                          &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2004 ACT            102 Fraser                                  30546                          53134   83680   0.365   0.635</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​TotalVotes, ²​`Liberal/National Coalition Percentage`,</span></span>
+<span><span class="co">#&gt; #   ³​`Australian Labor Party Percentage`</span></span></code></pre></div>
+<p>The package, includes two plots to visualise this data. The first
+(<em>house_2PP_comparison_plot()</em>), displays the results for a given
+election, for one or a number of electorates.</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_2PP_comparison_plot.html">house_2PP_comparison_plot</a></span><span class="op">(</span>year<span class="op">=</span><span class="fl">2022</span>,state<span class="op">=</span><span class="st">"VIC"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-preference-flowplot8-1.png" alt="plot of chunk plot8" width="100%"></p>
+<p>The second function - ** - shows the historical results for a given
+division.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_2PP_historical_plot.html">house_2PP_historical_plot</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Aston"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-preference-flowplot9-1.png" alt="plot of chunk plot9" width="100%"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

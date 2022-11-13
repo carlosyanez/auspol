@@ -72,6 +72,7 @@
 <span>  parties <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  parties_year <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  include_others <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  merge_parties <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  include_informal <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  include_names <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  individualise_IND <span class="op">=</span> <span class="cn">FALSE</span>,</span>
@@ -107,6 +108,10 @@ a certain year (.e.g only select the historical data for the three top parties i
 <dd><p>Boolean used along <em>parties</em> to included the remaining votes in one "Other" category.</p></dd>
 
 
+<dt>merge_parties</dt>
+<dd><p>list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))</p></dd>
+
+
 <dt>include_informal</dt>
 <dd><p>Boolean to add informal votes in addition to the party selection.
 Informal votes will be included if no parties are selected, or the top n parties are selected,
@@ -135,6 +140,10 @@ and  "Percentage" (which is the percentage counted on elections).</p></dd>
 <p>dataframe</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

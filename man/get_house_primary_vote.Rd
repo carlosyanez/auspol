@@ -14,9 +14,9 @@ get_house_primary_vote(
 )
 }
 \arguments{
-\item{division}{vector with division names}
+\item{division}{character vector with division names. When left blank, returns all division.}
 
-\item{year}{vector with election years}
+\item{year}{number vector with election years. When left blank, returns all years.}
 
 \item{state_abb}{vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)}
 

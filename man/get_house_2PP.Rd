@@ -2,7 +2,7 @@
 % Please edit documentation in R/house_get_data.R
 \name{get_house_2PP}
 \alias{get_house_2PP}
-\title{Get 2-party preferred party summary (Coalition vs ALP)}
+\title{Two-party-preferred summary}
 \usage{
 get_house_2PP(
   division = NULL,
@@ -12,9 +12,9 @@ get_house_2PP(
 )
 }
 \arguments{
-\item{division}{character with division name}
+\item{division}{character vector with division names. When left blank, returns all division.}
 
-\item{year}{number with election year}
+\item{year}{number vector with election years. When left blank, returns all years.}
 
 \item{state_abb}{vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)}
 
@@ -24,6 +24,13 @@ get_house_2PP(
 dataframe with list of elected MPs
 }
 \description{
-Get 2-party preferred party summary (Coalition vs ALP)
+Get 2-party preferred party summary (Coalition vs ALP), as calculated by the AEC.
+}
+\examples{
+\dontrun{
+get_house_2PP(division = "Indi",
+year=2016,
+aggregation = TRUE)
+}
 }
 \keyword{housegetdata}

@@ -85,7 +85,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-13</h4>
+            <h4 data-toc-skip class="date">2022-11-14</h4>
       
       
       <div class="d-none name"><code>house_getting_data.Rmd</code></div>
@@ -102,15 +102,15 @@ are:</p>
 <ul>
 <li>get_house_primary_vote()</li>
 <li>get_house_preferences()</li>
-<li>get_house_MPs()</li>
-<li>get_house_turnout()</li>
 <li>get_house_2PF()</li>
 <li>get_house_2PP()</li>
+<li>get_house_MPs()</li>
+<li>get_house_turnout()</li>
 </ul>
 <p>Please note that the presented here is shown as downloaded from the
 AEC’s website.</p>
 <div class="section level2">
-<h2 id="get-primary-vote-and-preferences">Get primary vote and preferences<a class="anchor" aria-label="anchor" href="#get-primary-vote-and-preferences"></a>
+<h2 id="primary-vote">Primary Vote<a class="anchor" aria-label="anchor" href="#primary-vote"></a>
 </h2>
 <p>It is possible to get all primary vote results for all electorates in
 all electon from 2044, by running <em>get_house_primary_vote()</em>.
@@ -139,7 +139,9 @@ electorates in polling places named “Perth”:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>,polling_places <span class="op">=</span> <span class="st">"Perth"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,</span>
+<span>                       year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>,</span>
+<span>                       polling_places <span class="op">=</span> <span class="st">"Perth"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">PartyAb</span><span class="op">==</span><span class="st">"ALP"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 17</span></span>
 <span><span class="co">#&gt;    Year StateAb Divisio…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing</span></span>
@@ -152,7 +154,9 @@ electorates in polling places named “Perth”:</p>
 <span><span class="co">#&gt; #   ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes</span></span></code></pre></div>
 <p>The function also can present the division totals, for example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>, aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,</span>
+<span>                       year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>, </span>
+<span>                       aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 37 × 14</span></span>
 <span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    Ballot…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴</span></span>
 <span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;         &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
@@ -167,6 +171,10 @@ electorates in polling places named “Perth”:</p>
 <span><span class="co">#&gt;  9  2019 WA             238 Curtin             999 Informal Informal        999 FALSE   FALSE   Inform… Inform… FALSE      2364</span></span>
 <span><span class="co">#&gt; 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron           2 FALSE   FALSE   GRN     The Gr… FALSE     10905</span></span>
 <span><span class="co">#&gt; # … with 27 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="preferences">Preferences<a class="anchor" aria-label="anchor" href="#preferences"></a>
+</h2>
 <p>To retrieve preferences for one division for a particular year, the
 function is called <em>get_house_preferences()</em></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -189,7 +197,8 @@ function is called <em>get_house_preferences()</em></p>
 <p>Similarly to the primary vote function, results can be aggregated and
 filtered by polling place:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>,</span>
+<span>                      aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 60 × 13</span></span>
 <span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm      PartyAb PartyNm Calcu…¹ Calcu…²</span></span>
 <span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
@@ -222,6 +231,80 @@ filtered by polling place:</p>
 <span><span class="co">#&gt; 10  2019 VIC            234 Wills       0 ABSE…       0       3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 </span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names ¹​DivisionNm, ²​CountNum, ³​BallotPosition, ⁴​CandidateId, ⁵​SittingMemberFl, ⁶​CalculationType,</span></span>
 <span><span class="co">#&gt; #   ⁷​CalculationValue</span></span></code></pre></div>
+<p>The AEC also provides a list of how the primary votes have flowed to
+the two finalists. The can be retrieved with <em>get_house_2PF</em>.
+Being related to the previous function, it also has the same
+parameters.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_2PF.html">get_house_2PF</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Jagajaga"</span>,year<span class="op">=</span><span class="fl">2013</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 8 × 17</span></span>
+<span><span class="co">#&gt;    Year StateAb Divis…¹ Divis…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ FromC…⁷ FromC…⁸ ToCan…⁹ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
+<span><span class="co">#&gt; 2  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3</span></span>
+<span><span class="co">#&gt; 3  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
+<span><span class="co">#&gt; 4  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3</span></span>
+<span><span class="co">#&gt; 5  2013 VIC         220 Jagaja…   28255 ALP     Austra… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
+<span><span class="co">#&gt; 6  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
+<span><span class="co">#&gt; 7  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3</span></span>
+<span><span class="co">#&gt; 8  2013 VIC         220 Jagaja…   28892 LP      Libera… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3</span></span>
+<span><span class="co">#&gt; # … with 1 more variable: TransferCount &lt;int&gt;, and abbreviated variable names ¹​DivisionId, ²​DivisionNm, ³​FromCandidateId,</span></span>
+<span><span class="co">#&gt; #   ⁴​FromCandidatePartyAb, ⁵​FromCandidatePartyNm, ⁶​FromCandidateSurname, ⁷​FromCandidateGivenNm, ⁸​FromCandidateBallotPosition,</span></span>
+<span><span class="co">#&gt; #   ⁹​ToCandidateId, ˟​ToCandidatePartyAb, ˟​ToCandidatePartyNm, ˟​ToCandidateSurname, ˟​ToCandidateGivenNm,</span></span>
+<span><span class="co">#&gt; #   ˟​ToCandidateBallotPosition</span></span></code></pre></div>
+<p>The last preference function is <em>get_house_2PP()</em>, which
+provides the <a href="https://en.wikipedia.org/wiki/Two-party-preferred_vote" class="external-link">Two-Party-Preferred</a>
+summaries as recorded by the AEC (usually, Coalition vs. ALP.)</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_2PP.html">get_house_2PP</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Indi"</span>,</span>
+<span>              year<span class="op">=</span><span class="fl">2016</span>,</span>
+<span>              aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 1 × 9</span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` Total…¹ Liber…² Austr…³</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                                   &lt;int&gt;                          &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2016 VIC            218 Indi                                    41083                          34375   75458   0.544   0.456</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​TotalVotes, ²​`Liberal/National Coalition Percentage`,</span></span>
+<span><span class="co">#&gt; #   ³​`Australian Labor Party Percentage`</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="elected-mps">Elected MPs<a class="anchor" aria-label="anchor" href="#elected-mps"></a>
+</h2>
+<p>The function <em>get_house_MPs()</em> retrieves the list of elected
+candidates. Without parameters it returns the complete lists (all
+divisions, for all elections), but similarly to the previous functions
+it allows for results to be filtered by divisions and years</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_MPs.html">get_house_MPs</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Melbourne"</span>,<span class="st">"Cooper"</span><span class="op">)</span>,</span>
+<span>              year <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 4 × 9</span></span>
+<span><span class="co">#&gt;    Year DivisionID DivisionNm StateAb CandidateID GivenNm Surname PartyNm                PartyAb</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;                  &lt;chr&gt;  </span></span>
+<span><span class="co">#&gt; 1  2022        320 Cooper     VIC           36384 Ged     KEARNEY Australian Labor Party ALP    </span></span>
+<span><span class="co">#&gt; 2  2022        228 Melbourne  VIC           36551 Adam    BANDT   The Greens             GRN    </span></span>
+<span><span class="co">#&gt; 3  2019        320 Cooper     VIC           32339 Ged     KEARNEY Australian Labor Party ALP    </span></span>
+<span><span class="co">#&gt; 4  2019        228 Melbourne  VIC           32423 Adam    BANDT   The Greens             GRN</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="turnout">Turnout<a class="anchor" aria-label="anchor" href="#turnout"></a>
+</h2>
+<p>The function <em>get_house_turnout()</em> retrieves turnout data as
+published by the AEC. It can be filtered by division and year</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_turnout.html">get_house_turnout</a></span><span class="op">(</span>year<span class="op">=</span><span class="fl">2019</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 151 × 8</span></span>
+<span><span class="co">#&gt;     Year DivisionID DivisionNm StateAb Enrolment Turnout TurnoutPercentage TurnoutSwing</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;       &lt;int&gt;   &lt;int&gt;             &lt;dbl&gt;        &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019        179 Adelaide   SA         121606  111299              91.5         1.73</span></span>
+<span><span class="co">#&gt;  2  2019        197 Aston      VIC        110342  103919              94.2        -0.69</span></span>
+<span><span class="co">#&gt;  3  2019        198 Ballarat   VIC        114954  107372              93.4         1.03</span></span>
+<span><span class="co">#&gt;  4  2019        103 Banks      NSW        106253   98845              93.0         1.04</span></span>
+<span><span class="co">#&gt;  5  2019        180 Barker     SA         118371  111893              94.5         0.5 </span></span>
+<span><span class="co">#&gt;  6  2019        104 Barton     NSW        108992   99380              91.2         1.34</span></span>
+<span><span class="co">#&gt;  7  2019        192 Bass       TAS         76532   71973              94.0         0.19</span></span>
+<span><span class="co">#&gt;  8  2019        318 Bean       ACT        104482   97982              93.8         0.09</span></span>
+<span><span class="co">#&gt;  9  2019        200 Bendigo    VIC        112755  105979              94.0         0.51</span></span>
+<span><span class="co">#&gt; 10  2019        105 Bennelong  NSW        108815  101542              93.3         1.61</span></span>
+<span><span class="co">#&gt; # … with 141 more rows</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

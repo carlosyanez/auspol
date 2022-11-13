@@ -1,7 +1,7 @@
 ---
 title: "House of Representatives - Primary Vote"
 author: "Carlos YANEZ SANTIBANEZ"
-date: "2022-11-13"
+date: "2022-11-14"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{House of Representatives - Primary Vote}
@@ -258,7 +258,9 @@ As in many cases there are many minor parties, it is sometime useful just to foc
 
 
 ```r
-house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include_others = TRUE )
+house_primary_historic_plot("Canberra", parties =3, 
+                            parties_year = 2022, 
+                            include_others = TRUE )
 ```
 
 <img src="vignettes/house-primary-voteprimvote2-1.png" alt="plot of chunk primvote2" width="100%" />
@@ -269,7 +271,8 @@ Finally, it is possible to aggregate party acronyms - sometimes a same party has
 ```r
 
 house_primary_historic_plot(division="Brisbane",parties=5,
-                            merge_parties = list(LNP=c("LNP","LNQ","LP"),ON=c("HAN","ON"))) 
+                            merge_parties = list(LNP=c("LNP","LNQ","LP"),
+                                                 ON=c("HAN","ON"))) 
 ```
 
 <img src="vignettes/house-primary-voteprimvote3-1.png" alt="plot of chunk primvote3" width="100%" />

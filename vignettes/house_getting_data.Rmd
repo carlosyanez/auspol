@@ -3,7 +3,7 @@ title: "House of Representatives - Get the data"
 resource_files:
   - vignetttes/house-preference-flow*.png
 author: "Carlos YANEZ SANTIBANEZ"
-date: "2022-11-13"
+date: "2022-11-14"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{House of Representatives - Get the data}
@@ -18,14 +18,15 @@ Although this package contains many convenience functions to process and display
 
 - get_house_primary_vote()
 - get_house_preferences()
-- get_house_MPs()
-- get_house_turnout()
 - get_house_2PF()
 - get_house_2PP()
+- get_house_MPs()
+- get_house_turnout()
+
 
 Please note that the presented here is shown as downloaded from the AEC's website.
 
-## Get primary vote and preferences
+## Primary Vote
 
 It is possible to get all primary vote results for all electorates in all electon from 2044, by running *get_house_primary_vote()*. More usefully, the funcion allows to filter by a number of electorates for a numbers of years, as shown in the below example:
 
@@ -56,7 +57,9 @@ The function allows also to narrow down to specific electorates. For instance, t
 ```r
 library(dplyr)
 
-get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022),polling_places = "Perth") |>
+get_house_primary_vote(division = c("Cowan","Curtin"),
+                       year=c(2019,2022),
+                       polling_places = "Perth") |>
   filter(PartyAb=="ALP")
 #> # A tibble: 4 × 17
 #>    Year StateAb Divisio…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing
@@ -73,7 +76,9 @@ The function also can present the division totals, for example:
 
 
 ```r
-get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022), aggregation = TRUE)
+get_house_primary_vote(division = c("Cowan","Curtin"),
+                       year=c(2019,2022), 
+                       aggregation = TRUE)
 #> # A tibble: 37 × 14
 #>     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    Ballot…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴
 #>    <dbl> <chr>        <int> <chr>            <int> <chr>    <chr>         <int> <lgl>   <lgl>   <chr>   <chr>   <lgl>     <int>
@@ -89,6 +94,8 @@ get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022), aggrega
 #> 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron           2 FALSE   FALSE   GRN     The Gr… FALSE     10905
 #> # … with 27 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes
 ```
+
+## Preferences
 
 To retrieve preferences for one division for a particular year, the function is called *get_house_preferences()*
 
@@ -117,7 +124,8 @@ Similarly to the primary vote function, results can be aggregated and filtered b
 
 
 ```r
-get_house_preferences("Wills",2019,aggregation = TRUE)
+get_house_preferences("Wills",2019,
+                      aggregation = TRUE)
 #> # A tibble: 60 × 13
 #>     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm      PartyAb PartyNm Calcu…¹ Calcu…²
 #>    <dbl> <chr>        <int> <chr>         <int>          <int>       <int> <chr>   <chr>        <chr>   <chr>   <chr>     <dbl>
@@ -155,4 +163,85 @@ get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |>
 #> # … with abbreviated variable names ¹​DivisionNm, ²​CountNum, ³​BallotPosition, ⁴​CandidateId, ⁵​SittingMemberFl, ⁶​CalculationType,
 #> #   ⁷​CalculationValue
 ```
+The AEC also provides a list of how the primary votes have flowed to the two finalists. The can be retrieved with *get_house_2PF*. Being related to the previous function, it also has the same parameters.
+
+
+```r
+get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
+#> # A tibble: 8 × 17
+#>    Year StateAb Divis…¹ Divis…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ FromC…⁷ FromC…⁸ ToCan…⁹ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟
+#>   <dbl> <chr>     <int> <chr>     <int> <chr>   <chr>   <chr>   <chr>     <int>   <int> <chr>   <chr>   <chr>   <chr>     <int>
+#> 1  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1
+#> 2  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3
+#> 3  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1
+#> 4  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3
+#> 5  2013 VIC         220 Jagaja…   28255 ALP     Austra… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1
+#> 6  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1
+#> 7  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3
+#> 8  2013 VIC         220 Jagaja…   28892 LP      Libera… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3
+#> # … with 1 more variable: TransferCount <int>, and abbreviated variable names ¹​DivisionId, ²​DivisionNm, ³​FromCandidateId,
+#> #   ⁴​FromCandidatePartyAb, ⁵​FromCandidatePartyNm, ⁶​FromCandidateSurname, ⁷​FromCandidateGivenNm, ⁸​FromCandidateBallotPosition,
+#> #   ⁹​ToCandidateId, ˟​ToCandidatePartyAb, ˟​ToCandidatePartyNm, ˟​ToCandidateSurname, ˟​ToCandidateGivenNm,
+#> #   ˟​ToCandidateBallotPosition
+```
+The last preference function is *get_house_2PP()*, which provides the [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries as recorded by the AEC (usually, Coalition vs. ALP.)
+
+
+```r
+get_house_2PP(division = "Indi",
+              year=2016,
+              aggregation = TRUE)
+#> # A tibble: 1 × 9
+#>    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` Total…¹ Liber…² Austr…³
+#>   <dbl> <chr>        <int> <chr>                                   <int>                          <int>   <int>   <dbl>   <dbl>
+#> 1  2016 VIC            218 Indi                                    41083                          34375   75458   0.544   0.456
+#> # … with abbreviated variable names ¹​TotalVotes, ²​`Liberal/National Coalition Percentage`,
+#> #   ³​`Australian Labor Party Percentage`
+```
+
+
+
+## Elected MPs
+
+The function *get_house_MPs()* retrieves the list of elected candidates. Without parameters it returns the complete lists (all divisions, for all elections), but similarly to the previous functions it allows for results to be filtered by divisions and years
+
+
+```r
+get_house_MPs(division = c("Melbourne","Cooper"),
+              year = c(2019,2022))
+#> # A tibble: 4 × 9
+#>    Year DivisionID DivisionNm StateAb CandidateID GivenNm Surname PartyNm                PartyAb
+#>   <dbl>      <int> <chr>      <chr>         <int> <chr>   <chr>   <chr>                  <chr>  
+#> 1  2022        320 Cooper     VIC           36384 Ged     KEARNEY Australian Labor Party ALP    
+#> 2  2022        228 Melbourne  VIC           36551 Adam    BANDT   The Greens             GRN    
+#> 3  2019        320 Cooper     VIC           32339 Ged     KEARNEY Australian Labor Party ALP    
+#> 4  2019        228 Melbourne  VIC           32423 Adam    BANDT   The Greens             GRN
+```
+
+## Turnout
+
+The function *get_house_turnout()* retrieves turnout data as published by the AEC. It can be filtered by division and year
+
+
+```r
+get_house_turnout(year=2019)
+#> # A tibble: 151 × 8
+#>     Year DivisionID DivisionNm StateAb Enrolment Turnout TurnoutPercentage TurnoutSwing
+#>    <dbl>      <int> <chr>      <chr>       <int>   <int>             <dbl>        <dbl>
+#>  1  2019        179 Adelaide   SA         121606  111299              91.5         1.73
+#>  2  2019        197 Aston      VIC        110342  103919              94.2        -0.69
+#>  3  2019        198 Ballarat   VIC        114954  107372              93.4         1.03
+#>  4  2019        103 Banks      NSW        106253   98845              93.0         1.04
+#>  5  2019        180 Barker     SA         118371  111893              94.5         0.5 
+#>  6  2019        104 Barton     NSW        108992   99380              91.2         1.34
+#>  7  2019        192 Bass       TAS         76532   71973              94.0         0.19
+#>  8  2019        318 Bean       ACT        104482   97982              93.8         0.09
+#>  9  2019        200 Bendigo    VIC        112755  105979              94.0         0.51
+#> 10  2019        105 Bennelong  NSW        108815  101542              93.3         1.61
+#> # … with 141 more rows
+```
+
+
+
+
 

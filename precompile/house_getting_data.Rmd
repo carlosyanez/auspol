@@ -29,14 +29,15 @@ Although this package contains many convenience functions to process and display
 
 - get_house_primary_vote()
 - get_house_preferences()
-- get_house_MPs()
-- get_house_turnout()
 - get_house_2PF()
 - get_house_2PP()
+- get_house_MPs()
+- get_house_turnout()
+
 
 Please note that the presented here is shown as downloaded from the AEC's website.
 
-## Get primary vote and preferences
+## Primary Vote
 
 It is possible to get all primary vote results for all electorates in all electon from 2044, by running *get_house_primary_vote()*. More usefully, the funcion allows to filter by a number of electorates for a numbers of years, as shown in the below example:
 
@@ -64,6 +65,8 @@ get_house_primary_vote(division = c("Cowan","Curtin"),
                        aggregation = TRUE)
 ```
 
+## Preferences
+
 To retrieve preferences for one division for a particular year, the function is called *get_house_preferences()*
 
 ```{r}
@@ -85,4 +88,39 @@ get_house_preferences("Wills",2019,
 get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> 
   head(10)
 ```
+The AEC also provides a list of how the primary votes have flowed to the two finalists. The can be retrieved with *get_house_2PF*. Being related to the previous function, it also has the same parameters.
+
+```{r}
+get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
+```
+The last preference function is *get_house_2PP()*, which provides the [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries as recorded by the AEC (usually, Coalition vs. ALP.)
+
+```{r}
+get_house_2PP(division = "Indi",
+              year=2016,
+              aggregation = TRUE)
+```
+
+
+
+## Elected MPs
+
+The function *get_house_MPs()* retrieves the list of elected candidates. Without parameters it returns the complete lists (all divisions, for all elections), but similarly to the previous functions it allows for results to be filtered by divisions and years
+
+```{r}
+get_house_MPs(division = c("Melbourne","Cooper"),
+              year = c(2019,2022))
+```
+
+## Turnout
+
+The function *get_house_turnout()* retrieves turnout data as published by the AEC. It can be filtered by division and year
+
+```{r}
+get_house_turnout(year=2019)
+```
+
+
+
+
 

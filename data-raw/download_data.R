@@ -3,7 +3,7 @@ library(fs)
 library(tidyverse)
 
 raw_files_dir <- here("data-raw","files")
-
+dir_create(raw_files_dir)
 # Get List ----
 
 sources <- read_csv(here("data-raw","sources.csv"))
@@ -18,6 +18,8 @@ sources  <- sources%>%
 
 
 # Download all files ----
+
+
 
 for(i in 1:nrow(sources)){
   source       <- sources[i,]$Source

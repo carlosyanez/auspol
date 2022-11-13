@@ -112,7 +112,9 @@ house_primary_historic_plot <- function(division=NULL,
 }
 
 
-#' Plot historical changes in primary vote in a electoral division (line chart)
+#' Plot historical changes in primary vote
+#' @description Line chart with historial changes for a division, group of candidates in a party,
+#'  selected parties, etc.
 #' @importFrom dplyr filter select all_of rename
 #' @importFrom ggplot2 ggplot aes labs
 #' @importFrom stringr str_c
@@ -125,7 +127,7 @@ house_primary_historic_plot <- function(division=NULL,
 #' @param extra_colours manual mapping of colours for each party, as a named vector.
 #' @param plot_format Whether to plot  lollipop chart ("lollipop", default) or a bar chart.
 #' @param include_labels If set to TRUE, the plot will include each value.
-#' @param nudge_x if labels are included, separation from chart/dot
+#' @param hor_nudge if labels are included, separation from chart/dot
 #' @param year numeric vector with election years (from 2004), defaults to all.
 #' @param parties which parties to include in the summary. All (default), a vector of strings
 #'  with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.
@@ -166,7 +168,7 @@ house_primary_comparison_plot <- function(division=NULL,
                                     extra_colours=NULL,
                                     plot_format = "lollipop",
                                     include_labels =FALSE,
-                                    nudge_x =5,
+                                    hor_nudge=5,
                                     parties=NULL,
                                     parties_year=NULL,
                                     merge_parties=NULL,
@@ -234,6 +236,9 @@ house_primary_comparison_plot <- function(division=NULL,
 
   if(sort_by_value) data <- data |> mutate(label=fct_reorder(.data$label,.data$value))
 
+  #print(hor_nudge)
+  if(!exists("hor_nudge")) hor_nudge <- 5
+
   p <- data |>
           ggplot(aes(y=.data$label,x=.data$value,
                      colour=.data$Party,fill=.data$Party,
@@ -242,7 +247,7 @@ house_primary_comparison_plot <- function(division=NULL,
                                segment.mapping= aes(yend=.data$label, xend=.data$value,
                                                     x=0,
                                                     colour=.data$Party),
-                               include_labels = TRUE,labels.nudge_x = nudge_x) +
+                               include_labels = TRUE,labels.nudge_x = 5) +
          labs(y=label)
 
    p <- auspol_theme(p,extra_colours = extra_colours, extra_values = unique(data$Party), coord_flip = FALSE)
@@ -255,5 +260,6 @@ house_primary_comparison_plot <- function(division=NULL,
 
   return(p)
 }
+
 
 

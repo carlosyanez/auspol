@@ -3,7 +3,7 @@
 \name{get_house_preferences}
 \alias{get_house_preferences}
 \alias{get_preferences}
-\title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
+\title{Preferences}
 \usage{
 get_house_preferences(
   division,
@@ -27,7 +27,8 @@ get_preferences(division, year, polling_places = NULL, aggregation = FALSE)
 dataframe with list of elected MPs
 }
 \description{
-Get list of with turnout all elected MPs, for groups of divisions, for given year
+Retrieves preference flow, filterable by election and year. Results can be presented by
+polling place - as retrived from the AEC - or aggregated by electoral division.
 }
 \examples{
 \dontrun{

@@ -9,8 +9,8 @@
 #' Data can be filtered by state, political party of polling locations. Results can be presented by
 #' polling station or aggregated by division.
 #' @return sf object with selected polygons
-#' @param  division vector with division names
-#' @param  year vector with election years
+#' @param  division character vector with division names. When left blank, returns all division.
+#' @param  year number vector with election years. When left blank, returns all years.
 #' @param  state_abb  vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)
 #' @param  party_abb  vector with party abbreviation (e.g. ALP,LIB,NP,GRN,etc.)
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
@@ -78,12 +78,18 @@ get_house_primary_vote <- function(division=NULL,
 
   }
 
-#' Reetrieve elected MPs, for groups of divisions, for given year
-#' @return dataframe with list of elected MPs
-#' @param  division vector with division names
-#' @param  year vector with election years
+#' Elected MPs
+#' @description Retrieve list of elected MPs, filterable by division and year
+#' @return data frame with list of elected MPs
+#' @param  division character vector with division names. When left blank, returns all division.
+#' @param  year number vector with election years. When left blank, returns all years.
 #' @export
 #' @keywords housegetdata
+#' @examples \dontrun{
+#' # Elected MPs in Melbourne and Cooper, 2019 and 2022
+#' get_house_MPs(division = c("Melbourne","Cooper"),
+#'               year = c(2019,2022))
+#' }
 get_house_MPs <- function(division=NULL,year=NULL){
   get_auspol_house_data("house_elected.zip",division,year)
 }
@@ -93,17 +99,24 @@ get_house_MPs <- function(division=NULL,year=NULL){
 get_MPs <- get_house_MPs
 
 
-#' Get list of with turnout all elected MPs, for groups of divisions, for given year
-#' @return dataframe with list of elected MPs
-#' @param  division character with division name
-#' @param  year number with election year
+#' Election turn out
+#' @description Retrieve election turnout, filterable by division and year
+#' @return data frame turnout numbers
+#' @param  division character vector with division names. When left blank, returns all division.
+#' @param  year number vector with election years. When left blank, returns all years.
 #' @export
 #' @keywords housegetdata
+#' @examples \dontrun{
+#' # Turnout in Riverina
+#'  get_house_turnout(division="Riverina",yeat)
+#' }
 get_house_turnout <- function(division=NULL,year=NULL){
   get_auspol_house_data("house_turnout.zip",division,year)
 }
 
-#' Get list of with turnout all elected MPs, for groups of divisions, for given year
+#' Preferences
+#' @description Retrieves preference flow, filterable by election and year. Results can be presented by
+#' polling place - as retrived from the AEC - or aggregated by electoral division.
 #' @return dataframe with list of elected MPs
 #' @param  division vector with division names
 #' @param  year vector with election years
@@ -165,16 +178,21 @@ get_house_preferences <- function(division,
 get_preferences <- get_house_preferences
 
 
-#' Get 2-party preferred flow (as calculated by the ABS), for an division on a given election
+#' Two-party preferred flow
+#' @description  Get flow from primary vote to finalists, for an division on a given election
 #' @return dataframe with list of elected MPs
-#' @param  division character with division name
-#' @param  year number with election year
+#' @param  division character vector with division names. When left blank, returns all division.
+#' @param  year number vector with election years. When left blank, returns all years.
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
 #'@importFrom stringr str_c
 #' @importFrom rlang .data
 #' @importFrom dplyr filter mutate summarise group_by if_else
 #' @export
 #' @keywords housegetdata
+#' @examples \dontrun{
+#' # get primary to finalist flow of preferences for Jagajaga in the 2013 election
+#' get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
+#' }
 get_house_2PF <- function(division,year,aggregation=FALSE){
 
   division_info <- check_division(division,year)
@@ -187,7 +205,6 @@ get_house_2PF <- function(division,year,aggregation=FALSE){
       filter(.data$DivisionNm==division,.data$Year==year)
 
     if(aggregation){
-      print(1)
       data <- data|>
         group_by(.data$Year,.data$StateAb,
                     .data$DivisionId,.data$DivisionNm,
@@ -216,10 +233,11 @@ get_house_2PF <- function(division,year,aggregation=FALSE){
 }
 
 
-#' Get 2-party preferred party summary (Coalition vs ALP)
+#' Two-party-preferred summary
+#' @description Get 2-party preferred party summary (Coalition vs ALP), as calculated by the AEC.
 #' @return dataframe with list of elected MPs
-#' @param  division character with division name
-#' @param  year number with election year
+#' @param  division character vector with division names. When left blank, returns all division.
+#' @param  year number vector with election years. When left blank, returns all years.
 #' @param  aggregation Whether to present division totals (defaults to FALSE)
 #' @param  state_abb  vector with state/territory acronym (e.g. NSW,VIC,QLD,etc.)
 #'@importFrom stringr str_c
@@ -227,6 +245,11 @@ get_house_2PF <- function(division,year,aggregation=FALSE){
 #' @importFrom  dplyr filter mutate summarise group_by if_else
 #' @export
 #' @keywords housegetdata
+#' @examples \dontrun{
+#' get_house_2PP(division = "Indi",
+#' year=2016,
+#' aggregation = TRUE)
+#' }
 get_house_2PP <- function(division=NULL,
                           year=NULL,
                           state_abb = NULL,

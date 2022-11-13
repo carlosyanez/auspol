@@ -9,6 +9,9 @@ library(zip)
 raw_files_dir <- here("data-raw","files")
 dest_dir      <- here("data-raw","processed")
 
+dir_create(raw_files_dir)
+dir_create(dest_dir)
+
 # Aux functions ----
 clean_parties <- function(df,var1,var2){
 
@@ -16,8 +19,13 @@ clean_parties <- function(df,var1,var2){
     mutate(  {{var1}} := if_else({{var2}}=="Informal","Informal",{{var1}},{{var1}}),
              {{var2}} := case_when(
              {{var1}}=="NAFD" ~ "Non Affiliated",
-             {{var1}}=="UNAM" ~ " Unendorsed and Ungrouped",
+             {{var1}}=="UNAM" ~ "Unendorsed and Ungrouped",
              TRUE ~  {{var2}}
+           ),
+            {{var1}} := case_when(
+             {{var2}}=="Non Affiliated" ~ "NAFD",
+             {{var2}}=="Unendorsed and Ungrouped" ~ "UNAM",
+             TRUE ~  {{var1}}
            ))
 
 }
@@ -214,7 +222,6 @@ save_zip_parquet(mps,"house_elected",dest_dir)
 # Load House - Two candidate preferred flow -----
 
 
-
 unzipped_flow <- dir_create(path(raw_files_dir,"2cpflow"))
 
 #unzip files
@@ -248,6 +255,19 @@ unzipped_sources$Type    <- "2CP"
 for(state in unique(unzipped_sources$State)){
 
   twocp_flow <- load_data("House","2CP",unzipped_sources %>% filter(State==state),unzipped_flow)
+  twocp_flow <- twocp_flow |>
+                mutate(first_pref = (FromCandidateSurname=="First Preferences")) |>
+                mutate(FromCandidateId              = if_else(first_pref,ToCandidateId,FromCandidateId),
+                       FromCandidatePartyAb         = if_else(first_pref,ToCandidatePartyAb,FromCandidatePartyAb),
+                       FromCandidatePartyNm         = if_else(first_pref,ToCandidatePartyNm,FromCandidatePartyNm),
+                       FromCandidateSurname         = if_else(first_pref,ToCandidateSurname,FromCandidateSurname),
+                       FromCandidateGivenNm         = if_else(first_pref,ToCandidateGivenNm,FromCandidateGivenNm),
+                       FromCandidateBallotPosition  = if_else(first_pref,ToCandidateBallotPosition,FromCandidateBallotPosition)
+                       ) |>
+                select(-first_pref) |>
+               clean_parties(FromCandidatePartyAb,FromCandidatePartyNm) |>
+               clean_parties(ToCandidatePartyAb,ToCandidatePartyNm)
+
 
   save_zip_parquet(twocp_flow,str_c("house_2CP_",state),dest_dir)
 

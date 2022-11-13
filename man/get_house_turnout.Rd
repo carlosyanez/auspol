@@ -2,19 +2,25 @@
 % Please edit documentation in R/house_get_data.R
 \name{get_house_turnout}
 \alias{get_house_turnout}
-\title{Get list of with turnout all elected MPs, for groups of divisions, for given year}
+\title{Election turn out}
 \usage{
 get_house_turnout(division = NULL, year = NULL)
 }
 \arguments{
-\item{division}{character with division name}
+\item{division}{character vector with division names. When left blank, returns all division.}
 
-\item{year}{number with election year}
+\item{year}{number vector with election years. When left blank, returns all years.}
 }
 \value{
-dataframe with list of elected MPs
+data frame turnout numbers
 }
 \description{
-Get list of with turnout all elected MPs, for groups of divisions, for given year
+Retrieve election turnout, filterable by division and year
+}
+\examples{
+\dontrun{
+# Turnout in Riverina
+ get_house_turnout(division="Riverina",yeat)
+}
 }
 \keyword{housegetdata}

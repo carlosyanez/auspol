@@ -62,7 +62,8 @@ and aggregate political parties. Can plot either percentages or absolute number 
 }
 \examples{
 \dontrun{
-#
+# Plot historic primary voting in Canberra, top 3 parties
+house_primary_historic_plot("Canberra", parties =3,
 
 }
 }

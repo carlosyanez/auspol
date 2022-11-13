@@ -30,6 +30,8 @@ Preferences are a key aspect of Australia's preferential voting system.  **auspo
 - get_house_preferences()
 - house_preference_flow_data()
 - house_preference_flow_plot()
+- get_house_2PF()
+- get_house_2PP()
 
 ## What is this?
 
@@ -58,8 +60,6 @@ It is also possible to filter by Polling Place Name (PPNm in the source):
 get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FALSE) |> head(10)
 
 ```
-
-
 
 
 Build on top of the basic function,  preference_flow_data() - provides an interface to access preference flows for a particular division (electorate) on a given year. This function returns a list, in which each element is a data frame with the results for each counting round. In its most basic use:
@@ -125,5 +125,51 @@ p <- house_preference_flow_plot(division = "Warringah",year=2022,
                      )
 
 p$source_data[[1]]
+```
+
+
+# Flow from primary vote to last round
+
+Although the last plot can be informative, The AEC also records how o understand how the votes has flow from primary votes to the two last candidates. This can be accessed through *get_house_2PF()*
+
+```{r}
+get_house_2PF(division = "Lingiari",year=2013,aggregation = TRUE)
+```
+
+These results can be charted using *house_2PF_plot*. This function can present the results either in alluvial or bar chart format.
+
+```{r plot6}
+house_2PF_plot("Lingiari",2013,plot_format = "alluvial")
+```
+
+
+```{r plot7}
+house_2PF_plot(division="Burt",
+               year=2022,
+               plot_format = "bar")
+
+```
+
+# Two-party preferred
+
+The AEC also publishes  [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries ([Coalition](https://en.wikipedia.org/wiki/Coalition_(Australia)) against Labor). These are available through * get_house_2PP()*, which allows to filter by division and year, and can be displayed by division or polling place
+
+
+```{r}
+get_house_2PP(division = "Fraser",year=2004,aggregation = TRUE)
+```
+
+The package, includes two plots to visualise this data. The first (*house_2PP_comparison_plot()*),  displays the results for a given election, for one or a number of electorates.
+
+```{r plot8}
+house_2PP_comparison_plot(year=2022,state="VIC")
+```
+
+
+The second function - ** - shows the historical results for a given division.
+
+
+```{r plot9}
+house_2PP_historical_plot(division="Aston")
 ```
 
