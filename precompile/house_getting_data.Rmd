@@ -50,14 +50,18 @@ The function allows also to narrow down to specific electorates. For instance, t
 ```{r}
 library(dplyr)
 
-get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022),polling_places = "Perth") |>
+get_house_primary_vote(division = c("Cowan","Curtin"),
+                       year=c(2019,2022),
+                       polling_places = "Perth") |>
   filter(PartyAb=="ALP")
 ```
 
 The function also can present the division totals, for example:
 
 ```{r}
-get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022), aggregation = TRUE)
+get_house_primary_vote(division = c("Cowan","Curtin"),
+                       year=c(2019,2022), 
+                       aggregation = TRUE)
 ```
 
 To retrieve preferences for one division for a particular year, the function is called *get_house_preferences()*
@@ -71,7 +75,8 @@ get_house_preferences("Wills",2019) |> head(10)
 Similarly to the primary vote function, results can be aggregated and filtered by polling place:
 
 ```{r}
-get_house_preferences("Wills",2019,aggregation = TRUE)
+get_house_preferences("Wills",2019,
+                      aggregation = TRUE)
 
 ```
 

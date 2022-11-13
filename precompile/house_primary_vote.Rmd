@@ -120,7 +120,9 @@ As in many cases there are many minor parties, it is sometime useful just to foc
 
 
 ```{r primvote2}
-house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include_others = TRUE )
+house_primary_historic_plot("Canberra", parties =3, 
+                            parties_year = 2022, 
+                            include_others = TRUE )
 
 ```
 
@@ -129,7 +131,8 @@ Finally, it is possible to aggregate party acronyms - sometimes a same party has
 ```{r primvote3}
 
 house_primary_historic_plot(division="Brisbane",parties=5,
-                            merge_parties = list(LNP=c("LNP","LNQ","LP"),ON=c("HAN","ON"))) 
+                            merge_parties = list(LNP=c("LNP","LNQ","LP"),
+                                                 ON=c("HAN","ON"))) 
 
 ```
 

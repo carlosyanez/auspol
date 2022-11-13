@@ -33,7 +33,10 @@
 #' @export
 #' @keywords houseplots
 #' @examples \dontrun{
-#' #
+#' # Plot historic primary voting in Canberra, top 3 parties
+#' house_primary_historic_plot("Canberra", parties =3,
+#                               parties_year = 2022,
+#                               include_others = TRUE )
 #'
 #' }
 house_primary_historic_plot <- function(division=NULL,
@@ -141,6 +144,19 @@ house_primary_historic_plot <- function(division=NULL,
 #' @returns ggplot2 object
 #' @export
 #' @keywords houseplots
+#' @examples \dontrun{
+#' # Compare primary voting in Kooyong in 2022,  lollipop chart (default)
+#' house_primary_comparison_plot(division = "Kooyong",
+#'                               year=2022,
+#'                               individualise_IND = TRUE)
+#
+#' # Liberal Primary vote in Tasmania in 2022, bar chart
+#' house_primary_comparison_plot(state="TAS",
+#'                               year=2022,
+#'                               parties=c("LP"),
+#'                               plot_format = "bar")
+#'
+#' }
 house_primary_comparison_plot <- function(division=NULL,
                                     year=NULL,
                                     state=NULL,
