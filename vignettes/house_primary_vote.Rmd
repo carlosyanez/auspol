@@ -250,7 +250,7 @@ The first plotting convenience function in this packages allows to compare the e
 house_primary_historic_plot("Canberra")
 ```
 
-<img src="vignettes/house-primary-voteunnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11" width="100%" />
+<img src="vignettes/house-primary-voteprimvote1-1.png" alt="plot of chunk primvote1" width="100%" />
 
 As in many cases there are many minor parties, it is sometime useful just to focus in a number of parties. This function allow to filter by a number of parties or by filtering by the most voted in a certain year. In both cases it is possible to consolidate the others votes.
 
@@ -261,7 +261,7 @@ As in many cases there are many minor parties, it is sometime useful just to foc
 house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include_others = TRUE )
 ```
 
-<img src="vignettes/house-primary-voteunnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="100%" />
+<img src="vignettes/house-primary-voteprimvote2-1.png" alt="plot of chunk primvote2" width="100%" />
 
 Finally, it is possible to aggregate party acronyms - sometimes a same party has changed named or registered differently
 
@@ -272,7 +272,7 @@ house_primary_historic_plot(division="Brisbane",parties=5,
                             merge_parties = list(LNP=c("LNP","LNQ","LP"),ON=c("HAN","ON"))) 
 ```
 
-<img src="vignettes/house-primary-voteunnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="100%" />
+<img src="vignettes/house-primary-voteprimvote3-1.png" alt="plot of chunk primvote3" width="100%" />
 
 ## Results for one election
 
@@ -283,7 +283,7 @@ This package also contains a convenience function to look at the primary vote re
 house_primary_comparison_plot(division = "Kooyong", year=2022,individualise_IND = TRUE)
 ```
 
-<img src="vignettes/house-primary-voteunnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14" width="100%" />
+<img src="vignettes/house-primary-voteprimvote4-1.png" alt="plot of chunk primvote4" width="100%" />
 
 The plots can also be displayed in using bars, as shown below
 
@@ -293,5 +293,5 @@ The plots can also be displayed in using bars, as shown below
 house_primary_comparison_plot(state="TAS",year=2022,parties=c("LP"),plot_format = "bar")
 ```
 
-<img src="vignettes/house-primary-voteunnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15" width="100%" />
+<img src="vignettes/house-primary-voteprimvote5-1.png" alt="plot of chunk primvote5" width="100%" />
 

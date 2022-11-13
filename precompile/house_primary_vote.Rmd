@@ -111,7 +111,7 @@ house_primary_vote_summary(division="Franklin",parties="LP")
 
 The first plotting convenience function in this packages allows to compare the evolution of primary voting across time. This function relies on house_primary_summary and uses many of its options. It's first use is to represent party trends in one electorate:
 
-```{r}
+```{r primvote1}
 house_primary_historic_plot("Canberra")
 ```
 
@@ -119,14 +119,14 @@ As in many cases there are many minor parties, it is sometime useful just to foc
 
 
 
-```{r}
+```{r primvote2}
 house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include_others = TRUE )
 
 ```
 
 Finally, it is possible to aggregate party acronyms - sometimes a same party has changed named or registered differently
 
-```{r}
+```{r primvote3}
 
 house_primary_historic_plot(division="Brisbane",parties=5,
                             merge_parties = list(LNP=c("LNP","LNQ","LP"),ON=c("HAN","ON"))) 
@@ -137,7 +137,7 @@ house_primary_historic_plot(division="Brisbane",parties=5,
 
 This package also contains a convenience function to look at the primary vote results for one division. Lile the previous function, this also inherits many of the attributes of *get_house_primary_vote*.
 
-```{r}
+```{r primvote4}
 house_primary_comparison_plot(division = "Kooyong", year=2022,individualise_IND = TRUE)
 
 ```
@@ -145,7 +145,7 @@ house_primary_comparison_plot(division = "Kooyong", year=2022,individualise_IND 
 The plots can also be displayed in using bars, as shown below
 
 
-```{r}
+```{r primvote5}
 house_primary_comparison_plot(state="TAS",year=2022,parties=c("LP"),plot_format = "bar")
 ```
 

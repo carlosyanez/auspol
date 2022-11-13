@@ -28,7 +28,7 @@ pkgdown::build_articles()
 pngs <- vignettes <- dir_ls(vignettes_folder,regexp=".png")
 article_dir<-here("docs","articles")
 #dir_create(article_img)
-file_copy(pngs, article_dir)
+file_copy(pngs, article_dir,overwrite = TRUE)
 
 article_html <- dir_ls(article_dir,regexp="html")
 

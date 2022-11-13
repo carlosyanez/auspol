@@ -301,21 +301,21 @@ relies on house_primary_summary and uses many of its options. It’s first
 use is to represent party trends in one electorate:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11" width="100%"></p>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote1-1.png" alt="plot of chunk primvote1" width="100%"></p>
 <p>As in many cases there are many minor parties, it is sometime useful
 just to focus in a number of parties. This function allow to filter by a
 number of parties or by filtering by the most voted in a certain year.
 In both cases it is possible to consolidate the others votes.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span>, parties <span class="op">=</span><span class="fl">3</span>, parties_year <span class="op">=</span> <span class="fl">2022</span>, include_others <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span></span></code></pre></div>
-<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="100%"></p>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote2-1.png" alt="plot of chunk primvote2" width="100%"></p>
 <p>Finally, it is possible to aggregate party acronyms - sometimes a
 same party has changed named or registered differently</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Brisbane"</span>,parties<span class="op">=</span><span class="fl">5</span>,</span>
 <span>                            merge_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>LNP<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LNP"</span>,<span class="st">"LNQ"</span>,<span class="st">"LP"</span><span class="op">)</span>,ON<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"HAN"</span>,<span class="st">"ON"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
-<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="100%"></p>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote3-1.png" alt="plot of chunk primvote3" width="100%"></p>
 </div>
 </div>
 <div class="section level2">
@@ -327,11 +327,11 @@ also inherits many of the attributes of
 <em>get_house_primary_vote</em>.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_comparison_plot.html">house_primary_comparison_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Kooyong"</span>, year<span class="op">=</span><span class="fl">2022</span>,individualise_IND <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14" width="100%"></p>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote4-1.png" alt="plot of chunk primvote4" width="100%"></p>
 <p>The plots can also be displayed in using bars, as shown below</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_comparison_plot.html">house_primary_comparison_plot</a></span><span class="op">(</span>state<span class="op">=</span><span class="st">"TAS"</span>,year<span class="op">=</span><span class="fl">2022</span>,parties<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LP"</span><span class="op">)</span>,plot_format <span class="op">=</span> <span class="st">"bar"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15" width="100%"></p>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteprimvote5-1.png" alt="plot of chunk primvote5" width="100%"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
