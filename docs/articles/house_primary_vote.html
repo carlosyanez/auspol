@@ -85,7 +85,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-11</h4>
+            <h4 data-toc-skip class="date">2022-11-13</h4>
       
       
       <div class="d-none name"><code>house_primary_vote.Rmd</code></div>
@@ -119,92 +119,92 @@ Brisbane for 2022:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Brisbane"</span>,year<span class="op">=</span><span class="fl">2022</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 344 × 17</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm Pollin…¹ Polli…² Candi…³ Surname GivenNm Ballo…⁴ Elected Histo…⁵ PartyAb PartyNm Ordin…⁶ Swing</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2022 QLD            156 Brisbane      83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
-<span><span class="co">#&gt;  2  2022 QLD            156 Brisbane      83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
-<span><span class="co">#&gt;  3  2022 QLD            156 Brisbane      83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
-<span><span class="co">#&gt;  4  2022 QLD            156 Brisbane      83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
-<span><span class="co">#&gt;  5  2022 QLD            156 Brisbane      83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
-<span><span class="co">#&gt;  6  2022 QLD            156 Brisbane      83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
-<span><span class="co">#&gt;  7  2022 QLD            156 Brisbane      83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
-<span><span class="co">#&gt;  8  2022 QLD            156 Brisbane      83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
-<span><span class="co">#&gt;  9  2022 QLD            156 Brisbane       6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
-<span><span class="co">#&gt; 10  2022 QLD            156 Brisbane       6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
-<span><span class="co">#&gt; # … with 334 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​PollingPlaceID, ²​PollingPlace,</span></span>
-<span><span class="co">#&gt; #   ³​CandidateID, ⁴​BallotPosition, ⁵​HistoricElected, ⁶​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2022 QLD          156 Brisba…   83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
+<span><span class="co">#&gt;  2  2022 QLD          156 Brisba…   83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
+<span><span class="co">#&gt;  3  2022 QLD          156 Brisba…   83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
+<span><span class="co">#&gt;  4  2022 QLD          156 Brisba…   83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
+<span><span class="co">#&gt;  5  2022 QLD          156 Brisba…   83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
+<span><span class="co">#&gt;  6  2022 QLD          156 Brisba…   83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
+<span><span class="co">#&gt;  7  2022 QLD          156 Brisba…   83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
+<span><span class="co">#&gt;  8  2022 QLD          156 Brisba…   83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
+<span><span class="co">#&gt;  9  2022 QLD          156 Brisba…    6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
+<span><span class="co">#&gt; 10  2022 QLD          156 Brisba…    6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
+<span><span class="co">#&gt; # … with 334 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​DivisionID, ²​DivisionNm,</span></span>
+<span><span class="co">#&gt; #   ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes</span></span></code></pre></div>
 <p>Both parameters can include more than one value, e.g.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Brisbane"</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 712 × 17</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm Pollin…¹ Polli…² Candi…³ Surname GivenNm Ballo…⁴ Elected Histo…⁵ PartyAb PartyNm Ordin…⁶ Swing</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2022 QLD            156 Brisbane      83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
-<span><span class="co">#&gt;  2  2022 QLD            156 Brisbane      83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
-<span><span class="co">#&gt;  3  2022 QLD            156 Brisbane      83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
-<span><span class="co">#&gt;  4  2022 QLD            156 Brisbane      83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
-<span><span class="co">#&gt;  5  2022 QLD            156 Brisbane      83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
-<span><span class="co">#&gt;  6  2022 QLD            156 Brisbane      83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
-<span><span class="co">#&gt;  7  2022 QLD            156 Brisbane      83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
-<span><span class="co">#&gt;  8  2022 QLD            156 Brisbane      83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
-<span><span class="co">#&gt;  9  2022 QLD            156 Brisbane       6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
-<span><span class="co">#&gt; 10  2022 QLD            156 Brisbane       6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
-<span><span class="co">#&gt; # … with 702 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​PollingPlaceID, ²​PollingPlace,</span></span>
-<span><span class="co">#&gt; #   ³​CandidateID, ⁴​BallotPosition, ⁵​HistoricElected, ⁶​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2022 QLD          156 Brisba…   83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
+<span><span class="co">#&gt;  2  2022 QLD          156 Brisba…   83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
+<span><span class="co">#&gt;  3  2022 QLD          156 Brisba…   83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
+<span><span class="co">#&gt;  4  2022 QLD          156 Brisba…   83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
+<span><span class="co">#&gt;  5  2022 QLD          156 Brisba…   83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
+<span><span class="co">#&gt;  6  2022 QLD          156 Brisba…   83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
+<span><span class="co">#&gt;  7  2022 QLD          156 Brisba…   83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
+<span><span class="co">#&gt;  8  2022 QLD          156 Brisba…   83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
+<span><span class="co">#&gt;  9  2022 QLD          156 Brisba…    6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
+<span><span class="co">#&gt; 10  2022 QLD          156 Brisba…    6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
+<span><span class="co">#&gt; # … with 702 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​DivisionID, ²​DivisionNm,</span></span>
+<span><span class="co">#&gt; #   ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Brisbane"</span>,<span class="st">"Perth"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1,783 × 17</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm Pollin…¹ Polli…² Candi…³ Surname GivenNm Ballo…⁴ Elected Histo…⁵ PartyAb PartyNm Ordin…⁶ Swing</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2022 QLD            156 Brisbane      83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
-<span><span class="co">#&gt;  2  2022 QLD            156 Brisbane      83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
-<span><span class="co">#&gt;  3  2022 QLD            156 Brisbane      83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
-<span><span class="co">#&gt;  4  2022 QLD            156 Brisbane      83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
-<span><span class="co">#&gt;  5  2022 QLD            156 Brisbane      83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
-<span><span class="co">#&gt;  6  2022 QLD            156 Brisbane      83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
-<span><span class="co">#&gt;  7  2022 QLD            156 Brisbane      83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
-<span><span class="co">#&gt;  8  2022 QLD            156 Brisbane      83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
-<span><span class="co">#&gt;  9  2022 QLD            156 Brisbane       6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
-<span><span class="co">#&gt; 10  2022 QLD            156 Brisbane       6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
-<span><span class="co">#&gt; # … with 1,773 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​PollingPlaceID, ²​PollingPlace,</span></span>
-<span><span class="co">#&gt; #   ³​CandidateID, ⁴​BallotPosition, ⁵​HistoricElected, ⁶​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2022 QLD          156 Brisba…   83397 Alderl…   37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      23  2.31</span></span>
+<span><span class="co">#&gt;  2  2022 QLD          156 Brisba…   83397 Alderl…   35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      25  0.77</span></span>
+<span><span class="co">#&gt;  3  2022 QLD          156 Brisba…   83397 Alderl…   37338 BATES   Stephen       3 TRUE    FALSE   GRN     Queens…     251  3.43</span></span>
+<span><span class="co">#&gt;  4  2022 QLD          156 Brisba…   83397 Alderl…   37230 JARRETT Madonna       4 FALSE   FALSE   ALP     Austra…     315  1.27</span></span>
+<span><span class="co">#&gt;  5  2022 QLD          156 Brisba…   83397 Alderl…   37482 EVANS   Trevor        5 FALSE   TRUE    LNP     Libera…     328 -9.97</span></span>
+<span><span class="co">#&gt;  6  2022 QLD          156 Brisba…   83397 Alderl…   38213 HOLD    Trevor        6 FALSE   FALSE   ON      Paulin…      31  1.5 </span></span>
+<span><span class="co">#&gt;  7  2022 QLD          156 Brisba…   83397 Alderl…   37311 BULL    Anthony       7 FALSE   FALSE   LDP     Libera…      22  2.21</span></span>
+<span><span class="co">#&gt;  8  2022 QLD          156 Brisba…   83397 Alderl…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      20 -1.17</span></span>
+<span><span class="co">#&gt;  9  2022 QLD          156 Brisba…    6017 Ascot     37204 KENNEDY Tiana         1 FALSE   FALSE   AJP     Animal…      35  1.65</span></span>
+<span><span class="co">#&gt; 10  2022 QLD          156 Brisba…    6017 Ascot     35972 KNUDSON Justin…       2 FALSE   FALSE   UAPP    United…      62  2.06</span></span>
+<span><span class="co">#&gt; # … with 1,773 more rows, 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​DivisionID, ²​DivisionNm,</span></span>
+<span><span class="co">#&gt; #   ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes</span></span></code></pre></div>
 <p>By default, the results are presented by polling place, with it is
 possible to aggregate them.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Brisbane"</span>,<span class="st">"Perth"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 37 × 14</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname   GivenNm  BallotPosition Elected Histor…¹ PartyAb PartyNm Sitti…² Ordin…³</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;             &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 QLD            156 Brisbane           999 Informal  Informal            999 FALSE   FALSE    Inform… Inform… FALSE      1999</span></span>
-<span><span class="co">#&gt;  2  2019 QLD            156 Brisbane         32751 PERRY     Anne                  1 FALSE   FALSE    ON      Paulin… FALSE      1641</span></span>
-<span><span class="co">#&gt;  3  2019 QLD            156 Brisbane         32946 NEWBURY   Paul                  6 FALSE   FALSE    ALP     Austra… FALSE     19018</span></span>
-<span><span class="co">#&gt;  4  2019 QLD            156 Brisbane         32960 WHITTAKER Aaron                 3 FALSE   FALSE    UAPP    United… FALSE       975</span></span>
-<span><span class="co">#&gt;  5  2019 QLD            156 Brisbane         33144 BARTLETT  Andrew                4 FALSE   FALSE    GRN     The Gr… FALSE     17247</span></span>
-<span><span class="co">#&gt;  6  2019 QLD            156 Brisbane         33206 EVANS     Trevor                2 TRUE    TRUE     LNP     Libera… FALSE     36119</span></span>
-<span><span class="co">#&gt;  7  2019 QLD            156 Brisbane         33224 EMANUEL   Kamala                7 FALSE   FALSE    SAL     Social… FALSE       528</span></span>
-<span><span class="co">#&gt;  8  2019 QLD            156 Brisbane         33326 JEANNERET Rod                   5 FALSE   FALSE    FACN    FRASER… FALSE       526</span></span>
-<span><span class="co">#&gt;  9  2019 WA             245 Perth              999 Informal  Informal            999 FALSE   FALSE    Inform… Inform… FALSE      3548</span></span>
-<span><span class="co">#&gt; 10  2019 WA             245 Perth            32155 PERKS     Caroline              6 FALSE   FALSE    GRN     The Gr… FALSE     13234</span></span>
-<span><span class="co">#&gt; # … with 27 more rows, and abbreviated variable names ¹​HistoricElected, ²​SittingMemberFl, ³​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname   GivenNm  BallotP…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 QLD            156 Brisbane           999 Informal  Informal       999 FALSE   FALSE   Inform… Inform… FALSE      1999</span></span>
+<span><span class="co">#&gt;  2  2019 QLD            156 Brisbane         32751 PERRY     Anne             1 FALSE   FALSE   ON      Paulin… FALSE      1641</span></span>
+<span><span class="co">#&gt;  3  2019 QLD            156 Brisbane         32946 NEWBURY   Paul             6 FALSE   FALSE   ALP     Austra… FALSE     19018</span></span>
+<span><span class="co">#&gt;  4  2019 QLD            156 Brisbane         32960 WHITTAKER Aaron            3 FALSE   FALSE   UAPP    United… FALSE       975</span></span>
+<span><span class="co">#&gt;  5  2019 QLD            156 Brisbane         33144 BARTLETT  Andrew           4 FALSE   FALSE   GRN     The Gr… FALSE     17247</span></span>
+<span><span class="co">#&gt;  6  2019 QLD            156 Brisbane         33206 EVANS     Trevor           2 TRUE    TRUE    LNP     Libera… FALSE     36119</span></span>
+<span><span class="co">#&gt;  7  2019 QLD            156 Brisbane         33224 EMANUEL   Kamala           7 FALSE   FALSE   SAL     Social… FALSE       528</span></span>
+<span><span class="co">#&gt;  8  2019 QLD            156 Brisbane         33326 JEANNERET Rod              5 FALSE   FALSE   FACN    FRASER… FALSE       526</span></span>
+<span><span class="co">#&gt;  9  2019 WA             245 Perth              999 Informal  Informal       999 FALSE   FALSE   Inform… Inform… FALSE      3548</span></span>
+<span><span class="co">#&gt; 10  2019 WA             245 Perth            32155 PERKS     Caroline         6 FALSE   FALSE   GRN     The Gr… FALSE     13234</span></span>
+<span><span class="co">#&gt; # … with 27 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Brisbane"</span>,<span class="st">"Perth"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>, polling_places <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Yokine North"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 12 × 17</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm Polli…¹ Polli…² Candi…³ Surname GivenNm Ballo…⁴ Elected Histo…⁵ PartyAb PartyNm Ordin…⁶  Swing</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2022 WA             245 Perth         8203 Yokine…   37417 BAILEY  Cameron       1 FALSE   FALSE   ON      Paulin…      25  -0.97</span></span>
-<span><span class="co">#&gt;  2  2022 WA             245 Perth         8203 Yokine…   36515 POWELL  Dean          2 FALSE   FALSE   AUC     Austra…      18   0.2 </span></span>
-<span><span class="co">#&gt;  3  2022 WA             245 Perth         8203 Yokine…   37748 CONNOR  Sean          3 FALSE   FALSE   GAP     The Gr…      14   1.54</span></span>
-<span><span class="co">#&gt;  4  2022 WA             245 Perth         8203 Yokine…   37803 VOS     Dave          4 FALSE   FALSE   WAP     WESTER…      18  -0.19</span></span>
-<span><span class="co">#&gt;  5  2022 WA             245 Perth         8203 Yokine…   37233 SZMEKU… Sarah         5 FALSE   FALSE   AJP     Animal…      14   1.54</span></span>
-<span><span class="co">#&gt;  6  2022 WA             245 Perth         8203 Yokine…   37327 GORMAN  Patrick       6 TRUE    TRUE    ALP     Austra…     341   7.73</span></span>
-<span><span class="co">#&gt;  7  2022 WA             245 Perth         8203 Yokine…   37273 NICKOLS Evan          7 FALSE   FALSE   LDP     Libera…      18   1.98</span></span>
-<span><span class="co">#&gt;  8  2022 WA             245 Perth         8203 Yokine…   36507 EBERHA… Sonya …       8 FALSE   FALSE   UAPP    United…      23   1.21</span></span>
-<span><span class="co">#&gt;  9  2022 WA             245 Perth         8203 Yokine…   36628 PERKS   Caroli…       9 FALSE   FALSE   GRN     The Gr…     138   2.23</span></span>
-<span><span class="co">#&gt; 10  2022 WA             245 Perth         8203 Yokine…   36601 DWYER   David        10 FALSE   FALSE   LP      Liberal     298 -15.7 </span></span>
-<span><span class="co">#&gt; 11  2022 WA             245 Perth         8203 Yokine…   37290 GYURU   Aiden        11 FALSE   FALSE   CYA     Austra…       4   0.44</span></span>
-<span><span class="co">#&gt; 12  2022 WA             245 Perth         8203 Yokine…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      80   2.8 </span></span>
-<span><span class="co">#&gt; # … with 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​PollingPlaceID, ²​PollingPlace, ³​CandidateID,</span></span>
-<span><span class="co">#&gt; #   ⁴​BallotPosition, ⁵​HistoricElected, ⁶​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb Divis…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸  Swing</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2022 WA          245 Perth      8203 Yokine…   37417 BAILEY  Cameron       1 FALSE   FALSE   ON      Paulin…      25  -0.97</span></span>
+<span><span class="co">#&gt;  2  2022 WA          245 Perth      8203 Yokine…   36515 POWELL  Dean          2 FALSE   FALSE   AUC     Austra…      18   0.2 </span></span>
+<span><span class="co">#&gt;  3  2022 WA          245 Perth      8203 Yokine…   37748 CONNOR  Sean          3 FALSE   FALSE   GAP     The Gr…      14   1.54</span></span>
+<span><span class="co">#&gt;  4  2022 WA          245 Perth      8203 Yokine…   37803 VOS     Dave          4 FALSE   FALSE   WAP     WESTER…      18  -0.19</span></span>
+<span><span class="co">#&gt;  5  2022 WA          245 Perth      8203 Yokine…   37233 SZMEKU… Sarah         5 FALSE   FALSE   AJP     Animal…      14   1.54</span></span>
+<span><span class="co">#&gt;  6  2022 WA          245 Perth      8203 Yokine…   37327 GORMAN  Patrick       6 TRUE    TRUE    ALP     Austra…     341   7.73</span></span>
+<span><span class="co">#&gt;  7  2022 WA          245 Perth      8203 Yokine…   37273 NICKOLS Evan          7 FALSE   FALSE   LDP     Libera…      18   1.98</span></span>
+<span><span class="co">#&gt;  8  2022 WA          245 Perth      8203 Yokine…   36507 EBERHA… Sonya …       8 FALSE   FALSE   UAPP    United…      23   1.21</span></span>
+<span><span class="co">#&gt;  9  2022 WA          245 Perth      8203 Yokine…   36628 PERKS   Caroli…       9 FALSE   FALSE   GRN     The Gr…     138   2.23</span></span>
+<span><span class="co">#&gt; 10  2022 WA          245 Perth      8203 Yokine…   36601 DWYER   David        10 FALSE   FALSE   LP      Liberal     298 -15.7 </span></span>
+<span><span class="co">#&gt; 11  2022 WA          245 Perth      8203 Yokine…   37290 GYURU   Aiden        11 FALSE   FALSE   CYA     Austra…       4   0.44</span></span>
+<span><span class="co">#&gt; 12  2022 WA          245 Perth      8203 Yokine…     999 Inform… Inform…     999 FALSE   FALSE   Inform… Inform…      80   2.8 </span></span>
+<span><span class="co">#&gt; # … with 1 more variable: SittingMemberFl &lt;lgl&gt;, and abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID,</span></span>
+<span><span class="co">#&gt; #   ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes</span></span></code></pre></div>
 <p>It is also possible to restrict the results to selected polling
 places</p>
 <p>Additionally, it is possible to select one or more states instead of
@@ -212,49 +212,49 @@ a group divisions, e.g.:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>state<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TAS"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 86 × 14</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    BallotPosition Elected Histo…¹ PartyAb PartyNm Sitti…² Ordin…³</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;               &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 TAS            192 Bass               999 Informal Informal              999 FALSE   FALSE   Inform… Inform… FALSE      2962</span></span>
-<span><span class="co">#&gt;  2  2019 TAS            192 Bass             32124 ARCHER   Bridget                 4 TRUE    FALSE   LP      Liberal FALSE     25401</span></span>
-<span><span class="co">#&gt;  3  2019 TAS            192 Bass             32327 HART     Ross                    2 FALSE   TRUE    ALP     Austra… FALSE     20882</span></span>
-<span><span class="co">#&gt;  4  2019 TAS            192 Bass             32379 WOODBURY Susan                   3 FALSE   FALSE   AJP     Animal… FALSE      1422</span></span>
-<span><span class="co">#&gt;  5  2019 TAS            192 Bass             32399 COOPER   Carl                    7 FALSE   FALSE   NP      The Na… FALSE       783</span></span>
-<span><span class="co">#&gt;  6  2019 TAS            192 Bass             32540 HALL     Tom                     1 FALSE   FALSE   GRN     The Gr… FALSE      6198</span></span>
-<span><span class="co">#&gt;  7  2019 TAS            192 Bass             32545 ROARK    Allan John              6 FALSE   FALSE   UAPP    United… FALSE      2891</span></span>
-<span><span class="co">#&gt;  8  2019 TAS            192 Bass             33590 LAMBERT  Todd                    5 FALSE   FALSE   IND     Indepe… FALSE      2229</span></span>
-<span><span class="co">#&gt;  9  2019 TAS            193 Braddon            999 Informal Informal              999 FALSE   FALSE   Inform… Inform… FALSE      5023</span></span>
-<span><span class="co">#&gt; 10  2019 TAS            193 Braddon          32094 BRAKEY   Craig                   2 FALSE   FALSE   IND     Indepe… FALSE      7046</span></span>
-<span><span class="co">#&gt; # … with 76 more rows, and abbreviated variable names ¹​HistoricElected, ²​SittingMemberFl, ³​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    Ballot…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;         &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 TAS            192 Bass               999 Informal Informal        999 FALSE   FALSE   Inform… Inform… FALSE      2962</span></span>
+<span><span class="co">#&gt;  2  2019 TAS            192 Bass             32124 ARCHER   Bridget           4 TRUE    FALSE   LP      Liberal FALSE     25401</span></span>
+<span><span class="co">#&gt;  3  2019 TAS            192 Bass             32327 HART     Ross              2 FALSE   TRUE    ALP     Austra… FALSE     20882</span></span>
+<span><span class="co">#&gt;  4  2019 TAS            192 Bass             32379 WOODBURY Susan             3 FALSE   FALSE   AJP     Animal… FALSE      1422</span></span>
+<span><span class="co">#&gt;  5  2019 TAS            192 Bass             32399 COOPER   Carl              7 FALSE   FALSE   NP      The Na… FALSE       783</span></span>
+<span><span class="co">#&gt;  6  2019 TAS            192 Bass             32540 HALL     Tom               1 FALSE   FALSE   GRN     The Gr… FALSE      6198</span></span>
+<span><span class="co">#&gt;  7  2019 TAS            192 Bass             32545 ROARK    Allan John        6 FALSE   FALSE   UAPP    United… FALSE      2891</span></span>
+<span><span class="co">#&gt;  8  2019 TAS            192 Bass             33590 LAMBERT  Todd              5 FALSE   FALSE   IND     Indepe… FALSE      2229</span></span>
+<span><span class="co">#&gt;  9  2019 TAS            193 Braddon            999 Informal Informal        999 FALSE   FALSE   Inform… Inform… FALSE      5023</span></span>
+<span><span class="co">#&gt; 10  2019 TAS            193 Braddon          32094 BRAKEY   Craig             2 FALSE   FALSE   IND     Indepe… FALSE      7046</span></span>
+<span><span class="co">#&gt; # … with 76 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes</span></span></code></pre></div>
 <p>It is also possible to filter results by one or more parties:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>state<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NT"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span>, party_abb<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ALP"</span>,<span class="st">"CLP"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 14</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm CandidateID Surname    GivenNm   BallotPosition Elected Histo…¹ PartyAb PartyNm Sitti…² Ordin…³</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;              &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1  2019 NT             306 Lingiari         32740 SNOWDON    Warren                 1 TRUE    TRUE    ALP     Austra… FALSE     20125</span></span>
-<span><span class="co">#&gt; 2  2019 NT             306 Lingiari         33045 PRICE      Jacinta                6 FALSE   FALSE   CLP     Countr… FALSE     15918</span></span>
-<span><span class="co">#&gt; 3  2019 NT             307 Solomon          32743 GOSLING    Luke John              1 TRUE    TRUE    ALP     Austra… FALSE     19484</span></span>
-<span><span class="co">#&gt; 4  2019 NT             307 Solomon          33053 GANLEY     Kathy                  3 FALSE   FALSE   CLP     Countr… FALSE     18297</span></span>
-<span><span class="co">#&gt; 5  2022 NT             306 Lingiari         36968 RYAN       Damien                 1 FALSE   FALSE   CLP     NT CLP  FALSE     13974</span></span>
-<span><span class="co">#&gt; 6  2022 NT             306 Lingiari         37286 SCRYMGOUR  Marion                 5 TRUE    FALSE   ALP     A.L.P.  FALSE     15367</span></span>
-<span><span class="co">#&gt; 7  2022 NT             307 Solomon          36937 MACFARLANE Tina                   4 FALSE   FALSE   CLP     NT CLP  FALSE     11989</span></span>
-<span><span class="co">#&gt; 8  2022 NT             307 Solomon          37280 GOSLING    Luke                   3 TRUE    TRUE    ALP     A.L.P.  FALSE     18891</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​HistoricElected, ²​SittingMemberFl, ³​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm CandidateID Surname    GivenNm   Ballot…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1  2019 NT             306 Lingiari         32740 SNOWDON    Warren           1 TRUE    TRUE    ALP     Austra… FALSE     20125</span></span>
+<span><span class="co">#&gt; 2  2019 NT             306 Lingiari         33045 PRICE      Jacinta          6 FALSE   FALSE   CLP     Countr… FALSE     15918</span></span>
+<span><span class="co">#&gt; 3  2019 NT             307 Solomon          32743 GOSLING    Luke John        1 TRUE    TRUE    ALP     Austra… FALSE     19484</span></span>
+<span><span class="co">#&gt; 4  2019 NT             307 Solomon          33053 GANLEY     Kathy            3 FALSE   FALSE   CLP     Countr… FALSE     18297</span></span>
+<span><span class="co">#&gt; 5  2022 NT             306 Lingiari         36968 RYAN       Damien           1 FALSE   FALSE   CLP     NT CLP  FALSE     13974</span></span>
+<span><span class="co">#&gt; 6  2022 NT             306 Lingiari         37286 SCRYMGOUR  Marion           5 TRUE    FALSE   ALP     A.L.P.  FALSE     15367</span></span>
+<span><span class="co">#&gt; 7  2022 NT             307 Solomon          36937 MACFARLANE Tina             4 FALSE   FALSE   CLP     NT CLP  FALSE     11989</span></span>
+<span><span class="co">#&gt; 8  2022 NT             307 Solomon          37280 GOSLING    Luke             3 TRUE    TRUE    ALP     A.L.P.  FALSE     18891</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes</span></span></code></pre></div>
 <p><em>house_primary_vote_summary()</em> builds on the basic function
-and summarise data.</p>
+and summarise data .</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_vote_summary.html">house_primary_vote_summary</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Brisbane"</span>, year<span class="op">=</span><span class="fl">2022</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 11</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionNm GivenNm     Surname  PartyAb  PartyNm                              OrdinaryVotes Percent…¹ Perce…² Elected</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;                                        &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt; 1  2022 QLD     Brisbane   Informal    Informal Informal Informal                                      1566      2.09    2.13 FALSE  </span></span>
-<span><span class="co">#&gt; 2  2022 QLD     Brisbane   Justin Marc KNUDSON  UAPP     United Australia Party                        1430      1.91    1.95 FALSE  </span></span>
-<span><span class="co">#&gt; 3  2022 QLD     Brisbane   Tiana       KENNEDY  AJP      Animal Justice Party                          1235      1.65    1.68 FALSE  </span></span>
-<span><span class="co">#&gt; 4  2022 QLD     Brisbane   Madonna     JARRETT  ALP      Australian Labor Party                       20346     27.1    27.7  FALSE  </span></span>
-<span><span class="co">#&gt; 5  2022 QLD     Brisbane   Anthony     BULL     LDP      Liberal Democrats                             1115      1.49    1.52 FALSE  </span></span>
-<span><span class="co">#&gt; 6  2022 QLD     Brisbane   Stephen     BATES    GRN      Queensland Greens                            20985     28.0    28.6  TRUE   </span></span>
-<span><span class="co">#&gt; 7  2022 QLD     Brisbane   Trevor      EVANS    LNP      Liberal National Party of Queensland         26801     35.7    36.5  FALSE  </span></span>
-<span><span class="co">#&gt; 8  2022 QLD     Brisbane   Trevor      HOLD     ON       Pauline Hanson's One Nation                   1518      2.02    2.07 FALSE  </span></span>
+<span><span class="co">#&gt;    Year StateAb DivisionNm PartyAb  PartyNm                              OrdinaryVotes GivenNm  Surname Perce…¹ Perce…² Elected</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;                                        &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt; 1  2022 QLD     Brisbane   AJP      Animal Justice Party                          1235 Tiana    KENNEDY    1.65    1.68 FALSE  </span></span>
+<span><span class="co">#&gt; 2  2022 QLD     Brisbane   ALP      Australian Labor Party                       20346 Madonna  JARRETT   27.1    27.7  FALSE  </span></span>
+<span><span class="co">#&gt; 3  2022 QLD     Brisbane   GRN      Queensland Greens                            20985 Stephen  BATES     28.0    28.6  TRUE   </span></span>
+<span><span class="co">#&gt; 4  2022 QLD     Brisbane   Informal Informal                                      1566 Informal Inform…    2.09    2.13 FALSE  </span></span>
+<span><span class="co">#&gt; 5  2022 QLD     Brisbane   LDP      Liberal Democrats                             1115 Anthony  BULL       1.49    1.52 FALSE  </span></span>
+<span><span class="co">#&gt; 6  2022 QLD     Brisbane   LNP      Liberal National Party of Queensland         26801 Trevor   EVANS     35.7    36.5  FALSE  </span></span>
+<span><span class="co">#&gt; 7  2022 QLD     Brisbane   ON       Pauline Hanson's One Nation                   1518 Trevor   HOLD       2.02    2.07 FALSE  </span></span>
+<span><span class="co">#&gt; 8  2022 QLD     Brisbane   UAPP     United Australia Party                        1430 Justin … KNUDSON    1.91    1.95 FALSE  </span></span>
 <span><span class="co">#&gt; # … with abbreviated variable names ¹​Percentage_with_Informal, ²​Percentage</span></span></code></pre></div>
 <p>Using the previous filters, it is possible to get ad-hoc summaries,
 for instance - all the ALP vote in Queensland in 2022, or the historic
@@ -263,35 +263,75 @@ Liberal vote in Franklin.</p>
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/house_primary_vote_summary.html">house_primary_vote_summary</a></span><span class="op">(</span>state <span class="op">=</span> <span class="st">"QLD"</span>, year<span class="op">=</span><span class="fl">2022</span>,parties<span class="op">=</span><span class="st">"ALP"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 30 × 11</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionNm  GivenNm Surname    PartyAb PartyNm                OrdinaryVotes Percentage_with_Informal Perce…¹ Elected</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                          &lt;int&gt;                    &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt;  1  2022 QLD     Bowman      Donisha DUFF       ALP     Australian Labor Party         23196                     28.7    29.6 FALSE  </span></span>
-<span><span class="co">#&gt;  2  2022 QLD     Brisbane    Madonna JARRETT    ALP     Australian Labor Party         20346                     27.1    27.7 FALSE  </span></span>
-<span><span class="co">#&gt;  3  2022 QLD     Capricornia Russell ROBERTSON  ALP     Australian Labor Party         20543                     26.9    28.7 FALSE  </span></span>
-<span><span class="co">#&gt;  4  2022 QLD     Dawson      Shane   HAMILTON   ALP     Australian Labor Party         18921                     23.8    24.9 FALSE  </span></span>
-<span><span class="co">#&gt;  5  2022 QLD     Fadden      Letitia DEL FABBRO ALP     Australian Labor Party         18140                     21.7    22.8 FALSE  </span></span>
-<span><span class="co">#&gt;  6  2022 QLD     Fairfax     Sue     FERGUSON   ALP     Australian Labor Party         18001                     21.0    22.3 FALSE  </span></span>
-<span><span class="co">#&gt;  7  2022 QLD     Fisher      Judene  ANDREWS    ALP     Australian Labor Party         19804                     22.9    23.7 FALSE  </span></span>
-<span><span class="co">#&gt;  8  2022 QLD     Forde       Rowan   HOLZBERGER ALP     Australian Labor Party         18969                     26.1    28.2 FALSE  </span></span>
-<span><span class="co">#&gt;  9  2022 QLD     Griffith    Terri   BUTLER     ALP     Australian Labor Party         21961                     27.9    28.4 FALSE  </span></span>
-<span><span class="co">#&gt; 10  2022 QLD     Groom       Gen     ALLPASS    ALP     Australian Labor Party         13822                     18.3    19.4 FALSE  </span></span>
-<span><span class="co">#&gt; # … with 20 more rows, and abbreviated variable name ¹​Percentage</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionNm  PartyAb PartyNm                OrdinaryVotes GivenNm Surname    Percentage_with_…¹ Perce…² Elected</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;                          &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;                   &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt;  1  2022 QLD     Blair       ALP     Australian Labor Party         27323 Shayne  NEUMANN                  33.4    35.5 TRUE   </span></span>
+<span><span class="co">#&gt;  2  2022 QLD     Bonner      ALP     Australian Labor Party         20930 Tabatha YOUNG                    29.3    30.0 FALSE  </span></span>
+<span><span class="co">#&gt;  3  2022 QLD     Bowman      ALP     Australian Labor Party         23196 Donisha DUFF                     28.7    29.6 FALSE  </span></span>
+<span><span class="co">#&gt;  4  2022 QLD     Brisbane    ALP     Australian Labor Party         20346 Madonna JARRETT                  27.1    27.7 FALSE  </span></span>
+<span><span class="co">#&gt;  5  2022 QLD     Capricornia ALP     Australian Labor Party         20543 Russell ROBERTSON                26.9    28.7 FALSE  </span></span>
+<span><span class="co">#&gt;  6  2022 QLD     Dawson      ALP     Australian Labor Party         18921 Shane   HAMILTON                 23.8    24.9 FALSE  </span></span>
+<span><span class="co">#&gt;  7  2022 QLD     Dickson     ALP     Australian Labor Party         22988 Ali     FRANCE                   31.0    32.3 FALSE  </span></span>
+<span><span class="co">#&gt;  8  2022 QLD     Fadden      ALP     Australian Labor Party         18140 Letitia DEL FABBRO               21.7    22.8 FALSE  </span></span>
+<span><span class="co">#&gt;  9  2022 QLD     Fairfax     ALP     Australian Labor Party         18001 Sue     FERGUSON                 21.0    22.3 FALSE  </span></span>
+<span><span class="co">#&gt; 10  2022 QLD     Fisher      ALP     Australian Labor Party         19804 Judene  ANDREWS                  22.9    23.7 FALSE  </span></span>
+<span><span class="co">#&gt; # … with 20 more rows, and abbreviated variable names ¹​Percentage_with_Informal, ²​Percentage</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_vote_summary.html">house_primary_vote_summary</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Franklin"</span>,parties<span class="op">=</span><span class="st">"LP"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 7 × 11</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionNm GivenNm      Surname PartyAb PartyNm OrdinaryVotes Percentage_with_Informal Percentage Elected</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;           &lt;int&gt;                    &lt;dbl&gt;      &lt;dbl&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt; 1  2004 TAS     Franklin   Henry        FINNIS  LP      Liberal         21337                     37.6       39.0 FALSE  </span></span>
-<span><span class="co">#&gt; 2  2007 TAS     Franklin   Vanessa      GOODWIN LP      Liberal         22616                     39.8       41.0 FALSE  </span></span>
-<span><span class="co">#&gt; 3  2010 TAS     Franklin   Jane         HOWLETT LP      Liberal         18386                     32.0       33.3 FALSE  </span></span>
-<span><span class="co">#&gt; 4  2013 TAS     Franklin   Bernadette   BLACK   LP      Liberal         21867                     37.1       38.7 FALSE  </span></span>
-<span><span class="co">#&gt; 5  2016 TAS     Franklin   Amanda-Sue   MARKHAM LP      Liberal         20754                     33.9       35.1 FALSE  </span></span>
-<span><span class="co">#&gt; 6  2019 TAS     Franklin   Dean         YOUNG   LP      Liberal         18591                     29.9       30.9 FALSE  </span></span>
-<span><span class="co">#&gt; 7  2022 TAS     Franklin   Kristy Maree JOHNSON LP      Liberal         14374                     24.5       25.9 FALSE</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionNm PartyAb PartyNm OrdinaryVotes GivenNm      Surname Percentage_with_Informal Percentage Elected</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;           &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;                      &lt;dbl&gt;      &lt;dbl&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt; 1  2004 TAS     Franklin   LP      Liberal         21337 Henry        FINNIS                      37.6       39.0 FALSE  </span></span>
+<span><span class="co">#&gt; 2  2007 TAS     Franklin   LP      Liberal         22616 Vanessa      GOODWIN                     39.8       41.0 FALSE  </span></span>
+<span><span class="co">#&gt; 3  2010 TAS     Franklin   LP      Liberal         18386 Jane         HOWLETT                     32.0       33.3 FALSE  </span></span>
+<span><span class="co">#&gt; 4  2013 TAS     Franklin   LP      Liberal         21867 Bernadette   BLACK                       37.1       38.7 FALSE  </span></span>
+<span><span class="co">#&gt; 5  2016 TAS     Franklin   LP      Liberal         20754 Amanda-Sue   MARKHAM                     33.9       35.1 FALSE  </span></span>
+<span><span class="co">#&gt; 6  2019 TAS     Franklin   LP      Liberal         18591 Dean         YOUNG                       29.9       30.9 FALSE  </span></span>
+<span><span class="co">#&gt; 7  2022 TAS     Franklin   LP      Liberal         14374 Kristy Maree JOHNSON                     24.5       25.9 FALSE</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plotting">Plotting<a class="anchor" aria-label="anchor" href="#plotting"></a>
 </h2>
+<div class="section level3">
+<h3 id="historic-trends">Historic Trends<a class="anchor" aria-label="anchor" href="#historic-trends"></a>
+</h3>
+<p>The first plotting convenience function in this packages allows to
+compare the evolution of primary voting across time. This function
+relies on house_primary_summary and uses many of its options. It’s first
+use is to represent party trends in one electorate:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-11-1.png" alt="plot of chunk unnamed-chunk-11" width="100%"></p>
+<p>As in many cases there are many minor parties, it is sometime useful
+just to focus in a number of parties. This function allow to filter by a
+number of parties or by filtering by the most voted in a certain year.
+In both cases it is possible to consolidate the others votes.</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span><span class="st">"Canberra"</span>, parties <span class="op">=</span><span class="fl">3</span>, parties_year <span class="op">=</span> <span class="fl">2022</span>, include_others <span class="op">=</span> <span class="cn">TRUE</span> <span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="100%"></p>
+<p>Finally, it is possible to aggregate party acronyms - sometimes a
+same party has changed named or registered differently</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="../reference/house_primary_historic_plot.html">house_primary_historic_plot</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Brisbane"</span>,parties<span class="op">=</span><span class="fl">5</span>,</span>
+<span>                            merge_parties <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>LNP<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LNP"</span>,<span class="st">"LNQ"</span>,<span class="st">"LP"</span><span class="op">)</span>,ON<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"HAN"</span>,<span class="st">"ON"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="100%"></p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="results-for-one-election">Results for one election<a class="anchor" aria-label="anchor" href="#results-for-one-election"></a>
+</h2>
+<p>This package also contains a convenience function to look at the
+primary vote results for one division. Lile the previous function, this
+also inherits many of the attributes of
+<em>get_house_primary_vote</em>.</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_comparison_plot.html">house_primary_comparison_plot</a></span><span class="op">(</span>division <span class="op">=</span> <span class="st">"Kooyong"</span>, year<span class="op">=</span><span class="fl">2022</span>,individualise_IND <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14" width="100%"></p>
+<p>The plots can also be displayed in using bars, as shown below</p>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/house_primary_comparison_plot.html">house_primary_comparison_plot</a></span><span class="op">(</span>state<span class="op">=</span><span class="st">"TAS"</span>,year<span class="op">=</span><span class="fl">2022</span>,parties<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"LP"</span><span class="op">)</span>,plot_format <span class="op">=</span> <span class="st">"bar"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="https://carlosyanez.github.io/auspol/articles/house-primary-voteunnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15" width="100%"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

@@ -128,6 +128,7 @@ house_primary_historic_plot <- function(division=NULL,
 #'  with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.
 #' @param parties_year If *parties* has is NULL or a number, this indicates if the selection needs to be from
 #' a certain year (.e.g only select the historical data for the three top parties in 2012)
+#' @param merge_parties list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))
 #' @param include_others  Boolean used along *parties* to included the remaining votes in one "Other" category.
 #' @param include_informal Boolean to add informal votes in addition to the party selection.
 #'  Informal votes will be included if no parties are selected, or the top n parties are selected,
@@ -152,9 +153,10 @@ house_primary_comparison_plot <- function(division=NULL,
                                     nudge_x =5,
                                     parties=NULL,
                                     parties_year=NULL,
+                                    merge_parties=NULL,
                                     include_others=FALSE,
                                     include_informal=FALSE,
-                                    individualise_IND = FALSE,
+                                    individualise_IND = TRUE,
                                     include_data = TRUE,
                                     data=NULL){
 
@@ -162,7 +164,7 @@ house_primary_comparison_plot <- function(division=NULL,
   #year must be declared
   if(is.null(year)) stop("Year must be declared")
   if(length(year)>1) stop("Select just one year!")
-
+  if(!(plot_format %in% c("lollipop","bar"))) stop("Only bar and lollipop formats allowed")
   #must contain one of the following
 
   if(is.null(data)){
@@ -174,6 +176,7 @@ house_primary_comparison_plot <- function(division=NULL,
                                  year=year,
                                  parties=parties,
                                  parties_year=parties_year,
+                                 merge_parties = merge_parties,
                                  include_others=include_others,
                                  include_informal=include_informal,
                                  include_names = TRUE,
@@ -215,23 +218,15 @@ house_primary_comparison_plot <- function(division=NULL,
 
   if(sort_by_value) data <- data |> mutate(label=fct_reorder(.data$label,.data$value))
 
-  aesthetics2 <- NULL
-  if(plot_format=="lollipop"){
-    aesthetics2 <- aes(yend=.data$label, xend=.data$value,
-                       x=0,
-                       colour=.data$Party)
-    print(1)
-  }
-
-
   p <- data |>
           ggplot(aes(y=.data$label,x=.data$value,
                      colour=.data$Party,fill=.data$Party,
                      label=round(.data$value,2))) +
-          geom_auspol_lollipop(format="lollipop",
-                               segment.mapping=aesthetics2,
-                               include_labels = TRUE,
-                               extra_values= unique(data$Party),labels.nudge_x = nudge_x) +
+          geom_auspol_lollipop(format=plot_format,
+                               segment.mapping= aes(yend=.data$label, xend=.data$value,
+                                                    x=0,
+                                                    colour=.data$Party),
+                               include_labels = TRUE,labels.nudge_x = nudge_x) +
          labs(y=label)
 
    p <- auspol_theme(p,extra_colours = extra_colours, extra_values = unique(data$Party), coord_flip = FALSE)

@@ -59,8 +59,8 @@ load_auspol <- function(auspol_file,
   obj <- NULL
 
 
-  if (Sys.getenv("cache_dir") != "") {
-    cache_dir <- Sys.getenv("cache_dir")
+  if (Sys.getenv("auspol_cache_dir") != "") {
+    cache_dir <- Sys.getenv("auspol_cache_dir")
     cache_dir <- path.expand(cache_dir)
   } else {
     cache_dir <- manage_cache_dir(path("auspol"))

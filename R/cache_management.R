@@ -18,7 +18,7 @@
 #' cache_dir('PATH TO MY NEW CACHE DIRECTORY')
 #'
 #' # Check to see if it has been set correctly
-#' Sys.getenv('cache_dir')
+#' Sys.getenv('auspol_cache_dir')
 #' }
 manage_cache_dir <- function(path) {
   home <- Sys.getenv("HOME")
@@ -35,17 +35,17 @@ manage_cache_dir <- function(path) {
 
   check <- readLines(renv)
 
-  if (isTRUE(any(grepl("cache_dir", check)))) {
+  if (isTRUE(any(grepl('auspol_cache_dir', check)))) {
     oldenv <- read.table(renv,sep="=",stringsAsFactors = FALSE)
-    newenv <- oldenv[!grepl("cache_dir", oldenv$V1), ]
+    newenv <- oldenv[!grepl('auspol_cache_dir', oldenv$V1), ]
     write.table(newenv, renv, quote = FALSE, sep = "=",
                 col.names = FALSE, row.names = FALSE)
   }
 
-  var <- paste0("cache_dir=", "'", path, "'")
+  var <- paste0("auspol_cache_dir=", "'", path, "'")
 
   write(var, renv, sep = "\n", append = TRUE)
-  message(sprintf("Your new auspol cache directory is %s. \nTo use now, restart R or run `readRenviron('~/.Renviron')`", path))
+  message(sprintf("Your new cache directory is %s. \nTo use now, restart R or run `readRenviron('~/.Renviron')`", path))
 
 }
 
@@ -76,7 +76,7 @@ update_data <- function(file=NULL){
 #' @export
 #' @keywords helpers
 ls_data <- function(){
-  cache_dir <- Sys.getenv("cache_dir")
+  cache_dir <- Sys.getenv('auspol_cache_dir')
   dir_info(cache_dir)
 }
 
@@ -87,7 +87,7 @@ ls_data <- function(){
 #' @export
 #' @keywords helpers
 delete_data <- function(file=NULL){
-  cache_dir <- Sys.getenv("cache_dir")
+  cache_dir <- Sys.getenv('auspol_cache_dir')
 
   if(is.null(file)){
     file <- dir_ls(cache_dir)
@@ -103,7 +103,17 @@ delete_data <- function(file=NULL){
 #' @export
 #' @keywords helpers
 import_data <- function(file){
-  cache_dir <- Sys.getenv("cache_dir")
+  cache_dir <- Sys.getenv('auspol_cache_dir')
   file_copy(file,path(cache_dir,file),TRUE)
+
+}
+
+#' Helper function to find cache folder
+#' @returns nothing
+#' @export
+#' @keywords helpers
+find_cache<- function(){
+  cache_dir <- Sys.getenv('auspol_cache_dir')
+  return(cache_dir)
 
 }

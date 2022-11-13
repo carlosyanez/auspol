@@ -14,13 +14,12 @@ vignette: >
 knitr::opts_chunk$set(
   warning=  FALSE,
   collapse = TRUE, comment = "#>", out.width = "100%",
-  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "man/figures/house-primary-vote",
+  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "vignettes/house-primary-vote",
   message = FALSE, warning = FALSE, error = FALSE
 )
 
 library(ggplot2)
 library(auspol)
-get_house_primary_vote()
 
 ```
 
@@ -130,8 +129,23 @@ Finally, it is possible to aggregate party acronyms - sometimes a same party has
 ```{r}
 
 house_primary_historic_plot(division="Brisbane",parties=5,
-                            merge_parties = list(LNP=c("LNP","LNQ","LP"))) 
+                            merge_parties = list(LNP=c("LNP","LNQ","LP"),ON=c("HAN","ON"))) 
 
 ```
 
+## Results for one election
+
+This package also contains a convenience function to look at the primary vote results for one division. Lile the previous function, this also inherits many of the attributes of *get_house_primary_vote*.
+
+```{r}
+house_primary_comparison_plot(division = "Kooyong", year=2022,individualise_IND = TRUE)
+
+```
+
+The plots can also be displayed in using bars, as shown below
+
+
+```{r}
+house_primary_comparison_plot(state="TAS",year=2022,parties=c("LP"),plot_format = "bar")
+```
 

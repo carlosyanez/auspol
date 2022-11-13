@@ -2,6 +2,7 @@
 
 export(auspol_theme)
 export(delete_data)
+export(find_cache)
 export(geom_auspol_line)
 export(geom_auspol_lollipop)
 export(get_MPs)
