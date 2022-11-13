@@ -44,7 +44,7 @@ list_divisions <- function(filters=NULL){
    data <- load_auspol("house_electorates.zip")
 
    if(is(filters,"list")){
-     for(i in length(filters)){
+     for(i in 1:length(filters)){
 
        data <- data |> filter(if_any(names(filters)[i], ~ .x %in% filters[[i]]))
 
@@ -78,7 +78,7 @@ list_parties <- function(filters=NULL,party_regex=NULL){
   data <- load_auspol("house_parties.zip")
 
   if(is(filters,"list")){
-    for(i in length(filters)){
+    for(i in 1:length(filters)){
 
       data <- data |> filter(if_any(names(filters)[i], ~  .x %in% filters[[i]]))
 
@@ -118,7 +118,7 @@ list_polling_places <- function(filters=NULL){
   data <- load_auspol("polling_places.zip")
 
   if(is(filters,"list")){
-    for(i in length(filters)){
+    for(i in 1:length(filters)){
 
       data <- data |> filter(if_any(names(filters)[i], ~ .x %in% filters[[i]]))
 

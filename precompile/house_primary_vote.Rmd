@@ -84,7 +84,8 @@ get_house_primary_vote(state=c("NT"),year=c(2019,2022),aggregation = TRUE, party
 ```
 
 
-*house_primary_vote_summary()* builds on the basic function and summarise data.
+*house_primary_vote_summary()* builds on the basic function and summarise data
+.
 ```{r}
 house_primary_vote_summary(division = "Brisbane", year=2022)
 ```
@@ -106,6 +107,8 @@ house_primary_vote_summary(division="Franklin",parties="LP")
 
 ## Plotting 
 
+### Historic Trends
+
 
 The first plotting convenience function in this packages allows to compare the evolution of primary voting across time. This function relies on house_primary_summary and uses many of its options. It's first use is to represent party trends in one electorate:
 
@@ -115,7 +118,6 @@ house_primary_historic_plot("Canberra")
 
 As in many cases there are many minor parties, it is sometime useful just to focus in a number of parties. This function allow to filter by a number of parties or by filtering by the most voted in a certain year. In both cases it is possible to consolidate the others votes.
 
-MERGE VALUES PENDIND
 
 
 ```{r}
@@ -123,5 +125,13 @@ house_primary_historic_plot("Canberra", parties =3, parties_year = 2022, include
 
 ```
 
+Finally, it is possible to aggregate party acronyms - sometimes a same party has changed named or registered differently
+
+```{r}
+
+house_primary_historic_plot(division="Brisbane",parties=5,
+                            merge_parties = list(LNP=c("LNP","LNQ","LP"))) 
+
+```
 
 

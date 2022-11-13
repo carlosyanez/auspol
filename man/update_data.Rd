@@ -5,20 +5,14 @@
 \title{Helper function to update/download  data}
 \usage{
 update_data(file = NULL)
-
-update_data(file = NULL)
 }
 \arguments{
 \item{file}{vectors with file name from repository. By default, downloads all files}
 }
 \value{
 nothing
-
-nothing
 }
 \description{
-Helper function to update/download  data
-
 Helper function to update/download  data
 }
 \keyword{helpers}

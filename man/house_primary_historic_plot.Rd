@@ -9,6 +9,7 @@ house_primary_historic_plot(
   plotted_variable = "Percentage",
   parties = NULL,
   parties_year = NULL,
+  merge_parties = NULL,
   include_others = FALSE,
   include_informal = FALSE,
   individualise_IND = FALSE,
@@ -28,7 +29,9 @@ house_primary_historic_plot(
 with the party acronyms (see list_parties()), or a number indicating the top n parties from a certain year.}
 
 \item{parties_year}{If \emph{parties} has is NULL or a number, this indicates if the selection needs to be from
-a certain year (.e.g only select the historical data for the three top parties in 2012)}
+a certain year (.e.g only select the historical data for the three top parties in 2012).}
+
+\item{merge_parties}{list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))}
 
 \item{include_others}{Boolean used along \emph{parties} to included the remaining votes in one "Other" category.}
 

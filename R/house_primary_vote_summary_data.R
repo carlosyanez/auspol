@@ -31,6 +31,14 @@
 #' @return dataframe
 #' @export
 #' @keywords houseconvenience
+#' @examples \dontrun{
+#' # Get primary for Kooyong in 2022
+#' house_primary_vote(division="Kooyong",year=2022)
+#' # Get historic primary for Liberals and Labor in Kooyong
+#' house_primary_vote(division="Kooyong",parties=c("LP","ALP")
+#' #Get primary vote for all National candidates in WA, 2022
+#' house_primary_vote(state="WA",year=2022,parties=c(NP))
+#' }
 house_primary_vote_summary <- function(division=NULL,
                                  state=NULL,
                                  year=NULL,
@@ -96,6 +104,33 @@ house_primary_vote_summary <- function(division=NULL,
 
   totals <- totals |> left_join(totals_no_inf,by=c("Year","DivisionNm"))
 
+  # merge parties
+
+  if(!is.null(merge_parties)){
+    for(i in 1:length(merge_parties)){
+      votes <- votes |>
+               mutate(PartyAb=if_else(.data$PartyAb %in% merge_parties[[i]],
+                                      names(merge_parties)[i],
+                                      .data$PartyAb))
+    }
+
+   party_list <- votes |>
+      distinct(.data$PartyAb,.data$PartyNm) |>
+      group_by(.data$PartyAb) |>
+      summarise(PartyNm=str_c(.data$PartyNm,collapse=", "))
+
+   votes <- votes |>
+     group_by(across(starts_with(c("Year","StateAb","DivisionNm","PartyAb"))))  |>
+     summarise(OrdinaryVotes=sum(.data$OrdinaryVotes,na.rm = TRUE),
+               Elected=any(.data$Elected),
+               GivenNm=str_c(unique(.data$GivenNm),collapse = ", "),
+               Surname=str_c(unique(.data$Surname),collapse = ", "),
+               .groups="drop") |>
+     left_join(party_list,by="PartyAb") |>
+     relocate("PartyNm",.after="PartyAb")
+  }
+
+
   # determine list of parties
 
   if(is.null(parties)){
@@ -135,29 +170,36 @@ house_primary_vote_summary <- function(division=NULL,
 
   parties <- unique(parties)
 
+
+
   # aggregate other parties?
   if(include_others){
 
     votes <- votes |>
       mutate(PartyAb=if_else(.data$PartyAb %in% parties,.data$PartyAb,"Other"))
 
-    party_list <- votes |>
-      distinct(.data$PartyAb,.data$PartyNm) |>
-      group_by(.data$PartyAb) |>
-      summarise(PartyNm=str_c(.data$PartyNm,collapse=", "))
-
-    votes <- votes |>
-      mutate(PartyAb=if_else(.data$PartyAb %in% parties,.data$PartyAb,"Other")) |>
-      group_by(across(!starts_with(c("Elected","OrdinaryVotes","PartyNm"))))  |>
-      summarise(OrdinaryVotes=sum(.data$OrdinaryVotes,na.rm = TRUE),
-                Elected=any(.data$Elected),
-                .groups="drop") |>
-      left_join(party_list,by="PartyAb") |>
-      relocate("PartyNm",.after="PartyAb")
   }else{
     votes <- votes |>
       filter(.data$PartyAb %in% parties)
   }
+
+  #consolidate by parties
+
+  party_list <- votes |>
+    distinct(.data$PartyAb,.data$PartyNm) |>
+    group_by(.data$PartyAb) |>
+    summarise(PartyNm=str_c(.data$PartyNm,collapse=", "))
+
+  votes <- votes |>
+    group_by(across(starts_with(c("Year","StateAb","DivisionNm","PartyAb"))))  |>
+    summarise(OrdinaryVotes=sum(.data$OrdinaryVotes,na.rm = TRUE),
+              Elected=any(.data$Elected),
+              GivenNm=str_c(unique(.data$GivenNm),collapse = ", "),
+              Surname=str_c(unique(.data$Surname),collapse = ", "),
+              .groups="drop") |>
+    left_join(party_list,by="PartyAb") |>
+    relocate("PartyNm",.after="PartyAb")
+
 
 
   df <- votes |> left_join(totals,by=c("Year","DivisionNm")) |>

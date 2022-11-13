@@ -9,6 +9,7 @@ house_preference_flow_plot(
   year,
   var = "Percent",
   exclude_parties = NULL,
+  merge_parties = NULL,
   extra_colours = NULL,
   include_data = FALSE
 )
@@ -21,6 +22,8 @@ house_preference_flow_plot(
 \item{var}{Variable to be plotted "Percent" (default) or "Preference Count"}
 
 \item{exclude_parties}{vector with party acronyms to exclude from plot}
+
+\item{merge_parties}{list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))}
 
 \item{extra_colours}{manual mapping of colours for each party, as a named vector.}
 

@@ -11,6 +11,7 @@ house_primary_vote_summary(
   parties = NULL,
   parties_year = NULL,
   include_others = FALSE,
+  merge_parties = NULL,
   include_informal = FALSE,
   include_names = TRUE,
   individualise_IND = FALSE,
@@ -32,6 +33,8 @@ a certain year (.e.g only select the historical data for the three top parties i
 
 \item{include_others}{Boolean used along \emph{parties} to included the remaining votes in one "Other" category.}
 
+\item{merge_parties}{list of parties to merge in one line following, the format list(NEWCODE=c(code1,code2,etc.))}
+
 \item{include_informal}{Boolean to add informal votes in addition to the party selection.
 Informal votes will be included if no parties are selected, or the top n parties are selected,
 and it happens to be in the top n - even if this flag is set to false.}
@@ -50,5 +53,15 @@ dataframe
 }
 \description{
 Helper function to download  data
+}
+\examples{
+\dontrun{
+# Get primary for Kooyong in 2022
+house_primary_vote(division="Kooyong",year=2022)
+# Get historic primary for Liberals and Labor in Kooyong
+house_primary_vote(division="Kooyong",parties=c("LP","ALP")
+#Get primary vote for all National candidates in WA, 2022
+house_primary_vote(state="WA",year=2022,parties=c(NP))
+}
 }
 \keyword{houseconvenience}
