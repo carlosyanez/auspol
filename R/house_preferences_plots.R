@@ -350,7 +350,7 @@ house_2PP_historical_plot <- function(division,year=NULL,var="Percentage",
              str_detect(.data$Party,"Labor")     ~ "ALP",
              str_detect(.data$Party,"Green")     ~ "GRN",
              TRUE                                ~ "Other"),
-           value = if_else(.data$Type=="Percentage",.data$value*100,.data$value)
+           value = if_else(.data$Type=="Percentage",round(.data$value*100,2),.data$value)
     ) |>
     filter(if_any(c("Type"), ~ .x==var))
 
