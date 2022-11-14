@@ -3,7 +3,7 @@ Title: Australian Federal Election Results (2004-2022)
 Version: 0.0.1.0000
 Authors@R: c(
     person("Carlos", "Yáñez Santibáñez", , "carlos.yanez.s@gmail.com", role = c("aut", "cre")),
-    person(given="Craig", family="Alexander", email= "Craig.Alexander.2@glasgow.ac.uk", role=c("cph")),
+    person(given="Craig", family="Alexander", email= "Craig.Alexander.2@glasgow.ac.uk", role=c("ths")),
     person(given="Kyle", family="Walker", email="kyle@walker-data.com", role=c("cph")),
     person("Australian Electoral Commission", role = c("cph"))
     )
