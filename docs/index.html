@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="index.html">auspol</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9001</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.0000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,8 +53,11 @@
     <a class="dropdown-item" href="articles/lists.html">List divisions, parties,...</a>
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header" data-toc-skip>House of Representatives</h6>
-    <a class="dropdown-item" href="articles/house_primary_vote.html">Primary Votes</a>
+    <a class="dropdown-item" href="articles/house_primary_vote.html">Primary Vote</a>
     <a class="dropdown-item" href="articles/house_preference_flow.html">Preferences</a>
+    <a class="dropdown-item" href="articles/house_elected.html">Results</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="articles/index.html">All articles</a>
   </div>
 </li>
       </ul>
@@ -80,16 +83,15 @@
 <div class="page-header"><h1 id="auspol">auspol<a class="anchor" aria-label="anchor" href="#auspol"></a>
 </h1></div>
 <p><!-- badges: start --> <a href="https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://carlosyanez.r-universe.dev" class="external-link"><img src="https://carlosyanez.r-universe.dev/badges/auspol" alt="auspol status badge"></a> <!-- badges: end --></p>
-<p><img src="https://github.com/carlosyanez/auspol/raw/main/img/work-in-progress.png" width="175" align="center"><br><br></p>
 <p><img src="https://github.com/carlosyanez/auspol/raw/main/img/hexSticker.png" width="175" height="200" align="right"></p>
-<p><strong>auspol</strong> provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R. Along with functions to access the data, this package also provides functions to provide summaries tables and plots.</p>
+<p><strong>auspol</strong> provides result data for the Australian Federal Elections, from 2004 onwards, direclty from R. Along with functions to access the data, this package also provides functions to provide summaries tables and plots. The current version provides election data for the House of Representatives.</p>
 <p>All the data is contained as a release (<a href="https://github.com/carlosyanez/auspol/releases/tag/data" class="external-link">here</a>) in <a href="https://arrow.apache.org/docs/r/index.html" class="external-link">Apache Parquet format</a>, so it can be used directly in any programming language/tool/platform that supports Parquet.</p>
 <div class="section level2">
 <h2 id="installation-and-pre-requisites">Installation and pre-requisites<a class="anchor" aria-label="anchor" href="#installation-and-pre-requisites"></a>
 </h2>
-<p>First install required packages,then, install this package from github</p>
+<p>The current version of this packages (0.0.1.0000) is not yet in CRAN. To install the package, you can download it from Github:</p>
 <pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"carlosyanez/auspol"</span><span class="op">)</span></span></code></pre>
-<p>Alternatively, install from r-universe</p>
+<p>Alternatively, install from r-universe:</p>
 <pre><code><span></span>
 <span><span class="co"># Enable this universe</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
@@ -100,9 +102,14 @@
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'auspol'</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level2">
+<h2 id="how-to-use">How to use.<a class="anchor" aria-label="anchor" href="#how-to-use"></a>
+</h2>
+<p>This package provides a series of functions to access the data as published by the AEC, as well as convinience functions to retrieve summaries and produce standard plots. For reference on how to check the <a href="articles/index.html">articles</a>.</p>
+</div>
+<div class="section level2">
 <h2 id="issues-bugs-ideas">Issues? bugs? Ideas?<a class="anchor" aria-label="anchor" href="#issues-bugs-ideas"></a>
 </h2>
-<p>If you find something that is not quite right, please post an issue. If you have any ideas, or if you want to contribute, <a href="https://twitter.com/messages/25712933-3805104374?recipient_id=25712933&amp;text=Hello%20world" class="external-link">please let me know</a>!</p>
+<p>If you find something that is not quite right, please post an issue. If you have any ideas,requests, or if you want to contribute, <a href="https://twitter.com/messages/25712933-3805104374?recipient_id=25712933&amp;text=Hello%20world" class="external-link">please let me know</a>!</p>
 </div>
 <div class="section level2">
 <h2 id="to-do">To Do<a class="anchor" aria-label="anchor" href="#to-do"></a>
@@ -120,6 +127,11 @@ Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pi
 </div></li>
 <li><a href="https://www.flaticon.com/free-icons/work-in-progress" title="work in progress icons" class="external-link">Work in progress icons created by Freepik - Flaticon</a></li>
 </ul>
+</div>
+<div class="section level2">
+<h2 id="acknowledgment-of-country">Acknowledgment of Country<a class="anchor" aria-label="anchor" href="#acknowledgment-of-country"></a>
+</h2>
+<p>The author of this package acknowledges the Boonwurrung/Bunurong and Wurrundjeri Woi Wurrung peoples of the Eastern Kulin Nation as Traditional Owners and Custodians of the land where this package has been created, and pays respect to their Elders past, present and emerging.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

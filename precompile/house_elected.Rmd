@@ -14,7 +14,7 @@ vignette: >
 knitr::opts_chunk$set(
   warning=  FALSE,
   collapse = TRUE, comment = "#>", out.width = "100%",
-  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "vignettes/lists",
+  fig.width = 7, fig.height = 4, dev = "CairoPNG", dpi = 150, fig.path = "vignettes/elected-",
   message = FALSE, warning = FALSE, error = FALSE
 )
 
@@ -47,21 +47,21 @@ get_house_MPs(year=2013)
 
 This package also contains  functions to represent election results graphically. The first function presents and overall count of votes per party on a given year. For example, for 2013.
 
-```{r}
+```{r plot1}
 house_results_tally(2013)
 ```
 
 Parties can be group together - i.e. putting all Coalition votes together
 
 
-```{r}
+```{r plot2}
 house_results_tally(2013, merge_parties = list(COAL=c("CLP","LP","LNP","NP")))
 
 ```
 
 Furthermore, independents can be individualised - for instance for the 2022 elections:
 
-```{r}
+```{r plot3}
 house_results_tally(2022, 
                     individualise_IND = TRUE,
                     merge_parties = list(COAL=c("CLP","LP","LNP","NP"),
@@ -76,7 +76,7 @@ house_results_tally(2022,
 Finally, there is also a function to plot the historical seats per party
 
 
-```{r}
+```{r plot4}
 house_results_historic(merge_parties = list(COAL=c("CLP","LP","LNP","NP")),
                        parties =c("COAL","ALP","GRN"),
                        include_other=TRUE)

@@ -2,9 +2,10 @@ pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
+  house_elected: house_elected.html
   house_getting_data: house_getting_data.html
   house_preference_flow: house_preference_flow.html
   house_primary_vote: house_primary_vote.html
   lists: lists.html
-last_built: 2022-11-13T22:40Z
+last_built: 2022-11-14T04:18Z
 

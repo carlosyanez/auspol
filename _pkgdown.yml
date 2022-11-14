@@ -34,6 +34,12 @@ navbar:
       href: articles/house_preference_flow.html
     - text: Results
       href: articles/house_elected.html
+    - text: -------
+    - text: All articles
+      href: articles/index.html
+
+
+
 
 home:
   title: auspol

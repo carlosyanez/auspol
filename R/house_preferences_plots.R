@@ -191,7 +191,7 @@ house_2PF_plot <- function(division,year,
                      color=.data$stratum,
                      y=.data$TransferCount,
                      fill = .data$stratum)) +
-            geom_auspol_bar() +
+            geom_flow() +
             geom_stratum(alpha = 1,color=NA)
     ) |>
       auspol_theme(extra_colours=extra_colours,
@@ -206,7 +206,7 @@ house_2PF_plot <- function(division,year,
             ggplot(aes(x=.data$To,y=.data$TransferCount,
                        group=fct_relevel(.data$From,levels),
                        fill=.data$From)) +
-            geom_col()
+            geom_auspol_bar(include_labels=FALSE)
     ) |>
       auspol_theme(type="fill",extra_colours=extra_colours,
                    extra_values = unique(as.character(data$From)),
@@ -358,7 +358,8 @@ house_2PP_historical_plot <- function(division,year=NULL,var="Percentage",
   p <- (data |>
           ggplot(aes(x=.data$Year,
                      y=.data$value,
-                     colour=.data$PartyAb))+
+                     colour=.data$PartyAb,
+                     label=.data$value))+
           geom_auspol_line(include_labels = include_labels)) |>
           auspol_theme(extra_values = unique(data$PartyAb),
                  legend_pos = "bottom") +

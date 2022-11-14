@@ -34,20 +34,20 @@ It is possible to get all primary vote results for all electorates in all electo
 ```r
 get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022))
 #> # A tibble: 1,735 × 17
-#>     Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing
-#>    <dbl> <chr>      <int> <chr>     <int> <chr>     <int> <chr>   <chr>     <int> <lgl>   <lgl>   <chr>   <chr>     <int> <dbl>
-#>  1  2022 WA           237 Cowan     11591 Alexan…   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…     688  9.18
-#>  2  2022 WA           237 Cowan     11591 Alexan…   36591 TRIPP   Isabel…       2 FALSE   FALSE   GRN     The Gr…     124 -1.47
-#>  3  2022 WA           237 Cowan     11591 Alexan…   36484 IRADUK… Sylvia        3 FALSE   FALSE   AUC     Austra…      28  0.05
-#>  4  2022 WA           237 Cowan     11591 Alexan…   37243 CALAUT… Michael       4 FALSE   FALSE   CYA     Austra…      27  1.96
-#>  5  2022 WA           237 Cowan     11591 Alexan…   37387 WALSH   Tyler         5 FALSE   FALSE   ON      Paulin…      38 -3.35
-#>  6  2022 WA           237 Cowan     11591 Alexan…   37222 van KR… Micah         6 FALSE   FALSE   LDP     Libera…      11  0.8 
-#>  7  2022 WA           237 Cowan     11591 Alexan…   37841 LAVERA… Roland        7 FALSE   FALSE   WAP     WESTER…      26  1.89
-#>  8  2022 WA           237 Cowan     11591 Alexan…   36483 HAND    Claire…       8 FALSE   FALSE   UAPP    United…      34 -0.24
-#>  9  2022 WA           237 Cowan     11591 Alexan…   36574 CONNEL… Vince         9 FALSE   TRUE    LP      Liberal     369 -9.96
-#> 10  2022 WA           237 Cowan     11591 Alexan…   37219 ANAGNO  Michael      10 FALSE   FALSE   AJP     Animal…      33  2.39
-#> # … with 1,725 more rows, 1 more variable: SittingMemberFl <lgl>, and abbreviated variable names ¹​DivisionID, ²​DivisionNm,
-#> #   ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes
+#>     Year StateAb Divis…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing Sitti…⁹
+#>    <dbl> <chr>     <int> <chr>     <int> <chr>     <int> <chr>   <chr>     <int> <lgl>   <lgl>   <chr>   <chr>     <int> <dbl> <lgl>  
+#>  1  2022 WA          237 Cowan     11591 Alexan…   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…     688  9.18 FALSE  
+#>  2  2022 WA          237 Cowan     11591 Alexan…   36591 TRIPP   Isabel…       2 FALSE   FALSE   GRN     The Gr…     124 -1.47 FALSE  
+#>  3  2022 WA          237 Cowan     11591 Alexan…   36484 IRADUK… Sylvia        3 FALSE   FALSE   AUC     Austra…      28  0.05 FALSE  
+#>  4  2022 WA          237 Cowan     11591 Alexan…   37243 CALAUT… Michael       4 FALSE   FALSE   CYA     Austra…      27  1.96 FALSE  
+#>  5  2022 WA          237 Cowan     11591 Alexan…   37387 WALSH   Tyler         5 FALSE   FALSE   ON      Paulin…      38 -3.35 FALSE  
+#>  6  2022 WA          237 Cowan     11591 Alexan…   37222 van KR… Micah         6 FALSE   FALSE   LDP     Libera…      11  0.8  FALSE  
+#>  7  2022 WA          237 Cowan     11591 Alexan…   37841 LAVERA… Roland        7 FALSE   FALSE   WAP     WESTER…      26  1.89 FALSE  
+#>  8  2022 WA          237 Cowan     11591 Alexan…   36483 HAND    Claire…       8 FALSE   FALSE   UAPP    United…      34 -0.24 FALSE  
+#>  9  2022 WA          237 Cowan     11591 Alexan…   36574 CONNEL… Vince         9 FALSE   TRUE    LP      Liberal     369 -9.96 FALSE  
+#> 10  2022 WA          237 Cowan     11591 Alexan…   37219 ANAGNO  Michael      10 FALSE   FALSE   AJP     Animal…      33  2.39 FALSE  
+#> # … with 1,725 more rows, and abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID,
+#> #   ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes, ⁹​SittingMemberFl
 ```
 
 The function allows also to narrow down to specific electorates. For instance, to check the primary vote for ALP candidates, for both electorates in polling places named "Perth":
@@ -62,14 +62,14 @@ get_house_primary_vote(division = c("Cowan","Curtin"),
                        polling_places = "Perth") |>
   filter(PartyAb=="ALP")
 #> # A tibble: 4 × 17
-#>    Year StateAb Divisio…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing
-#>   <dbl> <chr>       <int> <chr>     <int> <chr>     <int> <chr>   <chr>     <int> <lgl>   <lgl>   <chr>   <chr>     <int> <dbl>
-#> 1  2022 WA            237 Cowan    107098 Perth …   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…      97 15.0 
-#> 2  2022 WA            238 Curtin    99650 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…      50 -0.88
-#> 3  2022 WA            238 Curtin    94024 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…     168 -2.5 
-#> 4  2019 WA            238 Curtin    94024 Perth …   33431 MEECHAM Rob           7 FALSE   FALSE   ALP     Austra…     316  0.43
-#> # … with 1 more variable: SittingMemberFl <lgl>, and abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID,
-#> #   ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes
+#>    Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing Sitti…⁹
+#>   <dbl> <chr>      <int> <chr>     <int> <chr>     <int> <chr>   <chr>     <int> <lgl>   <lgl>   <chr>   <chr>     <int> <dbl> <lgl>  
+#> 1  2022 WA           237 Cowan    107098 Perth …   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…      97 15.0  FALSE  
+#> 2  2022 WA           238 Curtin    99650 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…      50 -0.88 FALSE  
+#> 3  2022 WA           238 Curtin    94024 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…     168 -2.5  FALSE  
+#> 4  2019 WA           238 Curtin    94024 Perth …   33431 MEECHAM Rob           7 FALSE   FALSE   ALP     Austra…     316  0.43 FALSE  
+#> # … with abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition,
+#> #   ⁷​HistoricElected, ⁸​OrdinaryVotes, ⁹​SittingMemberFl
 ```
 
 The function also can present the division totals, for example:
@@ -80,19 +80,19 @@ get_house_primary_vote(division = c("Cowan","Curtin"),
                        year=c(2019,2022), 
                        aggregation = TRUE)
 #> # A tibble: 37 × 14
-#>     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    Ballot…¹ Elected Histo…² PartyAb PartyNm Sitti…³ Ordin…⁴
-#>    <dbl> <chr>        <int> <chr>            <int> <chr>    <chr>         <int> <lgl>   <lgl>   <chr>   <chr>   <lgl>     <int>
-#>  1  2019 WA             237 Cowan              999 Informal Informal        999 FALSE   FALSE   Inform… Inform… FALSE      4090
-#>  2  2019 WA             237 Cowan            32239 COOPER   Mark              1 FALSE   FALSE   GRN     The Gr… FALSE      6493
-#>  3  2019 WA             237 Cowan            32778 LEBRASSE Andre             4 FALSE   FALSE   AUC     Austra… FALSE      1514
-#>  4  2019 WA             237 Cowan            32875 BEDFORD  Paul James        6 FALSE   FALSE   ASP     Shoote… FALSE      1101
-#>  5  2019 WA             237 Cowan            32934 WESTCOTT Peter             3 FALSE   FALSE   UAPP    United… FALSE      1582
-#>  6  2019 WA             237 Cowan            33348 ALY      Anne              2 TRUE    TRUE    ALP     Austra… FALSE     26330
-#>  7  2019 WA             237 Cowan            33389 STEWART  Isaac             7 FALSE   FALSE   LP      Liberal FALSE     26721
-#>  8  2019 WA             237 Cowan            33450 MUNDY    Sheila            5 FALSE   FALSE   ON      Paulin… FALSE      3641
-#>  9  2019 WA             238 Curtin             999 Informal Informal        999 FALSE   FALSE   Inform… Inform… FALSE      2364
-#> 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron           2 FALSE   FALSE   GRN     The Gr… FALSE     10905
-#> # … with 27 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​SittingMemberFl, ⁴​OrdinaryVotes
+#>     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    BallotPosition Elected Histor…¹ PartyAb PartyNm Sitti…² Ordin…³
+#>    <dbl> <chr>        <int> <chr>            <int> <chr>    <chr>               <int> <lgl>   <lgl>    <chr>   <chr>   <lgl>     <int>
+#>  1  2019 WA             237 Cowan              999 Informal Informal              999 FALSE   FALSE    Inform… Inform… FALSE      4090
+#>  2  2019 WA             237 Cowan            32239 COOPER   Mark                    1 FALSE   FALSE    GRN     The Gr… FALSE      6493
+#>  3  2019 WA             237 Cowan            32778 LEBRASSE Andre                   4 FALSE   FALSE    AUC     Austra… FALSE      1514
+#>  4  2019 WA             237 Cowan            32875 BEDFORD  Paul James              6 FALSE   FALSE    ASP     Shoote… FALSE      1101
+#>  5  2019 WA             237 Cowan            32934 WESTCOTT Peter                   3 FALSE   FALSE    UAPP    United… FALSE      1582
+#>  6  2019 WA             237 Cowan            33348 ALY      Anne                    2 TRUE    TRUE     ALP     Austra… FALSE     26330
+#>  7  2019 WA             237 Cowan            33389 STEWART  Isaac                   7 FALSE   FALSE    LP      Liberal FALSE     26721
+#>  8  2019 WA             237 Cowan            33450 MUNDY    Sheila                  5 FALSE   FALSE    ON      Paulin… FALSE      3641
+#>  9  2019 WA             238 Curtin             999 Informal Informal              999 FALSE   FALSE    Inform… Inform… FALSE      2364
+#> 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron                 2 FALSE   FALSE    GRN     The Gr… FALSE     10905
+#> # … with 27 more rows, and abbreviated variable names ¹​HistoricElected, ²​SittingMemberFl, ³​OrdinaryVotes
 ```
 
 ## Preferences
@@ -103,20 +103,19 @@ To retrieve preferences for one division for a particular year, the function is 
 ```r
 get_house_preferences("Wills",2019) |> head(10)
 #> # A tibble: 10 × 16
-#>     Year StateAb DivisionId Divis…¹  PPId PPNm  Count…² Ballo…³ Candi…⁴ Surname GivenNm PartyAb PartyNm Sitti…⁵ Calcu…⁶ Calcu…⁷
-#>    <dbl> <chr>        <int> <chr>   <int> <chr>   <int>   <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
-#>  1  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
-#>  2  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
-#>  3  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
-#>  4  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
-#>  5  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
-#>  6  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
-#>  7  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
-#>  8  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
-#>  9  2019 VIC            234 Wills       0 ABSE…       0       3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
-#> 10  2019 VIC            234 Wills       0 ABSE…       0       3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
-#> # … with abbreviated variable names ¹​DivisionNm, ²​CountNum, ³​BallotPosition, ⁴​CandidateId, ⁵​SittingMemberFl, ⁶​CalculationType,
-#> #   ⁷​CalculationValue
+#>     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵
+#>    <dbl> <chr>        <int> <chr>      <int> <chr>     <int>     <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
+#>  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
+#>  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
+#>  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
+#>  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
+#>  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
+#> 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
+#> # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue
 ```
 
 
@@ -127,18 +126,18 @@ Similarly to the primary vote function, results can be aggregated and filtered b
 get_house_preferences("Wills",2019,
                       aggregation = TRUE)
 #> # A tibble: 60 × 13
-#>     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm      PartyAb PartyNm Calcu…¹ Calcu…²
-#>    <dbl> <chr>        <int> <chr>         <int>          <int>       <int> <chr>   <chr>        <chr>   <chr>   <chr>     <dbl>
-#>  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher… AJP     Animal… Prefer…    3596
-#>  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher… AJP     Animal… Transf…       0
-#>  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Ali… VNS     Victor… Prefer…    4344
-#>  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Ali… VNS     Victor… Transf…       0
-#>  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John   LP      Libera… Prefer…   17241
-#>  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John   LP      Libera… Transf…       0
-#>  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross    GVIC    The Au… Prefer…   25575
-#>  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross    GVIC    The Au… Transf…       0
-#>  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju        UAPP    United… Prefer…    2979
-#> 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju        UAPP    United… Transf…       0
+#>     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm   Calcu…¹ Calcu…²
+#>    <dbl> <chr>        <int> <chr>         <int>          <int>       <int> <chr>   <chr>             <chr>   <chr>     <chr>     <dbl>
+#>  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Prefer…    3596
+#>  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Transf…       0
+#>  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Prefer…    4344
+#>  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Transf…       0
+#>  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Prefer…   17241
+#>  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Transf…       0
+#>  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Prefer…   25575
+#>  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Transf…       0
+#>  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Prefer…    2979
+#> 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Transf…       0
 #> # … with 50 more rows, and abbreviated variable names ¹​CalculationType, ²​CalculationValue
 ```
 
@@ -148,20 +147,19 @@ get_house_preferences("Wills",2019,
 get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> 
   head(10)
 #> # A tibble: 10 × 16
-#>     Year StateAb DivisionId Divis…¹  PPId PPNm  Count…² Ballo…³ Candi…⁴ Surname GivenNm PartyAb PartyNm Sitti…⁵ Calcu…⁶ Calcu…⁷
-#>    <dbl> <chr>        <int> <chr>   <int> <chr>   <int>   <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
-#>  1  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
-#>  2  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
-#>  3  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
-#>  4  2019 VIC            234 Wills       0 ABSE…       0       1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
-#>  5  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
-#>  6  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
-#>  7  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
-#>  8  2019 VIC            234 Wills       0 ABSE…       0       2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
-#>  9  2019 VIC            234 Wills       0 ABSE…       0       3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
-#> 10  2019 VIC            234 Wills       0 ABSE…       0       3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
-#> # … with abbreviated variable names ¹​DivisionNm, ²​CountNum, ³​BallotPosition, ⁴​CandidateId, ⁵​SittingMemberFl, ⁶​CalculationType,
-#> #   ⁷​CalculationValue
+#>     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵
+#>    <dbl> <chr>        <int> <chr>      <int> <chr>     <int>     <int>   <int> <chr>   <chr>   <chr>   <chr>   <chr>   <chr>     <dbl>
+#>  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   
+#>  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65
+#>  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   
+#>  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   
+#>  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35
+#>  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   
+#>  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   
+#> 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 
+#> # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue
 ```
 The AEC also provides a list of how the primary votes have flowed to the two finalists. The can be retrieved with *get_house_2PF*. Being related to the previous function, it also has the same parameters.
 
@@ -169,20 +167,19 @@ The AEC also provides a list of how the primary votes have flowed to the two fin
 ```r
 get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
 #> # A tibble: 8 × 17
-#>    Year StateAb Divis…¹ Divis…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ FromC…⁷ FromC…⁸ ToCan…⁹ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟ ToCan…˟
-#>   <dbl> <chr>     <int> <chr>     <int> <chr>   <chr>   <chr>   <chr>     <int>   <int> <chr>   <chr>   <chr>   <chr>     <int>
-#> 1  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1
-#> 2  2013 VIC         220 Jagaja…   28114 GRN     Austra… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3
-#> 3  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1
-#> 4  2013 VIC         220 Jagaja…   28175 AJP     Animal… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3
-#> 5  2013 VIC         220 Jagaja…   28255 ALP     Austra… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1
-#> 6  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1
-#> 7  2013 VIC         220 Jagaja…   28885 FFP     Family… WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3
-#> 8  2013 VIC         220 Jagaja…   28892 LP      Libera… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3
-#> # … with 1 more variable: TransferCount <int>, and abbreviated variable names ¹​DivisionId, ²​DivisionNm, ³​FromCandidateId,
-#> #   ⁴​FromCandidatePartyAb, ⁵​FromCandidatePartyNm, ⁶​FromCandidateSurname, ⁷​FromCandidateGivenNm, ⁸​FromCandidateBallotPosition,
-#> #   ⁹​ToCandidateId, ˟​ToCandidatePartyAb, ˟​ToCandidatePartyNm, ˟​ToCandidateSurname, ˟​ToCandidateGivenNm,
-#> #   ˟​ToCandidateBallotPosition
+#>    Year StateAb DivisionId DivisionNm FromCa…¹ FromC…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ ToCan…⁷ ToCan…⁸ ToCan…⁹ ToCan…˟ ToCan…˟ ToCan…˟
+#>   <dbl> <chr>        <int> <chr>         <int> <chr>   <chr>   <chr>   <chr>     <int>   <int> <chr>   <chr>   <chr>   <chr>     <int>
+#> 1  2013 VIC            220 Jagajaga      28114 GRN     Austra… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1
+#> 2  2013 VIC            220 Jagajaga      28114 GRN     Austra… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3
+#> 3  2013 VIC            220 Jagajaga      28175 AJP     Animal… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1
+#> 4  2013 VIC            220 Jagajaga      28175 AJP     Animal… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3
+#> 5  2013 VIC            220 Jagajaga      28255 ALP     Austra… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1
+#> 6  2013 VIC            220 Jagajaga      28885 FFP     Family… WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1
+#> 7  2013 VIC            220 Jagajaga      28885 FFP     Family… WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3
+#> 8  2013 VIC            220 Jagajaga      28892 LP      Libera… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3
+#> # … with 1 more variable: TransferCount <int>, and abbreviated variable names ¹​FromCandidateId, ²​FromCandidatePartyAb,
+#> #   ³​FromCandidatePartyNm, ⁴​FromCandidateSurname, ⁵​FromCandidateGivenNm, ⁶​FromCandidateBallotPosition, ⁷​ToCandidateId,
+#> #   ⁸​ToCandidatePartyAb, ⁹​ToCandidatePartyNm, ˟​ToCandidateSurname, ˟​ToCandidateGivenNm, ˟​ToCandidateBallotPosition
 ```
 The last preference function is *get_house_2PP()*, which provides the [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries as recorded by the AEC (usually, Coalition vs. ALP.)
 
@@ -192,11 +189,10 @@ get_house_2PP(division = "Indi",
               year=2016,
               aggregation = TRUE)
 #> # A tibble: 1 × 9
-#>    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` Total…¹ Liber…² Austr…³
-#>   <dbl> <chr>        <int> <chr>                                   <int>                          <int>   <int>   <dbl>   <dbl>
-#> 1  2016 VIC            218 Indi                                    41083                          34375   75458   0.544   0.456
-#> # … with abbreviated variable names ¹​TotalVotes, ²​`Liberal/National Coalition Percentage`,
-#> #   ³​`Australian Labor Party Percentage`
+#>    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` TotalVotes Liberal/N…¹ Austr…²
+#>   <dbl> <chr>        <int> <chr>                                   <int>                          <int>      <int>       <dbl>   <dbl>
+#> 1  2016 VIC            218 Indi                                    41083                          34375      75458       0.544   0.456
+#> # … with abbreviated variable names ¹​`Liberal/National Coalition Percentage`, ²​`Australian Labor Party Percentage`
 ```
 
 

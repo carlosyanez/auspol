@@ -180,7 +180,10 @@ house_results_historic <- function(individualise_IND=FALSE,
 
 
   p <- data |>
-         ggplot(aes(x=.data$Year,y=.data$n,colour=.data$PartyAb,fill=.data$PartyAb,label=.data$n)) +
+         ggplot(aes(x=.data$Year,y=.data$n,
+                    colour=.data$PartyAb,
+                    fill=.data$PartyAb,
+                    label=.data$n)) +
          geom_auspol_line(include_labels = include_labels) +
          labs(y="Seats")
 

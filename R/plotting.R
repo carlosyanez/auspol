@@ -174,7 +174,7 @@ geom_auspol_line <- function(include_labels=TRUE,...){
 
 
   if(include_labels){
-    ggpck <- ggpck %+% geom_text_repel(.id="labels",show.legend = FALSE,...)
+    ggpck <- ggpck %+% geom_text_repel(show.legend = FALSE,...)
   }
 
   return(ggpck)

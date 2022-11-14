@@ -4,10 +4,7 @@
     <loc>/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
+    <loc>/articles/house_elected.html</loc>
   </url>
   <url>
     <loc>/articles/house_getting_data.html</loc>
@@ -31,6 +28,12 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>/reference/auspol_theme.html</loc>
   </url>
   <url>
@@ -46,10 +49,10 @@
     <loc>/reference/data_update.html</loc>
   </url>
   <url>
-    <loc>/reference/delete_data.html</loc>
+    <loc>/reference/find_cache.html</loc>
   </url>
   <url>
-    <loc>/reference/find_cache.html</loc>
+    <loc>/reference/geom_auspol_bar.html</loc>
   </url>
   <url>
     <loc>/reference/geom_auspol_line.html</loc>
@@ -100,7 +103,10 @@
     <loc>/reference/house_primary_vote_summary.html</loc>
   </url>
   <url>
-    <loc>/reference/import_data.html</loc>
+    <loc>/reference/house_results_historic.html</loc>
+  </url>
+  <url>
+    <loc>/reference/house_results_tally.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
@@ -118,12 +124,6 @@
     <loc>/reference/list_years.html</loc>
   </url>
   <url>
-    <loc>/reference/ls_data.html</loc>
-  </url>
-  <url>
     <loc>/reference/manage_colours.html</loc>
-  </url>
-  <url>
-    <loc>/reference/update_data.html</loc>
   </url>
 </urlset>

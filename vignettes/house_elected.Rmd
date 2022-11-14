@@ -65,7 +65,7 @@ This package also contains  functions to represent election results graphically.
 house_results_tally(2013)
 ```
 
-<img src="vignettes/listsunnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="100%" />
+<img src="vignettes/elected-plot1-1.png" alt="plot of chunk plot1" width="100%" />
 
 Parties can be group together - i.e. putting all Coalition votes together
 
@@ -75,7 +75,7 @@ Parties can be group together - i.e. putting all Coalition votes together
 house_results_tally(2013, merge_parties = list(COAL=c("CLP","LP","LNP","NP")))
 ```
 
-<img src="vignettes/listsunnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%" />
+<img src="vignettes/elected-plot2-1.png" alt="plot of chunk plot2" width="100%" />
 
 Furthermore, independents can be individualised - for instance for the 2022 elections:
 
@@ -91,7 +91,7 @@ house_results_tally(2022,
                                          ))
 ```
 
-<img src="vignettes/listsunnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="100%" />
+<img src="vignettes/elected-plot3-1.png" alt="plot of chunk plot3" width="100%" />
 
 Finally, there is also a function to plot the historical seats per party
 
@@ -103,5 +103,5 @@ house_results_historic(merge_parties = list(COAL=c("CLP","LP","LNP","NP")),
                        include_other=TRUE)
 ```
 
-<img src="vignettes/listsunnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="100%" />
+<img src="vignettes/elected-plot4-1.png" alt="plot of chunk plot4" width="100%" />
 

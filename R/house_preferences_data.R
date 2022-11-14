@@ -211,7 +211,7 @@ preferences_lode         <- function(preferences,var){
   data_lodes <- data |>
     select(-any_of(c("Candidate","Round"))) |>
     mutate(alluvium=row_number(),.before=1) |>
-    pivot_longer(-c(.data$alluvium,.data$Count),names_to = "x",values_to="stratum") |>
+    pivot_longer(-c("alluvium","Count"),names_to = "x",values_to="stratum") |>
     mutate(x=str_remove(x,"Round_")) |>
     mutate(x=fct_relevel(x,c(str_c(1:no_rounds))))
 
@@ -272,7 +272,7 @@ house_preference_flow_data <- function(division,year,
   for(i in counts){
 
     iter<- data |>
-      filter(.data$CountNum==i) |>
+      filter(if_any(c("CountNum"), ~.x==i)) |>
       pivot_wider(names_from = "CalculationType",values_from = "CalculationValue") |>
       arrange(desc(.data$`Preference Count`)) |>
       mutate(RoundPosition=row_number())
