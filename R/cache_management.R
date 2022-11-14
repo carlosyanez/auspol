@@ -61,6 +61,7 @@ data_update <- function(file=NULL){
   if(is.null(file)){
     file <- pb_download_url(repo = "carlosyanez/auspol",
                     tag = "data")
+    file<- str_remove(file,"https://github.com/carlosyanez/auspol/releases/download/data/")
   }
 
   for(f in file){

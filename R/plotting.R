@@ -53,8 +53,8 @@ manage_colours <- function(extra_colours=NULL,extra_values=NULL,palette=NULL){
   colours <- party_colours(extra_colours)
   if(is.null(extra_values)) stop("Must provide list of values for mapping")
 
-    colours <- colours[names(colours) %in% c(extra_values)]
-    colours_nl_names <- unique(extra_values)[!(extra_values %in% names(colours))]
+  colours <- colours[names(colours) %in% c(extra_values)]
+  colours_nl_names <- unique(extra_values)[!(extra_values %in% names(colours))]
 
     if(length(colours_nl_names)>0){
 
@@ -68,7 +68,7 @@ manage_colours <- function(extra_colours=NULL,extra_values=NULL,palette=NULL){
 
       colour_names <- c(names(colours),colours_nl_names)
 
-      colours <- unique(c(colours,palette))
+      colours <- c(colours,palette)
       names(colours) <- colour_names
 
   }
@@ -156,12 +156,13 @@ geom_auspol_lollipop <- function(format="lollipop",include_labels=TRUE,...){
 }
 
 
-#' Line chart, custommised for this package.
+#' Line chart, customised for this package.
 #' @importFrom ggpackets ggpacket %+%
 #' @importFrom ggplot2  geom_point geom_line
 #' @importFrom ggrepel geom_text_repel
 #' @param include_labels Whether to include numeric labels (TRUE by default)
-#' @param ... parameters for {ggplot2} geom_segment() (segmnet.prefix), geom_point(), geom_col() and geom_text() (labels. prefix).
+#' @param ... parameters for {ggplot2} functions.
+#' Label parameters (geom_text_repel()) prefixed with "labels."
 #' @export
 #' @keywords plotting
 geom_auspol_line <- function(include_labels=TRUE,...){
@@ -179,3 +180,38 @@ geom_auspol_line <- function(include_labels=TRUE,...){
   return(ggpck)
 
 }
+
+
+#' Bar chart, customised for this package.
+#' @importFrom ggpackets ggpacket %+%
+#' @importFrom ggplot2  geom_col geom_vline geom_text position_dodge
+#' @param include_labels Whether to include numeric labels (TRUE by default)
+#' @param reference_line Value for reference line. If left empty, no line is added.
+#' @param nudge_x distance between label and bar
+#' @param ... parameters for {ggplot2} functions.
+#' Label parameters (geom_text_repel()) prefixed with "labels."
+#' Reference line parameters (geom_vline()) prefixed with "ref_line."
+#' @export
+#' @keywords plotting
+geom_auspol_bar <- function(include_labels=TRUE,
+                            reference_line=NULL,
+                            nudge_x = 4,
+                            ...){
+
+
+  ggpck <-  ggpacket(...)   %+%
+    geom_col(...)
+
+
+  if(include_labels){
+    ggpck <- ggpck %+% geom_text(.id="labels", nudge_x=nudge_x, vjust=-0.25)
+  }
+
+  if(!is.null(reference_line)){
+    ggpck <- ggpck + geom_vline(.id="ref_line",xintercept = reference_line,...)
+  }
+
+  return(ggpck)
+
+}
+

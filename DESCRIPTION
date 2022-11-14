@@ -34,16 +34,20 @@ Imports:
     utils,
     zip
 Suggests:
-    knitr,rmarkdown 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Collate: 
     'cache_management.R'
     'internal.R'
     'house_get_data.R'
     'house_preferences_data.R'
-    'house_preferences_plot.R'
+    'house_preferences_plots.R'
     'house_primary_vote_summary_data.R'
     'house_primary_vote_summary_plots.R'
+    'house_results_plots.R'
     'lists.R'
     'onLoad.R'
     'plotting.R'
+Config/testthat/edition: 3

@@ -91,7 +91,7 @@ list_parties <- function(filters=NULL,party_regex=NULL){
 
   data <- data |>
           mutate(dummy=TRUE)|>
-          pivot_wider(values_from = .data$dummy,names_from=.data$Year) |>
+          pivot_wider(values_from = "dummy",names_from="Year") |>
           arrange("PartyAb","StateAb")
 
   return(data)
@@ -127,7 +127,7 @@ list_polling_places <- function(filters=NULL){
 
   data <- data |>
     mutate(dummy=TRUE) |>
-    pivot_wider(names_from = .data$Year, values_from = .data$dummy) |>
+    pivot_wider(names_from = "Year", values_from = "dummy") |>
     distinct()
 
   return(data)

@@ -28,10 +28,12 @@ navbar:
       href: articles/lists.html
     - text: -------
     - text: "House of Representatives"
-    - text: Primary Votes
+    - text: Primary Vote
       href: articles/house_primary_vote.html
     - text: Preferences
       href: articles/house_preference_flow.html
+    - text: Results
+      href: articles/house_elected.html
 
 home:
   title: auspol

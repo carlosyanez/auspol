@@ -2,16 +2,17 @@
 % Please edit documentation in R/plotting.R
 \name{geom_auspol_line}
 \alias{geom_auspol_line}
-\title{Line chart, custommised for this package.}
+\title{Line chart, customised for this package.}
 \usage{
 geom_auspol_line(include_labels = TRUE, ...)
 }
 \arguments{
 \item{include_labels}{Whether to include numeric labels (TRUE by default)}
 
-\item{...}{parameters for {ggplot2} geom_segment() (segmnet.prefix), geom_point(), geom_col() and geom_text() (labels. prefix).}
+\item{...}{parameters for {ggplot2} functions.
+Label parameters (geom_text_repel()) prefixed with "labels."}
 }
 \description{
-Line chart, custommised for this package.
+Line chart, customised for this package.
 }
 \keyword{plotting}

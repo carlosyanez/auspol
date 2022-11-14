@@ -78,7 +78,7 @@ house_preference_flow_plot <- function(division,year,
 #' Preferences flow from primary to finalists
 #' @description Plot representing flow of preferences from first preferences to candidates in last round.
 #' Can be present as alluvial plot or bar chart, showing votes count or percentages.
-#' @importFrom ggplot2 ggplot aes labs geom_col theme element_blank
+#' @importFrom ggplot2 ggplot aes labs theme element_blank
 #' @importFrom ggalluvial geom_flow geom_stratum to_lodes_form
 #' @importFrom forcats fct_relevel
 #' @importFrom dplyr mutate select any_of across arrange pull rename summarise group_by
@@ -191,7 +191,7 @@ house_2PF_plot <- function(division,year,
                      color=.data$stratum,
                      y=.data$TransferCount,
                      fill = .data$stratum)) +
-            geom_flow() +
+            geom_auspol_bar() +
             geom_stratum(alpha = 1,color=NA)
     ) |>
       auspol_theme(extra_colours=extra_colours,
@@ -307,7 +307,7 @@ house_2PP_comparison_plot <- function(division=NULL,year,state=NULL,var="Percent
 #' Two Party-Preferred Comparison
 #' @description Plot with two-party preferred values for one of more divisions, for a given year
 #' Can be present as alluvial plot or bar chart, showing votes count or percentages.
-#' @importFrom ggplot2 ggplot aes labs geom_col theme element_blank
+#' @importFrom ggplot2 ggplot aes labs  theme element_blank
 #' @importFrom ggalluvial geom_flow geom_stratum to_lodes_form
 #' @importFrom forcats fct_relevel
 #' @importFrom dplyr mutate select any_of contains case_when if_else if_any filter distinct arrange desc pull
@@ -316,6 +316,7 @@ house_2PP_comparison_plot <- function(division=NULL,year,state=NULL,var="Percent
 #' @param division Electoral division
 #' @param year Election year
 #' @param var Variable to be plotted "Percentage" (default) or "Votes"
+#' @param include_labels If set to TRUE, the plot will include each value.
 #' @param include_data If set to TRUE, data will be included under <<output_var>>$source_data (defaults to FALSE)
 #' @return ggplot2 object
 #' @include internal.R
@@ -325,7 +326,9 @@ house_2PP_comparison_plot <- function(division=NULL,year,state=NULL,var="Percent
 #' # Plot historical 2PP for Aston
 #' house_2PP_historical_plot(division="Aston")
 #' }
-house_2PP_historical_plot <- function(division,year=NULL,var="Percentage",include_data=TRUE){
+house_2PP_historical_plot <- function(division,year=NULL,var="Percentage",
+                                      include_labels=TRUE,
+                                      include_data=TRUE){
 
   if(is.null(division)) stop("Year must be declared")
   if(length(division)>1) stop("Select just one year!")
@@ -356,8 +359,8 @@ house_2PP_historical_plot <- function(division,year=NULL,var="Percentage",includ
           ggplot(aes(x=.data$Year,
                      y=.data$value,
                      colour=.data$PartyAb))+
-          geom_line()) |>
-    auspol_theme(extra_values = unique(data$PartyAb),
+          geom_auspol_line(include_labels = include_labels)) |>
+          auspol_theme(extra_values = unique(data$PartyAb),
                  legend_pos = "bottom") +
     theme(axis.title.y = element_blank())+
     labs(x=var)

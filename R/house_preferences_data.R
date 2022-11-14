@@ -45,7 +45,7 @@ preference_distributor <- function(preferences,name_correction, var="Preference 
 
       round       <- round |>
         mutate(new=.data$Candidate) |>
-        rename(!!round_name:=.data$new)
+        rename(!!round_name:="new")
     }
 
 
@@ -131,7 +131,7 @@ preferences_lode         <- function(preferences,var){
 
       for(m in (i-1):1){
         candidate_m <-data_rounds |>
-          filter(.data$Round==m) |>
+          filter(if_any(c("Round"), ~ .x==m)) |>
           distinct(.data$Candidate) |>
           pull()
 
@@ -273,7 +273,7 @@ house_preference_flow_data <- function(division,year,
 
     iter<- data |>
       filter(.data$CountNum==i) |>
-      pivot_wider(names_from = .data$CalculationType,values_from = .data$CalculationValue) |>
+      pivot_wider(names_from = "CalculationType",values_from = "CalculationValue") |>
       arrange(desc(.data$`Preference Count`)) |>
       mutate(RoundPosition=row_number())
 

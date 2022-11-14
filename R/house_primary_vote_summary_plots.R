@@ -99,7 +99,7 @@ house_primary_historic_plot <- function(division=NULL,
   p <- data |>
     ggplot(aes(x=.data$Year,y=.data$value,colour=.data$PartyAb,
                label=round(.data$value,2))) +
-    geom_auspol_line() + labs(y=plotted_variable)
+    geom_auspol_line(include_labels = include_labels) + labs(y=plotted_variable)
 
   p <- auspol_theme(p,type="colour",extra_values=unique(data$PartyAb), legend_pos = "right")
 

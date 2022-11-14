@@ -269,55 +269,12 @@ get_house_2PF(division = "Lingiari",year=2013,aggregation = TRUE)
 These results can be charted using *house_2PF_plot*. This function can present the results either in alluvial or bar chart format.
 
 
-```r
-house_2PF_plot("Lingiari",2013,plot_format = "alluvial")
-```
-
-<img src="vignettes/house-preference-flowplot6-1.png" alt="plot of chunk plot6" width="100%" />
 
 
 
-```r
-house_2PF_plot(division="Burt",
-               year=2022,
-               plot_format = "bar")
-```
-
-<img src="vignettes/house-preference-flowplot7-1.png" alt="plot of chunk plot7" width="100%" />
-
-# Two-party preferred
-
-The AEC also publishes  [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries ([Coalition](https://en.wikipedia.org/wiki/Coalition_(Australia)) against Labor). These are available through * get_house_2PP()*, which allows to filter by division and year, and can be displayed by division or polling place
 
 
 
-```r
-get_house_2PP(division = "Fraser",year=2004,aggregation = TRUE)
-#> # A tibble: 1 × 9
-#>    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` Total…¹ Liber…² Austr…³
-#>   <dbl> <chr>        <int> <chr>                                   <int>                          <int>   <int>   <dbl>   <dbl>
-#> 1  2004 ACT            102 Fraser                                  30546                          53134   83680   0.365   0.635
-#> # … with abbreviated variable names ¹​TotalVotes, ²​`Liberal/National Coalition Percentage`,
-#> #   ³​`Australian Labor Party Percentage`
-```
-
-The package, includes two plots to visualise this data. The first (*house_2PP_comparison_plot()*),  displays the results for a given election, for one or a number of electorates.
 
 
-```r
-house_2PP_comparison_plot(year=2022,state="VIC")
-```
-
-<img src="vignettes/house-preference-flowplot8-1.png" alt="plot of chunk plot8" width="100%" />
-
-
-The second function - ** - shows the historical results for a given division.
-
-
-
-```r
-house_2PP_historical_plot(division="Aston")
-```
-
-<img src="vignettes/house-preference-flowplot9-1.png" alt="plot of chunk plot9" width="100%" />
 

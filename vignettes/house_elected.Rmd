@@ -1,0 +1,107 @@
+---
+title: "Elected MPs"
+author: "Carlos YANEZ SANTIBANEZ"
+date: "2022-11-14"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Elected MPs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+This package contains the following functions to retrieve and visualise the election results in the House of Representatives.
+
+- get_house_MPs()
+
+
+
+## Getting the data
+
+*get_house_MPs()*  retrieves the list of elected MPs. When used without any parameters, it will retrieve all elected MPs for all divisions, in all the elections in the package. However,data can be filtered by division and election year.
+
+
+
+```r
+get_house_MPs(division="Bennelong")
+#> # A tibble: 7 × 9
+#>    Year DivisionID DivisionNm StateAb CandidateID GivenNm      Surname   PartyNm                PartyAb
+#>   <dbl>      <int> <chr>      <chr>         <int> <chr>        <chr>     <chr>                  <chr>  
+#> 1  2022        105 Bennelong  NSW           36827 Jerome       LAXALE    Australian Labor Party ALP    
+#> 2  2019        105 Bennelong  NSW           33140 John         ALEXANDER Liberal                LP     
+#> 3  2016        105 Bennelong  NSW           28568 John         ALEXANDER Liberal                LP     
+#> 4  2013        105 Bennelong  NSW           23197 John         ALEXANDER Liberal                LP     
+#> 5  2010        105 Bennelong  NSW           21648 John         ALEXANDER Liberal                LP     
+#> 6  2007        105 Bennelong  NSW           18018 Maxine       McKEW     Australian Labor Party ALP    
+#> 7  2004        105 Bennelong  NSW           14818 John Winston HOWARD    Liberal                LP
+```
+
+
+
+```r
+get_house_MPs(year=2013)
+#> # A tibble: 150 × 9
+#>     Year DivisionID DivisionNm StateAb CandidateID GivenNm   Surname   PartyNm                PartyAb
+#>    <dbl>      <int> <chr>      <chr>         <int> <chr>     <chr>     <chr>                  <chr>  
+#>  1  2013        179 Adelaide   SA            23971 Kate      ELLIS     Australian Labor Party ALP    
+#>  2  2013        197 Aston      VIC           23474 Alan      TUDGE     Liberal                LP     
+#>  3  2013        198 Ballarat   VIC           23305 Catherine KING      Australian Labor Party ALP    
+#>  4  2013        103 Banks      NSW           23182 David     COLEMAN   Liberal                LP     
+#>  5  2013        180 Barker     SA            23648 Tony      PASIN     Liberal                LP     
+#>  6  2013        104 Barton     NSW           23183 Nickolas  VARVARIS  Liberal                LP     
+#>  7  2013        192 Bass       TAS           23294 Andrew    NIKOLIC   Liberal                LP     
+#>  8  2013        199 Batman     VIC           23296 David     FEENEY    Australian Labor Party ALP    
+#>  9  2013        200 Bendigo    VIC           23318 Lisa      CHESTERS  Australian Labor Party ALP    
+#> 10  2013        105 Bennelong  NSW           23197 John      ALEXANDER Liberal                LP     
+#> # … with 140 more rows
+```
+## Plotting
+
+This package also contains  functions to represent election results graphically. The first function presents and overall count of votes per party on a given year. For example, for 2013.
+
+
+```r
+house_results_tally(2013)
+```
+
+<img src="vignettes/listsunnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="100%" />
+
+Parties can be group together - i.e. putting all Coalition votes together
+
+
+
+```r
+house_results_tally(2013, merge_parties = list(COAL=c("CLP","LP","LNP","NP")))
+```
+
+<img src="vignettes/listsunnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="100%" />
+
+Furthermore, independents can be individualised - for instance for the 2022 elections:
+
+
+```r
+house_results_tally(2022, 
+                    individualise_IND = TRUE,
+                    merge_parties = list(COAL=c("CLP","LP","LNP","NP"),
+                                         TEAL=c("IND-DANIEL","IND-RYAN",
+                                                "IND-SCAMPS","IND-CHANEY",
+                                                "IND-SPENDER","IND-STEGGALL",
+                                                "IND-HAINES","IND-TINK")
+                                         ))
+```
+
+<img src="vignettes/listsunnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="100%" />
+
+Finally, there is also a function to plot the historical seats per party
+
+
+
+```r
+house_results_historic(merge_parties = list(COAL=c("CLP","LP","LNP","NP")),
+                       parties =c("COAL","ALP","GRN"),
+                       include_other=TRUE)
+```
+
+<img src="vignettes/listsunnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="100%" />
+
