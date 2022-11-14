@@ -34,9 +34,17 @@ options(repos = c(
 install.packages('auspol')
 ```
 
-## How to use.
+## How to use
 
 This package provides a series of functions to access the data as published by the AEC, as well as convinience functions to retrieve summaries and produce standard plots. For reference on how to check the [articles](articles/index.html).
+
+## Disclaimer
+
+This package's data has been sourced from the Australian  Electoral Commission's website. However, data is provided here with no guarantees of accuracy.
+
+**The Australian Electoral Commission is the authorative source of election data**. Should you need to certify the authenticity or correctness of the data, you should  retrieve the results directly from the AEC's website.
+
+The GitHub repository contains the raw data processing scripts in the *data-raw* folder.
 
 ## Issues? bugs? Ideas?
 
