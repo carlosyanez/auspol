@@ -42,7 +42,7 @@ This package provides a series of functions to access the data as published by t
 
 This package's data has been sourced from the Australian  Electoral Commission's website. However, data is provided here with no guarantees of accuracy.
 
-**The Australian Electoral Commission is the authorative source of election data**. Should you need to certify the authenticity or correctness of the data, you should  retrieve the results directly from the AEC's website.
+**The Australian Electoral Commission is the authoritative source of election data**. Should you need to certify the authenticity or correctness of the data, you should  retrieve the results directly from the AEC's website.
 
 The GitHub repository contains the raw data processing scripts in the *data-raw* folder.
 
