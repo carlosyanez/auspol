@@ -88,7 +88,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-14</h4>
+            <h4 data-toc-skip class="date">2022-11-28</h4>
       
       
       <div class="d-none name"><code>house_getting_data.Rmd</code></div>
@@ -96,10 +96,10 @@ SANTIBANEZ</h4>
 
     
     
-<p>Although this package contains many convenience functions to process
-and display the election data, there are probably many cases where the
-data in its original format is preferable - especially by and advanced
-analysis doing ad-hoc analysis. For these reason, the functions that
+<p>Although this package contains many convenient functions to process
+and displays the election data, there are probably many cases where the
+data in its original format is preferable - especially by an advanced
+analysis doing ad-hoc analysis. For these reasons, the functions that
 read the data in its “original” form are also exported for use. These
 are:</p>
 <ul>
@@ -110,34 +110,33 @@ are:</p>
 <li>get_house_MPs()</li>
 <li>get_house_turnout()</li>
 </ul>
-<p>Please note that the presented here is shown as downloaded from the
+<p>Please note that the presented here has been downloaded from the
 AEC’s website.</p>
 <div class="section level2">
 <h2 id="primary-vote">Primary Vote<a class="anchor" aria-label="anchor" href="#primary-vote"></a>
 </h2>
 <p>It is possible to get all primary vote results for all electorates in
-all electon from 2044, by running <em>get_house_primary_vote()</em>.
-More usefully, the funcion allows to filter by a number of electorates
-for a numbers of years, as shown in the below example:</p>
+all elections from 2044, by running <em>get_house_primary_vote()</em>.
+More usefully, the function allows filtering by a number of electorates
+for a number of years, as shown in the below example:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1,735 × 17</span></span>
-<span><span class="co">#&gt;     Year StateAb Divis…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing Sitti…⁹</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt;  1  2022 WA          237 Cowan     11591 Alexan…   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…     688  9.18 FALSE  </span></span>
-<span><span class="co">#&gt;  2  2022 WA          237 Cowan     11591 Alexan…   36591 TRIPP   Isabel…       2 FALSE   FALSE   GRN     The Gr…     124 -1.47 FALSE  </span></span>
-<span><span class="co">#&gt;  3  2022 WA          237 Cowan     11591 Alexan…   36484 IRADUK… Sylvia        3 FALSE   FALSE   AUC     Austra…      28  0.05 FALSE  </span></span>
-<span><span class="co">#&gt;  4  2022 WA          237 Cowan     11591 Alexan…   37243 CALAUT… Michael       4 FALSE   FALSE   CYA     Austra…      27  1.96 FALSE  </span></span>
-<span><span class="co">#&gt;  5  2022 WA          237 Cowan     11591 Alexan…   37387 WALSH   Tyler         5 FALSE   FALSE   ON      Paulin…      38 -3.35 FALSE  </span></span>
-<span><span class="co">#&gt;  6  2022 WA          237 Cowan     11591 Alexan…   37222 van KR… Micah         6 FALSE   FALSE   LDP     Libera…      11  0.8  FALSE  </span></span>
-<span><span class="co">#&gt;  7  2022 WA          237 Cowan     11591 Alexan…   37841 LAVERA… Roland        7 FALSE   FALSE   WAP     WESTER…      26  1.89 FALSE  </span></span>
-<span><span class="co">#&gt;  8  2022 WA          237 Cowan     11591 Alexan…   36483 HAND    Claire…       8 FALSE   FALSE   UAPP    United…      34 -0.24 FALSE  </span></span>
-<span><span class="co">#&gt;  9  2022 WA          237 Cowan     11591 Alexan…   36574 CONNEL… Vince         9 FALSE   TRUE    LP      Liberal     369 -9.96 FALSE  </span></span>
-<span><span class="co">#&gt; 10  2022 WA          237 Cowan     11591 Alexan…   37219 ANAGNO  Michael      10 FALSE   FALSE   AJP     Animal…      33  2.39 FALSE  </span></span>
-<span><span class="co">#&gt; # … with 1,725 more rows, and abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID,</span></span>
-<span><span class="co">#&gt; #   ⁶​BallotPosition, ⁷​HistoricElected, ⁸​OrdinaryVotes, ⁹​SittingMemberFl</span></span></code></pre></div>
-<p>The function allows also to narrow down to specific electorates. For
-instance, to check the primary vote for ALP candidates, for both
+<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm PollingPlaceID PollingPlace      CandidateID Surname     GivenNm     Ballo…¹ Elected Histo…² PartyAb PartyNm Ordin…³ Swing Sitti…⁴</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;                   &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;         &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt;  1  2022 WA             237 Cowan               11591 Alexander Heights       37205 ALY         Anne              1 TRUE    TRUE    ALP     Austra…     688  9.18 FALSE  </span></span>
+<span><span class="co">#&gt;  2  2022 WA             237 Cowan               11591 Alexander Heights       36591 TRIPP       Isabella          2 FALSE   FALSE   GRN     The Gr…     124 -1.47 FALSE  </span></span>
+<span><span class="co">#&gt;  3  2022 WA             237 Cowan               11591 Alexander Heights       36484 IRADUKUNDA  Sylvia            3 FALSE   FALSE   AUC     Austra…      28  0.05 FALSE  </span></span>
+<span><span class="co">#&gt;  4  2022 WA             237 Cowan               11591 Alexander Heights       37243 CALAUTTI    Michael           4 FALSE   FALSE   CYA     Austra…      27  1.96 FALSE  </span></span>
+<span><span class="co">#&gt;  5  2022 WA             237 Cowan               11591 Alexander Heights       37387 WALSH       Tyler             5 FALSE   FALSE   ON      Paulin…      38 -3.35 FALSE  </span></span>
+<span><span class="co">#&gt;  6  2022 WA             237 Cowan               11591 Alexander Heights       37222 van KRIEKEN Micah             6 FALSE   FALSE   LDP     Libera…      11  0.8  FALSE  </span></span>
+<span><span class="co">#&gt;  7  2022 WA             237 Cowan               11591 Alexander Heights       37841 LAVERACK    Roland            7 FALSE   FALSE   WAP     WESTER…      26  1.89 FALSE  </span></span>
+<span><span class="co">#&gt;  8  2022 WA             237 Cowan               11591 Alexander Heights       36483 HAND        Claire Eli…       8 FALSE   FALSE   UAPP    United…      34 -0.24 FALSE  </span></span>
+<span><span class="co">#&gt;  9  2022 WA             237 Cowan               11591 Alexander Heights       36574 CONNELLY    Vince             9 FALSE   TRUE    LP      Liberal     369 -9.96 FALSE  </span></span>
+<span><span class="co">#&gt; 10  2022 WA             237 Cowan               11591 Alexander Heights       37219 ANAGNO      Michael          10 FALSE   FALSE   AJP     Animal…      33  2.39 FALSE  </span></span>
+<span><span class="co">#&gt; # … with 1,725 more rows, and abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​OrdinaryVotes, ⁴​SittingMemberFl</span></span></code></pre></div>
+<p>The function allows also it to narrow down to specific electorates.
+For instance, to check the primary vote for ALP candidates, for both
 electorates in polling places named “Perth”:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
@@ -147,33 +146,32 @@ electorates in polling places named “Perth”:</p>
 <span>                       polling_places <span class="op">=</span> <span class="st">"Perth"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">PartyAb</span><span class="op">==</span><span class="st">"ALP"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 4 × 17</span></span>
-<span><span class="co">#&gt;    Year StateAb Divisi…¹ Divis…² Polli…³ Polli…⁴ Candi…⁵ Surname GivenNm Ballo…⁶ Elected Histo…⁷ PartyAb PartyNm Ordin…⁸ Swing Sitti…⁹</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;lgl&gt;  </span></span>
-<span><span class="co">#&gt; 1  2022 WA           237 Cowan    107098 Perth …   37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…      97 15.0  FALSE  </span></span>
-<span><span class="co">#&gt; 2  2022 WA           238 Curtin    99650 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…      50 -0.88 FALSE  </span></span>
-<span><span class="co">#&gt; 3  2022 WA           238 Curtin    94024 Perth …   37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…     168 -2.5  FALSE  </span></span>
-<span><span class="co">#&gt; 4  2019 WA           238 Curtin    94024 Perth …   33431 MEECHAM Rob           7 FALSE   FALSE   ALP     Austra…     316  0.43 FALSE  </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​DivisionID, ²​DivisionNm, ³​PollingPlaceID, ⁴​PollingPlace, ⁵​CandidateID, ⁶​BallotPosition,</span></span>
-<span><span class="co">#&gt; #   ⁷​HistoricElected, ⁸​OrdinaryVotes, ⁹​SittingMemberFl</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm PollingPlaceID PollingPlace               CandidateID Surname GivenNm Ballo…¹ Elected Histo…² PartyAb PartyNm Ordin…³ Swing Sitti…⁴</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;               &lt;int&gt; &lt;chr&gt;                            &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt; &lt;lgl&gt;  </span></span>
+<span><span class="co">#&gt; 1  2022 WA             237 Cowan              107098 Perth CBD East COWAN PPVC        37205 ALY     Anne          1 TRUE    TRUE    ALP     Austra…      97 15.0  FALSE  </span></span>
+<span><span class="co">#&gt; 2  2022 WA             238 Curtin              99650 Perth CBD East CURTIN PPVC       37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…      50 -0.88 FALSE  </span></span>
+<span><span class="co">#&gt; 3  2022 WA             238 Curtin              94024 Perth CBD West CURTIN PPVC       37282 SPENCER Yannick       7 FALSE   FALSE   ALP     Austra…     168 -2.5  FALSE  </span></span>
+<span><span class="co">#&gt; 4  2019 WA             238 Curtin              94024 Perth CURTIN PPVC                33431 MEECHAM Rob           7 FALSE   FALSE   ALP     Austra…     316  0.43 FALSE  </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​HistoricElected, ³​OrdinaryVotes, ⁴​SittingMemberFl</span></span></code></pre></div>
 <p>The function also can present the division totals, for example:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_primary_vote.html">get_house_primary_vote</a></span><span class="op">(</span>division <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Cowan"</span>,<span class="st">"Curtin"</span><span class="op">)</span>,</span>
 <span>                       year<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>,<span class="fl">2022</span><span class="op">)</span>, </span>
 <span>                       aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 37 × 14</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    BallotPosition Elected Histor…¹ PartyAb PartyNm Sitti…² Ordin…³</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;               &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt;     &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 WA             237 Cowan              999 Informal Informal              999 FALSE   FALSE    Inform… Inform… FALSE      4090</span></span>
-<span><span class="co">#&gt;  2  2019 WA             237 Cowan            32239 COOPER   Mark                    1 FALSE   FALSE    GRN     The Gr… FALSE      6493</span></span>
-<span><span class="co">#&gt;  3  2019 WA             237 Cowan            32778 LEBRASSE Andre                   4 FALSE   FALSE    AUC     Austra… FALSE      1514</span></span>
-<span><span class="co">#&gt;  4  2019 WA             237 Cowan            32875 BEDFORD  Paul James              6 FALSE   FALSE    ASP     Shoote… FALSE      1101</span></span>
-<span><span class="co">#&gt;  5  2019 WA             237 Cowan            32934 WESTCOTT Peter                   3 FALSE   FALSE    UAPP    United… FALSE      1582</span></span>
-<span><span class="co">#&gt;  6  2019 WA             237 Cowan            33348 ALY      Anne                    2 TRUE    TRUE     ALP     Austra… FALSE     26330</span></span>
-<span><span class="co">#&gt;  7  2019 WA             237 Cowan            33389 STEWART  Isaac                   7 FALSE   FALSE    LP      Liberal FALSE     26721</span></span>
-<span><span class="co">#&gt;  8  2019 WA             237 Cowan            33450 MUNDY    Sheila                  5 FALSE   FALSE    ON      Paulin… FALSE      3641</span></span>
-<span><span class="co">#&gt;  9  2019 WA             238 Curtin             999 Informal Informal              999 FALSE   FALSE    Inform… Inform… FALSE      2364</span></span>
-<span><span class="co">#&gt; 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron                 2 FALSE   FALSE    GRN     The Gr… FALSE     10905</span></span>
-<span><span class="co">#&gt; # … with 27 more rows, and abbreviated variable names ¹​HistoricElected, ²​SittingMemberFl, ³​OrdinaryVotes</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionID DivisionNm CandidateID Surname  GivenNm    BallotPosition Elected HistoricElected PartyAb  PartyNm                       SittingMem…¹ Ordin…²</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;               &lt;int&gt; &lt;lgl&gt;   &lt;lgl&gt;           &lt;chr&gt;    &lt;chr&gt;                         &lt;lgl&gt;          &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 WA             237 Cowan              999 Informal Informal              999 FALSE   FALSE           Informal Informal                      FALSE           4090</span></span>
+<span><span class="co">#&gt;  2  2019 WA             237 Cowan            32239 COOPER   Mark                    1 FALSE   FALSE           GRN      The Greens (WA)               FALSE           6493</span></span>
+<span><span class="co">#&gt;  3  2019 WA             237 Cowan            32778 LEBRASSE Andre                   4 FALSE   FALSE           AUC      Australian Christians         FALSE           1514</span></span>
+<span><span class="co">#&gt;  4  2019 WA             237 Cowan            32875 BEDFORD  Paul James              6 FALSE   FALSE           ASP      Shooters, Fishers and Farmers FALSE           1101</span></span>
+<span><span class="co">#&gt;  5  2019 WA             237 Cowan            32934 WESTCOTT Peter                   3 FALSE   FALSE           UAPP     United Australia Party        FALSE           1582</span></span>
+<span><span class="co">#&gt;  6  2019 WA             237 Cowan            33348 ALY      Anne                    2 TRUE    TRUE            ALP      Australian Labor Party        FALSE          26330</span></span>
+<span><span class="co">#&gt;  7  2019 WA             237 Cowan            33389 STEWART  Isaac                   7 FALSE   FALSE           LP       Liberal                       FALSE          26721</span></span>
+<span><span class="co">#&gt;  8  2019 WA             237 Cowan            33450 MUNDY    Sheila                  5 FALSE   FALSE           ON       Pauline Hanson's One Nation   FALSE           3641</span></span>
+<span><span class="co">#&gt;  9  2019 WA             238 Curtin             999 Informal Informal              999 FALSE   FALSE           Informal Informal                      FALSE           2364</span></span>
+<span><span class="co">#&gt; 10  2019 WA             238 Curtin           32149 PIDGEON  Cameron                 2 FALSE   FALSE           GRN      The Greens (WA)               FALSE          10905</span></span>
+<span><span class="co">#&gt; # … with 27 more rows, and abbreviated variable names ¹​SittingMemberFl, ²​OrdinaryVotes</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="preferences">Preferences<a class="anchor" aria-label="anchor" href="#preferences"></a>
@@ -183,75 +181,73 @@ function is called <em>get_house_preferences()</em></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 16</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   </span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   </span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   </span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue</span></span></code></pre></div>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm                 Sitti…¹ Calcu…² Calcu…³</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;                   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Prefer…  254   </span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Prefer…    4.65</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Prefer…  238   </span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Prefer…    4.35</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John        LP      Liberal Party of Austr… N       Prefer…  862   </span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John        LP      Liberal Party of Austr… N       Prefer…   15.8 </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​SittingMemberFl, ²​CalculationType, ³​CalculationValue</span></span></code></pre></div>
 <p>Similarly to the primary vote function, results can be aggregated and
 filtered by polling place:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>,</span>
 <span>                      aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 60 × 13</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm   Calcu…¹ Calcu…²</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Prefer…    3596</span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal J… Transf…       0</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Prefer…    4344</span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victoria… Transf…       0</span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Prefer…   17241</span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal … Transf…       0</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Prefer…   25575</span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Aust… Transf…       0</span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Prefer…    2979</span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United A… Transf…       0</span></span>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm                                      Calcu…¹ Calcu…²</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;                                        &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal Justice Party                         Prefer…    3596</span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills             0              1       32688 MILES   Christopher James AJP     Animal Justice Party                         Transf…       0</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists                         Prefer…    4344</span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills             0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists                         Transf…       0</span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal Party of Australia (Victorian Divis… Prefer…   17241</span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills             0              3       33251 KILLIN  Peter John        LP      Liberal Party of Australia (Victorian Divis… Transf…       0</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Australian Greens - Victoria             Prefer…   25575</span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills             0              4       32657 PULFORD Adam Ross         GVIC    The Australian Greens - Victoria             Transf…       0</span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United Australia Party                       Prefer…    2979</span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills             0              5       32329 VENKAT  Manju             UAPP    United Australia Party                       Transf…       0</span></span>
 <span><span class="co">#&gt; # … with 50 more rows, and abbreviated variable names ¹​CalculationType, ²​CalculationValue</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_preferences.html">get_house_preferences</a></span><span class="op">(</span><span class="st">"Wills"</span>,<span class="fl">2019</span>, polling_places<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"ABSENT"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 10 × 16</span></span>
-<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotP…¹ Candi…² Surname GivenNm PartyAb PartyNm Sitti…³ Calcu…⁴ Calcu…⁵</span></span>
-<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…  254   </span></span>
-<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Prefer…    4.65</span></span>
-<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0         1   32688 MILES   Christ… AJP     Animal… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…  238   </span></span>
-<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Prefer…    4.35</span></span>
-<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0         2   32398 BOLTON  Susann… VNS     Victor… N       Transf…    0   </span></span>
-<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…  862   </span></span>
-<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0         3   33251 KILLIN  Peter … LP      Libera… N       Prefer…   15.8 </span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​BallotPosition, ²​CandidateId, ³​SittingMemberFl, ⁴​CalculationType, ⁵​CalculationValue</span></span></code></pre></div>
-<p>The AEC also provides a list of how the primary votes have flowed to
-the two finalists. The can be retrieved with <em>get_house_2PF</em>.
-Being related to the previous function, it also has the same
-parameters.</p>
+<span><span class="co">#&gt;     Year StateAb DivisionId DivisionNm  PPId PPNm   CountNum BallotPosition CandidateId Surname GivenNm           PartyAb PartyNm                 Sitti…¹ Calcu…² Calcu…³</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;int&gt;          &lt;int&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;             &lt;chr&gt;   &lt;chr&gt;                   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Prefer…  254   </span></span>
+<span><span class="co">#&gt;  2  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Prefer…    4.65</span></span>
+<span><span class="co">#&gt;  3  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  4  2019 VIC            234 Wills          0 ABSENT        0              1       32688 MILES   Christopher James AJP     Animal Justice Party    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  5  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Prefer…  238   </span></span>
+<span><span class="co">#&gt;  6  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Prefer…    4.35</span></span>
+<span><span class="co">#&gt;  7  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  8  2019 VIC            234 Wills          0 ABSENT        0              2       32398 BOLTON  Susanne Alison    VNS     Victorian Socialists    N       Transf…    0   </span></span>
+<span><span class="co">#&gt;  9  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John        LP      Liberal Party of Austr… N       Prefer…  862   </span></span>
+<span><span class="co">#&gt; 10  2019 VIC            234 Wills          0 ABSENT        0              3       33251 KILLIN  Peter John        LP      Liberal Party of Austr… N       Prefer…   15.8 </span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​SittingMemberFl, ²​CalculationType, ³​CalculationValue</span></span></code></pre></div>
+<p>The AEC also lists how the primary votes have flowed to the two
+finalists. They can be retrieved with <em>get_house_2PF</em>. Being
+related to the previous function, it also has the same parameters.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_house_2PF.html">get_house_2PF</a></span><span class="op">(</span>division<span class="op">=</span><span class="st">"Jagajaga"</span>,year<span class="op">=</span><span class="fl">2013</span>,aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 8 × 17</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm FromCa…¹ FromC…² FromC…³ FromC…⁴ FromC…⁵ FromC…⁶ ToCan…⁷ ToCan…⁸ ToCan…⁹ ToCan…˟ ToCan…˟ ToCan…˟</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;         &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1  2013 VIC            220 Jagajaga      28114 GRN     Austra… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
-<span><span class="co">#&gt; 2  2013 VIC            220 Jagajaga      28114 GRN     Austra… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3</span></span>
-<span><span class="co">#&gt; 3  2013 VIC            220 Jagajaga      28175 AJP     Animal… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
-<span><span class="co">#&gt; 4  2013 VIC            220 Jagajaga      28175 AJP     Animal… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3</span></span>
-<span><span class="co">#&gt; 5  2013 VIC            220 Jagajaga      28255 ALP     Austra… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
-<span><span class="co">#&gt; 6  2013 VIC            220 Jagajaga      28885 FFP     Family… WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1</span></span>
-<span><span class="co">#&gt; 7  2013 VIC            220 Jagajaga      28885 FFP     Family… WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3</span></span>
-<span><span class="co">#&gt; 8  2013 VIC            220 Jagajaga      28892 LP      Libera… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3</span></span>
-<span><span class="co">#&gt; # … with 1 more variable: TransferCount &lt;int&gt;, and abbreviated variable names ¹​FromCandidateId, ²​FromCandidatePartyAb,</span></span>
-<span><span class="co">#&gt; #   ³​FromCandidatePartyNm, ⁴​FromCandidateSurname, ⁵​FromCandidateGivenNm, ⁶​FromCandidateBallotPosition, ⁷​ToCandidateId,</span></span>
-<span><span class="co">#&gt; #   ⁸​ToCandidatePartyAb, ⁹​ToCandidatePartyNm, ˟​ToCandidateSurname, ˟​ToCandidateGivenNm, ˟​ToCandidateBallotPosition</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionId DivisionNm FromCandidateId FromCandidatePartyAb FromCandidat…¹ FromC…² FromC…³ FromC…⁴ ToCan…⁵ ToCan…⁶ ToCan…⁷ ToCan…⁸ ToCan…⁹ ToCan…˟ Trans…˟</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                &lt;int&gt; &lt;chr&gt;                &lt;chr&gt;          &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;   &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1  2013 VIC            220 Jagajaga             28114 GRN                  Australian Gr… McKINN… Hugh          4   28255 ALP     Austra… MACKLIN Jenny         1   12016</span></span>
+<span><span class="co">#&gt; 2  2013 VIC            220 Jagajaga             28114 GRN                  Australian Gr… McKINN… Hugh          4   28892 LP      Libera… MULHOL… David         3    1680</span></span>
+<span><span class="co">#&gt; 3  2013 VIC            220 Jagajaga             28175 AJP                  Animal Justic… SCHRAM  Nathan…       5   28255 ALP     Austra… MACKLIN Jenny         1    1383</span></span>
+<span><span class="co">#&gt; 4  2013 VIC            220 Jagajaga             28175 AJP                  Animal Justic… SCHRAM  Nathan…       5   28892 LP      Libera… MULHOL… David         3     852</span></span>
+<span><span class="co">#&gt; 5  2013 VIC            220 Jagajaga             28255 ALP                  Australian La… MACKLIN Jenny         1   28255 ALP     Austra… MACKLIN Jenny         1   36238</span></span>
+<span><span class="co">#&gt; 6  2013 VIC            220 Jagajaga             28885 FFP                  Family First … WARD    Jessica       2   28255 ALP     Austra… MACKLIN Jenny         1     899</span></span>
+<span><span class="co">#&gt; 7  2013 VIC            220 Jagajaga             28885 FFP                  Family First … WARD    Jessica       2   28892 LP      Libera… MULHOL… David         3    1442</span></span>
+<span><span class="co">#&gt; 8  2013 VIC            220 Jagajaga             28892 LP                   Liberal Party… MULHOL… David         3   28892 LP      Libera… MULHOL… David         3   37920</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable names ¹​FromCandidatePartyNm, ²​FromCandidateSurname, ³​FromCandidateGivenNm, ⁴​FromCandidateBallotPosition, ⁵​ToCandidateId,</span></span>
+<span><span class="co">#&gt; #   ⁶​ToCandidatePartyAb, ⁷​ToCandidatePartyNm, ⁸​ToCandidateSurname, ⁹​ToCandidateGivenNm, ˟​ToCandidateBallotPosition, ˟​TransferCount</span></span></code></pre></div>
 <p>The last preference function is <em>get_house_2PP()</em>, which
 provides the <a href="https://en.wikipedia.org/wiki/Two-party-preferred_vote" class="external-link">Two-Party-Preferred</a>
 summaries as recorded by the AEC (usually, Coalition vs. ALP.)</p>
@@ -260,16 +256,16 @@ summaries as recorded by the AEC (usually, Coalition vs. ALP.)</p>
 <span>              year<span class="op">=</span><span class="fl">2016</span>,</span>
 <span>              aggregation <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 9</span></span>
-<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` TotalVotes Liberal/N…¹ Austr…²</span></span>
-<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                                   &lt;int&gt;                          &lt;int&gt;      &lt;int&gt;       &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt; 1  2016 VIC            218 Indi                                    41083                          34375      75458       0.544   0.456</span></span>
-<span><span class="co">#&gt; # … with abbreviated variable names ¹​`Liberal/National Coalition Percentage`, ²​`Australian Labor Party Percentage`</span></span></code></pre></div>
+<span><span class="co">#&gt;    Year StateAb DivisionID DivisionNm `Liberal/National Coalition Votes` `Australian Labor Party Votes` TotalVotes `Liberal/National Coalition Percentage` Australian L…¹</span></span>
+<span><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;        &lt;int&gt; &lt;chr&gt;                                   &lt;int&gt;                          &lt;int&gt;      &lt;int&gt;                                   &lt;dbl&gt;          &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt; 1  2016 VIC            218 Indi                                    41083                          34375      75458                                   0.544          0.456</span></span>
+<span><span class="co">#&gt; # … with abbreviated variable name ¹​`Australian Labor Party Percentage`</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="elected-mps">Elected MPs<a class="anchor" aria-label="anchor" href="#elected-mps"></a>
 </h2>
 <p>The function <em>get_house_MPs()</em> retrieves the list of elected
-candidates. Without parameters it returns the complete lists (all
+candidates. Without parameters, it returns the complete lists (all
 divisions, for all elections), but similarly to the previous functions
 it allows for results to be filtered by divisions and years</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">

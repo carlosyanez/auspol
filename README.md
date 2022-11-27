@@ -16,7 +16,7 @@ All the data is contained as a release ([here](https://github.com/carlosyanez/au
 
 ## Installation and pre-requisites
 
-The current version of this packages (0.0.1.0000) is not yet in CRAN. To  install the package, you can download it from Github:
+The current version of this package (0.0.1.0000) is not yet in CRAN. To  install the package, you can download it from Github:
 
 ```
 devtools::install_github("carlosyanez/auspol")
@@ -36,12 +36,11 @@ install.packages('auspol')
 
 ## How to use.
 
-This package provides a series of functions to access the data as published by the AEC, as well as convinience functions to retrieve summaries and produce standard plots. For reference on how to check the [articles](articles/index.html).
+This package provides a series of functions to access the data as published by the AEC, as well as convenience functions to retrieve summaries and produce standard plots. For reference on how to check the [articles](articles/index.html).
 
 ## Issues? bugs? Ideas?
 
-If you find something that is not quite right, please post an issue. If
-you have any ideas,requests, or if you want to contribute, [please let me know](https://twitter.com/messages/25712933-3805104374?recipient_id=25712933&text=Hello%20world)!
+If you find something that is not quite right, please post an issue.f you have any ideas, or requests, or if you want to contribute, [please let me know](https://twitter.com/messages/25712933-3805104374?recipient_id=25712933&text=Hello%20world)!
 
 ## To Do
 
@@ -56,6 +55,6 @@ This package is still under development. At the moment, it only contains data fo
 
 ## Acknowledgment of Country
 
-The author of this package acknowledges the Boonwurrung/Bunurong and Wurrundjeri Woi Wurrung peoples of the Eastern Kulin Nation as Traditional Owners and Custodians of the land where this package has been created, and pays respect to their Elders past, present and emerging.
+The author of this package acknowledges the Aboriginal and Torres Strait Islander people as the traditional custodians of Australia, and pays respect to their Elders past, present and emerging.
 
 

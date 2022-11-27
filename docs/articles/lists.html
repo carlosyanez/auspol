@@ -88,7 +88,7 @@
                         <h4 data-toc-skip class="author">Carlos YANEZ
 SANTIBANEZ</h4>
             
-            <h4 data-toc-skip class="date">2022-11-14</h4>
+            <h4 data-toc-skip class="date">2022-11-28</h4>
       
       
       <div class="d-none name"><code>lists.Rmd</code></div>
@@ -114,7 +114,7 @@ run:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_years.html">list_years</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2022 2019 2016 2013 2010 2007 2004</span></span></code></pre></div>
-<p>To retrieve the list of division for all the years, you can run
+<p>To retrieve the list of divisions for all the years, you can run
 <em>list_divisions</em>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_divisions.html">list_divisions</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -133,7 +133,7 @@ run:</p>
 <span><span class="co">#&gt; 10 NSW            108 Bradfield  TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
 <span><span class="co">#&gt; # … with 157 more rows</span></span></code></pre></div>
 <p>This function allows for some filtering by using a list containing
-for any of the columns included:</p>
+any of the columns included:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_divisions.html">list_divisions</a></span><span class="op">(</span>filter<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>DivisionNm<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Batman"</span>,<span class="st">"Cooper"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 2 × 10</span></span>
@@ -145,8 +145,8 @@ for any of the columns included:</p>
 <div class="section level2">
 <h2 id="political-parties">Political Parties<a class="anchor" aria-label="anchor" href="#political-parties"></a>
 </h2>
-<p>It is recommend to explore the list of parties that have participated
-in the elections in the data. For this **</p>
+<p>It is recommended to explore the list of parties that have
+participated in the elections in the data. For this **</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="fu"><a href="../reference/list_parties.html">list_parties</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -167,7 +167,7 @@ in the elections in the data. For this **</p>
 <p>Due to changes in parties and the federal nature of the country,
 parties may have different names in different places and they may change
 over time. In addition to a filter argument (like in list_divisions),
-this function also allows to filter by party names using a <a href="https://en.wikipedia.org/wiki/Regular_expression" class="external-link">regular
+this function also allows filtering by party names using a <a href="https://en.wikipedia.org/wiki/Regular_expression" class="external-link">regular
 expression</a>, e.g.:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_parties.html">list_parties</a></span><span class="op">(</span>party_regex <span class="op">=</span> <span class="st">"Greens"</span><span class="op">)</span></span>
@@ -196,23 +196,23 @@ expression</a>, e.g.:</p>
 <h2 id="polling-places">Polling places<a class="anchor" aria-label="anchor" href="#polling-places"></a>
 </h2>
 <p>Finally, it is possible to list all polling places, showing their
-active years. For exmple, for all the electorates in Bennelong</p>
+active years. For example, for all the electorates in Bennelong</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_polling_places.html">list_polling_places</a></span><span class="op">(</span>filters<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>DivisionNm<span class="op">=</span><span class="st">"Bennelong"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 126 × 16</span></span>
-<span><span class="co">#&gt;    State DivisionID DivisionNm PollingPlaceID Polli…¹ Premi…² Polli…³ Latit…⁴ Longi…⁵ `2004` `2007` `2010` `2013` `2016` `2019` `2022`</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;               &lt;int&gt;   &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt; </span></span>
-<span><span class="co">#&gt;  1 NSW          105 Bennelong              75       1 Epping… Balacl…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt;  2 NSW          105 Bennelong              75       1 Epping… Marsfi…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt;  3 NSW          105 Bennelong              79       1 Austra… Eastvi…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    </span></span>
-<span><span class="co">#&gt;  4 NSW          105 Bennelong              79       1 Austra… Ryde      -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    </span></span>
-<span><span class="co">#&gt;  5 NSW          105 Bennelong              79       1 The Li… Ryde      -33.8    151. NA     NA     NA     NA     NA     NA     TRUE  </span></span>
-<span><span class="co">#&gt;  6 NSW          105 Bennelong              80       1 Eastwo… Eastwo…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt;  7 NSW          105 Bennelong              81       1 Epping… Epping…   -33.8    151. TRUE   TRUE   TRUE   NA     NA     NA     NA    </span></span>
-<span><span class="co">#&gt;  8 NSW          105 Bennelong              81       1 Epping… Epping…   -33.8    151. NA     NA     NA     TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt;  9 NSW          105 Bennelong              82       1 Epping… Epping…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt; 10 NSW          105 Bennelong              84       1 Glades… Glades…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
-<span><span class="co">#&gt; # … with 116 more rows, and abbreviated variable names ¹​PollingPlaceTypeID, ²​PremisesNm, ³​PollingPlaceNm, ⁴​Latitude, ⁵​Longitude</span></span></code></pre></div>
+<span><span class="co">#&gt;    State DivisionID DivisionNm PollingPlaceID PollingPlaceTypeID PremisesNm                     Pollin…¹ Latit…² Longi…³ `2004` `2007` `2010` `2013` `2016` `2019` `2022`</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;               &lt;int&gt;              &lt;int&gt; &lt;chr&gt;                          &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt;  &lt;lgl&gt; </span></span>
+<span><span class="co">#&gt;  1 NSW          105 Bennelong              75                  1 Epping Boys High School        Balacla…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt;  2 NSW          105 Bennelong              75                  1 Epping Boys High School        Marsfie…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt;  3 NSW          105 Bennelong              79                  1 Australian Air League Building Eastview   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    </span></span>
+<span><span class="co">#&gt;  4 NSW          105 Bennelong              79                  1 Australian Air League Building Ryde       -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    </span></span>
+<span><span class="co">#&gt;  5 NSW          105 Bennelong              79                  1 The Living Way Church          Ryde       -33.8    151. NA     NA     NA     NA     NA     NA     TRUE  </span></span>
+<span><span class="co">#&gt;  6 NSW          105 Bennelong              80                  1 Eastwood Heights Public School Eastwoo…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt;  7 NSW          105 Bennelong              81                  1 Epping Community Centre        Epping …   -33.8    151. TRUE   TRUE   TRUE   NA     NA     NA     NA    </span></span>
+<span><span class="co">#&gt;  8 NSW          105 Bennelong              81                  1 Epping Public School           Epping …   -33.8    151. NA     NA     NA     TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt;  9 NSW          105 Bennelong              82                  1 Epping North Public School     Epping …   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt; 10 NSW          105 Bennelong              84                  1 Gladesville Public School      Gladesv…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  </span></span>
+<span><span class="co">#&gt; # … with 116 more rows, and abbreviated variable names ¹​PollingPlaceNm, ²​Latitude, ³​Longitude</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

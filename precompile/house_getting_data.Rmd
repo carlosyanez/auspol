@@ -24,8 +24,7 @@ library(auspol)
 
 ```
 
-
-Although this package contains many convenience functions to process and display the election data, there are probably many cases where the data in its original format is preferable - especially by and advanced analysis doing ad-hoc analysis. For these reason, the functions that read the data in its "original" form are also exported for use. These are:
+Although this package contains many convenient functions to process and displays the election data, there are probably many cases where the data in its original format is preferable - especially by an advanced analysis doing ad-hoc analysis. For these reasons, the functions that read the data in its "original" form are also exported for use. These are:
 
 - get_house_primary_vote()
 - get_house_preferences()
@@ -34,19 +33,17 @@ Although this package contains many convenience functions to process and display
 - get_house_MPs()
 - get_house_turnout()
 
-
-Please note that the presented here is shown as downloaded from the AEC's website.
+Please note that the presented here has been downloaded from the AEC's website.
 
 ## Primary Vote
 
-It is possible to get all primary vote results for all electorates in all electon from 2044, by running *get_house_primary_vote()*. More usefully, the funcion allows to filter by a number of electorates for a numbers of years, as shown in the below example:
+It is possible to get all primary vote results for all electorates in all elections from 2044, by running *get_house_primary_vote()*. More usefully, the function allows filtering by a number of electorates for a number of years, as shown in the below example:
 
 ```{r}
 get_house_primary_vote(division = c("Cowan","Curtin"),year=c(2019,2022))
 ```
 
-The function allows also to narrow down to specific electorates. For instance, to check the primary vote for ALP candidates, for both electorates in polling places named "Perth":
-
+The function allows also it to narrow down to specific electorates. For instance, to check the primary vote for ALP candidates, for both electorates in polling places named "Perth":
 
 ```{r}
 library(dplyr)
@@ -74,7 +71,6 @@ get_house_preferences("Wills",2019) |> head(10)
 
 ```
 
-
 Similarly to the primary vote function, results can be aggregated and filtered by polling place:
 
 ```{r}
@@ -83,12 +79,11 @@ get_house_preferences("Wills",2019,
 
 ```
 
-
 ```{r}
 get_house_preferences("Wills",2019, polling_places=c("ABSENT")) |> 
   head(10)
 ```
-The AEC also provides a list of how the primary votes have flowed to the two finalists. The can be retrieved with *get_house_2PF*. Being related to the previous function, it also has the same parameters.
+The AEC also lists how the primary votes have flowed to the two finalists. They can be retrieved with *get_house_2PF*. Being related to the previous function, it also has the same parameters.
 
 ```{r}
 get_house_2PF(division="Jagajaga",year=2013,aggregation = TRUE)
@@ -105,7 +100,7 @@ get_house_2PP(division = "Indi",
 
 ## Elected MPs
 
-The function *get_house_MPs()* retrieves the list of elected candidates. Without parameters it returns the complete lists (all divisions, for all elections), but similarly to the previous functions it allows for results to be filtered by divisions and years
+The function *get_house_MPs()* retrieves the list of elected candidates. Without parameters, it returns the complete lists (all divisions, for all elections), but similarly to the previous functions it allows for results to be filtered by divisions and years
 
 ```{r}
 get_house_MPs(division = c("Melbourne","Cooper"),
@@ -119,8 +114,3 @@ The function *get_house_turnout()* retrieves turnout data as published by the AE
 ```{r}
 get_house_turnout(year=2019)
 ```
-
-
-
-
-

@@ -40,14 +40,13 @@ list_years()
 
 ```
 
-To retrieve the list of division for all the years, you can run *list_divisions*:
+To retrieve the list of divisions for all the years, you can run *list_divisions*:
 
 ```{r}
 list_divisions()
 ```
 
-
-This function allows for some filtering by using a list containing for any of the columns included:
+This function allows for some filtering by using a list containing any of the columns included:
 
 ```{r}
 list_divisions(filter=list(DivisionNm=c("Batman","Cooper")))
@@ -55,7 +54,7 @@ list_divisions(filter=list(DivisionNm=c("Batman","Cooper")))
 
 ## Political Parties
 
-It is recommend to explore the list of parties that have participated in the elections in the data. For this **
+It is recommended to explore the list of parties that have participated in the elections in the data. For this **
 
 ```{r}
 
@@ -63,22 +62,16 @@ list_parties()
 
 ```
 
-
-Due to changes in parties and the federal nature of the country, parties may have different names in different places and they may change over time. In addition to a filter argument (like in list_divisions), this function also allows to filter by party names using  a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), e.g.:
+Due to changes in parties and the federal nature of the country, parties may have different names in different places and they may change over time. In addition to a filter argument (like in list_divisions), this function also allows filtering by party names using  a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), e.g.:
 
 ```{r}
 list_parties(party_regex = "Greens")
 ```
 
-
 ## Polling places
 
-Finally, it is possible to list all polling places, showing their active years. For exmple, for all the electorates in Bennelong
+Finally, it is possible to list all polling places, showing their active years. For example, for all the electorates in Bennelong
 
 ```{r}
 list_polling_places(filters=list(DivisionNm="Bennelong"))
 ```
-
-
-
-

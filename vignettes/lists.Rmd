@@ -1,7 +1,7 @@
 ---
 title: "Listing the essential data"
 author: "Carlos YANEZ SANTIBANEZ"
-date: "2022-11-14"
+date: "2022-11-28"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Listing the essential data}
@@ -28,7 +28,7 @@ list_years()
 #> [1] 2022 2019 2016 2013 2010 2007 2004
 ```
 
-To retrieve the list of division for all the years, you can run *list_divisions*:
+To retrieve the list of divisions for all the years, you can run *list_divisions*:
 
 
 ```r
@@ -49,8 +49,7 @@ list_divisions()
 #> # … with 157 more rows
 ```
 
-
-This function allows for some filtering by using a list containing for any of the columns included:
+This function allows for some filtering by using a list containing any of the columns included:
 
 
 ```r
@@ -64,7 +63,7 @@ list_divisions(filter=list(DivisionNm=c("Batman","Cooper")))
 
 ## Political Parties
 
-It is recommend to explore the list of parties that have participated in the elections in the data. For this **
+It is recommended to explore the list of parties that have participated in the elections in the data. For this **
 
 
 ```r
@@ -86,8 +85,7 @@ list_parties()
 #> # … with 377 more rows
 ```
 
-
-Due to changes in parties and the federal nature of the country, parties may have different names in different places and they may change over time. In addition to a filter argument (like in list_divisions), this function also allows to filter by party names using  a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), e.g.:
+Due to changes in parties and the federal nature of the country, parties may have different names in different places and they may change over time. In addition to a filter argument (like in list_divisions), this function also allows filtering by party names using  a [regular expression](https://en.wikipedia.org/wiki/Regular_expression), e.g.:
 
 
 ```r
@@ -114,30 +112,25 @@ list_parties(party_regex = "Greens")
 #> 17 WA      ODR     Outdoor Recreation Party (Stop The Greens) NA     NA     NA     NA     TRUE   NA     NA
 ```
 
-
 ## Polling places
 
-Finally, it is possible to list all polling places, showing their active years. For exmple, for all the electorates in Bennelong
+Finally, it is possible to list all polling places, showing their active years. For example, for all the electorates in Bennelong
 
 
 ```r
 list_polling_places(filters=list(DivisionNm="Bennelong"))
 #> # A tibble: 126 × 16
-#>    State DivisionID DivisionNm PollingPlaceID Polli…¹ Premi…² Polli…³ Latit…⁴ Longi…⁵ `2004` `2007` `2010` `2013` `2016` `2019` `2022`
-#>    <chr>      <int> <chr>               <int>   <int> <chr>   <chr>     <dbl>   <dbl> <lgl>  <lgl>  <lgl>  <lgl>  <lgl>  <lgl>  <lgl> 
-#>  1 NSW          105 Bennelong              75       1 Epping… Balacl…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
-#>  2 NSW          105 Bennelong              75       1 Epping… Marsfi…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
-#>  3 NSW          105 Bennelong              79       1 Austra… Eastvi…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    
-#>  4 NSW          105 Bennelong              79       1 Austra… Ryde      -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    
-#>  5 NSW          105 Bennelong              79       1 The Li… Ryde      -33.8    151. NA     NA     NA     NA     NA     NA     TRUE  
-#>  6 NSW          105 Bennelong              80       1 Eastwo… Eastwo…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
-#>  7 NSW          105 Bennelong              81       1 Epping… Epping…   -33.8    151. TRUE   TRUE   TRUE   NA     NA     NA     NA    
-#>  8 NSW          105 Bennelong              81       1 Epping… Epping…   -33.8    151. NA     NA     NA     TRUE   TRUE   TRUE   TRUE  
-#>  9 NSW          105 Bennelong              82       1 Epping… Epping…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
-#> 10 NSW          105 Bennelong              84       1 Glades… Glades…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
-#> # … with 116 more rows, and abbreviated variable names ¹​PollingPlaceTypeID, ²​PremisesNm, ³​PollingPlaceNm, ⁴​Latitude, ⁵​Longitude
+#>    State DivisionID DivisionNm PollingPlaceID PollingPlaceTypeID PremisesNm                     Pollin…¹ Latit…² Longi…³ `2004` `2007` `2010` `2013` `2016` `2019` `2022`
+#>    <chr>      <int> <chr>               <int>              <int> <chr>                          <chr>      <dbl>   <dbl> <lgl>  <lgl>  <lgl>  <lgl>  <lgl>  <lgl>  <lgl> 
+#>  1 NSW          105 Bennelong              75                  1 Epping Boys High School        Balacla…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
+#>  2 NSW          105 Bennelong              75                  1 Epping Boys High School        Marsfie…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
+#>  3 NSW          105 Bennelong              79                  1 Australian Air League Building Eastview   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    
+#>  4 NSW          105 Bennelong              79                  1 Australian Air League Building Ryde       -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   NA    
+#>  5 NSW          105 Bennelong              79                  1 The Living Way Church          Ryde       -33.8    151. NA     NA     NA     NA     NA     NA     TRUE  
+#>  6 NSW          105 Bennelong              80                  1 Eastwood Heights Public School Eastwoo…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
+#>  7 NSW          105 Bennelong              81                  1 Epping Community Centre        Epping …   -33.8    151. TRUE   TRUE   TRUE   NA     NA     NA     NA    
+#>  8 NSW          105 Bennelong              81                  1 Epping Public School           Epping …   -33.8    151. NA     NA     NA     TRUE   TRUE   TRUE   TRUE  
+#>  9 NSW          105 Bennelong              82                  1 Epping North Public School     Epping …   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
+#> 10 NSW          105 Bennelong              84                  1 Gladesville Public School      Gladesv…   -33.8    151. TRUE   TRUE   TRUE   TRUE   TRUE   TRUE   TRUE  
+#> # … with 116 more rows, and abbreviated variable names ¹​PollingPlaceNm, ²​Latitude, ³​Longitude
 ```
-
-
-
-

@@ -24,7 +24,6 @@ library(auspol)
 
 ```
 
-
 Preferences are a key aspect of Australia's preferential voting system.  **auspol** includes two functions to interact with the preference distribution data:
 
 - get_house_preferences()
@@ -37,10 +36,9 @@ Preferences are a key aspect of Australia's preferential voting system.  **auspo
 
 If you are unfamiliar with the Australian electoral system and preferential voting, please look at this [explainer](https://www.aec.gov.au/learn/preferential-voting.html) before proceeding.
 
-
 ## Getting the data
 
-get_house_preferences() - provides an interface to access preference flows for a particular division (electorate) on a given year, as published in the AEC's website . For instance:
+get_house_preferences() - provides an interface to access preference flows for a particular division (electorate) on a given year, as published on the AEC's website. For instance:
 
 ```{r}
 get_house_preferences("Wills",2019)
@@ -61,33 +59,30 @@ get_house_preferences("Wills",2019, polling_places=c("ABSENT"),aggregation = FAL
 
 ```
 
-
-Build on top of the basic function,  preference_flow_data() - provides an interface to access preference flows for a particular division (electorate) on a given year. This function returns a list, in which each element is a data frame with the results for each counting round. In its most basic use:
+Built on top of the basic functions,  preference_flow_data() - provides an interface to access preference flows for a particular division (electorate) in a given year. This function returns a list, in which each element is a data frame with the results for each counting round. In its most basic use:
 
 ```{r}
 house_preference_flow_data(division = "Wills", year=2019)
 ```
 
-The function also include other variables, which are better explained through its use as part of the next function,  house_preference_flow_plot().
+The function also includes other variables, which are better explained through its use as part of the next function,  house_preference_flow_plot().
 
 ## Plotting Preference flows.
 
-Perhaps it is most interesting to see how each round of counting assigns votes, until a candidate is chosen. For, this, this packages comes with the convenience function house_preference_flow_plot(), which  calls preference_flow_data() and plot the results in alluvial format. Using the previous example:
+Perhaps it is most interesting to see how each round of counting assigns votes until a candidate is chosen. This package comes with the convenience function house_preference_flow_plot(), which calls preference_flow_data() and plots the results in an alluvial format. Using the previous example:
 
 ```{r plot1}
 house_preference_flow_plot(division = "Wills",year=2019) +
   labs(title="Preference Flow for Wills, 2019")
 ```
 
-
-By default the vote is present as percentage, which can be changed changing the value of *var*:
+By default the vote is present as a percentage, which can be changed by changing the value of *var*:
 
 ```{r plot2}
 house_preference_flow_plot(division = "Wills",year=2019,var="Preference Count") +
   labs(title="Preference Flow for Wills, 2019")
 
 ```
-
 
 For analysis, it may be interesting to remove some parties from the initial round - e.g. to see how votes flow to the finalists. This can be done using *exclude_parties*:
 
@@ -96,7 +91,6 @@ house_preference_flow_plot(division = "Warringah",year=2022) +
   labs(title="Preference Flow for Warringah, 2022")
 
 ```
-
 
 ```{r plot4}
 house_preference_flow_plot(division = "Warringah",year=2022, exclude_parties = c("LP","IND-STEGGALL")) +
@@ -114,7 +108,6 @@ house_preference_flow_plot(division = "Warringah",year=2022,
   labs(title="Flow of preference votes to Liberal and Teal in Warringah, 2022")
 ```
 
-
 Similarly, it is possible to get the results of house_preference_flow_plot() directly, via *include_data*:
 
 ```{r}
@@ -127,21 +120,19 @@ p <- house_preference_flow_plot(division = "Warringah",year=2022,
 p$source_data[[1]]
 ```
 
-
 # Flow from primary vote to last round
 
-Although the last plot can be informative, The AEC also records how o understand how the votes has flow from primary votes to the two last candidates. This can be accessed through *get_house_2PF()*
+Although the last plot can be informative, The AEC also records how o understand how the votes have flowed from primary votes to the two last candidates. This can be accessed through *get_house_2PF()*
 
 ```{r}
 get_house_2PF(division = "Lingiari",year=2013,aggregation = TRUE)
 ```
 
-These results can be charted using *house_2PF_plot*. This function can present the results either in alluvial or bar chart format.
+These results can be charted using *house_2PF_plot()*. This function can present the results either in an alluvial or bar chart format.
 
 ```{r plot6}
 house_2PF_plot("Lingiari",2013,plot_format = "alluvial")
 ```
-
 
 ```{r plot7}
 house_2PF_plot(division="Burt",
@@ -152,24 +143,20 @@ house_2PF_plot(division="Burt",
 
 # Two-party preferred
 
-The AEC also publishes  [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries ([Coalition](https://en.wikipedia.org/wiki/Coalition_(Australia)) against Labor). These are available through * get_house_2PP()*, which allows to filter by division and year, and can be displayed by division or polling place
-
+The AEC also publishes  [Two-Party-Preferred](https://en.wikipedia.org/wiki/Two-party-preferred_vote) summaries ([Coalition](https://en.wikipedia.org/wiki/Coalition_(Australia)) against Labor). These are available through * get_house_2PP()*, which allows filtering by division and year, and can be displayed by division or polling place
 
 ```{r}
 get_house_2PP(division = "Fraser",year=2004,aggregation = TRUE)
 ```
 
-The package, includes two plots to visualise this data. The first (*house_2PP_comparison_plot()*),  displays the results for a given election, for one or a number of electorates.
+The package includes two plots to visualise this data. The first (*house_2PP_comparison_plot()*),  displays the results for a given election, for one or many electorates.
 
 ```{r plot8}
 house_2PP_comparison_plot(year=2022,state="VIC")
 ```
 
-
-The second function - ** - shows the historical results for a given division.
-
+The second function - *house_2PP_historical_plot()* - shows the historical results for a given division.
 
 ```{r plot9}
 house_2PP_historical_plot(division="Aston")
 ```
-

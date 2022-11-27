@@ -1,7 +1,7 @@
 ---
 title: "Elected MPs"
 author: "Carlos YANEZ SANTIBANEZ"
-date: "2022-11-14"
+date: "2022-11-28"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Elected MPs}
@@ -19,8 +19,7 @@ This package contains the following functions to retrieve and visualise the elec
 
 ## Getting the data
 
-*get_house_MPs()*  retrieves the list of elected MPs. When used without any parameters, it will retrieve all elected MPs for all divisions, in all the elections in the package. However,data can be filtered by division and election year.
-
+*get_house_MPs()*  retrieves the list of elected MPs. When used without any parameters, it will retrieve all elected MPs for all divisions, in all the elections in the package. However, data can be filtered by division and election year.
 
 
 ```r
@@ -36,7 +35,6 @@ get_house_MPs(division="Bennelong")
 #> 6  2007        105 Bennelong  NSW           18018 Maxine       McKEW     Australian Labor Party ALP    
 #> 7  2004        105 Bennelong  NSW           14818 John Winston HOWARD    Liberal                LP
 ```
-
 
 
 ```r
@@ -58,7 +56,7 @@ get_house_MPs(year=2013)
 ```
 ## Plotting
 
-This package also contains  functions to represent election results graphically. The first function presents and overall count of votes per party on a given year. For example, for 2013.
+This package also contains  functions to represent election results graphically. The first function presents an overall count of votes per party in a given year, e.g. for 2013.
 
 
 ```r
@@ -68,7 +66,6 @@ house_results_tally(2013)
 <img src="vignettes/elected-plot1-1.png" alt="plot of chunk plot1" width="100%" />
 
 Parties can be group together - i.e. putting all Coalition votes together
-
 
 
 ```r
@@ -96,7 +93,6 @@ house_results_tally(2022,
 Finally, there is also a function to plot the historical seats per party
 
 
-
 ```r
 house_results_historic(merge_parties = list(COAL=c("CLP","LP","LNP","NP")),
                        parties =c("COAL","ALP","GRN"),
@@ -104,4 +100,3 @@ house_results_historic(merge_parties = list(COAL=c("CLP","LP","LNP","NP")),
 ```
 
 <img src="vignettes/elected-plot4-1.png" alt="plot of chunk plot4" width="100%" />
-
