@@ -10,7 +10,5 @@
     Sys.setenv(aussie_cache_dir=cache_path)
 
   }
-manage_cache_dir(cache_path)
-
 
 }
