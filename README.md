@@ -1,6 +1,7 @@
 auspol
 ================
   <!-- badges: start -->
+  [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
   [![R-CMD-check](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/carlosyanez/auspol/actions/workflows/R-CMD-check.yaml)
   [![auspol status badge](https://carlosyanez.r-universe.dev/badges/auspol)](https://carlosyanez.r-universe.dev)
   <!-- badges: end -->

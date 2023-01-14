@@ -1,6 +1,6 @@
 test_that("data management", {
-  data_update()
-  data_info()
-  data_delete()
-  find_cache()
+  data_census_update()
+  data_census_info()
+  data_census_delete()
+  find_census_cache()
 })
