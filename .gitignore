@@ -45,3 +45,5 @@ data-raw/files/*
 *.zip
 path/*
 hex/gh.png
+precompile/.trackdown/*
+
