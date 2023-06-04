@@ -2,10 +2,11 @@
 ### Plotting Functions  #####
 ####################################################################
 
-#' Named vector with common parry colours, with option to add custom/additonal values
+#' Named vector with common party colours, with option to add custom/additional values
 #' @param extra named vector additional colour (hex) values
 #' @returns named vector
-#' @noRd
+#' @export
+#' @keywords plotting
 party_colours <- function(extra=NULL){
 
   colours <- c("ALP"="#E13940",
