@@ -64,7 +64,7 @@ house_primary_historic_plot <- function(division=NULL,
                                  parties=parties,
                                  parties_year=parties_year,
                                  include_others=include_others,
-                                 merge_parties=NULL,
+                                 merge_parties=merge_parties,
                                  include_informal=include_informal,
                                  include_names = FALSE,
                                  individualise_IND = individualise_IND,
@@ -93,8 +93,6 @@ house_primary_historic_plot <- function(division=NULL,
   data <- data |>
     select(all_of(data_cols)) |>
     rename(value=!!plotted_variable)
-
-
 
   p <- data |>
     ggplot(aes(x=.data$Year,y=.data$value,colour=.data$PartyAb,
