@@ -27,6 +27,7 @@
 #' @param include_labels If set to TRUE, the plot will include each value.
 #' @param year numeric vector with election years (from 2004), defaults to all.
 #' @param include_data If set to TRUE, output of house_primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)
+#' @param include_text_tooltip Flag to include tooltip for plotly mapped as text in ggplot
 #' @param data Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
 #' to plot, folowing the format from the output of  house_primary_vote_summary().
 #' @returns ggplot2 object
@@ -51,6 +52,7 @@ house_primary_historic_plot <- function(division=NULL,
                               include_labels =FALSE,
                               year=NULL,
                               include_data = FALSE,
+                              include_text_tooltip = FALSE,
                               data=NULL){
 
 
@@ -94,9 +96,25 @@ house_primary_historic_plot <- function(division=NULL,
     select(all_of(data_cols)) |>
     rename(value=!!plotted_variable)
 
+  if(include_text_tooltip){
+    data <- data |>
+            mutate(text_label=str_c("<b>",.data$PartyAb,"</b><br> Year ",.data$Year,": ",round(.data$value,3),"%"))
+
+    p <- data |>
+      ggplot(aes(x=.data$Year,y=.data$value,
+                 colour=.data$PartyAb,
+                 group=.data$PartyAb,
+                 label=round(.data$value,2),
+                 text=.data$text_label))
+  }else{
+
   p <- data |>
-    ggplot(aes(x=.data$Year,y=.data$value,colour=.data$PartyAb,
-               label=round(.data$value,2))) +
+    ggplot(aes(x=.data$Year,y=.data$value,
+               colour=.data$PartyAb,
+               group=.data$PartyAb,
+               label=round(.data$value,2)))
+  }
+  p <- p +
     geom_auspol_line(include_labels = include_labels) + labs(y=plotted_variable)
 
   p <- auspol_theme(p,type="colour",extra_values=unique(data$PartyAb), legend_pos = "right")

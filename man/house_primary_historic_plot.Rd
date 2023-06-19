@@ -17,6 +17,7 @@ house_primary_historic_plot(
   include_labels = FALSE,
   year = NULL,
   include_data = FALSE,
+  include_text_tooltip = FALSE,
   data = NULL
 )
 }
