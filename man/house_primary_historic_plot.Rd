@@ -51,6 +51,8 @@ from "IND" to "IND-<<candidate's surname>>", effectively separating them in part
 
 \item{include_data}{If set to TRUE, output of house_primary_vote_summary(), will be included under <<output_var>>$source_data (defaults to FALSE)}
 
+\item{include_text_tooltip}{Flag to include tooltip for plotly mapped as text in ggplot}
+
 \item{data}{Alternative, instead of providing a parameters, it is possible to provide the data frame with the data
 to plot, folowing the format from the output of  house_primary_vote_summary().}
 }
