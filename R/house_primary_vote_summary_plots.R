@@ -115,7 +115,14 @@ house_primary_historic_plot <- function(division=NULL,
                label=round(.data$value,2)))
   }
   p <- p +
-    geom_auspol_line(include_labels = include_labels) + labs(y=plotted_variable)
+    geom_point()+
+    geom_line() +
+    labs(y=plotted_variable)
+
+  if(include_labels){
+    p <- p + geom_text_repel(show.legend = FALSE)
+  }
+
 
   p <- auspol_theme(p,type="colour",extra_values=unique(data$PartyAb), legend_pos = "right")
 
