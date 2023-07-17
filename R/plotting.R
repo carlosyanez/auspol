@@ -209,7 +209,7 @@ geom_auspol_bar <- function(include_labels=TRUE,
   }
 
   if(!is.null(reference_line)){
-    ggpck <- ggpck + geom_vline(.id="ref_line",xintercept = reference_line,...)
+    ggpck <- ggpck %+% geom_vline(.id="ref_line",xintercept = reference_line,...)
   }
 
   return(ggpck)
